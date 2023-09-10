@@ -1,12 +1,22 @@
-<h1>Login</h1>
+<h1>Sign in</h1>
 <div>
-  <label for="username">username</label>
-  <input type="text" [(ngModel)]="username" id="username" required />
-  <label for="password">Password</label>
-  <input type="password" [(ngModel)]="password" id="password" required />
-  <a href="">Forgot password</a>
+  <div class="row">
+    <div class="col"><label for="username">username</label></div>
+    <div class="col">
+      <input type="text" [(ngModel)]="username" id="username" required />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col"><label for="password">Password</label></div>
+    <div class="col">
+      <input type="password" [(ngModel)]="password" id="password" required />
+    </div>
+  </div>
+
+  <a href="">Forgot password</a><br />
   <button type="button" (click)="onSubmit()">Sign In</button>
   <br />
-  <button type="button" (click)="onSubmit()">Sign Up</button>
+  <button type="button" (click)="onSubmit()" [routerLink]="['..', 'sign-up']">
+    Sign Up
+  </button>
 </div>
-Loading: {{ isLoading }} Error: {{ error }} Token: {{ token }}

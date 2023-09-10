@@ -41,7 +41,7 @@
     {
       "label": "start-frontend",
       "type": "npm",
-      "script": "start",
+      "script": "start:local",
       "isBackground": true,
       "presentation": {
         "focus": true,
