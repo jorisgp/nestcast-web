@@ -1,6 +1,6 @@
 import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
-import { SignInComponent } from './sign-in.component';
+import { SignInComponent } from './sign-in-form.component';
 
 describe('SignInComponent', () => {
   let spectator: Spectator<SignInComponent>;

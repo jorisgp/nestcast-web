@@ -1,6 +1,6 @@
-<app-sign-in
-  [error]="error"
-  [token]="token"
-  [isLoading]="isLoading"
+<app-sign-in-form
+  [error]="error$ | async"
+  [token]="token$ | async"
+  [isLoading]="isLoading$ | async"
   (signIn)="onSignIn($event)"
-></app-sign-in>
+></app-sign-in-form>

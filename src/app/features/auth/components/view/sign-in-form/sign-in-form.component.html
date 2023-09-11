@@ -1,0 +1,26 @@
+<h1>Sign in</h1>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div>
+    <div class="row">
+      <div class="col"><label for="username">username</label></div>
+      <div class="col">
+        <input type="text" formControlName="username" id="username" required />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><label for="password">Password</label></div>
+      <div class="col">
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          required
+        />
+      </div>
+    </div>
+    <a href="" [routerLink]="['..', 'password-lost']">Forgot password</a><br />
+    <button type="submit" [disabled]="!form.valid">Sign In</button>
+    <br />
+    <button type="button" [routerLink]="['..', 'sign-up']">Sign Up</button>
+  </div>
+</form>

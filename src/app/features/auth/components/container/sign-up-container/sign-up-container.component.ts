@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./sign-up-container.component.scss'],
 })
 export class SignUpContainerComponent {
-  onSignUp() {
-    console.log('Sign up');
+  onSignUp(event: any) {
+    console.log('Sign up', event);
   }
 }
