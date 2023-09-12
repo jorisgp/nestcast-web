@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { signIn } from 'src/app/core/state/actions/auth.actions';
 import {
@@ -6,6 +7,7 @@ import {
   selectIsLoading,
   selectToken,
 } from 'src/app/core/state/selectors/auth.selectors';
+import { Auth } from '../../../model/auth.model';
 
 @Component({
   selector: 'app-sign-in-container',
@@ -17,11 +19,18 @@ export class SignInContainerComponent {
   isLoading$ = this.store.select(selectIsLoading);
   token$ = this.store.select(selectToken);
 
-  constructor(private store: Store<{ auth: any }>) {}
+  constructor(private router: Router, private store: Store<{ auth: any }>) {}
 
-  onSignIn(event: any) {
-    this.store.dispatch(
-      signIn({ username: event.username, password: event.password })
-    );
+  ngOnInit() {
+    this.token$.subscribe((token) => {
+      console.log(token);
+      if (token) {
+        this.router.navigate(['/', 'admin']);
+      }
+    });
+  }
+
+  onSubmit(auth: Auth) {
+    this.store.dispatch(signIn({ data: auth }));
   }
 }

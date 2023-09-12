@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Auth } from '../../../model/auth.model';
 
 @Component({
   selector: 'app-sign-in-form',
@@ -19,10 +20,10 @@ export class SignInComponent {
   isLoading = false;
 
   @Output()
-  signUp = new EventEmitter<{ username: string; password: string }>();
+  submit = new EventEmitter<Auth>();
 
   submitForm() {
-    this.signUp.emit(this.form.value);
+    this.submit.emit(this.form.value);
   }
 
   ngOnInit() {

@@ -5,7 +5,6 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { LocalStorageService } from './local-storage.service';
 import { NotificationService } from './notification.service';
 
 @Injectable({
@@ -14,8 +13,7 @@ import { NotificationService } from './notification.service';
 export class NestcastHttpService {
   constructor(
     private http: HttpClient,
-    private notificationService: NotificationService,
-    private localStorageService: LocalStorageService
+    private notificationService: NotificationService
   ) {}
 
   postAuthLogin(body: any): Observable<any> {

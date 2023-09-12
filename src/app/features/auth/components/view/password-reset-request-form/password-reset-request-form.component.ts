@@ -2,11 +2,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-password-lost-form',
-  templateUrl: './password-lost-form.component.html',
-  styleUrls: ['./password-lost-form.component.scss'],
+  selector: 'app-password-reset-request-form',
+  templateUrl: './password-reset-request-form.component.html',
+  styleUrls: ['./password-reset-request-form.component.scss'],
 })
-export class PasswordLostFormComponent {
+export class PasswordResetRequestFormComponent {
   form: FormGroup;
 
   @Output()

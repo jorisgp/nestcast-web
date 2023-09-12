@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/shared/interfaces/user.interface';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -10,7 +11,7 @@ export class SignUpFormComponent {
   form: FormGroup;
 
   @Output()
-  signUp = new EventEmitter<any>();
+  submit = new EventEmitter<User>();
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -25,6 +26,6 @@ export class SignUpFormComponent {
   }
 
   submitForm() {
-    this.signUp.emit(this.form.value);
+    this.submit.emit(this.form.value);
   }
 }

@@ -1,16 +1,12 @@
 import { createAction, props } from '@ngrx/store';
+import { User } from 'src/app/shared/interfaces/user.interface';
 
-export const createUser = createAction(
-  '[New] User',
-  props<{ username: string; password: string }>()
-);
+const TYPE = '[User]';
 
-export const signInSuccess = createAction(
-  '[SignIn] SignIn Success',
-  props<{ token: string }>()
+export const GetProfile = createAction(`${TYPE} Get Profile`);
+export const SetUser = createAction(
+  `${TYPE} Set User`,
+  props<{ user: User }>()
 );
-
-export const signInFailure = createAction(
-  '[SignIn] SignIn Failure',
-  props<{ error: string }>()
-);
+export const LoadingUser = createAction(`${TYPE} Loading User`);
+export const ResetUser = createAction(`${TYPE} Reset User`);
