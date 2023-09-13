@@ -23,7 +23,6 @@ export class SignInContainerComponent {
 
   ngOnInit() {
     this.token$.subscribe((token) => {
-      console.log(token);
       if (token) {
         this.router.navigate(['/', 'admin']);
       }

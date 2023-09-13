@@ -20,10 +20,10 @@ export class SignInComponent {
   isLoading = false;
 
   @Output()
-  submit = new EventEmitter<Auth>();
+  submitForm = new EventEmitter<Auth>();
 
-  submitForm() {
-    this.submit.emit(this.form.value);
+  onSubmit() {
+    this.submitForm.emit(this.form.value);
   }
 
   ngOnInit() {

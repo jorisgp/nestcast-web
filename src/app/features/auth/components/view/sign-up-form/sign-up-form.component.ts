@@ -11,7 +11,7 @@ export class SignUpFormComponent {
   form: FormGroup;
 
   @Output()
-  submit = new EventEmitter<User>();
+  submitForm = new EventEmitter<User>();
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -25,7 +25,7 @@ export class SignUpFormComponent {
     });
   }
 
-  submitForm() {
-    this.submit.emit(this.form.value);
+  onSubmit() {
+    this.submitForm.emit(this.form.value);
   }
 }

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of, throwError } from 'rxjs';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
 import {
   LocalStorageService,
   StorageKey,
@@ -20,6 +20,7 @@ export class AuthEffects {
           tap((result) =>
             this.localStorageService.setItem(StorageKey.AUTH_TOKEN, result)
           ),
+
           map((token) => signInSuccess(token)),
           catchError((error) => of(signInFailure(error)))
         )
@@ -40,7 +41,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(authActions.signUp),
-        switchMap((action) =>
+        mergeMap((action) =>
           this.nestastHttpService.postUsers(action.data).pipe(
             tap(
               (res) => !!res.id && this.router.navigateByUrl('/auth/sign-in')
