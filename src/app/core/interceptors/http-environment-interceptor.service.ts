@@ -20,6 +20,10 @@ export class HttpEnvironmentInterceptorService {
     const token = this.localStorageService.getItem(StorageKey.AUTH_TOKEN);
     const isLoggedIn = token;
 
+    if (request.url.includes('assets')) {
+      return next.handle(request);
+    }
+
     if (isLoggedIn) {
       request = request.clone({
         url: `${environment.apiUrl}/${request.url}`,

@@ -3,7 +3,7 @@ export interface Login {
   password: string;
 }
 
-export interface PasswordResetRequest {
+export interface PasswordRequestReset {
   username: string;
 }
 

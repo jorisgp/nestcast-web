@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { of, throwError } from 'rxjs';
-import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import {
   LocalStorageService,
   StorageKey,
@@ -16,7 +16,7 @@ export class AuthEffects {
     this.actions$.pipe(
       ofType(authActions.signIn),
       switchMap((action) =>
-        this.nestastHttpService.postAuthLogin(action.data).pipe(
+        this.nestastHttpService.postAuthLogin(action.payload).pipe(
           tap((result) =>
             this.localStorageService.setItem(StorageKey.AUTH_TOKEN, result)
           ),
@@ -33,22 +33,6 @@ export class AuthEffects {
       this.actions$.pipe(
         ofType(authActions.signInSuccess),
         tap(() => this.router.navigate(['/', 'admin']))
-      ),
-    { dispatch: false }
-  );
-
-  signUp$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(authActions.signUp),
-        mergeMap((action) =>
-          this.nestastHttpService.postUsers(action.data).pipe(
-            tap(
-              (res) => !!res.id && this.router.navigateByUrl('/auth/sign-in')
-            ),
-            catchError((error) => throwError(error))
-          )
-        )
       ),
     { dispatch: false }
   );

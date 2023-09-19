@@ -1,0 +1,52 @@
+.background {
+  border-bottom: 2px solid black;
+  box-shadow: 0 3px 30px rgb(0 0 0 / 0.2);
+  height: 90vh;
+  width: 100%;
+}
+
+@property --color1 {
+  syntax: "<color>";
+  initial-value: rgb(210, 0, 77);
+  inherits: false;
+}
+
+@property --color2 {
+  syntax: "<color>";
+  initial-value: rgb(103, 0, 71);
+  inherits: false;
+}
+
+@property --color3 {
+  syntax: "<color>";
+  initial-value: rgb(36, 0, 30);
+  inherits: false;
+}
+
+:root {
+  --transition-time: 30s;
+}
+
+.background-section {
+  background: linear-gradient(
+    45deg,
+    var(--color1) 0%,
+    var(--color2) 35%,
+    var(--color3) 100%
+  );
+  transition: --color1 30s, --color2 30s, --color3 30s;
+}
+
+.background-section:hover {
+  --color1: rgb(0, 88, 211);
+  --color2: rgb(0, 76, 143);
+  --color3: rgb(15, 40, 129);
+
+  background: linear-gradient(
+    45deg,
+    var(--color1) 0%,
+    var(--color2) 35%,
+    var(--color3) 100%
+  );
+  transition: --color1 30s, --color2 30s, --color3 30s;
+}

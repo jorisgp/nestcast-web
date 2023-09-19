@@ -1,0 +1,21 @@
+{
+  "TITLE": "Nederlands",
+  "HOME": {
+    "INTRO": {
+      "subTitle": "De modernste podcast hosting",
+      "title": "Host je Podcast bij NestCast",
+      "text": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
+        "Hallo Hallo Vestibulum placerat nunc id leo faucibus, ac rhoncus lorem eleifend. Nam tristique ac tellus eu volutpat. Vivamus quis tempor ante. Cras nec tincidunt leo. Donec ornare, mauris id tempor eleifend, eros neque vestibulum metus, nec facilisis massa justo vitae felis. Nam dapibus dictum lobortis. Cras sit amet semper nisi. Aliquam ac elit quis felis convallis fringilla at sit amet lorem. Suspendisse maximus placerat ex, nec tempus dolor blandit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur congue."
+      ]
+    },
+    "DETAILS": {
+      "title": "Alleen Podcast hosting",
+      "text": [
+        "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
+        "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
+        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+      ]
+    }
+  }
+}

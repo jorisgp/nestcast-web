@@ -4,12 +4,12 @@ import { Status } from 'src/app/shared/shared.constants';
 import * as userActions from '../actions/user.actions';
 
 export interface UserState {
-  data: User;
+  payload: User;
   status: Status;
 }
 
 export const initialState: UserState = {
-  data: null,
+  payload: null,
   status: Status.UNINITIALIZED,
 };
 
@@ -18,20 +18,20 @@ const user = createReducer(
   on(userActions.SetUser, (state, payload) => {
     return {
       ...state,
-      data: payload.user,
+      payload: payload.user,
       status: Status.LOADED,
     };
   }),
   on(userActions.LoadingUser, (state) => {
     return {
       ...state,
-      data: null,
+      payload: null,
       status: Status.LOADING,
     };
   }),
   on(userActions.ResetUser, (state) => ({
     ...state,
-    data: null,
+    payload: null,
     status: Status.UNINITIALIZED,
   }))
 );

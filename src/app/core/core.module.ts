@@ -15,5 +15,6 @@ import { HttpEnvironmentInterceptorService } from './interceptors/http-environme
     },
   ],
   imports: [BrowserModule],
+  exports: [HeaderComponent, FooterComponent],
 })
 export class CoreModule {}

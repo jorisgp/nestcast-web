@@ -30,6 +30,6 @@ export class SignInContainerComponent {
   }
 
   onSubmit(auth: Auth) {
-    this.store.dispatch(signIn({ data: auth }));
+    this.store.dispatch(signIn({ payload: auth }));
   }
 }
