@@ -1,7 +1,7 @@
 .background {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 30px rgb(0 0 0 / 0.2);
-  height: 90vh;
+  height: 95vh;
   width: 100%;
 }
 
@@ -23,9 +23,7 @@
   inherits: false;
 }
 
-:root {
-  --transition-time: 30s;
-}
+$transitionTime: 10s;
 
 .background-section {
   background: linear-gradient(
@@ -34,7 +32,8 @@
     var(--color2) 35%,
     var(--color3) 100%
   );
-  transition: --color1 30s, --color2 30s, --color3 30s;
+  transition: --color1 $transitionTime, --color2 $transitionTime,
+    --color3 $transitionTime;
 }
 
 .background-section:hover {
@@ -48,5 +47,7 @@
     var(--color2) 35%,
     var(--color3) 100%
   );
-  transition: --color1 30s, --color2 30s, --color3 30s;
+
+  transition: --color1 $transitionTime, --color2 $transitionTime,
+    --color3 $transitionTime;
 }

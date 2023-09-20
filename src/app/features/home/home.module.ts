@@ -7,7 +7,10 @@ import { BackgroundSectionComponent } from './components/view/background-section
 import { CallToActionComponent } from './components/view/call-to-action/call-to-action.component';
 import { ColorSectionComponent } from './components/view/color-section/color-section.component';
 import { HalfPhotoSectionComponent } from './components/view/half-photo-section/half-photo-section.component';
+import { StackCategoryComponent } from './components/view/stack-category/stack-category.component';
+import { StackItemComponent } from './components/view/stack-item/stack-item.component';
 import { HomeRoutingModule } from './home-routing.module';
+import { StackImagePipePipe } from './pipes/stack-image-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { HomeRoutingModule } from './home-routing.module';
     HalfPhotoSectionComponent,
     ColorSectionComponent,
     CallToActionComponent,
+    StackItemComponent,
+    StackCategoryComponent,
+    StackImagePipePipe,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })

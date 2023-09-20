@@ -16,6 +16,130 @@
         "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
         "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
       ]
+    },
+    "TECHNIQUES": {
+      "title": "Technieken",
+      "text": [
+        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+      ],
+      "stack": [
+        {
+          "type": "programming",
+          "title": "Tech stack",
+          "text": [
+            "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+          ],
+          "items": [
+            {
+              "type": "angular",
+              "title": "Angular 16",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+            },
+            {
+              "type": "nestjs",
+              "title": "NestJs",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+            },
+            {
+              "type": "nodejs",
+              "title": "NodeJs",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+            },
+            {
+              "type": "typescript",
+              "title": "TypeScript",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+            },
+            {
+              "type": "javascript",
+              "title": "Javascript",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+            }
+          ]
+        },
+        {
+          "type": "testing",
+          "title": "Geautomatiseerde tests",
+          "text": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor."
+          ],
+          "items": [
+            {
+              "type": "jest",
+              "title": "Jest",
+              "text": ""
+            },
+            {
+              "type": "spectator",
+              "title": "Spectator",
+              "text": ""
+            },
+            {
+              "type": "cypress",
+              "title": "Cypress",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "services",
+          "title": "Services",
+          "text": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor."
+          ],
+          "items": [
+            {
+              "type": "aws",
+              "title": "AWS",
+              "text": ""
+            },
+            {
+              "type": "awss3",
+              "title": "AWS S3",
+              "text": ""
+            },
+            {
+              "type": "mongodb",
+              "title": "MongoDb",
+              "text": ""
+            },
+            {
+              "type": "github",
+              "title": "GitHub",
+              "text": ""
+            },
+            {
+              "type": "githubactions",
+              "title": "GitHub Actions",
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "AI",
+          "title": "AI",
+          "text": [
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor."
+          ],
+          "items": [
+            {
+              "type": "codium",
+              "title": "Codium",
+              "text": ""
+            },
+            {
+              "type": "chatgpt",
+              "title": "Chat GPT",
+              "text": ""
+            },
+            {
+              "type": "githubcopilot",
+              "title": "Github Copilot",
+              "text": ""
+            }
+          ]
+        }
+      ]
     }
   }
 }
