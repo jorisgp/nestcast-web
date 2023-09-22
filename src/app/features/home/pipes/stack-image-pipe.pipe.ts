@@ -25,19 +25,19 @@ export class StackImagePipePipe implements PipeTransform {
       case StackType.AWS:
         return 'assets/images/stack/aws.svg';
       case StackType.AWSS3:
-        return 'assets/images/stack/aws-s3.svg';
+        return 'assets/images/stack/awss3.svg';
       case StackType.MONGODB:
         return 'assets/images/stack/mongodb.svg';
       case StackType.GITHUB:
         return 'assets/images/stack/github.svg';
       case StackType.GITHUBACTIONS:
-        return 'assets/images/stack/github-actions.svg';
+        return 'assets/images/stack/githubactions.svg';
       case StackType.CODIUM:
-        return 'assets/images/stack/codium.svg';
+        return 'assets/images/stack/codium.png';
       case StackType.CHATGPT:
         return 'assets/images/stack/chatgpt.svg';
       case StackType.GITHUBCOPILOT:
-        return 'assets/images/stack/github-copilot.svg';
+        return 'assets/images/stack/githubcopilot.svg';
       default:
         return 'assets/images/stack/javascript.svg';
     }
