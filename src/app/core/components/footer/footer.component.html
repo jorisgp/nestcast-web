@@ -1,1 +1,50 @@
-<p>footer works!</p>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <div class="about mb-5">
+          <h3 class="mb-3">About NestCast</h3>
+          <p>
+            Pellentesque eget vulputate nibh. Donec non ornare leo. Nulla nec
+            elit risus. Donec eget sodales ex, vel mollis ex. Pellentesque
+            maximus, ligula quis dignissim pellentesque, ex turpis maximus orci,
+            ultricies porttitor velit erat nec ante. Donec non sem at purus
+            porttitor tristique et eget tellus.
+          </p>
+        </div>
+        <div class="social-media">
+          <app-icon [type]="IconType.FACEBOOK" class="facebook-icon"></app-icon>
+          <app-icon [type]="IconType.X" class="x-icon"></app-icon>
+          <app-icon
+            [type]="IconType.INSTAGRAM"
+            class="instagram-icon"
+          ></app-icon>
+          <app-icon [type]="IconType.LINKEDIN" class="linkedin-icon"></app-icon>
+        </div>
+      </div>
+      <div class="col-3 offset-1">
+        <h3>Get in touch</h3>
+        <a href="mailto:info@nestcast.com">info@netscast.com</a><br />
+        <a href="https:://www.netscast.com">https:://www.netscast.com</a
+        ><br /><br />
+        <address>
+          NestCast<br />
+          Hoofdweg 562<br />
+          1055AB Amsterdam<br />
+        </address>
+        <div class="map-wrapper">
+          <app-map></app-map>
+        </div>
+      </div>
+      <div class="col-3 offset-1">
+        <h3>Navigation</h3>
+        <ul>
+          <li>Home</li>
+          <li>Pricing</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

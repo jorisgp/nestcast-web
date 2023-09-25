@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "cli": {
-    "schematicCollections": ["@ngneat/spectator"],
+    "schematicCollections": ["@angular-eslint/schematics", "@ngneat/spectator"],
     "analytics": false
   },
   "version": 1,
@@ -33,7 +33,9 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.scss",
+              "./node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.js"]
           },
@@ -122,6 +124,12 @@
               "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
             "scripts": ["node_modules/bootstrap/dist/js/bootstrap.js"]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
           }
         }
       }

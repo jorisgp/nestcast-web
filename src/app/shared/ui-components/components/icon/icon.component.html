@@ -1,0 +1,10 @@
+<i
+  *ngIf="type"
+  class="icon bi"
+  ngClass="{{ type }}"
+  [class.large]="size === IconSize.LARGE"
+  [class.medium]="size === IconSize.MEDIUM"
+  [class.dark]="color === IconColor.DARK"
+  [class.light]="color === IconColor.LIGHT"
+  [class.grey]="color === IconColor.GREY"
+></i>

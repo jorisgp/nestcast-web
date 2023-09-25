@@ -1,0 +1,14 @@
+<app-background-section>
+  <div class="header-adjustment">
+    <app-call-to-action [data]="'HOME.ABOUT' | translate"></app-call-to-action>
+  </div>
+</app-background-section>
+<app-color-section>
+  <h2>{{ "HOME.TECHNIQUES.title" | translate }}</h2>
+  <app-paragraphs [data]="'HOME.TECHNIQUES.text' | translate"></app-paragraphs>
+
+  <app-stack-category
+    *ngFor="let stackCategory of 'HOME.TECHNIQUES.stack' | translate"
+    [data]="stackCategory"
+  ></app-stack-category>
+</app-color-section>

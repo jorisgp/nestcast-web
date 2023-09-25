@@ -9,12 +9,3 @@
 </app-color-section>
 
 <app-half-photo-section></app-half-photo-section>
-<app-color-section>
-  <h2>{{ "HOME.TECHNIQUES.title" | translate }}</h2>
-  <app-paragraphs [data]="'HOME.TECHNIQUES.text' | translate"></app-paragraphs>
-
-  <app-stack-category
-    *ngFor="let stackCategory of 'HOME.TECHNIQUES.stack' | translate"
-    [data]="stackCategory"
-  ></app-stack-category>
-</app-color-section>

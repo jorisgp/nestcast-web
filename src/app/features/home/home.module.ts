@@ -11,6 +11,13 @@ import { StackCategoryComponent } from './components/view/stack-category/stack-c
 import { StackItemComponent } from './components/view/stack-item/stack-item.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { StackImagePipePipe } from './pipes/stack-image-pipe.pipe';
+import { PricingCardComponent } from './components/view/pricing-card/pricing-card.component';
+import { AboutPageComponent } from './components/page/about-page/about-page.component';
+import { PricingPageComponent } from './components/page/pricing-page/pricing-page.component';
+import { ContactPageComponent } from './components/page/contact-page/contact-page.component';
+import { AboutPageContainerComponent } from './components/container/about-page-container/about-page-container.component';
+import { PricingPageContainerComponent } from './components/container/pricing-page-container/pricing-page-container.component';
+import { ContactPageContainerComponent } from './components/container/contact-page-container/contact-page-container.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +30,13 @@ import { StackImagePipePipe } from './pipes/stack-image-pipe.pipe';
     StackItemComponent,
     StackCategoryComponent,
     StackImagePipePipe,
+    PricingCardComponent,
+    AboutPageComponent,
+    PricingPageComponent,
+    ContactPageComponent,
+    AboutPageContainerComponent,
+    PricingPageContainerComponent,
+    ContactPageContainerComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })

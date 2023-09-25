@@ -1,0 +1,11 @@
+<div class="prcing-card">
+  <div>{{ data.title }}</div>
+  <div>{{ data.price }}</div>
+
+  <div>
+    <ul>
+      <li *ngFor="let usp of data.usps">{{ usp }}</li>
+    </ul>
+  </div>
+  <button>Op de wachtlijst</button>
+</div>

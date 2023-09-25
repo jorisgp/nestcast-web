@@ -1,6 +1,8 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HttpEnvironmentInterceptorService } from './interceptors/http-environment-interceptor.service';
@@ -14,7 +16,7 @@ import { HttpEnvironmentInterceptorService } from './interceptors/http-environme
       multi: true,
     },
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, SharedModule, RouterModule],
   exports: [HeaderComponent, FooterComponent],
 })
 export class CoreModule {}
