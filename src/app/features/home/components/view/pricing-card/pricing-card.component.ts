@@ -7,8 +7,14 @@ import { Component, Input } from '@angular/core';
 })
 export class PricingCardComponent {
   @Input()
-  data: PricingCard;
+  data: PricingCards;
 }
+
+export type PricingCards = {
+  title: string;
+  text: string;
+  cards: PricingCard[];
+};
 
 export type PricingCard = {
   plan: Plan;

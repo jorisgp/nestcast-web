@@ -38,6 +38,8 @@ export class StackImagePipePipe implements PipeTransform {
         return 'assets/images/stack/chatgpt.svg';
       case StackType.GITHUBCOPILOT:
         return 'assets/images/stack/githubcopilot.svg';
+      case StackType.NGRX:
+        return 'assets/images/stack/ngrx.svg';
       default:
         return 'assets/images/stack/javascript.svg';
     }
@@ -61,4 +63,5 @@ export enum StackType {
   CODIUM = 'codium',
   CHATGPT = 'chatgpt',
   GITHUBCOPILOT = 'githubcopilot',
+  NGRX = 'ngrx',
 }

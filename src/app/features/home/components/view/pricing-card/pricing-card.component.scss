@@ -1,0 +1,19 @@
+.container {
+  padding: 150px 0;
+}
+.pricing-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 1200px;
+
+  .pricing-card {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid white;
+    border-radius: 10px;
+    min-height: 500px;
+    max-width: 300px;
+    margin: 0 20px;
+  }
+}

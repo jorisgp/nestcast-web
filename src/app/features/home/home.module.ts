@@ -18,6 +18,7 @@ import { ContactPageComponent } from './components/page/contact-page/contact-pag
 import { AboutPageContainerComponent } from './components/container/about-page-container/about-page-container.component';
 import { PricingPageContainerComponent } from './components/container/pricing-page-container/pricing-page-container.component';
 import { ContactPageContainerComponent } from './components/container/contact-page-container/contact-page-container.component';
+import { SnippetComponent } from './components/view/snippet/snippet.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ContactPageContainerComponent } from './components/container/contact-pa
     AboutPageContainerComponent,
     PricingPageContainerComponent,
     ContactPageContainerComponent,
+    SnippetComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule],
 })

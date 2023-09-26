@@ -1,11 +1,19 @@
-<div class="prcing-card">
-  <div>{{ data.title }}</div>
-  <div>{{ data.price }}</div>
+<div>
+  <div class="container">
+    <div class="row pricing-cards">
+      <h2>{{ data.title }}</h2>
+      <app-paragraphs [data]="data.text"></app-paragraphs>
+      <div class="pricing-card" *ngFor="let card of data.cards">
+        <h4>{{ card.title }}</h4>
+        <div>{{ card.price }}</div>
 
-  <div>
-    <ul>
-      <li *ngFor="let usp of data.usps">{{ usp }}</li>
-    </ul>
+        <div>
+          <ul>
+            <li *ngFor="let usp of card.usps">{{ usp }}</li>
+          </ul>
+        </div>
+        <button>Op de wachtlijst</button>
+      </div>
+    </div>
   </div>
-  <button>Op de wachtlijst</button>
 </div>

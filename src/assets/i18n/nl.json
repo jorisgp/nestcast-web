@@ -17,6 +17,59 @@
         "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
       ]
     },
+    "SNIPPET_RIGHT": {
+      "title": "Alleen Podcast hosting",
+      "text": [
+        "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
+        "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
+        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
+      ]
+    },
+    "SNIPPET_LEFT": {
+      "title": "Alleen Podcast hosting",
+      "text": [
+        "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
+        "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
+        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1581368087049-7034ed0d1e6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1524293568345-75d62c3664f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80"
+      ]
+    },
+    "PRICING": {
+      "title": "Abonnementen",
+      "text": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor."
+      ],
+      "cards": [
+        {
+          "title": "Persoonlijk",
+          "price": "€ 6,25",
+          "usps": ["asd"]
+        },
+        {
+          "title": "Zakelijk",
+          "price": "€ 20,-",
+          "usps": ["asd"]
+        }
+      ]
+    }
+  },
+  "ABOUT": {
+    "INTRO": {
+      "subTitle": "De beste en modernste stack",
+      "title": "Over NestCast",
+      "text": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
+        "Hallo Hallo Vestibulum placerat nunc id leo faucibus, ac rhoncus lorem eleifend. Nam tristique ac tellus eu volutpat. Vivamus quis tempor ante. Cras nec tincidunt leo. Donec ornare, mauris id tempor eleifend, eros neque vestibulum metus, nec facilisis massa justo vitae felis. Nam dapibus dictum lobortis. Cras sit amet semper nisi. Aliquam ac elit quis felis convallis fringilla at sit amet lorem. Suspendisse maximus placerat ex, nec tempus dolor blandit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur congue."
+      ]
+    },
     "TECHNIQUES": {
       "title": "Technieken",
       "text": [
@@ -33,6 +86,11 @@
             {
               "type": "angular",
               "title": "Angular 16",
+              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+            },
+            {
+              "type": "ngrx",
+              "title": "NgRx",
               "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
             },
             {
@@ -139,6 +197,26 @@
             }
           ]
         }
+      ]
+    }
+  },
+  "PRICING": {
+    "INTRO": {
+      "subTitle": "De goedkoopste van Nederland",
+      "title": "Abonnementen",
+      "text": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
+        "Hallo Hallo Vestibulum placerat nunc id leo faucibus, ac rhoncus lorem eleifend. Nam tristique ac tellus eu volutpat. Vivamus quis tempor ante. Cras nec tincidunt leo. Donec ornare, mauris id tempor eleifend, eros neque vestibulum metus, nec facilisis massa justo vitae felis. Nam dapibus dictum lobortis. Cras sit amet semper nisi. Aliquam ac elit quis felis convallis fringilla at sit amet lorem. Suspendisse maximus placerat ex, nec tempus dolor blandit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur congue."
+      ]
+    }
+  },
+  "CONTACT": {
+    "INTRO": {
+      "subTitle": "De beste en modernste stack",
+      "title": "Contact met NestCast",
+      "text": [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
+        "Hallo Hallo Vestibulum placerat nunc id leo faucibus, ac rhoncus lorem eleifend. Nam tristique ac tellus eu volutpat. Vivamus quis tempor ante. Cras nec tincidunt leo. Donec ornare, mauris id tempor eleifend, eros neque vestibulum metus, nec facilisis massa justo vitae felis. Nam dapibus dictum lobortis. Cras sit amet semper nisi. Aliquam ac elit quis felis convallis fringilla at sit amet lorem. Suspendisse maximus placerat ex, nec tempus dolor blandit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur congue."
       ]
     }
   }

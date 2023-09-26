@@ -1,14 +1,20 @@
 <app-background-section>
   <div class="header-adjustment">
-    <app-call-to-action [data]="'HOME.ABOUT' | translate"></app-call-to-action>
+    <app-call-to-action [data]="'ABOUT.INTRO' | translate"></app-call-to-action>
   </div>
 </app-background-section>
 <app-color-section>
-  <h2>{{ "HOME.TECHNIQUES.title" | translate }}</h2>
-  <app-paragraphs [data]="'HOME.TECHNIQUES.text' | translate"></app-paragraphs>
-
-  <app-stack-category
-    *ngFor="let stackCategory of 'HOME.TECHNIQUES.stack' | translate"
-    [data]="stackCategory"
-  ></app-stack-category>
+  <div class="margin-section">
+    <h2>{{ "ABOUT.TECHNIQUES.title" | translate }}</h2>
+    <app-paragraphs
+      [data]="'ABOUT.TECHNIQUES.text' | translate"
+    ></app-paragraphs>
+    <app-stack-category
+      *ngFor="let stackCategory of 'ABOUT.TECHNIQUES.stack' | translate"
+      [data]="stackCategory"
+    ></app-stack-category>
+  </div>
 </app-color-section>
+<app-half-photo-section
+  src="https://images.unsplash.com/photo-1603575448360-153f093fd0b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+></app-half-photo-section>
