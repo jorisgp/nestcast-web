@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { ContainerDirective } from 'src/app/shared/directives/container.directive';
 import { ModalService } from 'src/app/shared/services/modal.service';
 
 @Component({
@@ -7,6 +8,9 @@ import { ModalService } from 'src/app/shared/services/modal.service';
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent {
+  @ViewChild(ContainerDirective, { static: true })
+  container: ContainerDirective;
+
   @Input()
   display = true;
 
@@ -24,7 +28,7 @@ export class ModalComponent {
   closeModal() {
     this.display = false;
     setTimeout(() => {
-      this.modalService.close();
+      this.modalService.removeChild();
     }, 100);
   }
 }

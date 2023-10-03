@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogModule } from 'primeng/dialog';
+import { ContainerDirective } from './directives/container.directive';
 import { NestCastHttpService } from './services/nest-cast-http.service';
 import { ButtonComponent } from './ui-components/components/button/button.component';
 import { IconComponent } from './ui-components/components/icon/icon.component';
@@ -17,8 +18,8 @@ import { ParagraphsComponent } from './ui-components/components/paragraphs/parag
     ParagraphsComponent,
     IconComponent,
     MapComponent,
-
     ModalComponent,
+    ContainerDirective,
   ],
   imports: [CommonModule, DialogModule],
   exports: [TranslateModule, ParagraphsComponent, IconComponent, MapComponent],

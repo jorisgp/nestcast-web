@@ -1,83 +1,41 @@
-import { DOCUMENT } from '@angular/common';
-import {
-  ComponentFactoryResolver,
-  ComponentRef,
-  EnvironmentInjector,
-  Inject,
-  Injectable,
-  ViewContainerRef,
-} from '@angular/core';
+import { ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
 import { ModalComponent } from '../ui-components/components/modal/modal.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ModalService {
-  viewContainerRef!: ViewContainerRef;
-  reference: ComponentRef<any>;
+  viewContainerRef: ViewContainerRef;
+  modalReference: ComponentRef<any>;
   modalOpen = false;
 
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private injector: EnvironmentInjector,
-    @Inject(DOCUMENT) private document: Document
-  ) {}
+  openModal(component: any, submitEvent: any, data?: any, config?: any) {
+    if (!this.modalOpen) {
+      this.modalOpen = true;
+      this.modalReference =
+        this.viewContainerRef.createComponent(ModalComponent);
+      const componentReference: ComponentRef<ModalInterface> =
+        this.modalReference.instance.container.viewContainerRef.createComponent(
+          component
+        );
 
-  // openModal(component: any) {
-  //   if (!this.modalOpen) {
-  //     this.modalOpen = true;
-  //     console.log(component);
-
-  //     const dialogRef = createComponent(component, {
-  //       environmentInjector: this.injector,
-  //     });
-
-  //     this.reference = this.viewContainerRef.createComponent(ModalComponent, {
-  //       projectableNodes: component,
-  //     });
-  //   }
-  // }
-
-  open<T>(content: any, data?: any) {
-    this.modalOpen = true;
-    const factory =
-      this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
-
-    const ngContent = this.resolveNgContent(content, data);
-    this.reference = this.viewContainerRef.createComponent(
-      component,
-      ngContent
-    );
-    this.reference.instance.data = data;
-
-    const componentRef = factory.create(this.injector, ngContent);
-
-    this.reference = componentRef;
-
-    console.log(this.reference);
-
-    this.viewContainerRef.insert(componentRef.hostView);
+      componentReference.instance.data = data;
+      componentReference.instance.submitEvent = submitEvent;
+      componentReference.instance.config = config;
+    }
   }
 
-  resolveNgContent<T>(content: any, data: any) {
-    console.log(data);
-    const factory =
-      this.componentFactoryResolver.resolveComponentFactory(content);
-    const componentRef: ComponentRef<any> = factory.create(this.injector);
-
-    componentRef.setInput('data', data);
-
-    return [
-      [componentRef],
-      [this.document.createTextNode('Second ng-content')],
-    ];
-  }
-
-  close() {
-    const index = this.viewContainerRef.indexOf(this.reference.hostView);
+  removeChild() {
+    const index = this.viewContainerRef.indexOf(this.modalReference.hostView);
     if (index != -1) {
       this.viewContainerRef.remove(index);
       this.modalOpen = false;
     }
   }
+}
+
+interface ModalInterface {
+  data: any;
+  config: any;
+  submitEvent: any;
 }

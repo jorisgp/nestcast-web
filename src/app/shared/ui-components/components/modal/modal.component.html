@@ -8,8 +8,5 @@
   (visibleChange)="closeOnVisibleChange()"
   closeIcon="pi pi-times"
 >
-  <ng-content></ng-content>
-  <button class="btn btn-light" type="button" (click)="closeModal()">
-    Annuleren
-  </button>
+  <ng-container appContainer></ng-container>
 </p-dialog>

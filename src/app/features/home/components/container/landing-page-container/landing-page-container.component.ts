@@ -14,9 +14,10 @@ export class LandingPageContainerComponent {
   constructor(private modalService: ModalService) {}
 
   openModal() {
-    this.modalService.open(
+    this.modalService.openModal(
       WaitingListFormComponent,
-      'Sign up for the waiting list'
+      () => {},
+      'test test'
     );
   }
 }
