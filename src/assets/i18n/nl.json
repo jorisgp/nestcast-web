@@ -50,13 +50,17 @@
       "cards": [
         {
           "title": "Persoonlijk",
-          "price": "€ 6,25",
-          "usps": ["asd"]
+          "price": "€6,25",
+          "usps": [
+            "Lorem ipsum dolor sit",
+            "Lorem ipsum dolor sit",
+            "Lorem ipsum dolor sit"
+          ]
         },
         {
           "title": "Zakelijk",
-          "price": "€ 20,-",
-          "usps": ["asd"]
+          "price": "€20,-",
+          "usps": ["L"]
         }
       ]
     }

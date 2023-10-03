@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { IconType } from 'src/app/shared/ui-components/components/icon/icon.component';
 
 @Component({
   selector: 'app-pricing-card',
@@ -8,6 +9,8 @@ import { Component, Input } from '@angular/core';
 export class PricingCardComponent {
   @Input()
   data: PricingCards;
+
+  IconType = IconType;
 }
 
 export type PricingCards = {

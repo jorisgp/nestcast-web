@@ -1,0 +1,15 @@
+<p-dialog
+  [header]="header"
+  [(visible)]="display"
+  [draggable]="false"
+  [resizable]="false"
+  [modal]="true"
+  [closable]="true"
+  (visibleChange)="closeOnVisibleChange()"
+  closeIcon="pi pi-times"
+>
+  <ng-content></ng-content>
+  <button class="btn btn-light" type="button" (click)="closeModal()">
+    Annuleren
+  </button>
+</p-dialog>

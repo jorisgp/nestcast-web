@@ -37,4 +37,5 @@ export enum IconType {
   X = 'bi-twitter-x',
   INSTAGRAM = 'bi-instagram',
   LINKEDIN = 'bi-linkedin',
+  PERSONAL = 'bi-person',
 }

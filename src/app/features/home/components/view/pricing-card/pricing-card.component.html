@@ -1,18 +1,32 @@
 <div>
   <div class="container">
     <div class="row pricing-cards">
-      <h2>{{ data.title }}</h2>
-      <app-paragraphs [data]="data.text"></app-paragraphs>
-      <div class="pricing-card" *ngFor="let card of data.cards">
-        <h4>{{ card.title }}</h4>
-        <div>{{ card.price }}</div>
+      <div class="intro">
+        <h2>{{ data.title }}</h2>
+        <app-paragraphs [data]="data.text"></app-paragraphs>
+      </div>
+      <div
+        class="pricing-card d-flex flex-column justify-content-between"
+        *ngFor="let card of data.cards"
+      >
+        <div class="d-flex flex-column">
+          <div class="d-flex align-items-center mb-3">
+            <app-icon [type]="IconType.PERSONAL"></app-icon>
+            <h4 class="title ms-2">{{ card.title }}</h4>
+          </div>
 
-        <div>
-          <ul>
-            <li *ngFor="let usp of card.usps">{{ usp }}</li>
-          </ul>
+          <div class="price mb-3">
+            <div class="amount">{{ card.price }}</div>
+            <div class="frequency">/Month</div>
+          </div>
+
+          <div>
+            <ul>
+              <li *ngFor="let usp of card.usps">{{ usp }}</li>
+            </ul>
+          </div>
         </div>
-        <button>Op de wachtlijst</button>
+        <div role="button" class="button">wachtlijst</div>
       </div>
     </div>
   </div>
