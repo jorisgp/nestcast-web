@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-background-section',
@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./background-section.component.scss'],
 })
 export class BackgroundSectionComponent {
+  @Input()
+  gradient: Gradient;
+
+  Gradient = Gradient;
   changeBackground = false;
+}
+
+export enum Gradient {
+  ONE,
+  TWO,
+  THREE,
+  FOUR,
 }

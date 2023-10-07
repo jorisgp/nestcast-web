@@ -8,6 +8,7 @@ import {
 import { WaitingList } from 'src/app/shared/interfaces/auth.interface';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { WaitingListFormComponent } from '../../form/waiting-list-form/waiting-list-form.component';
+import { Gradient } from '../../view/background-section/background-section.component';
 import { SnippetView } from '../../view/snippet/snippet.component';
 
 @Component({
@@ -20,6 +21,7 @@ export class LandingPageContainerComponent {
 
   error$ = this.store.select(selectWaitingListError);
   isLoading$ = this.store.select(selectWaitingListIsLoading);
+  Gradient = Gradient;
 
   constructor(
     private modalService: ModalService,
@@ -29,17 +31,6 @@ export class LandingPageContainerComponent {
   onSubmit(waitingList: WaitingList) {
     this.store.dispatch(addToWaitingList({ payload: waitingList }));
   }
-
-  ngOnInit(): void {
-    this.error$.subscribe((error) => {
-      console.log('error$', error);
-    });
-
-    this.isLoading$.subscribe((isLoading) => {
-      console.log('isLoading$', isLoading);
-    });
-  }
-
   openModal() {
     this.modalService.openModal(
       WaitingListFormComponent,

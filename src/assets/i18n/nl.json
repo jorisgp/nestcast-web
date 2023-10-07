@@ -2,7 +2,7 @@
   "TITLE": "Nederlands",
   "HOME": {
     "INTRO": {
-      "subTitle": "De modernste podcast hosting",
+      "subTitle": "De nieuwste hosting voor jouw podcast",
       "title": "Host je Podcast bij NestCast",
       "text": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
@@ -10,7 +10,7 @@
       ]
     },
     "DETAILS": {
-      "title": "Alleen Podcast hosting",
+      "title": "Podcast hosting en RSS",
       "text": [
         "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
         "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
@@ -18,7 +18,7 @@
       ]
     },
     "SNIPPET_RIGHT": {
-      "title": "Alleen Podcast hosting",
+      "title": "Podcast hosting & RSS",
       "text": [
         "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
         "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
@@ -31,7 +31,7 @@
       ]
     },
     "SNIPPET_LEFT": {
-      "title": "Alleen Podcast hosting",
+      "title": "Podcast platformen",
       "text": [
         "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
         "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
@@ -67,7 +67,7 @@
   },
   "ABOUT": {
     "INTRO": {
-      "subTitle": "De beste en modernste stack",
+      "subTitle": "De techniek achter NestCast",
       "title": "Over NestCast",
       "text": [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",

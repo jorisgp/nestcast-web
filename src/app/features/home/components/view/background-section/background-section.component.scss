@@ -1,3 +1,63 @@
+.gradient-1 {
+  $color1: hsl(212, 41%, 45%);
+  $color2: hsl(179, 60%, 45%);
+  $color3: hsl(344, 14%, 46%);
+  $color4: hsl(246, 77%, 45%);
+
+  &.background-section {
+    background-image: linear-gradient(to right, $color1, $color2);
+  }
+
+  &.background-section::before {
+    background-image: linear-gradient(to left, $color3, $color4);
+  }
+}
+
+.gradient-2 {
+  $color1: hsl(95, 55%, 23%);
+  $color2: hsl(179, 48%, 22%);
+  $color3: hsl(171, 100%, 50%);
+  $color4: hsl(0, 100%, 40%);
+
+  &.background-section {
+    background-image: linear-gradient(to right, $color1, $color2);
+  }
+
+  &.background-section::before {
+    background-image: linear-gradient(to bottom, $color3, $color4);
+  }
+}
+
+.gradient-3 {
+  $color1: hsl(211, 100%, 50%);
+  $color2: hsl(179, 100%, 30%);
+  $color3: hsl(344, 100%, 50%);
+  $color4: hsl(31, 100%, 40%);
+
+  &.background-section {
+    background-image: linear-gradient(to right, $color1, $color2);
+  }
+
+  &.background-section::before {
+    background-image: linear-gradient(to bottom, $color3, $color4);
+  }
+}
+
+.gradient-4 {
+  $color1: hsl(106, 100%, 50%);
+  $color2: hsl(57, 100%, 30%);
+  $color3: hsl(344, 100%, 50%);
+  $color4: hsl(323, 100%, 40%);
+
+  &.background-section {
+    background-image: linear-gradient(to right, $color1, $color2);
+  }
+
+  &.background-section::before {
+    background-image: linear-gradient(to bottom, $color3, $color4);
+  }
+}
+
 .background {
   border-bottom: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 3px 30px rgb(0 0 0 / 0.2);
@@ -5,49 +65,23 @@
   width: 100%;
 }
 
-@property --color1 {
-  syntax: "<color>";
-  initial-value: rgb(210, 0, 77);
-  inherits: false;
-}
-
-@property --color2 {
-  syntax: "<color>";
-  initial-value: rgb(103, 0, 71);
-  inherits: false;
-}
-
-@property --color3 {
-  syntax: "<color>";
-  initial-value: rgb(36, 0, 30);
-  inherits: false;
-}
-
-$transitionTime: 10s;
-
 .background-section {
-  background: linear-gradient(
-    45deg,
-    var(--color1) 0%,
-    var(--color2) 35%,
-    var(--color3) 100%
-  );
-  transition: --color1 $transitionTime, --color2 $transitionTime,
-    --color3 $transitionTime;
+  position: relative;
+  z-index: 1;
 }
 
-.background-section:hover {
-  --color1: rgb(0, 88, 211);
-  --color2: rgb(0, 76, 143);
-  --color3: rgb(15, 40, 129);
+.background-section::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: opacity 20s linear;
+  opacity: 0;
+}
 
-  background: linear-gradient(
-    45deg,
-    var(--color1) 0%,
-    var(--color2) 35%,
-    var(--color3) 100%
-  );
-
-  transition: --color1 $transitionTime, --color2 $transitionTime,
-    --color3 $transitionTime;
+.background-section:hover::before {
+  opacity: 1;
 }

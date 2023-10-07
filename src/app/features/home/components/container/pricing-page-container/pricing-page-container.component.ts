@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Gradient } from '../../view/background-section/background-section.component';
 import { SnippetView } from '../../view/snippet/snippet.component';
 
 @Component({
@@ -8,4 +9,5 @@ import { SnippetView } from '../../view/snippet/snippet.component';
 })
 export class PricingPageContainerComponent {
   SnippetView = SnippetView;
+  Gradient = Gradient;
 }
