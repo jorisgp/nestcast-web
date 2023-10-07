@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { signIn } from 'src/app/core/state/actions/auth.actions';
+import { signIn } from 'src/app/core/store/actions/auth.actions';
 import {
   selectError,
   selectIsLoading,
   selectToken,
-} from 'src/app/core/state/selectors/auth.selectors';
+} from 'src/app/core/store/selectors/auth.selectors';
 import { Auth } from '../../../model/auth.model';
 
 @Component({

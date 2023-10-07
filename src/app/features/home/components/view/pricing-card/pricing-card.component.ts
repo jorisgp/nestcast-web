@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconType } from 'src/app/shared/ui-components/components/icon/icon.component';
 
 @Component({
@@ -9,6 +9,9 @@ import { IconType } from 'src/app/shared/ui-components/components/icon/icon.comp
 export class PricingCardComponent {
   @Input()
   data: PricingCards;
+
+  @Output()
+  buttonClick = new EventEmitter<void>();
 
   IconType = IconType;
 }

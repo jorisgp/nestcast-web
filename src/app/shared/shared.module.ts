@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogModule } from 'primeng/dialog';
+import { FlagComponent } from './components/flag/flag.component';
 import { ContainerDirective } from './directives/container.directive';
 import { NestCastHttpService } from './services/nest-cast-http.service';
 import { ButtonComponent } from './ui-components/components/button/button.component';
@@ -20,9 +21,16 @@ import { ParagraphsComponent } from './ui-components/components/paragraphs/parag
     MapComponent,
     ModalComponent,
     ContainerDirective,
+    FlagComponent,
   ],
   imports: [CommonModule, DialogModule],
-  exports: [TranslateModule, ParagraphsComponent, IconComponent, MapComponent],
+  exports: [
+    TranslateModule,
+    ParagraphsComponent,
+    IconComponent,
+    MapComponent,
+    FlagComponent,
+  ],
 })
 export class SharedModule {}
 export { NestCastHttpService };

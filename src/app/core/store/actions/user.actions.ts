@@ -53,6 +53,7 @@ export const UserSignUpSuccess = createAction(
 );
 
 export const GetProfile = createAction(`${TYPE} Get Profile`);
+
 export const SetUser = createAction(
   `${TYPE} Set User`,
   props<{ user: User }>()

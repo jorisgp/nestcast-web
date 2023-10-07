@@ -19,16 +19,8 @@ export class ModalComponent {
 
   constructor(private modalService: ModalService) {}
 
-  closeOnVisibleChange() {
-    if (!this.display) {
-      this.closeModal();
-    }
-  }
-
   closeModal() {
     this.display = false;
-    setTimeout(() => {
-      this.modalService.removeChild();
-    }, 100);
+    this.modalService.removeChild();
   }
 }

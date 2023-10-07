@@ -1,25 +1,30 @@
-<div class="header">
+<div class="header" [class.scrolled]="background">
   <div class="container">
     <nav class="top-nav">
       <div>
         <a class="navbar-logo" href="#">nest<span>cast</span></a>
       </div>
-      <div>
-        <ul class="top-nav-links">
-          <li>
-            <a
-              [routerLink]="['/', 'pricing']"
-              routerLinkActive="router-link-active"
-              >Pricing</a
-            >
-          </li>
-          <li>
-            <a href="#" [routerLink]="['/', 'about']">About</a>
-          </li>
-          <li>
-            <a href="#" [routerLink]="['/', 'contact']">Contact</a>
-          </li>
-        </ul>
+      <div class="option-wrapper">
+        <div>
+          <ul class="top-nav-links">
+            <li>
+              <a
+                [routerLink]="['/', 'pricing']"
+                routerLinkActive="router-link-active"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="#" [routerLink]="['/', 'about']">About</a>
+            </li>
+            <li>
+              <a href="#" [routerLink]="['/', 'contact']">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="language-switch">
+          <app-language-switch></app-language-switch>
+        </div>
       </div>
     </nav>
   </div>

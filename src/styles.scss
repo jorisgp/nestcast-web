@@ -13,3 +13,14 @@ p {
 .header-adjustment {
   padding-top: 200px;
 }
+
+.language-switch {
+  .p-dropdown {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.35);
+
+    .p-dropdown-label {
+      padding: 5px 3px 8px 5px;
+    }
+  }
+}

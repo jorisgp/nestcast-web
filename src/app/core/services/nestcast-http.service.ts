@@ -5,6 +5,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
+import { WaitingList } from 'src/app/shared/interfaces/auth.interface';
 import { NotificationService } from './notification.service';
 
 @Injectable({
@@ -135,6 +136,12 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
+  postWaitingList(body: WaitingList): Observable<any> {
+    return this.http
+      .post<any>(`${apiPrefix}/${ApiResource.WAITING_LIST}`, body)
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
   private _handleError(errorResponse: HttpErrorResponse): Observable<never> {
     // in a real world app, we may send the server to some remote logging infrastructure
     // instead of just logging it to the console
@@ -170,7 +177,7 @@ export class NestcastHttpService {
         );
       }
     }
-    return throwError(() => errorMessage);
+    return throwError(() => errorResponse);
   }
 
   private _handleBadRequest(err: any) {
@@ -198,6 +205,7 @@ enum ApiResource {
   PASSWORD = 'password',
   SHOWS = 'shows',
   EPISODES = 'episodes',
+  WAITING_LIST = 'waiting-list',
 }
 
 export interface Upload {

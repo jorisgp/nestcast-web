@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UserSignUp } from 'src/app/core/state/actions/user.actions';
+import { UserSignUp } from 'src/app/core/store/actions/user.actions';
 import { User } from 'src/app/shared/interfaces/user.interface';
 
 @Component({

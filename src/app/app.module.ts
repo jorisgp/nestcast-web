@@ -12,8 +12,10 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { AuthEffects } from './core/state/effects/auth.effects';
-import { authReducer } from './core/state/reducers/auth.reducer';
+import { AuthEffects } from './core/store/effects/auth.effects';
+import { WaitingListEffects } from './core/store/effects/waiting-list.effects';
+import { authReducer } from './core/store/reducers/auth.reducer';
+import { waitingListReducer } from './core/store/reducers/waiting-list.reducer';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -39,8 +41,8 @@ export function createTranslateLoader(http: HttpClient) {
       maxAge: 25,
       logOnly: environment.production,
     }),
-    StoreModule.forRoot({ auth: authReducer }),
-    EffectsModule.forRoot([AuthEffects]),
+    StoreModule.forRoot({ auth: authReducer, waitingList: waitingListReducer }),
+    EffectsModule.forRoot([AuthEffects, WaitingListEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -8,11 +8,17 @@ import * as userActions from '../actions/user.actions';
 
 @Injectable()
 export class UserEffects {
+  constructor(
+    private router: Router,
+    private actions$: Actions,
+    private nestcastHttpService: NestcastHttpService
+  ) {}
+
   signUp$ = createEffect(() =>
     this.actions$.pipe(
       ofType(userActions.UserSignUp),
       mergeMap((action) =>
-        this.nestastHttpService.postUsers(action.payload).pipe(
+        this.nestcastHttpService.postUsers(action.payload).pipe(
           map((user) => userActions.UserSignUpSuccess(user)),
           catchError((error) => of(userActions.UserSignUpEror(error)))
         )
@@ -28,10 +34,4 @@ export class UserEffects {
       ),
     { dispatch: false }
   );
-
-  constructor(
-    private router: Router,
-    private actions$: Actions,
-    private nestastHttpService: NestcastHttpService
-  ) {}
 }

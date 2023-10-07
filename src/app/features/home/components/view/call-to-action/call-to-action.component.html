@@ -3,6 +3,8 @@
     <h2>{{ data.subTitle }}</h2>
     <h1>{{ data.title }}</h1>
     <app-paragraphs [data]="data.text">{{ data.text }}</app-paragraphs>
-    <button class="btn btn-dark">Ik wil op de wachtlijst</button>
+    <button class="btn btn-dark" (click)="buttonClick.emit()">
+      Ik wil op de wachtlijst
+    </button>
   </div>
 </div>

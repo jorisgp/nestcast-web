@@ -10,13 +10,21 @@ import {
 import { NestcastHttpService } from '../../services/nestcast-http.service';
 import * as authActions from '../actions/auth.actions';
 import { signInFailure, signInSuccess } from '../actions/auth.actions';
+
 @Injectable()
 export class AuthEffects {
+  constructor(
+    private router: Router,
+    private actions$: Actions,
+    private nestcastHttpService: NestcastHttpService,
+    private localStorageService: LocalStorageService
+  ) {}
+
   signIn$ = createEffect(() =>
     this.actions$.pipe(
       ofType(authActions.signIn),
       switchMap((action) =>
-        this.nestastHttpService.postAuthLogin(action.payload).pipe(
+        this.nestcastHttpService.postAuthLogin(action.payload).pipe(
           tap((result) =>
             this.localStorageService.setItem(StorageKey.AUTH_TOKEN, result)
           ),
@@ -36,11 +44,4 @@ export class AuthEffects {
       ),
     { dispatch: false }
   );
-
-  constructor(
-    private router: Router,
-    private actions$: Actions,
-    private nestastHttpService: NestcastHttpService,
-    private localStorageService: LocalStorageService
-  ) {}
 }

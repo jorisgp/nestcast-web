@@ -1,1 +1,79 @@
-<p>waiting-list-form works!</p>
+<div class="modal-content">
+  <h2>Add to waitinglist</h2>
+  <p>
+    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+    suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
+    vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
+    molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+    pariatur?"
+  </p>
+</div>
+<form [formGroup]="waitingListForm" (ngSubmit)="onSubmitForm()">
+  <div class="row">
+    <div class="col-12 mb-2">
+      <label for="first-name">First Name</label>
+      <input
+        class="form-control"
+        id="first-name"
+        type="text"
+        formControlName="firstName"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mb-2">
+      <label for="last-name">Last Name</label>
+      <input
+        class="form-control"
+        id="last-name"
+        type="text"
+        formControlName="lastName"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mb-2">
+      <label for="email">E-mail address</label>
+      <input
+        class="form-control"
+        id="email"
+        type="text"
+        formControlName="email"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mb-2">
+      <input
+        id="terms"
+        type="checkbox"
+        formControlName="terms"
+        class="form-check-input"
+      />
+      <label class="ms-2" for="terms">Terms</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 mb-2">
+      <input
+        id="contact"
+        type="checkbox"
+        formControlName="contactTerms"
+        class="form-check-input"
+      />
+      <label class="ms-2" for="contact">Contact</label>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-12 d-flex justify-content-end">
+      <button
+        type="button"
+        class="btn btn-lght me-1"
+        (click)="closeModal.emit()"
+      >
+        cancel
+      </button>
+      <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+  </div>
+</form>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UserPasswordRequestReset } from 'src/app/core/state/actions/user.actions';
+import { UserPasswordRequestReset } from 'src/app/core/store/actions/user.actions';
 import { PasswordRequestReset } from 'src/app/shared/interfaces/auth.interface';
 
 @Component({

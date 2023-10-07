@@ -1,6 +1,9 @@
 <app-background-section>
   <div class="header-adjustment">
-    <app-call-to-action [data]="'HOME.INTRO' | translate"></app-call-to-action>
+    <app-call-to-action
+      [data]="'HOME.INTRO' | translate"
+      (buttonClick)="openModal()"
+    ></app-call-to-action>
   </div>
 </app-background-section>
 <app-color-section>
@@ -17,6 +20,8 @@
 <app-half-photo-section
   src="https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
 >
-  <app-pricing-card [data]="'HOME.PRICING' | translate"></app-pricing-card>
-  <button (click)="openModal()">Open Modal</button>
+  <app-pricing-card
+    [data]="'HOME.PRICING' | translate"
+    (buttonClick)="openModal()"
+  ></app-pricing-card>
 </app-half-photo-section>

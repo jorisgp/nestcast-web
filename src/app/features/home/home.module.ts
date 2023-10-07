@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AboutPageContainerComponent } from './components/container/about-page-container/about-page-container.component';
 import { ContactPageContainerComponent } from './components/container/contact-page-container/contact-page-container.component';
 import { LandingPageContainerComponent } from './components/container/landing-page-container/landing-page-container.component';
 import { PricingPageContainerComponent } from './components/container/pricing-page-container/pricing-page-container.component';
+import { WaitingListFormComponent } from './components/form/waiting-list-form/waiting-list-form.component';
 import { AboutPageComponent } from './components/page/about-page/about-page.component';
 import { ContactPageComponent } from './components/page/contact-page/contact-page.component';
 import { HomePageComponent } from './components/page/home-page/home-page.component';
@@ -19,7 +21,6 @@ import { StackCategoryComponent } from './components/view/stack-category/stack-c
 import { StackItemComponent } from './components/view/stack-item/stack-item.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { StackImagePipePipe } from './pipes/stack-image-pipe.pipe';
-import { WaitingListFormComponent } from './components/form/waiting-list-form/waiting-list-form.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,6 @@ import { WaitingListFormComponent } from './components/form/waiting-list-form/wa
     SnippetComponent,
     WaitingListFormComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, SharedModule],
+  imports: [CommonModule, HomeRoutingModule, SharedModule, ReactiveFormsModule],
 })
 export class HomeModule {}

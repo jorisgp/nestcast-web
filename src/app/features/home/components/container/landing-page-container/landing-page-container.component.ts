@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { addToWaitingList } from 'src/app/core/store/actions/waiting-list.actions';
+import {
+  selectWaitingListError,
+  selectWaitingListIsLoading,
+} from 'src/app/core/store/selectors/waiting-list.selectors';
+import { WaitingList } from 'src/app/shared/interfaces/auth.interface';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { WaitingListFormComponent } from '../../form/waiting-list-form/waiting-list-form.component';
 import { SnippetView } from '../../view/snippet/snippet.component';
@@ -11,12 +18,32 @@ import { SnippetView } from '../../view/snippet/snippet.component';
 export class LandingPageContainerComponent {
   SnippetView = SnippetView;
 
-  constructor(private modalService: ModalService) {}
+  error$ = this.store.select(selectWaitingListError);
+  isLoading$ = this.store.select(selectWaitingListIsLoading);
+
+  constructor(
+    private modalService: ModalService,
+    private store: Store<{ waitingList: any }>
+  ) {}
+
+  onSubmit(waitingList: WaitingList) {
+    this.store.dispatch(addToWaitingList({ payload: waitingList }));
+  }
+
+  ngOnInit(): void {
+    this.error$.subscribe((error) => {
+      console.log('error$', error);
+    });
+
+    this.isLoading$.subscribe((isLoading) => {
+      console.log('isLoading$', isLoading);
+    });
+  }
 
   openModal() {
     this.modalService.openModal(
       WaitingListFormComponent,
-      () => {},
+      (waitingListFrom: WaitingList) => this.onSubmit(waitingListFrom),
       'test test'
     );
   }
