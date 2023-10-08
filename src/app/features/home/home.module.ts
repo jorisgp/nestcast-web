@@ -21,6 +21,7 @@ import { StackCategoryComponent } from './components/view/stack-category/stack-c
 import { StackItemComponent } from './components/view/stack-item/stack-item.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { StackImagePipePipe } from './pipes/stack-image-pipe.pipe';
+import { ContactFormComponent } from './components/form/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { StackImagePipePipe } from './pipes/stack-image-pipe.pipe';
     ContactPageContainerComponent,
     SnippetComponent,
     WaitingListFormComponent,
+    ContactFormComponent,
   ],
   imports: [CommonModule, HomeRoutingModule, SharedModule, ReactiveFormsModule],
 })
