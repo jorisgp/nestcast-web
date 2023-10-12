@@ -1,13 +1,12 @@
 import { createReducer, on } from '@ngrx/store';
-import { WaitingList } from 'src/app/shared/interfaces/auth.interface';
 import {
-  addToWaitingList,
-  addToWaitingListFailure,
-  addToWaitingListSuccess,
-} from '../actions/waiting-list.actions';
+  WaitingList,
+  WaitingListDetails,
+} from 'src/app/shared/interfaces/auth.interface';
+import * as waitingListActions from '../actions/waiting-list.actions';
 
 export interface WaitingListState {
-  payload: WaitingList;
+  payload: WaitingListDetails | WaitingList;
   error: any;
   isLoading: boolean;
 }
@@ -20,20 +19,50 @@ const initialState: WaitingListState = {
 
 export const waitingListReducer = createReducer(
   initialState,
-  on(addToWaitingList, (state, result) => ({
-    ...state,
-    payload: result.payload,
-    isLoading: true,
-  })),
-  on(addToWaitingListFailure, (state, error) => ({
-    ...state,
-    payload: null,
-    error: error,
-    isLoading: false,
-  })),
-  on(addToWaitingListSuccess, (state, result) => ({
-    ...state,
-    payload: result.payload,
-    isLoading: false,
-  }))
+  on(waitingListActions.addToWaitingList, (state, result) => {
+    return {
+      ...state,
+      payload: result.payload,
+      isLoading: true,
+    };
+  }),
+  on(waitingListActions.addToWaitingListFailure, (state, error) => {
+    return {
+      ...state,
+      payload: null,
+      error: error,
+      isLoading: false,
+    };
+  }),
+  on(waitingListActions.addToWaitingListSuccess, (state, result) => {
+    return {
+      ...state,
+      payload: result.payload,
+      error: null,
+      isLoading: false,
+    };
+  }),
+  on(waitingListActions.confirmToWaitingList, (state, result) => {
+    return {
+      ...state,
+      payload: result.payload,
+      isLoading: true,
+    };
+  }),
+  on(waitingListActions.confirmWaitingListFailure, (state, error) => {
+    return {
+      ...state,
+      payload: null,
+      error: error,
+      isLoading: false,
+    };
+  }),
+  on(waitingListActions.confirmWaitingListSuccess, (state, result) => {
+    return {
+      ...state,
+      payload: result.payload,
+      error: null,
+      isLoading: false,
+    };
+  })
 );

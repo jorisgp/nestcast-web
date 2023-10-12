@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, map, mergeMap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
 import * as waitingListActions from '../actions/waiting-list.actions';
 
@@ -15,11 +15,27 @@ export class WaitingListEffects {
   add$ = createEffect(() =>
     this.actions$.pipe(
       ofType(waitingListActions.addToWaitingList),
-      mergeMap((action) =>
+      switchMap((action) =>
         this.nestcastHttpService.postWaitingList(action.payload).pipe(
-          map((result) => waitingListActions.addToWaitingListSuccess(result)),
+          map((result) =>
+            waitingListActions.addToWaitingListSuccess({ payload: result })
+          ),
           catchError((error) =>
             of(waitingListActions.addToWaitingListFailure(error))
+          )
+        )
+      )
+    )
+  );
+
+  confirm$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(waitingListActions.confirmToWaitingList),
+      switchMap((action) =>
+        this.nestcastHttpService.postWaitingList(action.payload).pipe(
+          map((result) => waitingListActions.confirmToWaitingList(result)),
+          catchError((error) =>
+            of(waitingListActions.confirmWaitingListFailure(error))
           )
         )
       )

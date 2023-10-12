@@ -1,6 +1,8 @@
 import { createSelector } from '@ngrx/store';
 
-const selectWaitingListState = (state: any) => state.waitingList;
+const selectWaitingListState = (state: any) => {
+  return state.waitingListReducer;
+};
 
 export const selectWaitingListError = createSelector(
   selectWaitingListState,

@@ -205,7 +205,7 @@ enum ApiResource {
   PASSWORD = 'password',
   SHOWS = 'shows',
   EPISODES = 'episodes',
-  WAITING_LIST = 'waiting-list',
+  WAITING_LIST = 'waiting-lists',
 }
 
 export interface Upload {

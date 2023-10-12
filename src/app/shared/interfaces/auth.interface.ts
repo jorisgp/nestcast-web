@@ -21,8 +21,26 @@ export interface Login {
   password: string;
 }
 
+export interface BaseResponse {
+  created: Date;
+  updated: Date;
+  version: number;
+  id: string;
+}
+
 export interface WaitingList {
   firstName: string;
   lastName: string;
   email: string;
+  agreeContactTerms: boolean;
+  agreeTerms: boolean;
+  active: boolean;
 }
+
+export interface WaitingListConfirm {
+  id: string;
+  code: string;
+  active: boolean;
+}
+
+export interface WaitingListDetails extends WaitingList, BaseResponse {}

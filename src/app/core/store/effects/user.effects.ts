@@ -20,7 +20,7 @@ export class UserEffects {
       mergeMap((action) =>
         this.nestcastHttpService.postUsers(action.payload).pipe(
           map((user) => userActions.UserSignUpSuccess(user)),
-          catchError((error) => of(userActions.UserSignUpEror(error)))
+          catchError((error) => of(userActions.UserSignUpError(error)))
         )
       )
     )

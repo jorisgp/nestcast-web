@@ -27,7 +27,7 @@ export const UserPasswordReset = createAction(
   props<{ payload: PasswordReset }>()
 );
 
-export const UserPasswordResetEror = createAction(
+export const UserPasswordResetError = createAction(
   `${TYPE} Password Reset Error`,
   props<{ payload: PasswordReset }>()
 );
@@ -42,7 +42,7 @@ export const UserSignUp = createAction(
   props<{ payload: User }>()
 );
 
-export const UserSignUpEror = createAction(
+export const UserSignUpError = createAction(
   `${TYPE} SignUp Error`,
   props<{ payload: User }>()
 );

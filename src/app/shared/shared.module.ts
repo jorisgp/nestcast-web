@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogModule } from 'primeng/dialog';
+import { CodeConfirmationComponent } from './components/code-confirmation/code-confirmation.component';
 import { FlagComponent } from './components/flag/flag.component';
 import { ContainerDirective } from './directives/container.directive';
 import { NestCastHttpService } from './services/nest-cast-http.service';
@@ -22,14 +24,16 @@ import { ParagraphsComponent } from './ui-components/components/paragraphs/parag
     ModalComponent,
     ContainerDirective,
     FlagComponent,
+    CodeConfirmationComponent,
   ],
-  imports: [CommonModule, DialogModule],
+  imports: [CommonModule, DialogModule, ReactiveFormsModule],
   exports: [
     TranslateModule,
     ParagraphsComponent,
     IconComponent,
     MapComponent,
     FlagComponent,
+    CodeConfirmationComponent,
   ],
 })
 export class SharedModule {}

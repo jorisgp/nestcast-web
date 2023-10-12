@@ -22,13 +22,14 @@ export class WaitingListFormComponent implements ModalInterface {
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
-    terms: new FormControl(false, Validators.requiredTrue),
-    contactTerms: new FormControl(false, Validators.requiredTrue),
+    agreeTerms: new FormControl(false, Validators.requiredTrue),
+    agreeContactTerms: new FormControl(false, Validators.requiredTrue),
   });
 
   onSubmitForm() {
     if (this.waitingListForm.valid) {
       this.submitForm.emit(this.waitingListForm.value as WaitingList);
+      // this.closeModal.emit();
     }
   }
 }

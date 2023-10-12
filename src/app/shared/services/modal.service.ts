@@ -9,6 +9,18 @@ export class ModalService {
   private modalReference: ComponentRef<any>;
   private modalOpen = false;
 
+  closeOpenModal(component: any, submitEvent: any, data?: any, config?: any) {
+    if (this.modalOpen) {
+      this.removeChild().then(() => {
+        this.modalOpen = false;
+        console.log('this.modalOpen', this.modalOpen);
+        this.openModal(component, submitEvent, data, config);
+      });
+    } else {
+      this.openModal(component, submitEvent, data, config);
+    }
+  }
+
   openModal(component: any, submitEvent: any, data?: any, config?: any) {
     if (!this.modalOpen) {
       this.modalOpen = true;
@@ -22,7 +34,6 @@ export class ModalService {
       componentReference.instance.data = data;
       componentReference.instance.submitForm?.subscribe((eventData: any) => {
         submitEvent(eventData);
-        this.removeChild();
       });
       componentReference.instance.closeModal?.subscribe(() => {
         this._closeModal();
@@ -31,18 +42,22 @@ export class ModalService {
     }
   }
 
-  removeChild() {
+  removeChild(): Promise<null> {
     const index = this.viewContainerRef.indexOf(this.modalReference.hostView);
-    setTimeout(() => {
-      if (index != -1) {
-        this.viewContainerRef.remove(index);
-      }
-      this.modalOpen = false;
-    }, 500);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (index != -1) {
+          this.viewContainerRef.remove(index);
+        }
+        this.modalOpen = false;
+        resolve(null);
+      }, 300);
+    });
   }
 
   private _closeModal() {
-    this.modalReference.instance.closeModal();
+    this.modalReference.instance.closeModalFromService();
+    this.removeChild();
   }
 }
 

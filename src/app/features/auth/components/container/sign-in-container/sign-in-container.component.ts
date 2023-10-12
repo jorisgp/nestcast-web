@@ -27,6 +27,10 @@ export class SignInContainerComponent {
         this.router.navigate(['/', 'admin']);
       }
     });
+
+    this.isLoading$.subscribe((error) => {
+      console.log('error', error);
+    });
   }
 
   onSubmit(auth: Auth) {

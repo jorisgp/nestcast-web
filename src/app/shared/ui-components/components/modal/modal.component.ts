@@ -23,4 +23,7 @@ export class ModalComponent {
     this.display = false;
     this.modalService.removeChild();
   }
+  private closeModalFromService() {
+    this.display = false;
+  }
 }
