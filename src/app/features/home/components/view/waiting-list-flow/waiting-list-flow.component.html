@@ -1,0 +1,10 @@
+<app-waiting-list-form
+  *ngIf="step === WaitingListFlowStep.WAITNG_LIST"
+  (closeModal)="closeModal.emit()"
+  (submitForm)="submitForm.emit($event)"
+></app-waiting-list-form>
+<app-code-confirmation
+  (submitForm)="onSubmitConfirmationForm($event)"
+  (cancelBack)="closeModal.emit()"
+  *ngIf="step === WaitingListFlowStep.WAITNG_LIST_CONFIRMATION"
+></app-code-confirmation>

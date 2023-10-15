@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Contact } from 'src/app/shared/interfaces/auth.interface';
 import { ModalInterface } from 'src/app/shared/services/modal.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class ContactFormComponent implements ModalInterface {
   data: any;
 
   @Output()
-  submitForm = new EventEmitter<any>();
+  submitForm = new EventEmitter<Contact>();
 
   @Output()
   closeModal = new EventEmitter<void>();
@@ -22,12 +23,12 @@ export class ContactFormComponent implements ModalInterface {
     lastName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     message: new FormControl('', Validators.required),
-    contactTerms: new FormControl(false, Validators.requiredTrue),
+    agreeContactTerms: new FormControl(false, Validators.requiredTrue),
   });
 
   onSubmitForm() {
     if (this.contactForm.valid) {
-      this.submitForm.emit(this.contactForm.value as any);
+      this.submitForm.emit(this.contactForm.value as Contact);
     }
   }
 }

@@ -34,13 +34,34 @@ export interface WaitingList {
   email: string;
   agreeContactTerms: boolean;
   agreeTerms: boolean;
-  active: boolean;
+  confirmed: boolean;
 }
 
-export interface WaitingListConfirm {
+export interface WaitingListConfirmation {
   id: string;
-  code: string;
-  active: boolean;
+  confirmationCode: number;
+  confirmed: boolean;
 }
 
-export interface WaitingListDetails extends WaitingList, BaseResponse {}
+export interface WaitingListDetails extends WaitingList, BaseResponse {
+  confirmed: boolean;
+}
+
+export interface Contact {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  agreeContactTerms: boolean;
+  confirmed: boolean;
+}
+
+export interface ContactConfirmation {
+  id: string;
+  confirmationCode: number;
+  confirmed: boolean;
+}
+
+export interface ContactDetails extends WaitingList, BaseResponse {
+  confirmed: boolean;
+}

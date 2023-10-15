@@ -1,33 +1,33 @@
 import { createReducer, on } from '@ngrx/store';
 import {
-  WaitingList,
-  WaitingListConfirmation,
-  WaitingListDetails,
+  Contact,
+  ContactConfirmation,
+  ContactDetails,
 } from 'src/app/shared/interfaces/auth.interface';
-import * as waitingListActions from '../actions/waiting-list.actions';
+import * as contactActions from '../actions/contact.actions';
 
-export interface WaitingListState {
-  payload: WaitingListDetails | WaitingList | WaitingListConfirmation;
+export interface ContactState {
+  payload: ContactDetails | Contact | ContactConfirmation;
   error: any;
   isLoading: boolean;
 }
 
-const initialState: WaitingListState = {
+const initialState: ContactState = {
   payload: null,
   error: null,
   isLoading: false,
 };
 
-export const waitingListReducer = createReducer(
+export const contactReducer = createReducer(
   initialState,
-  on(waitingListActions.addToWaitingList, (state, result) => {
+  on(contactActions.addToContact, (state, result) => {
     return {
       ...state,
       payload: result.payload,
       isLoading: true,
     };
   }),
-  on(waitingListActions.addToWaitingListFailure, (state, error) => {
+  on(contactActions.addToContactFailure, (state, error) => {
     return {
       ...state,
       payload: null,
@@ -35,7 +35,7 @@ export const waitingListReducer = createReducer(
       isLoading: false,
     };
   }),
-  on(waitingListActions.addToWaitingListSuccess, (state, result) => {
+  on(contactActions.addToContactSuccess, (state, result) => {
     return {
       ...state,
       payload: result.payload,
@@ -43,14 +43,14 @@ export const waitingListReducer = createReducer(
       isLoading: false,
     };
   }),
-  on(waitingListActions.confirmWaitingList, (state, result) => {
+  on(contactActions.confirmContact, (state, result) => {
     return {
       ...state,
       payload: result.payload,
       isLoading: true,
     };
   }),
-  on(waitingListActions.confirmWaitingListFailure, (state, error) => {
+  on(contactActions.confirmContactFailure, (state, error) => {
     return {
       ...state,
       payload: null,
@@ -58,7 +58,7 @@ export const waitingListReducer = createReducer(
       isLoading: false,
     };
   }),
-  on(waitingListActions.confirmWaitingListSuccess, (state, result) => {
+  on(contactActions.confirmContactSuccess, (state, result) => {
     return {
       ...state,
       payload: result.payload,

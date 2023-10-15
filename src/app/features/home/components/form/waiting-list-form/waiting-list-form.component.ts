@@ -1,14 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { WaitingList } from 'src/app/shared/interfaces/auth.interface';
-import { ModalInterface } from 'src/app/shared/services/modal.service';
 
 @Component({
   selector: 'app-waiting-list-form',
   templateUrl: './waiting-list-form.component.html',
   styleUrls: ['./waiting-list-form.component.scss'],
 })
-export class WaitingListFormComponent implements ModalInterface {
+export class WaitingListFormComponent {
   @Input()
   data: any;
 
@@ -29,7 +28,6 @@ export class WaitingListFormComponent implements ModalInterface {
   onSubmitForm() {
     if (this.waitingListForm.valid) {
       this.submitForm.emit(this.waitingListForm.value as WaitingList);
-      // this.closeModal.emit();
     }
   }
 }

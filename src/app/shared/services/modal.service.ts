@@ -1,4 +1,9 @@
-import { ComponentRef, Injectable, ViewContainerRef } from '@angular/core';
+import {
+  ComponentRef,
+  EventEmitter,
+  Injectable,
+  ViewContainerRef,
+} from '@angular/core';
 import { ModalComponent } from '../ui-components/components/modal/modal.component';
 
 @Injectable({
@@ -9,19 +14,13 @@ export class ModalService {
   private modalReference: ComponentRef<any>;
   private modalOpen = false;
 
-  closeOpenModal(component: any, submitEvent: any, data?: any, config?: any) {
-    if (this.modalOpen) {
-      this.removeChild().then(() => {
-        this.modalOpen = false;
-        console.log('this.modalOpen', this.modalOpen);
-        this.openModal(component, submitEvent, data, config);
-      });
-    } else {
-      this.openModal(component, submitEvent, data, config);
-    }
-  }
-
-  openModal(component: any, submitEvent: any, data?: any, config?: any) {
+  openModal(
+    component: any,
+    submitEvent: EventFunction,
+    submitConfirmationEvent?: EventFunction,
+    data?: any,
+    config?: any
+  ) {
     if (!this.modalOpen) {
       this.modalOpen = true;
       this.modalReference =
@@ -35,8 +34,14 @@ export class ModalService {
       componentReference.instance.submitForm?.subscribe((eventData: any) => {
         submitEvent(eventData);
       });
+      componentReference.instance.submitConfirmationForm?.subscribe(
+        (eventData: any) => {
+          submitConfirmationEvent(eventData);
+        }
+      );
+
       componentReference.instance.closeModal?.subscribe(() => {
-        this._closeModal();
+        this.closeModal();
       });
       componentReference.instance.config = config;
     }
@@ -55,7 +60,7 @@ export class ModalService {
     });
   }
 
-  private _closeModal() {
+  closeModal() {
     this.modalReference.instance.closeModalFromService();
     this.removeChild();
   }
@@ -64,6 +69,9 @@ export class ModalService {
 export interface ModalInterface {
   data: any;
   config?: any;
-  submitForm: any;
-  closeModal: any;
+  submitForm: EventEmitter<any>;
+  submitConfirmationForm?: EventEmitter<any>;
+  closeModal: EventEmitter<any>;
 }
+
+type EventFunction = (payload: any) => any;

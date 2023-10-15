@@ -39,6 +39,7 @@ export function createTranslateLoader(http: HttpClient) {
       effects.UserEffects,
       effects.WaitingListEffects,
       effects.AuthEffects,
+      effects.ContactEffects,
     ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

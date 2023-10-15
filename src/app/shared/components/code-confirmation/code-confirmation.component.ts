@@ -6,26 +6,25 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
-import {
-  WaitingListConfirm,
-  WaitingListDetails,
-} from '../../interfaces/auth.interface';
-import { ModalInterface } from '../../services/modal.service';
+import { WaitingListDetails } from '../../interfaces/auth.interface';
 
 @Component({
   selector: 'app-code-confirmation',
   templateUrl: './code-confirmation.component.html',
   styleUrls: ['./code-confirmation.component.scss'],
 })
-export class CodeConfirmationComponent implements ModalInterface {
-  @ViewChild('button') button: ElementRef;
+export class CodeConfirmationComponent {
+  @ViewChild('button')
+  button: ElementRef;
 
   data: WaitingListDetails;
   config?: any;
-  submitForm = new EventEmitter<WaitingListConfirm>();
 
   @Output()
-  closeModal = new EventEmitter<void>();
+  submitForm = new EventEmitter<number>();
+
+  @Output()
+  cancelBack = new EventEmitter<void>();
 
   confirmationForm = new FormGroup({
     digits: new FormArray([
@@ -38,43 +37,15 @@ export class CodeConfirmationComponent implements ModalInterface {
 
   onSubmit() {
     const value = this.confirmationForm.value.digits;
-    console.log(
-      'this.confirmationForm.value.digits',
-      this.confirmationForm.value.digits
-    );
-
-    const code = value.map((input) => input.digit).toString();
-    this.submitForm.emit({ id: this.data.id, code: code, active: true });
-  }
-
-  get digits() {
-    return this.confirmationForm.controls['digits'] as FormArray<FormGroup>;
-  }
-
-  onKeyUp(event: KeyboardEvent) {
-    event.preventDefault();
+    const code = value.map((input) => input.digit).join('');
+    this.submitForm.emit(+code);
   }
 
   onPaste(event: ClipboardEvent) {
     event.preventDefault();
     let data = event.clipboardData.getData('text/plain');
-    this.setValue(data);
+    this._setValue(data);
     this.button.nativeElement.focus();
-  }
-
-  setValue(value: string) {
-    value = value.trim();
-    value = value.substring(0, 4);
-
-    if (Number.isInteger(+value)) {
-      value
-        .split('')
-        .forEach((character, index) =>
-          (this.digits.controls[index] as FormGroup).controls['digit'].setValue(
-            character
-          )
-        );
-    }
   }
 
   onKeyDown(event: any) {
@@ -106,5 +77,27 @@ export class CodeConfirmationComponent implements ModalInterface {
         element.select();
       }
     }
+  }
+
+  onKeyUp(event: KeyboardEvent) {
+    event.preventDefault();
+  }
+
+  private _setValue(value: string) {
+    value = value.trim().substring(0, 4);
+
+    if (Number.isInteger(+value)) {
+      value
+        .split('')
+        .forEach((character, index) =>
+          (this.digits.controls[index] as FormGroup).controls['digit'].setValue(
+            character
+          )
+        );
+    }
+  }
+
+  get digits() {
+    return this.confirmationForm.controls['digits'] as FormArray<FormGroup>;
   }
 }

@@ -1,35 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subject } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import {
   addToWaitingList,
-  confirmToWaitingList,
+  confirmWaitingList,
 } from 'src/app/core/store/actions/waiting-list.actions';
 import {
   selectWaitingList,
   selectWaitingListError,
 } from 'src/app/core/store/selectors/waiting-list.selectors';
-import { CodeConfirmationComponent } from 'src/app/shared/components/code-confirmation/code-confirmation.component';
 import {
   WaitingList,
   WaitingListDetails,
 } from 'src/app/shared/interfaces/auth.interface';
 import { ModalService } from 'src/app/shared/services/modal.service';
-import { WaitingListFormComponent } from '../../form/waiting-list-form/waiting-list-form.component';
 import { Gradient } from '../../view/background-section/background-section.component';
 import { SnippetView } from '../../view/snippet/snippet.component';
+import { WaitingListFlowComponent } from '../../view/waiting-list-flow/waiting-list-flow.component';
 
 @Component({
   selector: 'app-landing-page-container',
   templateUrl: './landing-page-container.component.html',
   styleUrls: ['./landing-page-container.component.scss'],
 })
-export class LandingPageContainerComponent implements OnInit {
+export class LandingPageContainerComponent implements OnInit, OnDestroy {
   private destroy$ = new Subject<void>();
-  SnippetView = SnippetView;
+  data: WaitingListDetails;
+
   selectWaitingList$ = this.store.select(selectWaitingList);
   selectWaitingListError$ = this.store.select(selectWaitingListError);
 
+  SnippetView = SnippetView;
   Gradient = Gradient;
 
   constructor(
@@ -38,39 +39,47 @@ export class LandingPageContainerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.selectWaitingList$.subscribe((waitingList) => {
-      console.log('waitingList', waitingList);
-      if (waitingList?.id) {
-        this.openCodeConfirmationModal(waitingList);
-      }
-    });
+    this.selectWaitingList$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((waitingList) => {
+        this.data = waitingList;
+      });
 
-    this.selectWaitingListError$.subscribe((error) => {
-      console.log('error', error);
-    });
+    this.selectWaitingListError$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((error) => {
+        this.modalService.removeChild();
+      });
   }
 
-  onSubmitWaitinglist(waitingList: WaitingList) {
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+  openWaitingListModal() {
+    this._openWaitingListModal();
+  }
+
+  private _onSubmitWaitinglist(waitingList: WaitingList) {
     this.store.dispatch(addToWaitingList({ payload: waitingList }));
   }
 
-  onSubmitConfirmWaitinglist(waitingList: WaitingList) {
-    this.store.dispatch(confirmToWaitingList({ payload: waitingList }));
-  }
-  openModal() {
-    this.modalService.openModal(
-      WaitingListFormComponent,
-      (waitingListFrom: WaitingList) =>
-        this.onSubmitWaitinglist(waitingListFrom)
+  private _onSubmitConfirmWaitinglist(confirmationCode: number) {
+    this.store.dispatch(
+      confirmWaitingList({
+        payload: { id: this.data.id, confirmationCode, confirmed: true },
+      })
     );
+    this.modalService.closeModal();
   }
 
-  openCodeConfirmationModal(data: WaitingListDetails) {
-    this.modalService.closeOpenModal(
-      CodeConfirmationComponent,
+  private _openWaitingListModal() {
+    this.modalService.openModal(
+      WaitingListFlowComponent,
       (waitingListFrom: WaitingList) =>
-        this.onSubmitConfirmWaitinglist(waitingListFrom),
-      data
+        this._onSubmitWaitinglist(waitingListFrom),
+      (confirmationCode: number) =>
+        this._onSubmitConfirmWaitinglist(confirmationCode)
     );
   }
 }

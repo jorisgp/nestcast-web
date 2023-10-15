@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import {
   WaitingList,
+  WaitingListConfirmation,
   WaitingListDetails,
 } from 'src/app/shared/interfaces/auth.interface';
 import { Error } from 'src/app/shared/interfaces/nest-cast.interface';
@@ -22,9 +23,9 @@ export const addToWaitingListFailure = createAction(
   props<{ payload: Error }>()
 );
 
-export const confirmToWaitingList = createAction(
+export const confirmWaitingList = createAction(
   `${TYPE} Confirm`,
-  props<{ payload: WaitingList }>()
+  props<{ payload: WaitingListConfirmation }>()
 );
 
 export const confirmWaitingListSuccess = createAction(

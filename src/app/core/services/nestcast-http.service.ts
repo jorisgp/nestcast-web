@@ -1,11 +1,17 @@
 import {
   HttpClient,
   HttpErrorResponse,
+  HttpParams,
   HttpStatusCode,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { WaitingList } from 'src/app/shared/interfaces/auth.interface';
+import {
+  Contact,
+  ContactConfirmation,
+  WaitingList,
+  WaitingListConfirmation,
+} from 'src/app/shared/interfaces/auth.interface';
 import { NotificationService } from './notification.service';
 
 @Injectable({
@@ -138,8 +144,48 @@ export class NestcastHttpService {
 
   postWaitingList(body: WaitingList): Observable<any> {
     return this.http
-      .post<any>(`${apiPrefix}/${ApiResource.WAITING_LIST}`, body)
+      .post<any>(`${apiPrefix}/${ApiResource.WAITING_LISTS}`, body)
       .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  patchWaitingList(
+    id: string,
+    confirmationCode: number,
+    body: WaitingListConfirmation
+  ): Observable<any> {
+    const params = this._createParams({ confirmationCode: confirmationCode });
+    return this.http
+      .patch<any>(`${apiPrefix}/${ApiResource.WAITING_LISTS}/${id}`, body, {
+        params,
+      })
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  postContact(body: Contact): Observable<any> {
+    return this.http
+      .post<any>(`${apiPrefix}/${ApiResource.CONTACTS}`, body)
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  patchContact(
+    id: string,
+    confirmationCode: number,
+    body: ContactConfirmation
+  ): Observable<any> {
+    const params = this._createParams({ confirmationCode: confirmationCode });
+    return this.http
+      .patch<any>(`${apiPrefix}/${ApiResource.CONTACTS}/${id}`, body, {
+        params,
+      })
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  private _createParams(keyValuePairs: { [key: string]: any }): HttpParams {
+    let httpParams = new HttpParams();
+    if (keyValuePairs) {
+      httpParams = new HttpParams({ fromObject: keyValuePairs });
+    }
+    return httpParams;
   }
 
   private _handleError(errorResponse: HttpErrorResponse): Observable<never> {
@@ -205,7 +251,8 @@ enum ApiResource {
   PASSWORD = 'password',
   SHOWS = 'shows',
   EPISODES = 'episodes',
-  WAITING_LIST = 'waiting-lists',
+  WAITING_LISTS = 'waiting-lists',
+  CONTACTS = 'contacts',
 }
 
 export interface Upload {
