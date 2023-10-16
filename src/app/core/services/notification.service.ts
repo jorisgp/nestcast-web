@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
+import { MessageService } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NotificationService {
-  constructor() {}
+  constructor(private messageService: MessageService) {}
 
   showSuccess(title: string, text: string) {
     console.log(`Notification service: ${title}`, text);
@@ -26,7 +27,13 @@ export class NotificationService {
     this.showNotification(title, text, Severity.ERROR);
   }
 
-  private showNotification(title: string, text: string, severity: Severity) {}
+  private showNotification(title: string, text: string, severity: Severity) {
+    this.messageService.add({
+      severity: severity,
+      summary: title,
+      detail: text,
+    });
+  }
 }
 
 enum Severity {

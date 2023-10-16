@@ -70,3 +70,9 @@
     }
   }
 }
+
+@media (min-width: #{567px}) {
+  .option-wrapper {
+    display: none;
+  }
+}

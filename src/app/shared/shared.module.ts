@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import { DialogModule } from 'primeng/dialog';
+import { MessageModule } from 'primeng/message';
+import { MessagesModule } from 'primeng/messages';
 import { CodeConfirmationComponent } from './components/code-confirmation/code-confirmation.component';
 import { FlagComponent } from './components/flag/flag.component';
 import { ContainerDirective } from './directives/container.directive';
@@ -26,7 +28,13 @@ import { ParagraphsComponent } from './ui-components/components/paragraphs/parag
     FlagComponent,
     CodeConfirmationComponent,
   ],
-  imports: [CommonModule, DialogModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    DialogModule,
+    ReactiveFormsModule,
+    MessageModule,
+    MessagesModule,
+  ],
   exports: [
     TranslateModule,
     ParagraphsComponent,
