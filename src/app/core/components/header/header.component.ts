@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,7 +7,10 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  mobileMenu = false;
   background = false;
+
+  constructor(private router: Router) {}
 
   @HostListener('window:scroll', ['$event'])
   doSomething(event: any) {
@@ -16,5 +20,14 @@ export class HeaderComponent {
     } else {
       this.background = false;
     }
+  }
+
+  toggleMenu() {
+    this.mobileMenu = !this.mobileMenu;
+  }
+
+  navigate(location: string[]) {
+    this.mobileMenu = false;
+    this.router.navigate(location);
   }
 }
