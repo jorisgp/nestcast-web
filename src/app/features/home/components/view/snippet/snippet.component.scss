@@ -1,5 +1,7 @@
+@import "/src//mixins.scss";
+
 .snippet {
-  margin: 150px 0;
+  margin: 40px 0;
 
   .images {
     display: flex;
@@ -10,7 +12,7 @@
     display: flex;
 
     .image-wrapper {
-      margin: 10px;
+      margin: 5px 5px 20px 5px;
       width: 100%;
       border: 1px solid #666;
       border-radius: 6px;
@@ -23,5 +25,23 @@
       height: 100%;
       object-fit: cover; /* or object-fit: contain; */
     }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .snippet {
+    margin: 150px 0;
+    .images {
+      .image-wrapper {
+        margin: 10px;
+      }
+    }
+  }
+
+  .left-order-1 {
+    order: 1;
+  }
+  .left-order-2 {
+    order: 2;
   }
 }

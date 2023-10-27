@@ -1,3 +1,5 @@
+@import "/src//mixins.scss";
+
 .gradient-1 {
   $color1: hsl(212, 41%, 45%);
   $color2: hsl(179, 60%, 45%);
@@ -59,29 +61,39 @@
 }
 
 .background {
-  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 3px 30px rgb(0 0 0 / 0.2);
-  height: 95vh;
+  min-height: 100vh;
   width: 100%;
+  padding-bottom: 50px;
+}
+.header-adjustment {
+  padding-top: 150px;
 }
 
-.background-section {
-  position: relative;
-  z-index: 1;
-}
+@include media-breakpoint-up(sm) {
+  .background {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 30px rgb(0 0 0 / 0.2);
+    min-height: 95vh;
+  }
 
-.background-section::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  transition: opacity 10s linear;
-  opacity: 0;
-}
+  .background-section {
+    position: relative;
+    z-index: 1;
+  }
 
-.background-section:hover::before {
-  opacity: 1;
+  .background-section::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: opacity 10s linear;
+    opacity: 0;
+  }
+
+  .background-section:hover::before {
+    opacity: 1;
+  }
 }

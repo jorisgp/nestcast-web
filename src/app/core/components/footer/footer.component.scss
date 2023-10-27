@@ -1,5 +1,7 @@
+@import "/src//mixins.scss";
+
 .footer {
-  padding: 100px 0 100px;
+  padding: 60px 0 100px;
   background-color: #f5f5f5;
 }
 .social-media {
@@ -38,5 +40,11 @@ ul {
     &:hover {
       color: #999;
     }
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .footer {
+    padding-top: 100px;
   }
 }

@@ -2,7 +2,7 @@
   <div class="row">
     <div
       class="col-12 col-lg-6 images"
-      [class.order-2]="view == SnippetView.LEFT"
+      [class.left-order-2]="view == SnippetView.LEFT"
     >
       <div class="d-flex images">
         <div *ngFor="let image of data.images" class="image-wrapper">
@@ -10,7 +10,10 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-6" [class.order-1]="view == SnippetView.LEFT">
+    <div
+      class="col-12 col-lg-6"
+      [class.left-order-1]="view == SnippetView.LEFT"
+    >
       <h3>{{ data.title }}</h3>
       <app-paragraphs [data]="data.text"></app-paragraphs>
     </div>
