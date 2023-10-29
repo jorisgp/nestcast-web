@@ -34,7 +34,6 @@ export function createTranslateLoader(http: HttpClient) {
         deps: [HttpClient],
       },
     }),
-
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([
       effects.UserEffects,
