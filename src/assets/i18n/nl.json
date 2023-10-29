@@ -2,27 +2,19 @@
   "TITLE": "Nederlands",
   "HOME": {
     "INTRO": {
-      "subTitle": "De nieuwste hosting voor jouw podcast",
+      "subTitle": "De beste hosting voor jouw podcast",
       "title": "Host je Podcast bij NestCast",
       "text": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
-        "Hallo Hallo Vestibulum placerat nunc id leo faucibus, ac rhoncus lorem eleifend. Nam tristique ac tellus eu volutpat. Vivamus quis tempor ante. Cras nec tincidunt leo. Donec ornare, mauris id tempor eleifend, eros neque vestibulum metus, nec facilisis massa justo vitae felis. Nam dapibus dictum lobortis. Cras sit amet semper nisi. Aliquam ac elit quis felis convallis fringilla at sit amet lorem. Suspendisse maximus placerat ex, nec tempus dolor blandit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur congue."
-      ]
-    },
-    "DETAILS": {
-      "title": "Podcast hosting en RSS",
-      "text": [
-        "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
-        "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
-        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+        "Nestcast helpt jou om snel en eenvoudig je podcast te distrubueren naar Spotify, Apple Podcast, Podimo en alle andere kleinere podcast plaformen. Wij zorgen dat je podcast beschikbaar wordt met behulp van een RSS feed, het formaat om podcasts beschikbaar te stellen aan podcast plaformen zoals Spotify en Apple Podcasts.",
+        "Nestcast is in staat de beste podcast service te leveren tegen een concurrerende prijs. Wij zijn in staat dit te doen door het gebruik van AI en machine learning. Ons revolutionaire plaform wordt onderhouden door een klein team waardoor onze kosten laag blijven."
       ]
     },
     "SNIPPET_RIGHT": {
       "title": "Podcast hosting & RSS",
       "text": [
-        "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
-        "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
-        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+        "Om een podcast te hosten is het noodzakelijk om je geluidsbestanden op een server beschikbaar te stellen en een RSS feed te generen waarin staat welke afleveringen beschikbaar zijn. Deze RSS feed wordt gebruikt door podcast platformen zoals Spotify en Apple Podcasts om jouw podcast beschikbaar te maken voor luisteraars.",
+        "Er zijn vele bedrijven die zich richten op podcast hosting, maar NestCast is de enige die zich alleen richt op het hosten en distribueren van podcasts. Dit is de reden dat wij de beste zijn in wat we doen.",
+        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te maken voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
       ],
       "images": [
         "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
@@ -33,35 +25,12 @@
     "SNIPPET_LEFT": {
       "title": "Podcast platformen",
       "text": [
-        "NestCast richt zich alleen op de hosting en distributie van podcasts, dit is de reden dat wij de beste zijn in wat we doen.",
-        "Podcast hosting gaat over het distribueren van een podcast met behulp van een RSS feed. Het technische vlak is het belangrijkste onderdeel van jouw podcast, deze moet tenslotte altijd bereikbaar zijn voor zoveel mogelijk luisteraars.",
-        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+        "Spotify, Amazon Music, Samsung Podcasts, Podcast Index, Listen Notes, Apple Podcasts, Google Podcasts, Pandora, Tune In, iHeartRadio, Deezer. Dit is een greep uit de platformen waarop wij jouw podcast beschikbaar kunnen maken. Wij zorgen ervoor dat jouw podcast beschikbaar is voor zoveel mogelijk luisteraars.",
+        "De RSS feed die wij van jouw podcast beschikbaar maken, is zo samengesteld dat deze door alle platformen kan worden gebruikt. Jij hebt optimale controle over hoe jouw podcast op de verschillende platformen wordt weergegeven."
       ],
       "images": [
         "https://images.unsplash.com/photo-1581368087049-7034ed0d1e6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
         "https://images.unsplash.com/photo-1524293568345-75d62c3664f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80"
-      ]
-    },
-    "PRICING": {
-      "title": "Abonnementen",
-      "text": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor."
-      ],
-      "cards": [
-        {
-          "title": "Persoonlijk",
-          "price": "€6,25",
-          "usps": [
-            "Lorem ipsum dolor sit",
-            "Lorem ipsum dolor sit",
-            "Lorem ipsum dolor sit"
-          ]
-        },
-        {
-          "title": "Zakelijk",
-          "price": "€20,-",
-          "usps": ["L"]
-        }
       ]
     }
   },
@@ -70,52 +39,52 @@
       "subTitle": "De techniek achter NestCast",
       "title": "Over NestCast",
       "text": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
-        "Hallo Hallo Vestibulum placerat nunc id leo faucibus, ac rhoncus lorem eleifend. Nam tristique ac tellus eu volutpat. Vivamus quis tempor ante. Cras nec tincidunt leo. Donec ornare, mauris id tempor eleifend, eros neque vestibulum metus, nec facilisis massa justo vitae felis. Nam dapibus dictum lobortis. Cras sit amet semper nisi. Aliquam ac elit quis felis convallis fringilla at sit amet lorem. Suspendisse maximus placerat ex, nec tempus dolor blandit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur congue."
+        "NestCast is geboren uit passie voor podcast en techniek. Onze founder Joris Pieters is al jaren bezig met het maken van podcasts. Zo maakte hij de populaire podcast \"B&Gay vol Liefde\" over de avonturen van de kandidaten van het programma \"B&B Vol Liefde\"",
+        "Door de kennis over podcasts in combinatie met een achtergrond als Full Stack Developer werd het mogelijk om een hoog technologisch plaform te maken voor podcast hosting. Omdat tegenwoordig AI en machine learning een steeds grotere rol spelen in de techniek, is ook NestCast een porduct dat gebruikt maakt van deze technieken. Hiermee hopen wij nog sneller te kunnen innoveren"
       ]
     },
     "TECHNIQUES": {
       "title": "Technieken",
       "text": [
-        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+        "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen. De gebruiker zal voornamelijk de voorkant van onze applicatie zien, om zijn of haar podcast te beheren en te distribueren. Wij hebben hiervoor een SPA ontwikkeld, wat staat voor Single Page Application. In de user experience uit dit zich vooral in een applcatie die werkt zonder dat er page refresh plaatsvinden tijdens het gebruik."
       ],
       "stack": [
         {
           "type": "programming",
           "title": "Tech stack",
           "text": [
-            "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te komen voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
+            "NestCast gebruikt Angular om moderne user experience te kunnen bieden. Angular is een framework dat wordt onderhouden door Google. Binnen het framwork wordt TypeScript gebruikt om te programmeren. In onze backend maken wij gebruik van Nest.js, een backend framework dat gebruik maakt van Node en waarin TypeSCript ook de taal is om te programmeren. Nest heeft zijn structuur grotendeels gepasseerd op Angular. "
           ],
           "items": [
             {
               "type": "angular",
               "title": "Angular 16",
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+              "text": "Frontend framework onderhouden door google"
             },
             {
               "type": "ngrx",
               "title": "NgRx",
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+              "text": "State management voor Angular gepaseerd op Redux"
             },
             {
               "type": "nestjs",
               "title": "NestJs",
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+              "text": "NodeJS backend framework gebasseerd op de module structuur van Angular"
             },
             {
               "type": "nodejs",
               "title": "NodeJs",
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+              "text": "Het framwork dat het mogelijk maakte server side JavaScript te gebruiken"
             },
             {
               "type": "typescript",
               "title": "TypeScript",
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+              "text": "Laag bovenop JavaScript om type safety te bieden"
             },
             {
               "type": "javascript",
               "title": "Javascript",
-              "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar."
+              "text": "De taal van het web"
             }
           ]
         },
@@ -123,23 +92,23 @@
           "type": "testing",
           "title": "Geautomatiseerde tests",
           "text": [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor."
+            "Om de kwaliteit van onze software te verhogen en de kosten laag te houden zijn automatische tests onmisbaar. Wij maken gebruik van verschillende soorten tests om de kwaliteit van onze software te waarborgen."
           ],
           "items": [
             {
               "type": "jest",
               "title": "Jest",
-              "text": ""
+              "text": "Jest is een JavaScript-testframework dat is ontworpen om de juistheid van elke JavaScript-codebase te garanderen."
             },
             {
               "type": "spectator",
               "title": "Spectator",
-              "text": ""
+              "text": "Een laag op het Angular test framework om het testen van Angular componenten te vereenvoudigen"
             },
             {
               "type": "cypress",
               "title": "Cypress",
-              "text": ""
+              "text": "Een end-to-end testframework voor webapplicaties. Het is gebouwd bovenop Mocha, Chai en Sinon."
             }
           ]
         },
@@ -147,33 +116,33 @@
           "type": "services",
           "title": "Services",
           "text": [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor."
+            "Om onze applicatie te hosten en jouw podcast te distruberen maken wij gebruik van verschillende services. Deze services zijn allemaal cloud services. Dit betekent dat wij geen eigen servers hebben en dat wij gebruik maken van de servers van de aanbieders van deze services. Dit zorgt ervoor dat wij geen onderhoud hoeven te plegen aan onze servers en dat wij altijd gebruik kunnen maken van de nieuwste technieken."
           ],
           "items": [
             {
               "type": "aws",
               "title": "AWS",
-              "text": ""
+              "text": "Amazon Web Services is een cloud computing-platform dat wordt aangeboden door Amazon.com"
             },
             {
               "type": "awss3",
               "title": "AWS S3",
-              "text": ""
+              "text": "S3 is de storage service van AWS. Wij gebruiken S3 om de geluidsbestanden van jouw podcast op te slaan."
             },
             {
               "type": "mongodb",
               "title": "MongoDb",
-              "text": ""
+              "text": "Een NoSQL database die wij gebruiken om de data van jouw podcast op te slaan."
             },
             {
               "type": "github",
               "title": "GitHub",
-              "text": ""
+              "text": "Dit is een online service om onze code te beheren en te delen met andere ontwikkelaars."
             },
             {
               "type": "githubactions",
               "title": "GitHub Actions",
-              "text": ""
+              "text": "Automatisch software deployen met behulp van GitHub Actions pipelines."
             }
           ]
         },
@@ -181,23 +150,23 @@
           "type": "AI",
           "title": "AI",
           "text": [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor."
+            "Deze tekst is gegenereerd door een AI. Wij gebruiken AI om de kwaliteit van onze software te verhogen en de kosten laag te houden. Wij maken gebruik van verschillende soorten AI om de kwaliteit van onze software te waarborgen."
           ],
           "items": [
             {
               "type": "codium",
               "title": "Codium",
-              "text": ""
+              "text": "Codium analyseert code en schrijft automatisch tests, ook doet codium code suggesties."
             },
             {
               "type": "chatgpt",
               "title": "Chat GPT",
-              "text": ""
+              "text": "ChatGPT is een prototype van een chatbot met kunstmatige intelligentie, ontwikkeld door OpenAI."
             },
             {
               "type": "githubcopilot",
               "title": "Github Copilot",
-              "text": ""
+              "text": "GitHub Copilot zet natuurlijke taalaanwijzingen om in coderingssuggesties in tientallen talen."
             }
           ]
         }
@@ -206,22 +175,100 @@
   },
   "PRICING": {
     "INTRO": {
-      "subTitle": "De goedkoopste van Nederland",
+      "subTitle": "De hoogste prijs kwaliteit",
       "title": "Abonnementen",
       "text": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
-        "Hallo Hallo Vestibulum placerat nunc id leo faucibus, ac rhoncus lorem eleifend. Nam tristique ac tellus eu volutpat. Vivamus quis tempor ante. Cras nec tincidunt leo. Donec ornare, mauris id tempor eleifend, eros neque vestibulum metus, nec facilisis massa justo vitae felis. Nam dapibus dictum lobortis. Cras sit amet semper nisi. Aliquam ac elit quis felis convallis fringilla at sit amet lorem. Suspendisse maximus placerat ex, nec tempus dolor blandit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur congue."
+        "Onze abonnementen zullen voor zowel zakelijk als particuliere klanten een lage prijs hebben. Wij richten ons vooral op klanten die het belangrijk vinden om hun podcast beschikbaar te hebben en te houden.",
+        "Om je podcast beschikbaar te houden is het vooral belangrijk dat de prijs niet te hoog is. Zodra de luisteraars teruglopen is het soms niet meer rendabel om je podcast beschikbaar te houden. Wij zorgen ervoor dat je podcast beschikbaar blijft voor een lage prijs."
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
+      ]
+    },
+    "SNIPPET_RIGHT": {
+      "title": "Persoonlijk abonnement",
+      "text": [
+        "Voor de hobbiest of de beginnende podcaster is het persoonlijk abonnement een goede keuze. Je kunt al je afleveringen hosten en beschikbaar maken op alle grote platformen. Je hebt toegang tot een uitgebreide management console waarin je je podcast kunt beheren en statistieken kunt inzien.",
+        "Bedrijven hebben veel content die wellicht niet heel actueel is maar wel belangrijk is om beschikbaar te hebben. NestCast helpt deze bedrijven hun content beschikbaar te houden zonder dat de kosten onnodig hoog oplopen."
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
+      ]
+    },
+    "SNIPPET_LEFT": {
+      "subTitle": "De hoogste prijs kwaliteit",
+      "title": "Zakelijk abonnementen",
+      "text": [
+        "Voor onze zakelijke klanten hebben wij een vergelijkbaar abonnement als voor onze particuliere klanten. Het verschil zit hem in de facturatie. Bij een zakelijk abonnement wordt de factuur op naam van het bedrijf gezet.",
+        "Om je podcast beschikbaar te houden is het vooral belangrijk dat de prijs niet te hoog is. Zodra de luisteraars teruglopen is het soms niet meer rendabel om je podcast beschikbaar te houden. Wij zorgen ervoor dat je podcast beschikbaar blijft voor een lage prijs."
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
+      ]
+    },
+    "PRICING": {
+      "title": "Abonnementen",
+      "text": [
+        "Er komen vanaf begin 2024 twee abonnementen beschikbaar met een vergelijkbare prijs. Een zakelijk abonnement en een aprticulier abonnement. De abonnement zijn beschikbaar met een zogenaamde fair use policy. Komt het gebruik van jouw podcast boven een bepaalde grens, dan wordt er een toeslag in rekening gebracht. Deze toeslag is afhankelijk van het aantal luisteraars en de duur van de podcast."
+      ],
+      "cards": [
+        {
+          "title": "Persoonlijk",
+          "price": "± €5,00",
+          "usps": [
+            "Host al je afleveringen",
+            "Uitgebreide management console",
+            "Podcast beschikbaar op grote platformen",
+            "Statistieken"
+          ]
+        },
+        {
+          "title": "Zakelijk",
+          "price": "± €5,00",
+          "usps": [
+            "Op naam van bedrijf",
+            "Uitgebriede management console",
+            "Podcast beschikbaar op grote platformen",
+            "Statistieken"
+          ]
+        }
       ]
     }
   },
   "CONTACT": {
     "INTRO": {
-      "subTitle": "De beste en modernste stack",
+      "subTitle": "amsterdam is ons thuis",
       "title": "Contact met NestCast",
       "text": [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vel augue quis tellus pretium pulvinar. Ut et enim orci. Integer suscipit elit quis fringilla auctor.",
-        "Hallo Hallo Vestibulum placerat nunc id leo faucibus, ac rhoncus lorem eleifend. Nam tristique ac tellus eu volutpat. Vivamus quis tempor ante. Cras nec tincidunt leo. Donec ornare, mauris id tempor eleifend, eros neque vestibulum metus, nec facilisis massa justo vitae felis. Nam dapibus dictum lobortis. Cras sit amet semper nisi. Aliquam ac elit quis felis convallis fringilla at sit amet lorem. Suspendisse maximus placerat ex, nec tempus dolor blandit a. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam molestie consectetur congue."
+        "NestCast is een Amsterdams bedrijf, en daar zijn wij trots op. Amsterdam barst van het IT talent en heeft een uitstekend start-up klimaat. Ook is Amsterdam de podcast hoofdstad van Nederland. Wij zijn dan ook trots om hier ons bedrijf te hebben. Ons kantoor is gevestigd in Amsterdam West, Bos en Lommer. ",
+        "Wij willen graag met iedereen in contact komen die geïnteresseerd is in podcast hosting. Wij zijn altijd op zoek naar nieuwe klanten, maar ook naar nieuwe collega's. Ben jij een developer en wil je werken aan een innovatief product? Neem dan contact met ons op."
       ]
+    }
+  },
+  "FOOTER": {
+    "ABOUT": {
+      "title": "Over NestCast",
+      "text": [
+        "NestCast streeft er naar om het meest technisch geavanceerd podcast hosting bedrijft te zijn. Door inzet van AI en de modernste technieken zijn wij in staat om de beste service te leveren tegen de laagste prijs."
+      ]
+    },
+    "CONTACT": {
+      "website": "https://www.nestcast.com",
+      "email": "info@nestcast.com",
+      "title": "Kom in contact",
+      "name": "NestCast",
+      "address": "Hoofdweg 562",
+      "zipcode": "1055AB",
+      "place": "Amsterdam"
+    },
+    "NAVIAGTION": {
+      "title": "Navigatie"
     }
   }
 }
