@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
 import { DropdownChangeEvent } from 'primeng/dropdown';
 import { Country, Language } from 'src/app/shared/model/models';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-language-switch',
@@ -10,29 +10,24 @@ import { Country, Language } from 'src/app/shared/model/models';
 })
 export class LanguageSwitchComponent {
   countries: Country[];
-  selectedCountry: Country;
   Language = Language;
+  selectedCountry: Country;
+  countryObservable = this.languageService.country$;
 
-  constructor(private translateService: TranslateService) {}
+  constructor(private languageService: LanguageService) {}
 
   ngOnInit() {
-    const language = navigator.language;
+    this.countries = this.languageService.getCountries();
+    this.languageService.setInitialCountry();
 
-    this.switchLanguage(language as Language);
-
-    this.countries = [
-      { name: 'UK', code: 'UK', language: Language.EN },
-      { name: 'Nederland', code: 'NL', language: Language.NL },
-      { name: 'United States', code: 'US', language: Language.EN },
-      { name: 'France', code: 'FR', language: Language.FR },
-    ];
+    this.countryObservable.subscribe((country) => {
+      this.selectedCountry = country;
+    });
   }
 
   onLanguageChange(changeEvent: DropdownChangeEvent) {
-    this.switchLanguage(changeEvent.value.language);
-  }
-  switchLanguage(language: Language): void {
-    this.translateService.use(language);
-    this.translateService.reloadLang(language);
+    this.languageService.setInitialCountryByLanguage(
+      changeEvent.value.language
+    );
   }
 }

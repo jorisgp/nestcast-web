@@ -48,7 +48,9 @@ export class LandingPageContainerComponent implements OnInit, OnDestroy {
     this.selectWaitingListError$
       .pipe(takeUntil(this.destroy$))
       .subscribe((error) => {
-        this.modalService.removeChild();
+        if (error) {
+          this.modalService.removeChild();
+        }
       });
   }
 

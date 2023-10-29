@@ -6,6 +6,7 @@ import { AboutPageContainerComponent } from './components/container/about-page-c
 import { ContactPageContainerComponent } from './components/container/contact-page-container/contact-page-container.component';
 import { LandingPageContainerComponent } from './components/container/landing-page-container/landing-page-container.component';
 import { PricingPageContainerComponent } from './components/container/pricing-page-container/pricing-page-container.component';
+import { ContactFormComponent } from './components/form/contact-form/contact-form.component';
 import { WaitingListFormComponent } from './components/form/waiting-list-form/waiting-list-form.component';
 import { AboutPageComponent } from './components/page/about-page/about-page.component';
 import { ContactPageComponent } from './components/page/contact-page/contact-page.component';
@@ -14,16 +15,15 @@ import { PricingPageComponent } from './components/page/pricing-page/pricing-pag
 import { BackgroundSectionComponent } from './components/view/background-section/background-section.component';
 import { CallToActionComponent } from './components/view/call-to-action/call-to-action.component';
 import { ColorSectionComponent } from './components/view/color-section/color-section.component';
+import { ContactFlowComponent } from './components/view/contact-flow/contact-flow.component';
 import { HalfPhotoSectionComponent } from './components/view/half-photo-section/half-photo-section.component';
 import { PricingCardComponent } from './components/view/pricing-card/pricing-card.component';
 import { SnippetComponent } from './components/view/snippet/snippet.component';
 import { StackCategoryComponent } from './components/view/stack-category/stack-category.component';
 import { StackItemComponent } from './components/view/stack-item/stack-item.component';
+import { WaitingListFlowComponent } from './components/view/waiting-list-flow/waiting-list-flow.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { StackImagePipePipe } from './pipes/stack-image-pipe.pipe';
-import { ContactFormComponent } from './components/form/contact-form/contact-form.component';
-import { WaitingListFlowComponent } from './components/view/waiting-list-flow/waiting-list-flow.component';
-import { ContactFlowComponent } from './components/view/contact-flow/contact-flow.component';
 
 @NgModule({
   declarations: [

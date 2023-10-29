@@ -37,12 +37,12 @@
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3 offset-lg-1">
-        <h3>Navigation</h3>
+        <h3>{{ "FOOTER.NAVIGATION.title" | translate }}<br /></h3>
         <ul>
-          <li [routerLink]="['/']">Home</li>
-          <li [routerLink]="['/', 'pricing']">Pricing</li>
-          <li [routerLink]="['/', 'about']">About</li>
-          <li [routerLink]="['/', 'contact']">Contact</li>
+          <li (click)="navigate(['/'])">Home</li>
+          <li (click)="navigate(['pricing'])">Pricing</li>
+          <li (click)="navigate(['about'])">About</li>
+          <li (click)="navigate(['contact'])">Contact</li>
         </ul>
       </div>
     </div>

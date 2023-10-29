@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { RouterService } from '../../services/router.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent {
   mobileMenu = false;
   background = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: RouterService, private route: ActivatedRoute) {}
 
   @HostListener('window:scroll', ['$event'])
   doSomething(event: any) {
@@ -28,6 +29,6 @@ export class HeaderComponent {
 
   navigate(location: string[]) {
     this.mobileMenu = false;
-    this.router.navigate(location);
+    this.router.navigate(location, { relativeTo: this.route });
   }
 }

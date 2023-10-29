@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { languageResolver } from './core/resolvers/language.resolver';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: ':lang',
+    loadChildren: () =>
+      import('./features/home/home.module').then((m) => m.HomeModule),
+    resolve: { language: languageResolver },
   },
   {
     path: 'auth',

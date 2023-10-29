@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="top-nav">
       <div>
-        <a class="navbar-logo" href="#" (click)="navigate(['/'])"
+        <a class="navbar-logo" (click)="navigate(['/'])"
           >nest<span>cast</span></a
         >
       </div>
@@ -13,13 +13,13 @@
         <div>
           <ul class="top-nav-links">
             <li>
-              <a (click)="navigate(['/', 'pricing'])">Pricing</a>
+              <a (click)="navigate(['pricing'])">Pricing</a>
             </li>
             <li>
-              <a (click)="navigate(['/', 'about'])">About</a>
+              <a (click)="navigate(['about'])">About</a>
             </li>
             <li>
-              <a (click)="navigate(['/', 'contact'])">Contact</a>
+              <a (click)="navigate(['contact'])">Contact</a>
             </li>
           </ul>
         </div>

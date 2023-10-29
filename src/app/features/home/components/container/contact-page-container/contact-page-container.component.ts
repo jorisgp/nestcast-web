@@ -46,7 +46,9 @@ export class ContactPageContainerComponent {
     this.selectContactError$
       .pipe(takeUntil(this.destroy$))
       .subscribe((error) => {
-        this.modalService.removeChild();
+        if (error) {
+          this.modalService.removeChild();
+        }
       });
   }
 
