@@ -1,5 +1,8 @@
 <app-background-section [gradient]="Gradient.TWO">
-  <app-call-to-action [data]="'PRICING.INTRO' | translate"></app-call-to-action>
+  <app-call-to-action
+    [data]="'PRICING.INTRO' | translate"
+    (buttonClick)="openWaitingListModal()"
+  ></app-call-to-action>
 </app-background-section>
 <app-color-section>
   <app-snippet
@@ -15,5 +18,8 @@
 <app-half-photo-section
   src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
 >
-  <app-pricing-card [data]="'PRICING.PRICING' | translate"></app-pricing-card>
+  <app-pricing-card
+    [data]="'PRICING.PRICING' | translate"
+    (buttonClick)="openWaitingListModal()"
+  ></app-pricing-card>
 </app-half-photo-section>
