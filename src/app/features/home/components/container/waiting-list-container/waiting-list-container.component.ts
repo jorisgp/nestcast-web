@@ -20,7 +20,7 @@ import { WaitingListFlowComponent } from '../../view/waiting-list-flow/waiting-l
 
 @Component({
   selector: 'app-waiting-list-container',
-  templateUrl: './waiting-list-container.component.html',
+  template: '',
 })
 export class WaitingListContainerComponent {
   private destroy$ = new Subject<void>();
