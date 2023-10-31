@@ -43,20 +43,13 @@ export class WaitingListContainerComponent {
       .subscribe((waitingList) => {
         this.data = waitingList;
       });
-
-    this.selectWaitingListError$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((error) => {
-        if (error) {
-          this.modalService.removeChild();
-        }
-      });
   }
 
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
+
   openWaitingListModal() {
     this._openWaitingListModal();
   }
@@ -71,7 +64,6 @@ export class WaitingListContainerComponent {
         payload: { id: this.data.id, confirmationCode, confirmed: true },
       })
     );
-    this.modalService.closeModal();
   }
 
   private _openWaitingListModal() {

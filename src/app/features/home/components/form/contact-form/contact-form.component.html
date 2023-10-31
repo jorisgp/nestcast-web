@@ -1,79 +1,80 @@
 <div class="modal-content">
-  <h2>Contact us</h2>
+  <h2>{{ "CONTACT.FORM.title" | translate }}</h2>
   <p>
-    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-    suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-    vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-    molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-    pariatur?"
+    {{ "CONTACT.FORM.text" | translate }}
   </p>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmitForm()">
+    <div class="row">
+      <div class="col-12 mb-2">
+        <label for="first-name"> {{ "FORM.FIRSTNAME" | translate }}</label>
+        <input
+          class="form-control"
+          id="first-name"
+          type="text"
+          formControlName="firstName"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mb-2">
+        <label for="last-name"> {{ "FORM.LASTNAME" | translate }}</label>
+        <input
+          class="form-control"
+          id="last-name"
+          type="text"
+          formControlName="lastName"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mb-2">
+        <label for="email">{{ "FORM.EMAILADDRESS" | translate }}</label>
+        <input
+          class="form-control"
+          id="email"
+          type="text"
+          formControlName="email"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 mb-2">
+        <label for="message">{{ "FORM.MESSAGE" | translate }}</label>
+        <textarea
+          class="form-control"
+          id="message"
+          type="text"
+          formControlName="message"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12">
+        <input
+          id="contact"
+          type="checkbox"
+          formControlName="agreeContactTerms"
+          class="form-check-input"
+        />
+        <label class="ms-2" for="contact">{{
+          "FORM.CONTACTTERMS" | translate
+        }}</label>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12 d-flex justify-content-end">
+        <button
+          type="button"
+          class="btn btn-lght me-1"
+          (click)="closeModal.emit()"
+        >
+          {{ "CANCEL" | translate }}
+        </button>
+        <button type="submit" class="btn btn-dark">
+          {{ "SEND" | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
-<form [formGroup]="contactForm" (ngSubmit)="onSubmitForm()">
-  <div class="row">
-    <div class="col-12 mb-2">
-      <label for="first-name">First Name</label>
-      <input
-        class="form-control"
-        id="first-name"
-        type="text"
-        formControlName="firstName"
-      />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 mb-2">
-      <label for="last-name">Last Name</label>
-      <input
-        class="form-control"
-        id="last-name"
-        type="text"
-        formControlName="lastName"
-      />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 mb-2">
-      <label for="email">E-mail address</label>
-      <input
-        class="form-control"
-        id="email"
-        type="text"
-        formControlName="email"
-      />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 mb-2">
-      <label for="message">Message</label>
-      <textarea
-        class="form-control"
-        id="message"
-        type="text"
-        formControlName="message"
-      ></textarea>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 mb-2">
-      <input
-        id="contact"
-        type="checkbox"
-        formControlName="agreeContactTerms"
-        class="form-check-input"
-      />
-      <label class="ms-2" for="contact">Contact</label>
-    </div>
-  </div>
-  <div class="row mt-2">
-    <div class="col-12 d-flex justify-content-end">
-      <button
-        type="button"
-        class="btn btn-lght me-1"
-        (click)="closeModal.emit()"
-      >
-        cancel
-      </button>
-      <button type="submit" class="btn btn-dark">Submit</button>
-    </div>
-  </div>
-</form>

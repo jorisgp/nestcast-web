@@ -1,17 +1,13 @@
 <div class="modal-content">
-  <h2>Add to waitinglist</h2>
+  <h2>{{ "WAITINGLIST.FORM.title" | translate }}</h2>
   <p>
-    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
-    suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem
-    vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-    molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-    pariatur?"
+    {{ "WAITINGLIST.FORM.text" | translate }}
   </p>
 </div>
 <form [formGroup]="waitingListForm" (ngSubmit)="onSubmitForm()">
   <div class="row">
     <div class="col-12 mb-2">
-      <label for="first-name">First Name</label>
+      <label for="first-name">{{ "FORM.FIRSTNAME" | translate }}</label>
       <input
         class="form-control"
         id="first-name"
@@ -22,7 +18,7 @@
   </div>
   <div class="row">
     <div class="col-12 mb-2">
-      <label for="last-name">Last Name</label>
+      <label for="last-name"> {{ "FORM.LASTNAME" | translate }}</label>
       <input
         class="form-control"
         id="last-name"
@@ -33,7 +29,7 @@
   </div>
   <div class="row">
     <div class="col-12 mb-2">
-      <label for="email">E-mail address</label>
+      <label for="email">{{ "FORM.EMAILADDRESS" | translate }}</label>
       <input
         class="form-control"
         id="email"
@@ -50,7 +46,9 @@
         formControlName="agreeTerms"
         class="form-check-input"
       />
-      <label class="ms-2" for="agreeTerms">Terms</label>
+      <label class="ms-2" for="agreeTerms">{{
+        "FORM.TERMS" | translate
+      }}</label>
     </div>
   </div>
   <div class="row">
@@ -61,7 +59,9 @@
         formControlName="agreeContactTerms"
         class="form-check-input"
       />
-      <label class="ms-2" for="agreeContactTerms">Contact</label>
+      <label class="ms-2" for="agreeContactTerms">
+        {{ "FORM.CONTACTTERMS" | translate }}</label
+      >
     </div>
   </div>
   <div class="row mt-2">

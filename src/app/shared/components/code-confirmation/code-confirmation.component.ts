@@ -5,7 +5,6 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-code-confirmation',
@@ -13,6 +12,8 @@ import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./code-confirmation.component.scss'],
 })
 export class CodeConfirmationComponent {
+  code: string = '    ';
+
   @ViewChild('button')
   button: ElementRef;
 
@@ -22,78 +23,59 @@ export class CodeConfirmationComponent {
   @Output()
   cancelBack = new EventEmitter<void>();
 
-  confirmationForm = new FormGroup({
-    digits: new FormArray([
-      new FormGroup({ digit: new FormControl('', Validators.required) }),
-      new FormGroup({ digit: new FormControl('', Validators.required) }),
-      new FormGroup({ digit: new FormControl('', Validators.required) }),
-      new FormGroup({ digit: new FormControl('', Validators.required) }),
-    ]),
-  });
-
-  onSubmit() {
-    const value = this.confirmationForm.value.digits;
-    const code = value.map((input) => input.digit).join('');
-    this.submitForm.emit(+code);
-  }
-
-  onPaste(event: ClipboardEvent) {
+  onKeyPress(event: any, index: number) {
     event.preventDefault();
-    let data = event.clipboardData.getData('text/plain');
-    this._setValue(data);
-    this.button.nativeElement.focus();
+    const key = event.key;
+    const codeArray = this.code.split('');
+    if (Number.isInteger(+key)) {
+      codeArray[index] = key;
+      this.code = codeArray.join('');
+      this._elementForward(event);
+      if (index === 3) {
+        this.button.nativeElement.focus();
+      }
+    } else if (key === 'Backspace') {
+      codeArray[index] = '';
+      this.code = codeArray.join('');
+      this._elementBack(event);
+    } else if (key === 'ArrowLeft') {
+      this._elementBack(event);
+    } else if (key === 'ArrowRight') {
+      this._elementForward(event);
+    }
   }
 
   onKeyDown(event: any) {
-    if (event.code !== 'Tab' && event.key !== 'Shift') {
+    if (event.key !== 'Meta' && event.key !== 'v') {
       event.preventDefault();
-
-      let element;
-      const srcElement = event.srcElement;
-      const key = event.key;
-
-      if (event.code !== 'Backspace') {
-        if (Number.isInteger(+key)) {
-          srcElement.value = key;
-          element = event.srcElement.nextElementSibling;
-        }
-      } else {
-        srcElement.value = '';
-        element = event.srcElement.previousElementSibling;
-        if (!element) {
-          return;
-        }
-      }
-
-      if (srcElement && element == null) {
-        this.button.nativeElement.focus();
-        return;
-      } else {
-        element.focus();
-        element.select();
-      }
     }
   }
 
-  onKeyUp(event: KeyboardEvent) {
+  onPaste(event: ClipboardEvent, index: number) {
     event.preventDefault();
+    let data = event.clipboardData.getData('text/plain');
+    this.code = this.code.substring(0, index) + data.substring(0, 4 - index);
+    this.button?.nativeElement.focus();
   }
 
-  private _setValue(value: string) {
-    value = value.trim().substring(0, 4);
+  onSubmit() {
+    this.submitForm.emit(+this.code);
+  }
 
-    if (Number.isInteger(+value)) {
-      value
-        .split('')
-        .forEach((character, index) =>
-          (this.digits.controls[index] as FormGroup).controls['digit'].setValue(
-            character
-          )
-        );
+  private _elementForward(event: any) {
+    const element = event.srcElement.nextElementSibling;
+    this._focus(element);
+  }
+
+  private _elementBack(event: any) {
+    const element = event.srcElement.previousElementSibling;
+    this._focus(element);
+  }
+
+  private _focus(element: any) {
+    if (element) {
+      element.focus();
+      element.select();
     }
-  }
-
-  get digits() {
-    return this.confirmationForm.controls['digits'] as FormArray<FormGroup>;
   }
 }

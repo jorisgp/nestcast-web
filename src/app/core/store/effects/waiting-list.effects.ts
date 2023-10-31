@@ -45,9 +45,9 @@ export class WaitingListEffects {
             map((result) =>
               waitingListActions.confirmWaitingListSuccess(result)
             ),
-            catchError((error) =>
-              of(waitingListActions.confirmWaitingListFailure(error))
-            )
+            catchError((error) => {
+              return of(waitingListActions.confirmWaitingListFailure(error));
+            })
           )
       )
     )
@@ -61,6 +61,20 @@ export class WaitingListEffects {
           this.notificationService.showSuccess(
             'Success',
             'You have been added to the waiting list!'
+          )
+        )
+      ),
+    { dispatch: false }
+  );
+
+  confirmError$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(waitingListActions.confirmWaitingListFailure),
+        tap(() =>
+          this.notificationService.showSuccess(
+            'Mislukt',
+            'Jouw contactpoging kon niet bevestigd worden, probeer het opnieuw.'
           )
         )
       ),

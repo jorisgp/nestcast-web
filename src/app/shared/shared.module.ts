@@ -29,6 +29,7 @@ import { ParagraphsComponent } from './ui-components/components/paragraphs/parag
     CodeConfirmationComponent,
   ],
   imports: [
+    TranslateModule,
     CommonModule,
     DialogModule,
     ReactiveFormsModule,

@@ -252,6 +252,10 @@
         "NestCast is een Amsterdams bedrijf, en daar zijn wij trots op. Amsterdam barst van het IT talent en heeft een uitstekend start-up klimaat. Ook is Amsterdam de podcast hoofdstad van Nederland. Wij zijn dan ook trots om hier ons bedrijf te hebben. Ons kantoor is gevestigd in Amsterdam West, Bos en Lommer. ",
         "Wij willen graag met iedereen in contact komen die geïnteresseerd is in podcast hosting. Wij zijn altijd op zoek naar nieuwe klanten, maar ook naar nieuwe collega's. Ben jij een developer en wil je werken aan een innovatief product? Neem dan contact met ons op."
       ]
+    },
+    "FORM": {
+      "title": "Stuur ons een bericht",
+      "text": "Wij staan graag in contact met onze klanten, potentiële business partners, concullega's en toekomstige mederwerkers. Gebruik dit formulier om met ons in contact te komen. "
     }
   },
   "FOOTER": {
@@ -273,5 +277,28 @@
     "NAVIGATION": {
       "title": "Navigatie"
     }
-  }
+  },
+  "WAITINGLIST": {
+    "FORM": {
+      "title": "Meld je aan voor de wachtlijst",
+      "text": "Wil je als eerste gerbuik maken van ons podcast hosting platform? Schrijf je met behulp van dit formulier in. "
+    }
+  },
+  "FORM": {
+    "title": "Meld je aan voor de wachtlijst",
+    "text": "Wil je als eerste gerbuik maken van ons podcast hosting platform? Schrijf je met behulp van dit formulier in. ",
+    "FIRSTNAME": "Voornaam",
+    "LASTNAME": "Achternaam",
+    "EMAILADDRESS": "E-mailadres",
+    "MESSAGE": "Bericht",
+    "TERMS": "Ik ga akkoord met de algemene voorwaarden",
+    "CONTACTTERMS": "Ik ga akkoord met de communicatie voorwaarden"
+  },
+  "EMAILCONFIRMATION": {
+    "title": "Bevestig je e-mailadres",
+    "text": "Om misbruikt te voorkomen en jouw privacy te beschermen vragen wij je om je contact verzoek te bevestigen. Zo weten wij zeker dat wij geen ongewenste berichten versturen. Wij hebben een code naar jouw e-mailadres gestuurd."
+  },
+  "CANCEL": "Annuleren",
+  "CONFIRM": "Bevestigen",
+  "SEND": "Versturen"
 }

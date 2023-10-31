@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { ContactConfirmation } from 'src/app/shared/interfaces/auth.interface';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
+import { NotificationService } from '../../services/notification.service';
 import * as contactActions from '../actions/contact.actions';
 
 @Injectable()
 export class ContactEffects {
   constructor(
     private actions$: Actions,
-    private nestcastHttpService: NestcastHttpService
+    private nestcastHttpService: NestcastHttpService,
+    private notificationService: NotificationService
   ) {}
 
   add$ = createEffect(() =>
@@ -43,5 +45,33 @@ export class ContactEffects {
           )
       )
     )
+  );
+
+  confirmSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(contactActions.confirmContactSuccess),
+        tap(() =>
+          this.notificationService.showSuccess(
+            'Success',
+            'Your message has been sent and confirmed!'
+          )
+        )
+      ),
+    { dispatch: false }
+  );
+
+  confirmError$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(contactActions.confirmContactFailure),
+        tap(() =>
+          this.notificationService.showWarn(
+            'Failed',
+            'Jouw contactpoging kon niet bevestigd worden, probeer het opnieuw.'
+          )
+        )
+      ),
+    { dispatch: false }
   );
 }

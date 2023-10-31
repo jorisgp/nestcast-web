@@ -42,14 +42,6 @@ export class ContactPageContainerComponent {
     this.selectContact$.pipe(takeUntil(this.destroy$)).subscribe((contact) => {
       this.data = contact;
     });
-
-    this.selectContactError$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((error) => {
-        if (error) {
-          this.modalService.removeChild();
-        }
-      });
   }
 
   ngOnDestroy(): void {
@@ -70,7 +62,6 @@ export class ContactPageContainerComponent {
         payload: { id: this.data.id, confirmationCode, confirmed: true },
       })
     );
-    this.modalService.closeModal();
   }
 
   private _openContactModal() {
