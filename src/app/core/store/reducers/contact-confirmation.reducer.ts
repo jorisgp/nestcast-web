@@ -1,33 +1,32 @@
 import { createReducer, on } from '@ngrx/store';
 import {
-  Contact,
   ContactConfirmation,
   ContactDetails,
 } from 'src/app/shared/interfaces/auth.interface';
-import * as contactActions from '../actions/contact.actions';
+import * as contactConfirmationActions from '../actions/contact-confirmation.actions';
 
-export interface ContactState {
-  payload: ContactDetails | Contact | ContactConfirmation;
+export interface ContactConfirmationState {
+  payload: ContactDetails | ContactConfirmation;
   error: any;
   isLoading: boolean;
 }
 
-const initialState: ContactState = {
+const initialState: ContactConfirmationState = {
   payload: null,
   error: null,
   isLoading: false,
 };
 
-export const contactReducer = createReducer(
+export const contactConfirmationReducer = createReducer(
   initialState,
-  on(contactActions.addToContact, (state, result) => {
+  on(contactConfirmationActions.confirmContact, (state, result) => {
     return {
       ...state,
       payload: result.payload,
       isLoading: true,
     };
   }),
-  on(contactActions.addToContactFailure, (state, error) => {
+  on(contactConfirmationActions.confirmContactFailure, (state, error) => {
     return {
       ...state,
       payload: null,
@@ -35,7 +34,7 @@ export const contactReducer = createReducer(
       isLoading: false,
     };
   }),
-  on(contactActions.addToContactSuccess, (state, result) => {
+  on(contactConfirmationActions.confirmContactSuccess, (state, result) => {
     return {
       ...state,
       payload: result.payload,

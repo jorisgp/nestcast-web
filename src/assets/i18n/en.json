@@ -1,20 +1,21 @@
 {
-  "TITLE": "Dutch",
+  "TITLE": "Dutch2",
   "HOME": {
     "INTRO": {
       "subTitle": "The best hosting for your podcast",
-      "title": "Host your Podcast with NestCast",
+      "title": "Host Your Podcast with NestCast",
+      "buttonText": "I want to join the waiting list",
       "text": [
-        "Nestcast helps you quickly and easily distribute your podcast to Spotify, Apple Podcasts, Podimo, and all other smaller podcast platforms. We ensure that your podcast becomes available using an RSS feed, the format for making podcasts available to podcast platforms like Spotify and Apple Podcasts.",
-        "Nestcast can provide the best podcast service at a competitive price. We can do this by using AI and machine learning. Our revolutionary platform is maintained by a small team, keeping our costs low."
+        "NestCast helps you quickly and easily distribute your podcast to platforms like Spotify, Apple Podcasts, Podimo, and other smaller podcast platforms. We ensure your podcast becomes available using an RSS feed, the format used to make podcasts available on platforms like Spotify and Apple Podcasts.",
+        "NestCast is capable of delivering the best podcast service at a competitive price. We achieve this through the use of AI and machine learning. Our revolutionary platform is maintained by a small team, keeping our costs low."
       ]
     },
     "SNIPPET_RIGHT": {
-      "title": "Podcast hosting & RSS",
+      "title": "Podcast Hosting & RSS",
       "text": [
-        "To host a podcast, it is necessary to make your audio files available on a server and generate an RSS feed that indicates which episodes are available. This RSS feed is used by podcast platforms like Spotify and Apple Podcasts to make your podcast available to listeners.",
-        "There are many companies that focus on podcast hosting, but NestCast is the only one that focuses solely on hosting and distributing podcasts. This is why we are the best at what we do.",
-        "We use the latest techniques and services to achieve the highest level of service at a low cost. We work with Angular 16, NestJs, and MongoDB. This ensures that we can provide a fast and reliable service. Our developers are constantly working on innovation and improving our service to ensure you always have a state-of-the-art product."
+        "To host a podcast, it is necessary to make your audio files available on a server and generate an RSS feed indicating the available episodes. This RSS feed is used by podcast platforms like Spotify and Apple Podcasts to make your podcast accessible to listeners.",
+        "There are many companies that focus on podcast hosting, but NestCast is the only one dedicated to hosting and distributing podcasts. This is why we excel in what we do.",
+        "We use the latest technologies and services to provide the highest service level possible at an affordable price. We work with Angular 16, NestJs, and MongoDB. This ensures we can offer a fast and reliable service. Our developers are constantly working on innovation and improving our service to ensure you always have a state-of-the-art product."
       ],
       "images": [
         "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
@@ -23,37 +24,37 @@
       ]
     },
     "SNIPPET_LEFT": {
-      "title": "Podcast platforms",
+      "title": "Podcast Platforms",
       "text": [
-        "Spotify, Amazon Music, Samsung Podcasts, Podcast Index, Listen Notes, Apple Podcasts, Google Podcasts, Pandora, Tune In, iHeartRadio, Deezer. These are just some of the platforms on which we can make your podcast available. We ensure that your podcast is available to as many listeners as possible.",
-        "The RSS feed we make available for your podcast is structured in a way that can be used by all platforms. You have optimal control over how your podcast is displayed on different platforms."
+        "Spotify, Amazon Music, Samsung Podcasts, Podcast Index, Listen Notes, Apple Podcasts, Google Podcasts, Pandora, Tune In, iHeartRadio, Deezer. These are just some of the platforms on which we can make your podcast available. We ensure your podcast is accessible to as many listeners as possible.",
+        "The RSS feed we create for your podcast is designed to be compatible with all platforms. You have optimal control over how your podcast is displayed on different platforms."
       ],
       "images": [
         "https://images.unsplash.com/photo-1581368087049-7034ed0d1e6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1524293568345-75d62c3664f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto.format&fit=crop&w=2022&q=80"
+        "https://images.unsplash.com/photo-1524293568345-75d62c3664f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80"
       ]
     }
   },
   "ABOUT": {
     "INTRO": {
-      "subTitle": "The technology behind NestCast",
+      "subTitle": "The Technology Behind NestCast",
       "title": "About NestCast",
       "text": [
-        "NestCast was born out of a passion for podcasts and technology. Our founder, Joris Pieters, has been creating podcasts for years. He created the popular podcast \"B&Gay vol Liefde,\" which follows the adventures of the contestants of the program \"B&B Vol Liefde.\"",
-        "Combining podcast knowledge with a background as a Full Stack Developer made it possible to create a highly technological platform for podcast hosting. As AI and machine learning play an increasingly significant role in technology today, NestCast also uses these technologies. With them, we hope to innovate even faster."
+        "NestCast was born out of a passion for podcasts and technology. Our founder, Joris Pieters, has been creating podcasts for years. He produced the popular podcast 'B&Gay vol Liefde,' which follows the adventures of the participants in the 'B&B Vol Liefde' program.",
+        "Combining his knowledge of podcasts with a background as a Full Stack Developer made it possible to create a highly technological platform for podcast hosting. In today's world, where AI and machine learning play an increasingly significant role in technology, NestCast is a product that harnesses these technologies for faster innovation."
       ]
     },
     "TECHNIQUES": {
       "title": "Techniques",
       "text": [
-        "We use the most modern techniques and services to provide the highest level of service possible. Users will mainly see the front end of our application for managing and distributing their podcasts. We have developed a Single Page Application (SPA) for this purpose, which results in an application that works without page refreshes during use."
+        "We use the latest techniques and services to provide the highest service level possible. Users mainly interact with the front end of our application to manage and distribute their podcasts. We've developed a Single Page Application (SPA) for this purpose, resulting in a user experience that works without page refreshes during use."
       ],
       "stack": [
         {
           "type": "programming",
-          "title": "Tech stack",
+          "title": "Tech Stack",
           "text": [
-            "NestCast uses Angular to provide a modern user experience. Angular is a framework maintained by Google. TypeScript is used for programming within the framework. In our backend, we use Nest.js, a backend framework based on Node, and TypeScript is the programming language there as well. Nest is largely based on the module structure of Angular."
+            "NestCast uses Angular to deliver a modern user experience. Angular is a framework maintained by Google. Within the framework, TypeScript is used for programming. In our backend, we use Nest.js, a backend framework based on Node, and TypeScript is also the programming language. Nest's structure is largely based on Angular."
           ],
           "items": [
             {
@@ -69,12 +70,12 @@
             {
               "type": "nestjs",
               "title": "NestJs",
-              "text": "NodeJS backend framework based on the module structure of Angular"
+              "text": "NodeJS backend framework based on Angular's module structure"
             },
             {
               "type": "nodejs",
               "title": "NodeJs",
-              "text": "The framework that made server-side JavaScript possible"
+              "text": "The framework that enabled server-side JavaScript"
             },
             {
               "type": "typescript",
@@ -90,25 +91,25 @@
         },
         {
           "type": "testing",
-          "title": "Automated tests",
+          "title": "Automated Tests",
           "text": [
-            "To improve the quality of our software and keep costs low, automated tests are essential. We use various types of tests to ensure the quality of our software."
+            "To improve the quality of our software and keep costs low, automated tests are indispensable. We use various types of tests to ensure the quality of our software."
           ],
           "items": [
             {
               "type": "jest",
               "title": "Jest",
-              "text": "Jest is a JavaScript testing framework designed to ensure the correctness of every JavaScript codebase."
+              "text": "Jest is a JavaScript testing framework designed to guarantee the accuracy of any JavaScript codebase."
             },
             {
               "type": "spectator",
               "title": "Spectator",
-              "text": "A layer on the Angular test framework to simplify testing Angular components."
+              "text": "A layer on top of the Angular testing framework to simplify testing Angular components."
             },
             {
               "type": "cypress",
               "title": "Cypress",
-              "text": "An end-to-end testing framework for web applications built on Mocha, Chai, and Sinon."
+              "text": "An end-to-end testing framework for web applications. It is built on top of Mocha, Chai, and Sinon."
             }
           ]
         },
@@ -116,13 +117,13 @@
           "type": "services",
           "title": "Services",
           "text": [
-            "To host our application and distribute your podcast, we use various cloud services. All of these services are cloud-based, meaning we don't have our own servers and rely on the servers of the service providers. This ensures that we don't have to maintain our servers and can always use the latest technologies."
+            "To host our application and distribute your podcast, we use various cloud services. These services are all cloud-based, meaning we do not have our own servers and instead utilize the servers of the service providers. This allows us to avoid server maintenance and stay up to date with the latest technologies."
           ],
           "items": [
             {
               "type": "aws",
               "title": "AWS",
-              "text": "Amazon Web Services is a cloud computing platform offered by Amazon.com"
+              "text": "Amazon Web Services is a cloud computing platform offered by Amazon.com."
             },
             {
               "type": "awss3",
@@ -137,7 +138,7 @@
             {
               "type": "github",
               "title": "GitHub",
-              "text": "This is an online service to manage and share our code with other developers."
+              "text": "This is an online service for managing and sharing our code with other developers."
             },
             {
               "type": "githubactions",
@@ -150,7 +151,7 @@
           "type": "AI",
           "title": "AI",
           "text": [
-            "This text is generated by AI. We use AI to improve the quality of our software and keep costs low. We use various types of AI to ensure the quality of our software."
+            "This text is generated by an AI. We use AI to enhance the quality of our software and keep costs low. We use various types of AI to ensure the quality of our software."
           ],
           "items": [
             {
@@ -166,7 +167,7 @@
             {
               "type": "githubcopilot",
               "title": "GitHub Copilot",
-              "text": "GitHub Copilot converts natural language hints into coding suggestions in dozens of languages."
+              "text": "GitHub Copilot translates natural language hints into code suggestions in dozens of languages."
             }
           ]
         }
@@ -177,14 +178,15 @@
     "INTRO": {
       "subTitle": "The highest price quality",
       "title": "Subscriptions",
+      "buttonText": "Join the waiting list",
       "text": [
         "Our subscriptions will have a low price for both business and private customers. We mainly focus on customers who consider it important to have their podcast available and accessible.",
         "To keep your podcast available, it's crucial that the price isn't too high. When the number of listeners decreases, it may no longer be profitable to keep your podcast available. We ensure that your podcast remains available at a low price."
       ],
       "images": [
-        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
+        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
       ]
     },
     "SNIPPET_RIGHT": {
@@ -194,9 +196,9 @@
         "Businesses often have a lot of content that may not be very current but is important to keep available. NestCast helps these businesses keep their content available without incurring unnecessary costs."
       ],
       "images": [
-        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto.format&fit=crop&w=1976&q=80"
+        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
       ]
     },
     "SNIPPET_LEFT": {
@@ -207,9 +209,9 @@
         "To keep your podcast available, it's crucial that the price isn't too high. When the number of listeners decreases, it may no longer be profitable to keep your podcast available. We ensure that your podcast remains available at a low price."
       ],
       "images": [
-        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto.format&fit=crop&w=1976&q=80"
+        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
+        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
+        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
       ]
     },
     "PRICING": {
@@ -245,10 +247,23 @@
     "INTRO": {
       "subTitle": "Amsterdam is our home",
       "title": "Contact NestCast",
+      "buttonText": "Send us a message",
       "text": [
         "NestCast is an Amsterdam-based company, and we are proud of it. Amsterdam is filled with IT talent and has an excellent start-up environment. Amsterdam is also the podcast capital of the Netherlands. We are proud to have our company here. Our office is located in Amsterdam West, Bos en Lommer.",
         "We'd like to get in touch with anyone interested in podcast hosting. We're always looking for new customers and new colleagues. Are you a developer and want to work on an innovative product? Get in touch with us."
       ]
+    },
+    "FORM": {
+      "title": "Send us a message",
+      "text": "We are eager to connect with our customers, potential business partners, colleagues, and future employees. Use this form to get in touch with us."
+    },
+    "SUCCESSMESSAGE": {
+      "title": "Thank you for your message",
+      "text": "We have received your message."
+    },
+    "ERRORMESSAGE": {
+      "title": "Failed",
+      "text": "Your message could not be confirmed, please try again."
     }
   },
   "FOOTER": {
@@ -270,5 +285,34 @@
     "NAVIGATION": {
       "title": "Navigation"
     }
-  }
+  },
+  "WAITINGLIST": {
+    "FORM": {
+      "title": "Join the waiting list",
+      "text": "Do you want to be among the first to use our podcast hosting platform? Sign up using this form."
+    },
+    "SUCCESSMESSAGE": {
+      "title": "Thank you for your interest",
+      "text": "You have been added to the waiting list."
+    },
+    "ERRORMESSAGE": {
+      "title": "Failed",
+      "text": "Your registration could not be confirmed, please try again."
+    }
+  },
+  "FORM": {
+    "FIRSTNAME": "First Name",
+    "LASTNAME": "Last Name",
+    "EMAILADDRESS": "Email Address",
+    "MESSAGE": "Message",
+    "TERMS": "I agree to the terms and conditions",
+    "CONTACTTERMS": "I agree to the communication terms"
+  },
+  "EMAILCONFIRMATION": {
+    "title": "Confirm your email address",
+    "text": "To prevent abuse and protect your privacy, we ask you to confirm your contact request. This way, we ensure that we do not send unwanted messages. We have sent a code to your email address."
+  },
+  "CANCEL": "Cancel",
+  "CONFIRM": "Confirm",
+  "SEND": "Send"
 }

@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
-import {
-  addToContact,
-  confirmContact,
-} from 'src/app/core/store/actions/contact.actions';
+import { confirmContact } from 'src/app/core/store/actions/contact-confirmation.actions';
+import { addToContact } from 'src/app/core/store/actions/contact.actions';
 import {
   selectContact,
   selectContactError,
-} from 'src/app/core/store/selectors/contacts.selectors';
+} from 'src/app/core/store/selectors/contact.selectors';
 import {
   Contact,
   ContactDetails,

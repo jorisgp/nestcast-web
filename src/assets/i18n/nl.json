@@ -256,6 +256,14 @@
     "FORM": {
       "title": "Stuur ons een bericht",
       "text": "Wij staan graag in contact met onze klanten, potentiële business partners, concullega's en toekomstige mederwerkers. Gebruik dit formulier om met ons in contact te komen. "
+    },
+    "SUCCESSMESSAGE": {
+      "title": "Bedankt voor je bericht",
+      "text": "Wij hebben je bericht ontvangen."
+    },
+    "ERRORMESSAGE": {
+      "title": "Mislukt",
+      "text": "Je bericht kon niet bevestigd worden, probeer het nognmaals."
     }
   },
   "FOOTER": {
@@ -282,11 +290,17 @@
     "FORM": {
       "title": "Meld je aan voor de wachtlijst",
       "text": "Wil je als eerste gerbuik maken van ons podcast hosting platform? Schrijf je met behulp van dit formulier in. "
+    },
+    "SUCCESSMESSAGE": {
+      "title": "Bedankt voor je interesse",
+      "text": "Je bent aangemeld voor de wachtrij"
+    },
+    "ERRORMESSAGE": {
+      "title": "Mislukt",
+      "text": "Je aanmelding kon niet bevestigd worden, probeer het nognmaals."
     }
   },
   "FORM": {
-    "title": "Meld je aan voor de wachtlijst",
-    "text": "Wil je als eerste gerbuik maken van ons podcast hosting platform? Schrijf je met behulp van dit formulier in. ",
     "FIRSTNAME": "Voornaam",
     "LASTNAME": "Achternaam",
     "EMAILADDRESS": "E-mailadres",

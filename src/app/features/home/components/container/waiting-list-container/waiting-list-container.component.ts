@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
-import {
-  addToWaitingList,
-  confirmWaitingList,
-} from 'src/app/core/store/actions/waiting-list.actions';
+import { confirmWaitingList } from 'src/app/core/store/actions/waiting-list-confirmation.actions';
+import { addToWaitingList } from 'src/app/core/store/actions/waiting-list.actions';
 import {
   selectWaitingList,
   selectWaitingListError,
@@ -34,7 +32,7 @@ export class WaitingListContainerComponent {
 
   constructor(
     private modalService: ModalService,
-    private store: Store<{ waitingList: any }>
+    private store: Store<{ waitingList: any; waitingListConfirmation: any }>
   ) {}
 
   ngOnInit() {

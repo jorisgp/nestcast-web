@@ -42,28 +42,5 @@ export const waitingListReducer = createReducer(
       error: null,
       isLoading: false,
     };
-  }),
-  on(waitingListActions.confirmWaitingList, (state, result) => {
-    return {
-      ...state,
-      payload: result.payload,
-      isLoading: true,
-    };
-  }),
-  on(waitingListActions.confirmWaitingListFailure, (state, error) => {
-    return {
-      ...state,
-      payload: null,
-      error: error,
-      isLoading: false,
-    };
-  }),
-  on(waitingListActions.confirmWaitingListSuccess, (state, result) => {
-    return {
-      ...state,
-      payload: result.payload,
-      error: null,
-      isLoading: false,
-    };
   })
 );

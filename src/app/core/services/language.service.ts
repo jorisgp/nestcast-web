@@ -44,6 +44,10 @@ export class LanguageService {
     this.changeLanguage();
   }
 
+  getTranslation(key: string): string {
+    return this.translateService.instant(key);
+  }
+
   private changeLanguage(): boolean {
     const country = this.country;
     if (country) {
@@ -63,6 +67,10 @@ export class LanguageService {
 
   getCountry(): Country {
     return this.country;
+  }
+
+  getLanguage(): string {
+    return this.country.language;
   }
 
   private _findCountry(language: string, countryCode?: string): Country {

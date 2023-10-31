@@ -12,6 +12,7 @@ import {
   WaitingList,
   WaitingListConfirmation,
 } from 'src/app/shared/interfaces/auth.interface';
+import { LanguageService } from './language.service';
 import { NotificationService } from './notification.service';
 
 @Injectable({
@@ -20,7 +21,8 @@ import { NotificationService } from './notification.service';
 export class NestcastHttpService {
   constructor(
     private http: HttpClient,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private languageService: LanguageService
   ) {}
 
   postAuthLogin(body: any): Observable<any> {
@@ -144,7 +146,10 @@ export class NestcastHttpService {
 
   postWaitingList(body: WaitingList): Observable<any> {
     return this.http
-      .post<any>(`${apiPrefix}/${ApiResource.WAITING_LISTS}`, body)
+      .post<any>(`${apiPrefix}/${ApiResource.WAITING_LISTS}`, {
+        ...body,
+        language: this.languageService.getLanguage(),
+      })
       .pipe(catchError((error) => this._handleError(error)));
   }
 
@@ -163,7 +168,10 @@ export class NestcastHttpService {
 
   postContact(body: Contact): Observable<any> {
     return this.http
-      .post<any>(`${apiPrefix}/${ApiResource.CONTACTS}`, body)
+      .post<any>(`${apiPrefix}/${ApiResource.CONTACTS}`, {
+        ...body,
+        language: this.languageService.getLanguage(),
+      })
       .pipe(catchError((error) => this._handleError(error)));
   }
 
@@ -195,10 +203,6 @@ export class NestcastHttpService {
     if (errorResponse.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
       errorMessage = `An error occurred: ${errorResponse.error.message}`;
-      this.notificationService.showError(
-        'Er is een onverwachte lokale fout opgetreden',
-        errorResponse.error.message
-      );
     } else {
       // The backend returned an unsuccessful response code.
       // The response body may contain clues as to what went wrong,
@@ -207,20 +211,8 @@ export class NestcastHttpService {
       if (errorResponse.status === HttpStatusCode.BadRequest) {
         this._handleBadRequest(errorResponse);
       } else if (errorResponse.status === HttpStatusCode.InternalServerError) {
-        this.notificationService.showError(
-          'Er is een onverwachte fout opgetreden',
-          errorResponse.error?.message
-        );
       } else if (errorResponse.status === HttpStatusCode.Unauthorized) {
-        this.notificationService.showError(
-          'Unauthorized',
-          errorResponse.error?.message
-        );
       } else {
-        this.notificationService.showError(
-          'Er is een fout opgetreden',
-          errorResponse.error?.message
-        );
       }
     }
     return throwError(() => errorResponse);
