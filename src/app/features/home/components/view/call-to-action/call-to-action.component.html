@@ -1,6 +1,13 @@
 <div class="row">
-  <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
-    <div class="call-to-action">
+  <div
+    class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5"
+    [ngClass]="{
+      'offset-lg-3 offset-xl-2': view === CallToActionView.LEFT,
+      'offset-sm-1 offset-md-3 offset-lg-5 offset-xl-5':
+        view === CallToActionView.RIGHT
+    }"
+  >
+    <div class="call-to-action" [class.dark]="color === CallToActionColor.DARK">
       <h2>{{ data.subTitle }}</h2>
       <h1>{{ data.title }}</h1>
       <app-paragraphs [data]="data.text">{{ data.text }}</app-paragraphs>

@@ -44,6 +44,15 @@
         "Door de kennis over podcasts in combinatie met een achtergrond als Full Stack Developer werd het mogelijk om een hoog technologisch plaform te maken voor podcast hosting. Omdat tegenwoordig AI en machine learning een steeds grotere rol spelen in de techniek, is ook NestCast een porduct dat gebruikt maakt van deze technieken. Hiermee hopen wij nog sneller te kunnen innoveren"
       ]
     },
+    "WORD": {
+      "subTitle": "De techniek achter NestCast",
+      "title": "Woord van de oprichter",
+      "text": [
+        "NestCast is begonnen als een side project. Net als vele ontwikkelaars die echt van hun vak houden, onstaan er voortdurend ideeën om een nieuw product te maken. Er zijn in de loop der jaren een hoop ideeën de revue gepasseerd, maar bij NestCast stond vast dat dit product ook in productie genomen moest worden.",
+        "Als freelance ontwikkelaar is het belangrijk om een goed portfolio te hebben. NestCast was in de eerste plaats een showcase maar naarmate je er serieus mee aan de slag gaat, neemt het enthousiasme toe. Elke milestone geeft een heel bevredigend gevoel, en dit gevoel is heel belangrijk als je werk ook je passie is. ",
+        "Joris Pieters"
+      ]
+    },
     "TECHNIQUES": {
       "title": "Technieken",
       "text": [
@@ -245,12 +254,20 @@
   },
   "CONTACT": {
     "INTRO": {
-      "subTitle": "amsterdam is ons thuis",
+      "subTitle": "hoe gaat het met jou?",
       "title": "Contact met NestCast",
       "buttonText": "Stuur ons een bericht",
       "text": [
-        "NestCast is een Amsterdams bedrijf, en daar zijn wij trots op. Amsterdam barst van het IT talent en heeft een uitstekend start-up klimaat. Ook is Amsterdam de podcast hoofdstad van Nederland. Wij zijn dan ook trots om hier ons bedrijf te hebben. Ons kantoor is gevestigd in Amsterdam West, Bos en Lommer. ",
-        "Wij willen graag met iedereen in contact komen die geïnteresseerd is in podcast hosting. Wij zijn altijd op zoek naar nieuwe klanten, maar ook naar nieuwe collega's. Ben jij een developer en wil je werken aan een innovatief product? Neem dan contact met ons op."
+        "NestCast is een bedrijf dat zich open wil stellen voor klanten, technisch talent, collega's in het podcasthosting vak. Net als een deel van onze software open source is zijn wij een open boek. ",
+        "Wij zijn altijd op zoek naar nieuwe klanten, maar ook naar nieuwe collega's. Ben jij een developer en wil je werken aan een innovatief product? Neem dan contact met ons op. Heb je feedback op ons product, dan horen wij dat ook graag."
+      ]
+    },
+    "PLACE": {
+      "subTitle": "amsterdam is ons thuis",
+      "title": "Onze locatie",
+      "buttonText": "Stuur ons een bericht",
+      "text": [
+        "NestCast is een Amsterdams bedrijf, en daar zijn wij trots op. Amsterdam barst van het IT talent en heeft een uitstekend start-up klimaat. Ook is Amsterdam de podcast hoofdstad van Nederland. Wij zijn dan ook trots om hier ons bedrijf te hebben. Ons kantoor is gevestigd in Amsterdam West, Bos en Lommer. "
       ]
     },
     "FORM": {

@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { Gradient } from '../../view/background-section/background-section.component';
+import {
+  CallToActionColor,
+  CallToActionView,
+} from '../../view/call-to-action/call-to-action.component';
 import { SnippetView } from '../../view/snippet/snippet.component';
 
 @Component({
@@ -10,4 +14,6 @@ import { SnippetView } from '../../view/snippet/snippet.component';
 export class AboutPageContainerComponent {
   SnippetView = SnippetView;
   Gradient = Gradient;
+  CallToActionColor = CallToActionColor;
+  CallToActionView = CallToActionView;
 }

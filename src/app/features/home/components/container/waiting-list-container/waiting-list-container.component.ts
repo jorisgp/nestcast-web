@@ -12,8 +12,6 @@ import {
   WaitingListDetails,
 } from 'src/app/shared/interfaces/auth.interface';
 import { ModalService } from 'src/app/shared/services/modal.service';
-import { Gradient } from '../../view/background-section/background-section.component';
-import { SnippetView } from '../../view/snippet/snippet.component';
 import { WaitingListFlowComponent } from '../../view/waiting-list-flow/waiting-list-flow.component';
 
 @Component({
@@ -26,9 +24,6 @@ export class WaitingListContainerComponent {
 
   selectWaitingList$ = this.store.select(selectWaitingList);
   selectWaitingListError$ = this.store.select(selectWaitingListError);
-
-  SnippetView = SnippetView;
-  Gradient = Gradient;
 
   constructor(
     private modalService: ModalService,

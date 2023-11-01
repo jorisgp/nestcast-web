@@ -13,6 +13,10 @@ import {
 } from 'src/app/shared/interfaces/auth.interface';
 import { ModalService } from 'src/app/shared/services/modal.service';
 import { Gradient } from '../../view/background-section/background-section.component';
+import {
+  CallToActionColor,
+  CallToActionView,
+} from '../../view/call-to-action/call-to-action.component';
 import { ContactFlowComponent } from '../../view/contact-flow/contact-flow.component';
 import { SnippetView } from '../../view/snippet/snippet.component';
 
@@ -29,6 +33,8 @@ export class ContactPageContainerComponent {
   selectContactError$ = this.store.select(selectContactError);
 
   SnippetView = SnippetView;
+  CallToActionView = CallToActionView;
+  CallToActionColor = CallToActionColor;
   Gradient = Gradient;
 
   constructor(
