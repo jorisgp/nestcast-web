@@ -1,10 +1,14 @@
+@import "/src//mixins.scss";
+
 .half-photo-section {
-  padding-top: 150px;
-  padding-bottom: 50px;
-  min-height: 100vh;
+  padding: 20px 0;
   width: 100%;
   background: rgb(2, 0, 36);
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+
+  @include media-breakpoint-up(sm) {
+    padding: 150px 0;
+  }
 }

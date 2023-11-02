@@ -18,9 +18,9 @@
         "Wij gebruiken de modernste technieken en services om tot het hoogste service niveau mogelijk te maken voor een lage prijs. Wij werken met Angular 16, NestJs en MongoDB. Dit zorgt ervoor dat wij een snelle en betrouwbare service kunnen leveren. Onze ontwikkelaars zijn voortdurend bezig met innovatie en het verbeteren van onze service zodat je altijd zeker bent van state of the art product"
       ],
       "images": [
-        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
+        "assets/images/pictures/podcaster-1.jpg",
+        "assets/images/pictures/podcaster-2.jpg",
+        "assets/images/pictures/podcaster-3.jpg"
       ]
     },
     "SNIPPET_LEFT": {
@@ -30,8 +30,8 @@
         "De RSS feed die wij van jouw podcast beschikbaar maken, is zo samengesteld dat deze door alle platformen kan worden gebruikt. Jij hebt optimale controle over hoe jouw podcast op de verschillende platformen wordt weergegeven."
       ],
       "images": [
-        "https://images.unsplash.com/photo-1581368087049-7034ed0d1e6f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1524293568345-75d62c3664f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80"
+        "assets/images/pictures/podcaster-4.jpg",
+        "assets/images/pictures/podcaster-5.jpg"
       ]
     }
   },
@@ -50,6 +50,7 @@
       "text": [
         "NestCast is begonnen als een side project. Net als vele ontwikkelaars die echt van hun vak houden, onstaan er voortdurend ideeën om een nieuw product te maken. Er zijn in de loop der jaren een hoop ideeën de revue gepasseerd, maar bij NestCast stond vast dat dit product ook in productie genomen moest worden.",
         "Als freelance ontwikkelaar is het belangrijk om een goed portfolio te hebben. NestCast was in de eerste plaats een showcase maar naarmate je er serieus mee aan de slag gaat, neemt het enthousiasme toe. Elke milestone geeft een heel bevredigend gevoel, en dit gevoel is heel belangrijk als je werk ook je passie is. ",
+        "NestCast zal de code waar mogelijk obenbaar maken, met andere woorden open-source maken. Bij ons staat veiligheid en privacy voorop, maar wij willen ook graag onze kennis delen met andere ontwikkelaars en laten zien hoe wij over goede oplossingen denken.",
         "Joris Pieters"
       ]
     },
@@ -205,9 +206,9 @@
         "Bedrijven hebben veel content die wellicht niet heel actueel is maar wel belangrijk is om beschikbaar te hebben. NestCast helpt deze bedrijven hun content beschikbaar te houden zonder dat de kosten onnodig hoog oplopen."
       ],
       "images": [
-        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
+        "assets/images/pictures/personal-1.jpg",
+        "assets/images/pictures/personal-2.jpg",
+        "assets/images/pictures/personal-3.jpg"
       ]
     },
     "SNIPPET_LEFT": {
@@ -218,9 +219,9 @@
         "Om je podcast beschikbaar te houden is het vooral belangrijk dat de prijs niet te hoog is. Zodra de luisteraars teruglopen is het soms niet meer rendabel om je podcast beschikbaar te houden. Wij zorgen ervoor dat je podcast beschikbaar blijft voor een lage prijs."
       ],
       "images": [
-        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
+        "assets/images/pictures/business-1.jpg",
+        "assets/images/pictures/business-2.jpg",
+        "assets/images/pictures/business-3.jpg"
       ]
     },
     "PRICING": {
@@ -331,5 +332,11 @@
   },
   "CANCEL": "Annuleren",
   "CONFIRM": "Bevestigen",
-  "SEND": "Versturen"
+  "SEND": "Versturen",
+  "MENU": {
+    "HOME": "Home",
+    "PRICING": "Prijzen",
+    "ABOUT": "Over ons",
+    "CONTACT": "Contact"
+  }
 }

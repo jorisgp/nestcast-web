@@ -39,10 +39,14 @@
       <div class="col-12 col-sm-6 col-lg-3 offset-lg-1">
         <h3>{{ "FOOTER.NAVIGATION.title" | translate }}<br /></h3>
         <ul>
-          <li (click)="navigate(['/'])">Home</li>
-          <li (click)="navigate(['pricing'])">Pricing</li>
-          <li (click)="navigate(['about'])">About</li>
-          <li (click)="navigate(['contact'])">Contact</li>
+          <li (click)="navigate(['/'])">{{ "MENU.HOME" | translate }}</li>
+          <li (click)="navigate(['pricing'])">
+            {{ "MENU.PRICING" | translate }}
+          </li>
+          <li (click)="navigate(['about'])">{{ "MENU.ABOUT" | translate }}</li>
+          <li (click)="navigate(['contact'])">
+            {{ "MENU.CONTACT" | translate }}
+          </li>
         </ul>
       </div>
     </div>

@@ -1,5 +1,6 @@
-import { Location } from '@angular/common';
-import { Injectable } from '@angular/core';
+import { DOCUMENT, Location } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 import { Country, Language } from 'src/app/shared/model/models';
@@ -15,8 +16,11 @@ export class LanguageService {
   private countries = countries;
 
   constructor(
+    @Inject(DOCUMENT)
+    private document: Document,
     private translateService: TranslateService,
-    private location: Location
+    private location: Location,
+    private meta: Meta
   ) {}
 
   setInitialCountry() {
@@ -56,6 +60,9 @@ export class LanguageService {
       this.location.go(this._replaceLanguageInUrl(country.language));
 
       this.countrySubject.next(country);
+
+      this.document.documentElement.lang = country.language;
+
       return true;
     }
     return false;

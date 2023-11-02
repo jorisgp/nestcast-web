@@ -27,7 +27,6 @@ export class ContactFormComponent implements ModalInterface {
   });
 
   onSubmitForm() {
-    console.log('submirForm');
     if (this.contactForm.valid) {
       this.submitForm.emit(this.contactForm.value as Contact);
     }
