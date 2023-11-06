@@ -1,6 +1,6 @@
 import { DOCUMENT, Location } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 import { Country, Language } from 'src/app/shared/model/models';
@@ -20,7 +20,8 @@ export class LanguageService {
     private document: Document,
     private translateService: TranslateService,
     private location: Location,
-    private meta: Meta
+    private meta: Meta,
+    private titleService: Title
   ) {}
 
   setInitialCountry() {
@@ -52,22 +53,6 @@ export class LanguageService {
     return this.translateService.instant(key);
   }
 
-  private changeLanguage(): boolean {
-    const country = this.country;
-    if (country) {
-      this.translateService.use(country.language);
-      this.translateService.reloadLang(country.language);
-      this.location.go(this._replaceLanguageInUrl(country.language));
-
-      this.countrySubject.next(country);
-
-      this.document.documentElement.lang = country.language;
-
-      return true;
-    }
-    return false;
-  }
-
   getCountries(): Country[] {
     return this.countries;
   }
@@ -78,6 +63,30 @@ export class LanguageService {
 
   getLanguage(): string {
     return this.country.language;
+  }
+
+  private changeLanguage(): boolean {
+    const country = this.country;
+    if (country) {
+      this.translateService.use(country.language).forEach?.(() => {
+        this.document.documentElement.lang = country.language;
+        this.titleService.setTitle(this.getTranslation('TITLE'));
+        this.meta.updateTag({
+          name: 'description',
+          content: this.getTranslation('DESCRIPTION'),
+        });
+        this.meta.updateTag({
+          name: 'keywords',
+          content: this.getTranslation('KEYWORDS'),
+        });
+      });
+      this.location.go(this._replaceLanguageInUrl(country.language));
+
+      this.countrySubject.next(country);
+
+      return true;
+    }
+    return false;
   }
 
   private _findCountry(language: string, countryCode?: string): Country {

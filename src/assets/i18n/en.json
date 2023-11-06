@@ -1,5 +1,7 @@
 {
-  "TITLE": "Dutch",
+  "TITLE": "NestCast - Podcast for everybody",
+  "KEYWORDS": "EN podcast hosting rss feed",
+  "DESCRIPTION": "ENGELS hosten jouw podcast voor een veel lagere prijs dan andere hosting bedrijven. Hierdoor kan je langdurig jouw podcast beschikbaar houden.",
   "HOME": {
     "INTRO": {
       "subTitle": "The best hosting for your podcast",
@@ -292,8 +294,8 @@
       ]
     },
     "CONTACT": {
-      "website": "https://www.nestcast.com",
-      "email": "info@nestcast.com",
+      "website": "https://www.nestcast.net",
+      "email": "info@nestcast.net",
       "title": "Get in touch",
       "name": "NestCast",
       "address": "Hoofdweg 562",
@@ -338,5 +340,11 @@
     "PRICING": "Pricing",
     "ABOUT": "About us",
     "CONTACT": "Contact"
+  },
+  "SOCIALMEDIA": {
+    "INSTAGRAM": "https://www.instagram.com/nestcastnet/",
+    "X": "https://x.com/nestcastnet",
+    "FACEBOOK": "https://www.facebook.com/profile.php?id=61553274982927",
+    "LINKEDIN": "https://www.linkedin.com/company/100249897"
   }
 }

@@ -7,13 +7,30 @@
           <p>{{ "FOOTER.ABOUT.text" | translate }}</p>
         </div>
         <div class="social-media mb-5">
-          <app-icon [type]="IconType.FACEBOOK" class="facebook-icon"></app-icon>
-          <app-icon [type]="IconType.X" class="x-icon"></app-icon>
           <app-icon
+            *ngIf="'SOCIALMEDIA.FACEBOOK' | translate as facebookLink"
+            [type]="IconType.FACEBOOK"
+            class="facebook-icon"
+            (click)="openLink(facebookLink)"
+          ></app-icon>
+          <app-icon
+            *ngIf="'SOCIALMEDIA.X' | translate as xLink"
+            [type]="IconType.X"
+            class="x-icon"
+            (click)="openLink(xLink)"
+          ></app-icon>
+          <app-icon
+            *ngIf="'SOCIALMEDIA.INSTAGRAM' | translate as instagramLink"
             [type]="IconType.INSTAGRAM"
             class="instagram-icon"
+            (click)="openLink(instagramLink)"
           ></app-icon>
-          <app-icon [type]="IconType.LINKEDIN" class="linkedin-icon"></app-icon>
+          <app-icon
+            *ngIf="'SOCIALMEDIA.LINKEDIN' | translate as linkedInLink"
+            [type]="IconType.LINKEDIN"
+            class="linkedin-icon"
+            (click)="openLink(linkedInLink)"
+          ></app-icon>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 offset-lg-1">
@@ -22,7 +39,7 @@
           <a href="mailto:{{ 'FOOTER.CONTACT.email' | translate }}">
             {{ "FOOTER.CONTACT.email" | translate }}</a
           ><br />
-          <a href="https:://www.netscast.com">
+          <a href="https:://www.netscast.net">
             {{ "FOOTER.CONTACT.website" | translate }}</a
           ><br /><br />
           <address>

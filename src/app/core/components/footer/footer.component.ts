@@ -12,6 +12,10 @@ export class FooterComponent {
 
   constructor(private router: RouterService) {}
 
+  openLink(link: string) {
+    window.open(link, '_blank');
+  }
+
   navigate(location: string[]) {
     this.router.navigate(location);
   }
