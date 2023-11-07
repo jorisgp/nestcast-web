@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PlatformService } from '../../services/platform.service';
 import { RouterService } from '../../services/router.service';
 
 @Component({
@@ -11,15 +12,20 @@ export class HeaderComponent {
   mobileMenu = false;
   background = false;
 
-  constructor(private router: RouterService, private route: ActivatedRoute) {}
+  constructor(
+    private router: RouterService,
+    private route: ActivatedRoute,
+    private platformService: PlatformService
+  ) {}
 
   @HostListener('window:scroll', ['$event'])
-  doSomething(event: any) {
-    const scrollY = window.scrollY;
-    if (scrollY > 100) {
-      this.background = true;
-    } else {
-      this.background = false;
+  addBackground(event: any) {
+    if (this.platformService.isBrowser) {
+      if (scrollY > 100) {
+        this.background = true;
+      } else {
+        this.background = false;
+      }
     }
   }
 

@@ -7,30 +7,39 @@
           <p>{{ "FOOTER.ABOUT.text" | translate }}</p>
         </div>
         <div class="social-media mb-5">
-          <app-icon
+          <a
+            [href]="facebookLink"
             *ngIf="'SOCIALMEDIA.FACEBOOK' | translate as facebookLink"
-            [type]="IconType.FACEBOOK"
-            class="facebook-icon"
-            (click)="openLink(facebookLink)"
-          ></app-icon>
-          <app-icon
-            *ngIf="'SOCIALMEDIA.X' | translate as xLink"
-            [type]="IconType.X"
-            class="x-icon"
-            (click)="openLink(xLink)"
-          ></app-icon>
-          <app-icon
+          >
+            <app-icon
+              [type]="IconType.FACEBOOK"
+              class="facebook-icon"
+            ></app-icon
+          ></a>
+          <a
+            [href]="facebookLink"
+            *ngIf="'SOCIALMEDIA.X' | translate as facebookLink"
+          >
+            <app-icon [type]="IconType.X" class="x-icon"></app-icon>
+          </a>
+          <a
+            [href]="instagramLink"
             *ngIf="'SOCIALMEDIA.INSTAGRAM' | translate as instagramLink"
-            [type]="IconType.INSTAGRAM"
-            class="instagram-icon"
-            (click)="openLink(instagramLink)"
-          ></app-icon>
-          <app-icon
+          >
+            <app-icon
+              [type]="IconType.INSTAGRAM"
+              class="instagram-icon"
+            ></app-icon
+          ></a>
+          <a
+            [href]="linkedInLink"
             *ngIf="'SOCIALMEDIA.LINKEDIN' | translate as linkedInLink"
-            [type]="IconType.LINKEDIN"
-            class="linkedin-icon"
-            (click)="openLink(linkedInLink)"
-          ></app-icon>
+          >
+            <app-icon
+              [type]="IconType.LINKEDIN"
+              class="linkedin-icon"
+            ></app-icon>
+          </a>
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-4 offset-lg-1">
@@ -49,7 +58,7 @@
             {{ "FOOTER.CONTACT.place" | translate }}<br />
           </address>
           <div class="map-wrapper">
-            <app-map></app-map>
+            <app-map *ngIf="isBrowser"></app-map>
           </div>
         </div>
       </div>

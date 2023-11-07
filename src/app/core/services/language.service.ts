@@ -4,6 +4,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 import { Country, Language } from 'src/app/shared/model/models';
+import { PlatformService } from './platform.service';
 
 @Injectable({
   providedIn: 'root',
@@ -21,21 +22,25 @@ export class LanguageService {
     private translateService: TranslateService,
     private location: Location,
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    private plaformService: PlatformService
   ) {}
 
   setInitialCountry() {
-    const navigatorLanguages = navigator.languages;
     this.country = this.countries.find((country: Country) => country.default);
 
-    for (const languageString of navigatorLanguages) {
-      const language = languageString.substring(0, 2);
-      const countryCode = languageString.substring(3, 5);
-      const matchedCountry = this._findCountry(language, countryCode);
+    if (this.plaformService.isBrowser) {
+      const navigatorLanguages = navigator?.languages;
 
-      if (matchedCountry) {
-        this.country = matchedCountry;
-        break;
+      for (const languageString of navigatorLanguages) {
+        const language = languageString.substring(0, 2);
+        const countryCode = languageString.substring(3, 5);
+        const matchedCountry = this._findCountry(language, countryCode);
+
+        if (matchedCountry) {
+          this.country = matchedCountry;
+          break;
+        }
       }
     }
     this.changeLanguage();

@@ -1,15 +1,17 @@
 import { Injectable } from '@angular/core';
+import { PlatformService } from './platform.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LocalStorageService {
+  constructor(private plaformService: PlatformService) {}
   setNumber(storageKey: StorageKey, data: number) {
     localStorage.setItem(storageKey, data.toString());
   }
 
   getNumber(storageKey: StorageKey): number | null {
-    const value = localStorage.getItem(storageKey);
+    const value = this._getItem(storageKey);
     return value ? +value : null;
   }
 
@@ -22,8 +24,15 @@ export class LocalStorageService {
   }
 
   getItem(storageKey: StorageKey | string): any {
-    const value = localStorage.getItem(storageKey);
+    const value = this._getItem(storageKey);
     return value ? JSON.parse(value) : null;
+  }
+
+  private _getItem(storageKey: StorageKey | string) {
+    if (this.plaformService.isBrowser) {
+      return localStorage.getItem(storageKey);
+    }
+    return null;
   }
 }
 
