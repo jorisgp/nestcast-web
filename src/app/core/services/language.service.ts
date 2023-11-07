@@ -49,6 +49,11 @@ export class LanguageService {
     this.changeLanguage();
   }
 
+  setCountry(country: Country) {
+    this.country = country;
+    this.changeLanguage();
+  }
+
   getTranslation(key: string): string {
     return this.translateService.instant(key);
   }

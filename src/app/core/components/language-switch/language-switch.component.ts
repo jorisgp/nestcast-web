@@ -26,8 +26,6 @@ export class LanguageSwitchComponent {
   }
 
   onLanguageChange(changeEvent: DropdownChangeEvent) {
-    this.languageService.setInitialCountryByLanguage(
-      changeEvent.value.language
-    );
+    this.languageService.setCountry(changeEvent.value);
   }
 }
