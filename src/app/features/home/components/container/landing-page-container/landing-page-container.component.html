@@ -1,0 +1,24 @@
+<app-background-section [gradient]="Gradient.ONE">
+  <app-call-to-action
+    [data]="'HOME.INTRO' | translate"
+    (buttonClick)="openWaitingListModal()"
+  ></app-call-to-action>
+</app-background-section>
+<app-color-section>
+  <app-snippet
+    [data]="'HOME.SNIPPET_RIGHT' | translate"
+    [view]="SnippetView.RIGHT"
+  ></app-snippet>
+  <app-snippet
+    [data]="'HOME.SNIPPET_LEFT' | translate"
+    [view]="SnippetView.LEFT"
+  ></app-snippet>
+</app-color-section>
+<app-half-photo-section
+  src="https://images.unsplash.com/photo-1484704849700-f032a568e944?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+>
+  <app-pricing-card
+    [data]="'PRICING.PRICING' | translate"
+    (buttonClick)="openWaitingListModal()"
+  ></app-pricing-card>
+</app-half-photo-section>

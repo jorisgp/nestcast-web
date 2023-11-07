@@ -1,0 +1,10 @@
+<app-contact-form
+  *ngIf="step === ContactFlowStep.CONTACT"
+  (closeModal)="closeModal.emit()"
+  (submitForm)="submitForm.emit($event)"
+></app-contact-form>
+<app-code-confirmation
+  (submitForm)="onSubmitConfirmationForm($event)"
+  (cancelBack)="closeModal.emit()"
+  *ngIf="step === ContactFlowStep.CONTACT_CONFIRMATION"
+></app-code-confirmation>

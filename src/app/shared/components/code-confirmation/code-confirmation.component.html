@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="modal-content">
+    <h2>{{ "EMAILCONFIRMATION.title" | translate }}</h2>
+    <p>
+      {{ "EMAILCONFIRMATION.text" | translate }}
+    </p>
+
+    <div class="code d-flex">
+      <ng-container *ngFor="let digits of [1, 2, 3, 4]; let i = index">
+        <input
+          type="text"
+          maxlength="1"
+          class="form-control digit-input"
+          [value]="code.split('')[i] || ''"
+          title="digit"
+          (keyup)="onKeyPress($event, i)"
+          (keydown)="onKeyDown($event)"
+          (paste)="onPaste($event, i)"
+      /></ng-container>
+    </div>
+    <div class="row mt-2">
+      <div class="col-12 d-flex justify-content-end">
+        <button
+          type="button"
+          class="btn btn-lght me-1"
+          (click)="cancelBack.emit()"
+        >
+          {{ "CANCEL" | translate }}
+        </button>
+        <button type="button" #button class="btn btn-dark" (click)="onSubmit()">
+          {{ "CONFIRM" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

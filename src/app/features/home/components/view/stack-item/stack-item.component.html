@@ -1,0 +1,12 @@
+<div class="d-flex flex-column justify-content-center">
+  <div class="image-wrapper">
+    <img
+      [src]="data.type | stackImagePipe"
+      [alt]="data.title"
+      [title]="data.title"
+      class="mb-3"
+    />
+  </div>
+  <div class="title">{{ data.title }}</div>
+  <div class="text">{{ data.text }}</div>
+</div>

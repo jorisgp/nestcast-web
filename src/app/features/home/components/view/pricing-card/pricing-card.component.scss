@@ -1,0 +1,79 @@
+.pricing-cards {
+  margin: 0 10px;
+
+  h4 {
+    margin: 0;
+  }
+
+  .intro {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    margin: 0 10px 30px 10px;
+    padding: 20px;
+    width: calc(100% - 20px);
+  }
+
+  .pricing-card {
+    color: white;
+    padding: 20px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 88, 211, 0.95) 0%,
+      rgba(0, 76, 143, 0.95) 35%,
+      rgba(15, 40, 129, 0.95) 100%
+    );
+    border: 1px solid white;
+    border-radius: 10px;
+    min-height: 500px;
+    margin-bottom: 20px;
+
+    .price {
+      color: #666;
+      background-color: white;
+      width: 85%;
+      height: 100px;
+      margin-left: -20px;
+      border-radius: 0 50px 50px 0;
+      padding: 16px 30px;
+
+      .amount {
+        font-size: 32px;
+        font-weight: 700;
+      }
+      .frequency {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+      }
+    }
+
+    .content {
+      flex-grow: 1;
+    }
+
+    li {
+      margin: 10px 0;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+
+    .button {
+      height: 40px;
+      align-self: center;
+      border-radius: 18px;
+      padding: 8px 20px 10px 20px;
+      border: 2px solid #666;
+      font-size: 20px;
+      line-height: 20px;
+      text-transform: uppercase;
+
+      transition: cubic-bezier(0.075, 0.82, 0.165, 1) all 0.5s;
+
+      &:hover {
+        color: #666;
+        background-color: white;
+      }
+    }
+  }
+}

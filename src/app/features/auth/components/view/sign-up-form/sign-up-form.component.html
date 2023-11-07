@@ -1,0 +1,32 @@
+<h1>Sign up</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div>
+    <div class="row">
+      <div class="col"><label for="username">E-mail</label></div>
+      <div class="col">
+        <input type="text" formControlName="username" id="username" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><label for="password">Password</label></div>
+      <div class="col">
+        <input type="password" formControlName="password" id="password" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><label for="firstName">First name</label></div>
+      <div class="col">
+        <input type="text" formControlName="firstName" id="firstName" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col"><label for="lastName">Last name</label></div>
+      <div class="col">
+        <input type="text" formControlName="lastName" id="lastName" />
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!form.valid">Sign Up</button><br />
+    <button type="button" [routerLink]="['..', 'sign-in']">Sign In</button>
+  </div>
+</form>

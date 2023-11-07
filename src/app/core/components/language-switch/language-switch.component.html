@@ -1,0 +1,19 @@
+<p-dropdown
+  class="dropdown"
+  [options]="countries"
+  [(ngModel)]="selectedCountry"
+  optionLabel="name"
+  [showClear]="false"
+  (onChange)="onLanguageChange($event)"
+>
+  <ng-template pTemplate="selectedItem">
+    <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+      <app-flag [data]="selectedCountry"></app-flag>
+    </div>
+  </ng-template>
+  <ng-template let-country pTemplate="item">
+    <div class="flex align-items-center gap-2">
+      <app-flag [data]="country"></app-flag>
+    </div>
+  </ng-template>
+</p-dropdown>

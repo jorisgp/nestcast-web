@@ -1,0 +1,38 @@
+<div class="header" [class.scrolled]="background">
+  <div class="container">
+    <nav class="top-nav">
+      <div>
+        <a class="navbar-logo" (click)="navigate(['/'])"
+          >nest<span>cast</span></a
+        >
+      </div>
+      <div class="burger-menu">
+        <i class="bi bi-list" (click)="toggleMenu()"></i>
+      </div>
+      <div class="option-wrapper" [class.visible]="mobileMenu">
+        <div>
+          <ul class="top-nav-links">
+            <li>
+              <a (click)="navigate(['pricing'])">{{
+                "MENU.PRICING" | translate
+              }}</a>
+            </li>
+            <li>
+              <a (click)="navigate(['about'])">{{
+                "MENU.ABOUT" | translate
+              }}</a>
+            </li>
+            <li>
+              <a (click)="navigate(['contact'])">{{
+                "MENU.CONTACT" | translate
+              }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="language-switch">
+          <app-language-switch></app-language-switch>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>

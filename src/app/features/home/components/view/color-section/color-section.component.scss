@@ -1,0 +1,12 @@
+@import "/src//mixins.scss";
+
+.color-section {
+  padding-top: 20px;
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid black;
+
+  @include media-breakpoint-up(sm) {
+    padding-top: 150px;
+  }
+}

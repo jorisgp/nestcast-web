@@ -1,0 +1,15 @@
+<p-dialog
+  [showHeader]="false"
+  [(visible)]="display"
+  [draggable]="false"
+  [resizable]="false"
+  [modal]="true"
+  [closable]="true"
+  (onHide)="closeModal()"
+  [dismissableMask]="true"
+  closeIcon="pi pi-times"
+>
+  <div class="modal-content">
+    <ng-container appContainer></ng-container>
+  </div>
+</p-dialog>

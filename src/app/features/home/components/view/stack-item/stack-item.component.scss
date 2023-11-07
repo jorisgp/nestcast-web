@@ -1,0 +1,24 @@
+.title,
+.text {
+  text-align: center;
+}
+
+.title {
+  font-weight: 700;
+}
+.text {
+  font-size: 12px;
+}
+
+.image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  height: 140px;
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
