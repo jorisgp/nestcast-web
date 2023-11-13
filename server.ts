@@ -8,18 +8,6 @@ import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { AppServerModule } from './src/main.server';
 
-// @ts-ignore
-global['requestAnimationFrame'] = (callback: FrameRequestCallback) => {
-  let lastTime = 0;
-  const currTime = new Date().getTime();
-  const timeToCall = Math.max(0, 16 - (currTime - lastTime));
-  const id = setTimeout(function () {
-    callback(currTime + timeToCall);
-  }, timeToCall);
-  lastTime = currTime + timeToCall;
-  return id;
-};
-
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
@@ -36,6 +24,11 @@ export function app(): express.Express {
     })
   );
 
+  server.get('*', (req, res, next) => {
+    console.log('req.baseUrl', req.baseUrl);
+    next();
+  });
+
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
@@ -51,6 +44,7 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
+    console.log('render - req.baseUrl', req.baseUrl);
     res.render(indexHtml, {
       req,
       providers: [

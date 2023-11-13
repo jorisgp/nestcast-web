@@ -1,0 +1,41 @@
+service: nestcast-web
+
+plugins:
+  - serverless-apigw-binary
+  - serverless-offline
+provider:
+  name: aws
+  runtime: nodejs18.x
+  memorySize: 128
+  timeout: 30
+  stage: production
+  region: eu-west-1
+
+package:
+  exclude:
+    - src/**
+    - node_modules/**
+    - e2e/**
+    - coverage/**
+    - .angular/**
+    - .vscode/**
+    - "!src/assets/**"
+    - "!node_modules/aws-serverless-express/**"
+    - "!node_modules/binary-case/**"
+    - "!node_modules/type-is/**"
+    - "!node_modules/media-typer/**"
+    - "!node_modules/mime-types/**"
+    - "!node_modules/mime-db/**"
+    - "!node_modules/@vendia/**"
+
+custom:
+  apigwBinary:
+    types:
+      - "*/*"
+
+functions:
+  api:
+    handler: lambda.ssrserverless
+    events:
+      - http: GET /{proxy+}
+      - http: GET /

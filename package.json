@@ -31,6 +31,7 @@
     "@nguniversal/express-engine": "^16.2.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "aws-serverless-express": "^3.4.0",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
     "express": "^4.15.2",
@@ -38,6 +39,8 @@
     "primeicons": "^6.0.1",
     "primeng": "16.2",
     "rxjs": "~7.8.0",
+    "serverless": "^3.36.0",
+    "serverless-apigw-binary": "^0.4.4",
     "ssr-window": "^4.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -64,6 +67,7 @@
     "@typescript-eslint/parser": "5.62.0",
     "eslint": "^8.49.0",
     "jest": "^29.6.1",
+    "serverless-offline": "^13.2.1",
     "typescript": "~5.1.3"
   }
 }

@@ -10,7 +10,7 @@ import * as express from 'express';
 
 @Injectable()
 export class TranslateInterceptor implements HttpInterceptor {
-  private readonly DEFAULT_PORT = 4000;
+  private readonly DEFAULT_PORT: number = null;
   private readonly PORT = process.env['PORT'] || this.DEFAULT_PORT;
 
   constructor(@Inject(REQUEST) private request: express.Request) {}
