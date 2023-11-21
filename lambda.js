@@ -21,8 +21,12 @@ const binaryMimeTypes = [
   "image/x-icon",
   "image/svg+xml",
   "application/x-font-ttf",
-  "font/woff2",
+  "application/x-font-woff",
+  "application/x-font-woff2",
+  "image/svg+xml",
+  "font/ttf",
   "font/woff",
+  "font/woff2",
 ];
 
 const app = server.app();

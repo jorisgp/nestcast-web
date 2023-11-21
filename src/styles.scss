@@ -1,4 +1,11 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../src/mixins.scss";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+@import "../node_modules/leaflet/dist/leaflet.css";
+@import "../node_modules/primeng/resources/themes/lara-light-blue/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
 @import "primeicons/primeicons.css";
+
 button {
   cursor: pointer;
 }
