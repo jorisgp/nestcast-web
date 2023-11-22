@@ -13,8 +13,8 @@ export class LanguageService {
   private countrySubject: BehaviorSubject<Country> =
     new BehaviorSubject<Country>(null);
   public country$ = this.countrySubject.asObservable();
-  private country: Country;
   private countries = countries;
+  private country: Country = this.defaultCountry;
 
   constructor(
     @Inject(DOCUMENT)
@@ -27,8 +27,6 @@ export class LanguageService {
   ) {}
 
   setInitialCountry() {
-    this.country = this.countries.find((country: Country) => country.default);
-
     if (this.plaformService.isBrowser) {
       const navigatorLanguages = navigator?.languages;
 
@@ -63,6 +61,9 @@ export class LanguageService {
     return this.translateService.instant(key);
   }
 
+  get defaultCountry() {
+    return this.countries?.find((country: Country) => country.default);
+  }
   getCountries(): Country[] {
     return this.countries;
   }
