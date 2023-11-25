@@ -18,16 +18,12 @@ export class LanguageSwitchComponent {
 
   ngOnInit() {
     this.countries = this.languageService.getCountries();
-    this.languageService.setInitialCountry();
-
     this.countryObservable.subscribe((country) => {
       this.selectedCountry = country;
     });
   }
 
   onLanguageChange(changeEvent: DropdownChangeEvent) {
-    this.languageService.setInitialCountryByLanguage(
-      changeEvent.value.language
-    );
+    this.languageService.setCountry(changeEvent.value);
   }
 }

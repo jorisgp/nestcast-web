@@ -4,6 +4,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
 import { Country, Language } from 'src/app/shared/model/models';
+import { PlatformService } from './platform.service';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +13,8 @@ export class LanguageService {
   private countrySubject: BehaviorSubject<Country> =
     new BehaviorSubject<Country>(null);
   public country$ = this.countrySubject.asObservable();
-  private country: Country;
   private countries = countries;
+  private country: Country = this.defaultCountry;
 
   constructor(
     @Inject(DOCUMENT)
@@ -21,21 +22,23 @@ export class LanguageService {
     private translateService: TranslateService,
     private location: Location,
     private meta: Meta,
-    private titleService: Title
+    private titleService: Title,
+    private plaformService: PlatformService
   ) {}
 
   setInitialCountry() {
-    const navigatorLanguages = navigator.languages;
-    this.country = this.countries.find((country: Country) => country.default);
+    if (this.plaformService.isBrowser) {
+      const navigatorLanguages = navigator?.languages;
 
-    for (const languageString of navigatorLanguages) {
-      const language = languageString.substring(0, 2);
-      const countryCode = languageString.substring(3, 5);
-      const matchedCountry = this._findCountry(language, countryCode);
+      for (const languageString of navigatorLanguages) {
+        const language = languageString.substring(0, 2);
+        const countryCode = languageString.substring(3, 5);
+        const matchedCountry = this._findCountry(language, countryCode);
 
-      if (matchedCountry) {
-        this.country = matchedCountry;
-        break;
+        if (matchedCountry) {
+          this.country = matchedCountry;
+          break;
+        }
       }
     }
     this.changeLanguage();
@@ -49,10 +52,18 @@ export class LanguageService {
     this.changeLanguage();
   }
 
+  setCountry(country: Country) {
+    this.country = country;
+    this.changeLanguage();
+  }
+
   getTranslation(key: string): string {
     return this.translateService.instant(key);
   }
 
+  get defaultCountry() {
+    return this.countries?.find((country: Country) => country.default);
+  }
   getCountries(): Country[] {
     return this.countries;
   }

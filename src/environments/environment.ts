@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiPrefix: true,
-  apiUrl: '',
+  apiUrl: 'http://nestcast.net',
 };
 
 /*
