@@ -40,6 +40,10 @@ export class StackImagePipePipe implements PipeTransform {
         return 'assets/images/stack/githubcopilot.svg';
       case StackType.NGRX:
         return 'assets/images/stack/ngrx.svg';
+      case StackType.AWSLAMBDA:
+        return 'assets/images/stack/awslambda.svg';
+      case StackType.SERVERLESS:
+        return 'assets/images/stack/serverless.svg';
       default:
         return 'assets/images/stack/javascript.svg';
     }
@@ -64,4 +68,6 @@ export enum StackType {
   CHATGPT = 'chatgpt',
   GITHUBCOPILOT = 'githubcopilot',
   NGRX = 'ngrx',
+  AWSLAMBDA = 'awslambda',
+  SERVERLESS = 'serverless',
 }

@@ -34,12 +34,14 @@ ul {
   list-style-type: none;
   padding: 0;
   li {
-    max-width: 150px;
-    cursor: pointer;
     font-size: 22px;
     margin-bottom: 18px;
     &:hover {
       color: #999;
+    }
+
+    span {
+      cursor: pointer;
     }
   }
 }

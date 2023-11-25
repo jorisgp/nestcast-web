@@ -25,10 +25,13 @@ export class TranslateInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     if (request.url.startsWith('./assets')) {
       const baseUrl = this.getBaseUrl(this.request);
+      console.debug('TranslateInterceptor: baseUrl', baseUrl);
       request = request.clone({
         url: `${baseUrl}/${request.url.replace('./assets', 'assets')}`,
       });
     }
+
+    console.log();
     return next.handle(request);
   }
 }

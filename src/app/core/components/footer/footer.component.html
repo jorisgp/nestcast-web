@@ -9,6 +9,7 @@
         <div class="social-media mb-5">
           <a
             [href]="facebookLink"
+            target="_blank"
             *ngIf="'SOCIALMEDIA.FACEBOOK' | translate as facebookLink"
           >
             <app-icon
@@ -18,12 +19,14 @@
           ></a>
           <a
             [href]="facebookLink"
+            target="_blank"
             *ngIf="'SOCIALMEDIA.X' | translate as facebookLink"
           >
             <app-icon [type]="IconType.X" class="x-icon"></app-icon>
           </a>
           <a
             [href]="instagramLink"
+            target="_blank"
             *ngIf="'SOCIALMEDIA.INSTAGRAM' | translate as instagramLink"
           >
             <app-icon
@@ -33,6 +36,7 @@
           ></a>
           <a
             [href]="linkedInLink"
+            target="_blank"
             *ngIf="'SOCIALMEDIA.LINKEDIN' | translate as linkedInLink"
           >
             <app-icon
@@ -57,21 +61,33 @@
             {{ "FOOTER.CONTACT.zipcode" | translate }}
             {{ "FOOTER.CONTACT.place" | translate }}<br />
           </address>
-          <div class="map-wrapper">
+          <!-- <div class="map-wrapper">
             <app-map *ngIf="isBrowser"></app-map>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-12 col-sm-6 col-lg-3 offset-lg-1">
         <h3>{{ "FOOTER.NAVIGATION.title" | translate }}<br /></h3>
         <ul>
-          <li (click)="navigate(['/'])">{{ "MENU.HOME" | translate }}</li>
-          <li (click)="navigate(['pricing'])">
-            {{ "MENU.PRICING" | translate }}
+          <li>
+            <span (click)="navigate(['/'])">
+              {{ "MENU.HOME" | translate }}
+            </span>
           </li>
-          <li (click)="navigate(['about'])">{{ "MENU.ABOUT" | translate }}</li>
-          <li (click)="navigate(['contact'])">
-            {{ "MENU.CONTACT" | translate }}
+          <li>
+            <span (click)="navigate(['pricing'])">{{
+              "MENU.PRICING" | translate
+            }}</span>
+          </li>
+          <li>
+            <span (click)="navigate(['about'])">
+              {{ "MENU.ABOUT" | translate }}
+            </span>
+          </li>
+          <li>
+            <span (click)="navigate(['contact'])">
+              {{ "MENU.CONTACT" | translate }}
+            </span>
           </li>
         </ul>
       </div>
