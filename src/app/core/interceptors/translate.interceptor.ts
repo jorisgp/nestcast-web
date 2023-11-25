@@ -30,8 +30,6 @@ export class TranslateInterceptor implements HttpInterceptor {
         url: `${baseUrl}/${request.url.replace('./assets', 'assets')}`,
       });
     }
-
-    console.log();
     return next.handle(request);
   }
 }
