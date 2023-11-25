@@ -3,6 +3,7 @@ service: nestcast-web
 plugins:
   - serverless-apigw-binary
   - serverless-offline
+
 provider:
   name: aws
   runtime: nodejs18.x
