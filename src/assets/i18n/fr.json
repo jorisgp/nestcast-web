@@ -1,0 +1,365 @@
+{
+  "TITLE": "NestCast - Hébergement de podcast pour tous",
+  "KEYWORDS": "hébergement de podcast nestcast flux rss spotify",
+  "DESCRIPTION": "Nous hébergeons votre podcast à un prix bien inférieur à celui d'autres entreprises d'hébergement. Ainsi, vous pouvez maintenir la disponibilité de votre podcast pendant une longue période.",
+  "HOME": {
+    "INTRO": {
+      "subTitle": "Le meilleur hébergement pour votre podcast",
+      "title": "Hébergez votre podcast chez NestCast",
+      "buttonText": "Je veux être sur liste d'attente",
+      "text": [
+        "Nestcast vous aide à distribuer rapidement et facilement votre podcast sur Spotify, Apple Podcast, Podimo et toutes les autres plates-formes de podcast plus petites. Nous nous assurons que votre podcast soit disponible à l'aide d'un flux RSS, le format pour rendre les podcasts disponibles sur des plates-formes telles que Spotify et Apple Podcasts.",
+        "Nestcast est capable de fournir le meilleur service de podcast à un prix compétitif. Nous sommes en mesure de le faire en utilisant l'IA et l'apprentissage automatique. Notre plateforme révolutionnaire est entretenue par une petite équipe, ce qui maintient nos coûts bas."
+      ]
+    },
+    "SNIPPET_RIGHT": {
+      "title": "Hébergement de podcast et RSS",
+      "text": [
+        "Pour héberger un podcast, il est nécessaire de mettre vos fichiers audio à disposition sur un serveur et de générer un flux RSS indiquant quelles émissions sont disponibles. Ce flux RSS est utilisé par des plateformes de podcast telles que Spotify et Apple Podcasts pour rendre votre podcast disponible aux auditeurs.",
+        "Il existe de nombreuses entreprises qui se concentrent sur l'hébergement de podcasts, mais NestCast est la seule à se consacrer uniquement à l'hébergement et à la distribution de podcasts. C'est pourquoi nous sommes les meilleurs dans ce que nous faisons.",
+        "Nous utilisons les techniques et les services les plus modernes pour atteindre le plus haut niveau de service possible à un prix bas. Nous travaillons avec Angular 16, NestJs et MongoDB. Cela nous permet de fournir un service rapide et fiable. Nos développeurs sont constamment engagés dans l'innovation et l'amélioration de notre service, vous assurant ainsi d'avoir toujours un produit de pointe."
+      ],
+      "images": [
+        "assets/images/pictures/podcaster-1.jpg",
+        "assets/images/pictures/podcaster-2.jpg",
+        "assets/images/pictures/podcaster-3.jpg"
+      ]
+    },
+    "SNIPPET_LEFT": {
+      "title": "Plateformes de podcast",
+      "text": [
+        "Spotify, Amazon Music, Samsung Podcasts, Podcast Index, Listen Notes, Apple Podcasts, Google Podcasts, Pandora, Tune In, iHeartRadio, Deezer. Voici quelques-unes des plateformes sur lesquelles nous pouvons rendre votre podcast disponible. Nous veillons à ce que votre podcast soit disponible pour le plus grand nombre d'auditeurs possible.",
+        "Le flux RSS que nous rendons disponible pour votre podcast est conçu pour être utilisé par toutes les plateformes. Vous avez un contrôle optimal sur la manière dont votre podcast est affiché sur les différentes plateformes."
+      ],
+      "images": [
+        "assets/images/pictures/podcaster-4.jpg",
+        "assets/images/pictures/podcaster-5.jpg"
+      ]
+    }
+  },
+  "ABOUT": {
+    "INTRO": {
+      "subTitle": "La technologie derrière NestCast",
+      "title": "À propos de NestCast",
+      "text": [
+        "NestCast est né de la passion pour les podcasts et la technologie. Notre fondateur Joris Pieters crée des podcasts depuis de nombreuses années. Il a notamment réalisé le podcast populaire \"B&Gay vol Liefde\" sur les aventures des candidats du programme \"B&B Vol Liefde\".",
+        "Grâce à sa connaissance des podcasts et à son expérience en tant que développeur Full Stack, il a été possible de créer une plateforme technologique de pointe pour l'hébergement de podcasts. Comme l'IA et l'apprentissage automatique jouent un rôle de plus en plus important dans la technologie aujourd'hui, NestCast est également un produit qui utilise ces techniques. Nous espérons ainsi pouvoir innover plus rapidement."
+      ]
+    },
+    "WORD": {
+      "subTitle": "La technologie derrière NestCast",
+      "title": "Mot du fondateur",
+      "text": [
+        "NestCast a commencé comme un projet secondaire. Tout comme de nombreux développeurs passionnés par leur métier, des idées de création de nouveaux produits émergent constamment. Au fil des ans, de nombreuses idées ont été envisagées, mais pour NestCast, il était clair que ce produit devait également être mis en production.",
+        "En tant que développeur indépendant, il est important d'avoir un bon portfolio. NestCast était à l'origine une vitrine, mais à mesure que vous vous investissez sérieusement, l'enthousiasme augmente. Chaque étape importante donne une satisfaction très gratifiante, et ce sentiment est très important lorsque votre travail est aussi votre passion.",
+        "NestCast publiera le code autant que possible en open source. Pour nous, la sécurité et la confidentialité sont primordiales, mais nous souhaitons également partager nos connaissances avec d'autres développeurs et montrer notre façon de penser aux bonnes solutions.",
+        "Joris Pieters"
+      ]
+    },
+
+    "TECHNIQUES": {
+      "title": "Techniques",
+      "text": [
+        "Nous utilisons les techniques et services les plus modernes pour atteindre le plus haut niveau de service possible. L'utilisateur verra principalement l'interface de notre application pour gérer et distribuer son podcast. À cette fin, nous avons développé une application monopage (SPA), ce qui signifie une application qui fonctionne sans actualisation de la page pendant son utilisation, offrant ainsi une meilleure expérience utilisateur."
+      ],
+      "stack": [
+        {
+          "type": "programming",
+          "title": "Empilement technologique",
+          "text": [
+            "NestCast utilise Angular pour offrir une expérience utilisateur moderne. Angular est un framework maintenu par Google. TypeScript est utilisé pour la programmation dans ce cadre. Dans notre backend, nous utilisons Nest.js, un framework backend basé sur Node, où TypeScript est également le langage de programmation. Nest s'est en grande partie structuré sur Angular."
+          ],
+          "items": [
+            {
+              "type": "angular",
+              "title": "Angular 16",
+              "text": "Framework frontend maintenu par Google"
+            },
+            {
+              "type": "ngrx",
+              "title": "NgRx",
+              "text": "Gestion d'état pour Angular basée sur Redux"
+            },
+            {
+              "type": "nestjs",
+              "title": "NestJs",
+              "text": "Framework backend NodeJS basé sur la structure de module d'Angular"
+            },
+            {
+              "type": "nodejs",
+              "title": "NodeJs",
+              "text": "Le framework qui a permis l'utilisation de JavaScript côté serveur"
+            },
+            {
+              "type": "typescript",
+              "title": "TypeScript",
+              "text": "Une surcouche de JavaScript pour offrir la sécurité des types"
+            },
+            {
+              "type": "javascript",
+              "title": "JavaScript",
+              "text": "Le langage du web"
+            }
+          ]
+        },
+        {
+          "type": "testing",
+          "title": "Tests automatisés",
+          "text": [
+            "Pour augmenter la qualité de notre logiciel et maintenir les coûts bas, les tests automatisés sont indispensables. Nous utilisons différents types de tests pour garantir la qualité de notre logiciel."
+          ],
+          "items": [
+            {
+              "type": "jest",
+              "title": "Jest",
+              "text": "Jest est un framework de test JavaScript conçu pour garantir la précision de toute base de code JavaScript."
+            },
+            {
+              "type": "spectator",
+              "title": "Spectator",
+              "text": "Une couche sur le framework de test Angular pour simplifier les tests des composants Angular"
+            },
+            {
+              "type": "cypress",
+              "title": "Cypress",
+              "text": "Un framework de test de bout en bout pour les applications web. Il est construit sur Mocha, Chai et Sinon."
+            }
+          ]
+        },
+        {
+          "type": "services",
+          "title": "Services",
+          "text": [
+            "Pour héberger notre application et distribuer votre podcast, nous utilisons différents services, tous des services cloud. Cela signifie que nous n'avons pas nos propres serveurs et que nous utilisons les serveurs des fournisseurs de ces services. Cela garantit que nous n'avons pas besoin de maintenir nos serveurs et que nous pouvons toujours utiliser les dernières technologies."
+          ],
+          "items": [
+            {
+              "type": "mongodb",
+              "title": "MongoDB",
+              "text": "Une base de données NoSQL que nous utilisons pour stocker les données de votre podcast."
+            },
+            {
+              "type": "github",
+              "title": "GitHub",
+              "text": "Il s'agit d'un service en ligne pour gérer et partager notre code avec d'autres développeurs."
+            },
+            {
+              "type": "githubactions",
+              "title": "GitHub Actions",
+              "text": "Déploiement automatique du logiciel à l'aide des pipelines GitHub Actions."
+            }
+          ]
+        },
+        {
+          "type": "cloud_services",
+          "title": "Services cloud",
+          "text": [
+            "L'hébergement d'applications web et d'API est une spécialité. Nous utilisons différents services cloud pour héberger notre application et rendre votre podcast disponible. Notre fournisseur cloud est AWS, Amazon Web Services. AWS est le plus grand fournisseur de services cloud au monde et offre une large gamme de services."
+          ],
+          "items": [
+            {
+              "type": "aws",
+              "title": "AWS",
+              "text": "Amazon Web Services est une plateforme de cloud computing proposée par Amazon.com."
+            },
+            {
+              "type": "awss3",
+              "title": "AWS S3",
+              "text": "S3 est le service de stockage d'AWS. Nous utilisons S3 pour stocker les fichiers audio de votre podcast."
+            },
+            {
+              "type": "awslambda",
+              "title": "AWS Lambda",
+              "text": "AWS Lambda est un service informatique sans serveur qui exécute du code en réponse à des événements et ajuste automatiquement les ressources informatiques nécessaires."
+            },
+            {
+              "type": "serverless",
+              "title": "Serverless",
+              "text": "Serverless est un framework qui permet le développement et le déploiement d'applications sans serveur, par exemple sur AWS Lambda."
+            }
+          ]
+        },
+        {
+          "type": "AI",
+          "title": "IA",
+          "text": [
+            "Ce texte a été généré par une IA. Nous utilisons l'IA pour augmenter la qualité de notre logiciel et maintenir les coûts bas. Nous utilisons différents types d'IA pour garantir la qualité de notre logiciel."
+          ],
+          "items": [
+            {
+              "type": "codium",
+              "title": "Codium",
+              "text": "Codium analyse le code et écrit automatiquement des tests, il propose également des suggestions de code."
+            },
+            {
+              "type": "chatgpt",
+              "title": "Chat GPT",
+              "text": "ChatGPT est un prototype de chatbot avec intelligence artificielle, développé par OpenAI."
+            },
+            {
+              "type": "githubcopilot",
+              "title": "GitHub Copilot",
+              "text": "GitHub Copilot convertit les indications en langage naturel en suggestions de codage dans des dizaines de langues."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "PRICING": {
+    "INTRO": {
+      "subTitle": "La meilleure qualité-prix",
+      "title": "Abonnements",
+      "buttonText": "Je veux être sur liste d'attente",
+      "text": [
+        "Nos abonnements auront un prix bas pour les clients commerciaux et particuliers. Nous nous concentrons surtout sur les clients qui considèrent important d'avoir et de maintenir leur podcast disponible.",
+        "Pour maintenir votre podcast disponible, il est crucial que le prix ne soit pas trop élevé. Dès que le nombre d'auditeurs diminue, il devient parfois non rentable de maintenir votre podcast disponible. Nous nous assurons que votre podcast reste disponible à un prix abordable."
+      ]
+    },
+    "SNIPPET_RIGHT": {
+      "title": "Abonnement personnel",
+      "text": [
+        "Pour les amateurs ou les podcasters débutants, l'abonnement personnel est un bon choix. Vous pouvez héberger toutes vos émissions et les rendre disponibles sur toutes les grandes plateformes. Vous avez accès à une console de gestion complète où vous pouvez gérer votre podcast et consulter des statistiques.",
+        "Les entreprises ont beaucoup de contenu qui n'est peut-être pas très actuel mais qui est important à avoir disponible. NestCast aide ces entreprises à maintenir leur contenu disponible sans que les coûts ne deviennent excessifs."
+      ],
+      "images": [
+        "assets/images/pictures/personal-1.jpg",
+        "assets/images/pictures/personal-2.jpg",
+        "assets/images/pictures/personal-3.jpg"
+      ]
+    },
+    "SNIPPET_LEFT": {
+      "subTitle": "La meilleure qualité-prix",
+      "title": "Abonnements professionnels",
+      "text": [
+        "Pour nos clients professionnels, nous proposons un abonnement similaire à celui de nos clients particuliers. La différence réside dans la facturation. Avec un abonnement professionnel, la facture est émise au nom de l'entreprise.",
+        "Pour maintenir votre podcast disponible, il est crucial que le prix ne soit pas trop élevé. Dès que le nombre d'auditeurs diminue, il devient parfois non rentable de maintenir votre podcast disponible. Nous nous assurons que votre podcast reste disponible à un prix abordable."
+      ],
+      "images": [
+        "assets/images/pictures/business-1.jpg",
+        "assets/images/pictures/business-2.jpg",
+        "assets/images/pictures/business-3.jpg"
+      ]
+    },
+    "PRICING": {
+      "title": "Abonnements",
+      "text": [
+        "À partir du début de 2024, deux abonnements seront disponibles avec un prix similaire. Un abonnement professionnel et un abonnement particulier. Les abonnements sont disponibles avec une politique d'utilisation équitable. Si l'utilisation de votre podcast dépasse un certain seuil, un supplément sera facturé. Ce supplément dépend du nombre d'auditeurs et de la durée du podcast."
+      ],
+      "cards": [
+        {
+          "title": "Personnel",
+          "price": "± €5,00",
+          "usps": [
+            "Hébergez toutes vos émissions",
+            "Console de gestion complète",
+            "Podcast disponible sur les grandes plateformes",
+            "Statistiques"
+          ]
+        },
+        {
+          "title": "Professionnel",
+          "price": "± €5,00",
+          "usps": [
+            "Au nom de l'entreprise",
+            "Console de gestion complète",
+            "Podcast disponible sur les grandes plateformes",
+            "Statistiques"
+          ]
+        }
+      ]
+    }
+  },
+  "CONTACT": {
+    "INTRO": {
+      "subTitle": "Comment ça va?",
+      "title": "Contact avec NestCast",
+      "buttonText": "Envoyez-nous un message",
+      "text": [
+        "NestCast est une entreprise qui souhaite s'ouvrir aux clients, aux talents techniques, aux collègues dans le domaine de l'hébergement de podcasts. Tout comme une partie de notre logiciel est open source, nous sommes un livre ouvert.",
+        "Nous sommes toujours à la recherche de nouveaux clients, mais aussi de nouveaux collègues. Êtes-vous un développeur et souhaitez-vous travailler sur un produit innovant? Contactez-nous. Si vous avez des commentaires sur notre produit, nous aimerions aussi les entendre."
+      ]
+    },
+    "PLACE": {
+      "subTitle": "Amsterdam est notre maison",
+      "title": "Notre emplacement",
+      "buttonText": "Envoyez-nous un message",
+      "text": [
+        "NestCast est une entreprise basée à Amsterdam, et nous en sommes fiers. Amsterdam regorge de talents en informatique et bénéficie d'un excellent climat de start-up. De plus, Amsterdam est la capitale néerlandaise du podcast. Nous sommes donc fiers d'avoir notre entreprise ici. Notre bureau est situé à Amsterdam West, Bos en Lommer."
+      ]
+    },
+    "FORM": {
+      "title": "Envoyez-nous un message",
+      "text": "Nous aimons être en contact avec nos clients, nos partenaires potentiels, nos collègues et nos futurs employés. Utilisez ce formulaire pour entrer en contact avec nous."
+    },
+    "SUCCESSMESSAGE": {
+      "title": "Merci pour votre message",
+      "text": "Nous avons bien reçu votre message."
+    },
+    "ERRORMESSAGE": {
+      "title": "Échec",
+      "text": "Votre message n'a pas pu être confirmé. Veuillez réessayer."
+    }
+  },
+  "FOOTER": {
+    "ABOUT": {
+      "title": "À propos de NestCast",
+      "text": [
+        "NestCast s'efforce d'être la société d'hébergement de podcasts la plus techniquement avancée. Grâce à l'utilisation de l'IA et des technologies les plus modernes, nous sommes en mesure de fournir le meilleur service au prix le plus bas."
+      ]
+    },
+    "CONTACT": {
+      "website": "https://www.nestcast.net",
+      "email": "info@nestcast.net",
+      "title": "Entrez en contact",
+      "name": "NestCast",
+      "address": "Hoofdweg 562",
+      "zipcode": "1055AB",
+      "place": "Amsterdam"
+    },
+    "NAVIGATION": {
+      "title": "Navigation"
+    }
+  },
+  "WAITINGLIST": {
+    "FORM": {
+      "title": "Inscrivez-vous sur la liste d'attente",
+      "text": "Voulez-vous être le premier à utiliser notre plateforme d'hébergement de podcasts? Inscrivez-vous à l'aide de ce formulaire."
+    },
+    "SUCCESSMESSAGE": {
+      "title": "Merci pour votre intérêt",
+      "text": "Vous êtes inscrit sur la liste d'attente."
+    },
+    "ERRORMESSAGE": {
+      "title": "Échec",
+      "text": "Votre inscription n'a pas pu être confirmée. Veuillez réessayer."
+    }
+  },
+  "FORM": {
+    "FIRSTNAME": "Prénom",
+    "LASTNAME": "Nom de famille",
+    "EMAILADDRESS": "Adresse e-mail",
+    "MESSAGE": "Message",
+    "TERMS": "J'accepte les conditions générales",
+    "CONTACTTERMS": "J'accepte les conditions de communication"
+  },
+  "EMAILCONFIRMATION": {
+    "title": "Confirmez votre adresse e-mail",
+    "text": "Pour éviter les abus et protéger votre vie privée, nous vous demandons de confirmer votre demande de contact. Ainsi, nous nous assurons que nous n'envoyons pas de messages indésirables. Nous avons envoyé un code à votre adresse e-mail."
+  },
+  "CANCEL": "Annuler",
+  "CONFIRM": "Confirmer",
+  "SEND": "Envoyer",
+  "MENU": {
+    "HOME": "Accueil",
+    "PRICING": "Tarifs",
+    "ABOUT": "À propos de nous",
+    "CONTACT": "Contact"
+  },
+  "SOCIALMEDIA": {
+    "INSTAGRAM": "https://www.instagram.com/nestcastnet/",
+    "X": "https://x.com/nestcastnet",
+    "FACEBOOK": "https://www.facebook.com/profile.php?id=61553274982927",
+    "LINKEDIN": "https://www.linkedin.com/company/100249897"
+  }
+}

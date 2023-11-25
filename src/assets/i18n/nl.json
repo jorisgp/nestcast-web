@@ -1,6 +1,6 @@
 {
-  "TITLE": "NestCast - Podcast hosting voor iedereen3",
-  "KEYWORDS": "nestcast podcast hosting rss feed",
+  "TITLE": "NestCast - Podcast hosting voor iedereen",
+  "KEYWORDS": "nestcast podcast hosting rss feed spotify",
   "DESCRIPTION": "Wij hosten jouw podcast voor een veel lagere prijs dan andere hosting bedrijven. Hierdoor kan je langdurig jouw podcast beschikbaar houden.",
   "HOME": {
     "INTRO": {
@@ -133,16 +133,6 @@
           ],
           "items": [
             {
-              "type": "aws",
-              "title": "AWS",
-              "text": "Amazon Web Services is een cloud computing-platform dat wordt aangeboden door Amazon.com"
-            },
-            {
-              "type": "awss3",
-              "title": "AWS S3",
-              "text": "S3 is de storage service van AWS. Wij gebruiken S3 om de geluidsbestanden van jouw podcast op te slaan."
-            },
-            {
               "type": "mongodb",
               "title": "MongoDb",
               "text": "Een NoSQL database die wij gebruiken om de data van jouw podcast op te slaan."
@@ -156,6 +146,35 @@
               "type": "githubactions",
               "title": "GitHub Actions",
               "text": "Automatisch software deployen met behulp van GitHub Actions pipelines."
+            }
+          ]
+        },
+        {
+          "type": "cloud_services",
+          "title": "Cloud Services",
+          "text": [
+            "Het hosten van webapplicaties en api's is een vak apart. Wij maken gebruik van verschillende cloud services om onze applicatie te hosten en jouw podcast beschikbaar te maken. Onze cloudprovider is AWS, Amazon Web Services. AWS is de grootste cloud provider ter wereld en biedt een breed scala aan services."
+          ],
+          "items": [
+            {
+              "type": "aws",
+              "title": "AWS",
+              "text": "Amazon Web Services is een cloud computing-platform dat wordt aangeboden door Amazon.com"
+            },
+            {
+              "type": "awss3",
+              "title": "AWS S3",
+              "text": "S3 is de storage service van AWS. Wij gebruiken S3 om de geluidsbestanden van jouw podcast op te slaan."
+            },
+            {
+              "type": "awslambda",
+              "title": "AWS Lamda",
+              "text": "AWS Lambda is een serverless computing-service die code uitvoert in reactie op gebeurtenissen en automatisch de benodigde computerresources schaalt."
+            },
+            {
+              "type": "serverless",
+              "title": "Serverless",
+              "text": "Serverless is een framework dat het mogelijk maakt om serverless applicaties te ontwikkelen en te deployen op bijvoorbeeld AWS Lambda."
             }
           ]
         },
@@ -194,11 +213,6 @@
       "text": [
         "Onze abonnementen zullen voor zowel zakelijk als particuliere klanten een lage prijs hebben. Wij richten ons vooral op klanten die het belangrijk vinden om hun podcast beschikbaar te hebben en te houden.",
         "Om je podcast beschikbaar te houden is het vooral belangrijk dat de prijs niet te hoog is. Zodra de luisteraars teruglopen is het soms niet meer rendabel om je podcast beschikbaar te houden. Wij zorgen ervoor dat je podcast beschikbaar blijft voor een lage prijs."
-      ],
-      "images": [
-        "https://images.unsplash.com/photo-1599560324079-af5f94f2c37e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-        "https://images.unsplash.com/photo-1598805291212-f1e476b437df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80",
-        "https://plus.unsplash.com/premium_photo-1679079456625-6981df35fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1976&q=80"
       ]
     },
     "SNIPPET_RIGHT": {

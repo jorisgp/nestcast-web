@@ -62,7 +62,7 @@ export class LanguageService {
   }
 
   get defaultCountry() {
-    return this.countries?.find((country: Country) => country.default);
+    return this.countries.find((country: Country) => country.default);
   }
   getCountries(): Country[] {
     return this.countries;
@@ -144,4 +144,6 @@ const countries = [
   { name: 'Nederland', code: 'NL', language: Language.NL },
   { name: 'UK', code: 'UK', language: Language.EN, default: true },
   { name: 'United States', code: 'US', language: Language.EN },
+  { name: 'France', code: 'FR', language: Language.FR },
+  { name: 'Espania', code: 'ES', language: Language.ES },
 ];

@@ -24,11 +24,6 @@ export function app(): express.Express {
     })
   );
 
-  server.get('*', (req, res, next) => {
-    console.log('req.baseUrl', req.baseUrl);
-    next();
-  });
-
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
@@ -44,7 +39,6 @@ export function app(): express.Express {
 
   // All regular routes use the Universal engine
   server.get('*', (req, res) => {
-    console.log('render - req.baseUrl', req.baseUrl);
     res.render(indexHtml, {
       req,
       providers: [
