@@ -1,32 +1,59 @@
 <h1>Sign up</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <div>
-    <div class="row">
-      <div class="col"><label for="username">E-mail</label></div>
-      <div class="col">
-        <input type="text" formControlName="username" id="username" />
+    <div class="row mb-2">
+      <div class="col-12">
+        <label for="username" class="">E-mail</label>
+        <input
+          type="text"
+          formControlName="username"
+          id="username"
+          class="form-control"
+        />
       </div>
     </div>
-    <div class="row">
-      <div class="col"><label for="password">Password</label></div>
-      <div class="col">
-        <input type="password" formControlName="password" id="password" />
+    <div class="row mb-2">
+      <div class="col-12">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          class="form-control"
+        />
       </div>
     </div>
-    <div class="row">
-      <div class="col"><label for="firstName">First name</label></div>
-      <div class="col">
-        <input type="text" formControlName="firstName" id="firstName" />
+    <div class="row mb-2">
+      <div class="col-12">
+        <label for="firstName">First name</label>
+        <input
+          type="text"
+          formControlName="firstName"
+          id="firstName"
+          class="form-control"
+        />
       </div>
     </div>
-    <div class="row">
-      <div class="col"><label for="lastName">Last name</label></div>
-      <div class="col">
-        <input type="text" formControlName="lastName" id="lastName" />
+    <div class="row mb-2">
+      <div class="col-12">
+        <label for="lastName">Last name</label>
+        <input
+          type="text"
+          formControlName="lastName"
+          id="lastName"
+          class="form-control"
+        />
       </div>
     </div>
-
-    <button type="submit" [disabled]="!form.valid">Sign Up</button><br />
-    <button type="button" [routerLink]="['..', 'sign-in']">Sign In</button>
+    <div class="d-flex justify-content-end">
+      <div class="d-flex flex-column">
+        <button type="submit" class="btn btn-dark" [disabled]="!form.valid">
+          Sign Up
+        </button>
+        <div class="align-right">
+          <a href="#" [routerLink]="['..', 'sign-in']"> Sign In </a>
+        </div>
+      </div>
+    </div>
   </div>
 </form>

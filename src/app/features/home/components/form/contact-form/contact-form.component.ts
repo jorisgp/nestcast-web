@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ModalInterface } from 'src/app/core/services/modal.service';
 import { Contact } from 'src/app/shared/interfaces/auth.interface';
-import { ModalInterface } from 'src/app/shared/services/modal.service';
 
 @Component({
   selector: 'app-contact-form',

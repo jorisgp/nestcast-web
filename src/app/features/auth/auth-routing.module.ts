@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'sign-in',
+    component: SignInPageComponent,
   },
   {
     path: 'sign-in',

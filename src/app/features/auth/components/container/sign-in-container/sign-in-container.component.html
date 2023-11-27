@@ -1,8 +1,10 @@
-<div class="header-adjustment">
-  <app-sign-in-form
-    [error]="error$ | async"
-    [token]="token$ | async"
-    [isLoading]="isLoading$ | async"
-    (submitForm)="onSubmit($event)"
-  ></app-sign-in-form>
-</div>
+<app-background-section [gradient]="Gradient.FOUR">
+  <app-card>
+    <app-sign-in-form
+      [error]="error$ | async"
+      [token]="token$ | async"
+      [isLoading]="isLoading$ | async"
+      (submitForm)="onSubmit($event)"
+    ></app-sign-in-form>
+  </app-card>
+</app-background-section>

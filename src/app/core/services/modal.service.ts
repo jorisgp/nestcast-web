@@ -4,7 +4,7 @@ import {
   Injectable,
   ViewContainerRef,
 } from '@angular/core';
-import { ModalComponent } from '../ui-components/components/modal/modal.component';
+import { ModalComponent } from 'src/app/shared/ui-components/components/modal/modal.component';
 
 @Injectable({
   providedIn: 'root',
@@ -22,9 +22,13 @@ export class ModalService {
     config?: any
   ) {
     if (!this.modalOpen) {
+      console.log(this.viewContainerRef);
+
       this.modalOpen = true;
       this.modalReference =
         this.viewContainerRef.createComponent(ModalComponent);
+
+      console.log(this.modalReference);
       const componentReference: ComponentRef<ModalInterface> =
         this.modalReference.instance.container.viewContainerRef.createComponent(
           component

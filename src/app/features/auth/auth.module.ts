@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { AuthRoutingModule } from './auth-routing.module';
 import { PasswordResetContainerComponent } from './components/container/password-reset-container/password-reset-container.component';
 import { PasswordResetRequestContainerComponent } from './components/container/password-reset-request-container/password-reset-request-container.component';
@@ -30,6 +31,12 @@ import { SignUpFormComponent } from './components/view/sign-up-form/sign-up-form
     PasswordResetRequestFormComponent,
     PasswordResetFormComponent,
   ],
-  imports: [CommonModule, FormsModule, AuthRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    AuthRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
 export class AuthModule {}

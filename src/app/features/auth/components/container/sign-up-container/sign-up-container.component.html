@@ -1,3 +1,5 @@
-<div class="header-adjustment">
-  <app-sign-up-form (submitForm)="onSubmit($event)"></app-sign-up-form>
-</div>
+<app-background-section [gradient]="Gradient.THREE">
+  <app-card>
+    <app-sign-up-form (submitForm)="onSubmit($event)"></app-sign-up-form>
+  </app-card>
+</app-background-section>

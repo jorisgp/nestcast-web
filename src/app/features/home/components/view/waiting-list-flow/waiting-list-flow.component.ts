@@ -6,8 +6,8 @@ import {
   Output,
 } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
+import { ModalInterface } from 'src/app/core/services/modal.service';
 import { WaitingList } from 'src/app/shared/interfaces/auth.interface';
-import { ModalInterface } from 'src/app/shared/services/modal.service';
 
 @Component({
   selector: 'app-waiting-list-flow',

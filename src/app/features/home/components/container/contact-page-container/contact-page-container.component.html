@@ -1,6 +1,6 @@
 <app-background-section [gradient]="Gradient.FOUR">
   <app-call-to-action
-    [data]="'CONTACT.INTRO' | translate"
+    [data]="'HOME.CONTACT.INTRO' | translate"
     [view]="CallToActionView.LEFT"
     (buttonClick)="openContactModal()"
   ></app-call-to-action>
@@ -8,7 +8,7 @@
 
 <app-half-photo-section src="assets/images/pictures/amsterdam.jpg">
   <app-call-to-action
-    [data]="'CONTACT.PLACE' | translate"
+    [data]="'HOME.CONTACT.PLACE' | translate"
     [view]="CallToActionView.RIGHT"
     [color]="CallToActionColor.DARK"
     (buttonClick)="openContactModal()"

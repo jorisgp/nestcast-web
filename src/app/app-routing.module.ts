@@ -10,13 +10,22 @@ const routes: Routes = [
   },
   {
     path: ':lang',
-    loadChildren: () =>
-      import('./features/home/home.module').then((m) => m.HomeModule),
     resolve: { language: languageResolver },
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./features/home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('./features/auth/auth.module').then((m) => m.AuthModule),
+      },
+    ],
   },
   {
     path: 'auth',
-    data: { reuse: true },
     loadChildren: () =>
       import('./features/auth/auth.module').then((m) => m.AuthModule),
   },
@@ -30,7 +39,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled', initialNavigation: 'enabledBlocking' }),
+    RouterModule.forRoot(routes, {
+      scrollPositionRestoration: 'enabled',
+      initialNavigation: 'enabledBlocking',
+    }),
   ],
   exports: [RouterModule],
 })

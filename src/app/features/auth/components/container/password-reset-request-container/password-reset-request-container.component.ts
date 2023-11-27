@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { UserPasswordRequestReset } from 'src/app/core/store/actions/user.actions';
 import { PasswordRequestReset } from 'src/app/shared/interfaces/auth.interface';
+import { Gradient } from 'src/app/shared/ui-components/components/page-sections/background-section/background-section.component';
 
 @Component({
   selector: 'app-password-reset-request-container',
@@ -9,6 +10,8 @@ import { PasswordRequestReset } from 'src/app/shared/interfaces/auth.interface';
   styleUrls: ['./password-reset-request-container.component.scss'],
 })
 export class PasswordResetRequestContainerComponent {
+  Gradient = Gradient;
+
   constructor(private store: Store<{ auth: any }>) {}
 
   onSubmit(passwordRequestReset: PasswordRequestReset) {

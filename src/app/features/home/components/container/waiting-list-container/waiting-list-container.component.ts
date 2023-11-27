@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
+import { ModalService } from 'src/app/core/services/modal.service';
 import { confirmWaitingList } from 'src/app/core/store/actions/waiting-list-confirmation.actions';
 import { addToWaitingList } from 'src/app/core/store/actions/waiting-list.actions';
 import {
@@ -11,7 +12,6 @@ import {
   WaitingList,
   WaitingListDetails,
 } from 'src/app/shared/interfaces/auth.interface';
-import { ModalService } from 'src/app/shared/services/modal.service';
 import { WaitingListFlowComponent } from '../../view/waiting-list-flow/waiting-list-flow.component';
 
 @Component({
