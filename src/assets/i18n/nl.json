@@ -298,7 +298,19 @@
       },
       "ERRORMESSAGE": {
         "title": "Mislukt",
+        "text": "Er is iets fout gegaan, probeer het later opnieuw."
+      },
+      "ERRORMESSAGECONFIRM": {
+        "title": "Mislukt",
         "text": "Je bericht kon niet bevestigd worden, probeer het nognmaals."
+      }
+    }
+  },
+  "AUTH": {
+    "SIGN_UP": {
+      "ERROR": {
+        "title": "Mislukt",
+        "text": "Er is iets fout gegaan, probeer het later opnieuw."
       }
     }
   },
@@ -332,6 +344,10 @@
       "text": "Je bent aangemeld voor de wachtrij"
     },
     "ERRORMESSAGE": {
+      "title": "Mislukt",
+      "text": "Er is iets fout gegaan, probeer het later opnieuw."
+    },
+    "ERRORMESSAGECONFIRM": {
       "title": "Mislukt",
       "text": "Je aanmelding kon niet bevestigd worden, probeer het nognmaals."
     }

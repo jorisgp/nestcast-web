@@ -19,4 +19,19 @@ export const signInFailure = createAction(
   props<{ payload: Error }>()
 );
 
+export const signUp = createAction(
+  `${TYPE} User SignUp`,
+  props<{ payload: Login }>()
+);
+
+export const signUpSuccess = createAction(
+  `${TYPE} SignUp Success`,
+  props<{ payload: Token }>()
+);
+
+export const signUpFailure = createAction(
+  `${TYPE} SignUp Failure`,
+  props<{ payload: Error }>()
+);
+
 export const signOut = createAction('[SignIn] User SignOut');

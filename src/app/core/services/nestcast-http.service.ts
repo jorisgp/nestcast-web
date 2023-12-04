@@ -51,7 +51,10 @@ export class NestcastHttpService {
 
   postUsers(body: any): Observable<any> {
     return this.http
-      .post<any>(`${apiPrefix}/${ApiResource.USERS}`, body)
+      .post<any>(`${apiPrefix}/${ApiResource.USERS}`, {
+        ...body,
+        language: this.languageService.getLanguage(),
+      })
       .pipe(catchError((error) => this._handleError(error)));
   }
 

@@ -60,8 +60,12 @@ export class ContactConfirmationEffects {
         ofType(contactConfirmationActions.confirmContactFailure),
         tap(() => {
           this.notificationService.showWarn(
-            this.languageService.getTranslation('CONTACT.ERRORMESSAGE.title'),
-            this.languageService.getTranslation('CONTACT.ERRORMESSAGE.text')
+            this.languageService.getTranslation(
+              'CONTACT.ERRORMESSAGECONFIRM.title'
+            ),
+            this.languageService.getTranslation(
+              'CONTACT.ERRORMESSAGECONFIRM.text'
+            )
           );
         })
       ),

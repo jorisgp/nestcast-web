@@ -2,6 +2,7 @@ import {
   Component,
   ElementRef,
   EventEmitter,
+  Input,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -17,11 +18,21 @@ export class CodeConfirmationComponent {
   @ViewChild('button')
   button: ElementRef;
 
+  @Input()
+  title: string;
+
+  @Input()
+  text: string[] | string;
+
   @Output()
   submitForm = new EventEmitter<number>();
 
   @Output()
   cancelBack = new EventEmitter<void>();
+
+  get cancelEnabled(): boolean {
+    return this.cancelBack.observed;
+  }
 
   onKeyPress(event: any, index: number) {
     event.preventDefault();

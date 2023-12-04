@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActivatePageComponent } from './components/page/activate-page/activate-page.component';
 import { PasswordLostPageComponent } from './components/page/password-lost-page/password-lost-page.component';
 import { PasswordRenewPageComponent } from './components/page/password-renew-page/password-renew-page.component';
 import { SignInPageComponent } from './components/page/sign-in-page/sign-in-page.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'password-renew/:token',
     component: PasswordRenewPageComponent,
+  },
+  {
+    path: 'activate',
+    component: ActivatePageComponent,
   },
 ];
 

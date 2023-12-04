@@ -69,9 +69,11 @@ export class WaitingListConfirmationEffects {
         tap(() =>
           this.notificationService.showWarn(
             this.languageService.getTranslation(
-              'WAITINGLIST.ERRORMESSAGE.title'
+              'WAITINGLIST.ERRORMESSAGECONFIRM.title'
             ),
-            this.languageService.getTranslation('WAITINGLIST.ERRORMESSAGE.text')
+            this.languageService.getTranslation(
+              'WAITINGLIST.ERRORMESSAGECONFIRM.text'
+            )
           )
         )
       ),

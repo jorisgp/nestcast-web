@@ -8,8 +8,6 @@ import { Auth } from '../../../model/auth.model';
   styleUrls: ['./sign-in-form.component.scss'],
 })
 export class SignInComponent {
-  form: FormGroup;
-
   @Input()
   token: string;
 
@@ -22,17 +20,15 @@ export class SignInComponent {
   @Output()
   submitForm = new EventEmitter<Auth>();
 
+  form: FormGroup = new FormGroup({
+    username: new FormControl(null, [Validators.required, Validators.email]),
+    password: new FormControl(null, [
+      Validators.required,
+      Validators.minLength(8),
+    ]),
+  });
+
   onSubmit() {
     this.submitForm.emit(this.form.value);
-  }
-
-  ngOnInit() {
-    this.form = new FormGroup({
-      username: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(8),
-      ]),
-    });
   }
 }

@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { LanguageService } from '../../services/language.service';
+import { ModalService } from '../../services/modal.service';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
+import { NotificationService } from '../../services/notification.service';
 import * as contactActions from '../actions/contact.actions';
 
 @Injectable()
 export class ContactEffects {
   constructor(
     private actions$: Actions,
-    private nestcastHttpService: NestcastHttpService
+    private nestcastHttpService: NestcastHttpService,
+    private notificationService: NotificationService,
+    private languageService: LanguageService,
+    private modalService: ModalService
   ) {}
 
   add$ = createEffect(() =>
@@ -24,5 +30,24 @@ export class ContactEffects {
         )
       )
     )
+  );
+
+  contactError$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(contactActions.addToContactFailure),
+        tap(() => {
+          this.notificationService.showWarn(
+            this.languageService.getTranslation(
+              'HOME.CONTACT.ERRORMESSAGE.title'
+            ),
+            this.languageService.getTranslation(
+              'HOME.CONTACT.ERRORMESSAGE.text'
+            )
+          );
+          this.modalService.closeModal();
+        })
+      ),
+    { dispatch: false }
   );
 }
