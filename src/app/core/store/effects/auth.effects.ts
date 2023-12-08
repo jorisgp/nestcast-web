@@ -80,8 +80,7 @@ export class AuthEffects {
         ofType(signInFailure),
         tap(() =>
           this.notificationService.showWarn(
-            this.languageService.getTranslation('AUTH.SIGN_IN.ERROR.title'),
-            this.languageService.getTranslation('AUTH.SIGN_IN.ERROR.text')
+            this.languageService.getTranslation('AUTH.SIGN_IN.ERROR')
           )
         )
       ),

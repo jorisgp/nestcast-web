@@ -307,10 +307,58 @@
     }
   },
   "AUTH": {
-    "SIGN_UP": {
+    "SIGN_IN": {
       "ERROR": {
         "title": "Mislukt",
         "text": "Er is iets fout gegaan, probeer het later opnieuw."
+      }
+    }
+  },
+  "USER": {
+    "SIGN_UP": {
+      "ERROR": {
+        "title": "Mislukt",
+        "text": "Je inloggevens zijn niet correct, probeer het opnieuw."
+      },
+      "SUCCESS": {
+        "title": "Bedankt voor je aanmelding",
+        "text": "Wij hebben je aanmelding ontvangen. Login om verder te gaan."
+      }
+    },
+    "SIGN_IN": {
+      "ERROR": {
+        "title": "Mislukt",
+        "text": "Er is iets fout gegaan, probeer het later opnieuw."
+      }
+    },
+    "PASSWORD_RESET": {
+      "ERROR": {
+        "title": "Mislukt",
+        "text": "Er is iets fout gegaan, probeer het later opnieuw."
+      },
+      "SUCCESS": {
+        "title": "Bedankt voor je aanmelding",
+        "text": "Wij hebben je aanmelding ontvangen. Je ontvangt een e-mail om je aanmelding te bevestigen."
+      }
+    },
+    "REQUEST_PASSWORD_RESET": {
+      "ERROR": {
+        "title": "Mislukt",
+        "text": "Er is iets fout gegaan, probeer het later opnieuw."
+      },
+      "SUCCESS": {
+        "title": "Bedankt voor je aanmelding",
+        "text": "Wij hebben je aanmelding ontvangen. Je ontvangt een e-mail om je aanmelding te bevestigen."
+      }
+    },
+    "CONFIRM_USERNAME": {
+      "ERROR": {
+        "title": "Mislukt",
+        "text": "Er is iets fout gegaan, probeer het later opnieuw."
+      },
+      "SUCCESS": {
+        "title": "Bedankt",
+        "text": "Je gebruikersnaam is geverifieerd. Je kunt nu inloggen."
       }
     }
   },

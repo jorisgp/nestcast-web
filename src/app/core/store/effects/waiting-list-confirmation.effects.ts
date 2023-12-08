@@ -49,12 +49,7 @@ export class WaitingListConfirmationEffects {
         ofType(waitingListConfirmationActions.confirmWaitingListSuccess),
         tap(() => {
           this.notificationService.showSuccess(
-            this.languageService.getTranslation(
-              'WAITINGLIST.SUCCESSMESSAGE.title'
-            ),
-            this.languageService.getTranslation(
-              'WAITINGLIST.SUCCESSMESSAGE.text'
-            )
+            this.languageService.getTranslation('WAITINGLIST.SUCCESSMESSAGE')
           );
           this.modalService.closeModal();
         })
@@ -69,10 +64,7 @@ export class WaitingListConfirmationEffects {
         tap(() =>
           this.notificationService.showWarn(
             this.languageService.getTranslation(
-              'WAITINGLIST.ERRORMESSAGECONFIRM.title'
-            ),
-            this.languageService.getTranslation(
-              'WAITINGLIST.ERRORMESSAGECONFIRM.text'
+              'WAITINGLIST.ERRORMESSAGECONFIRM'
             )
           )
         )

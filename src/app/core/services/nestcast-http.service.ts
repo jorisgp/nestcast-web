@@ -253,13 +253,16 @@ export class NestcastHttpService {
       Object.keys(errorMessageObject)
         .map((key) => errorMessageObject[key])
         .forEach((item) =>
-          this.notificationService.showWarn('Ongeldige handeling', item)
+          this.notificationService.showWarn({
+            title: 'Ongeldige handeling',
+            text: item,
+          })
         );
     } catch (catchedError) {
-      this.notificationService.showWarn(
-        'Ongeldige handeling',
-        err.error.message
-      );
+      this.notificationService.showWarn({
+        title: 'Ongeldige handeling',
+        text: err.error.message,
+      });
     }
   }
 }

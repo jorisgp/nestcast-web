@@ -41,10 +41,7 @@ export class WaitingListEffects {
         ofType(waitingListActions.addToWaitingListFailure),
         tap(() => {
           this.notificationService.showWarn(
-            this.languageService.getTranslation(
-              'WAITINGLIST.ERRORMESSAGE.title'
-            ),
-            this.languageService.getTranslation('WAITINGLIST.ERRORMESSAGE.text')
+            this.languageService.getTranslation('WAITINGLIST.ERRORMESSAGE')
           );
           this.modalService.closeModal();
         })

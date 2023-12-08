@@ -38,12 +38,7 @@ export class ContactEffects {
         ofType(contactActions.addToContactFailure),
         tap(() => {
           this.notificationService.showWarn(
-            this.languageService.getTranslation(
-              'HOME.CONTACT.ERRORMESSAGE.title'
-            ),
-            this.languageService.getTranslation(
-              'HOME.CONTACT.ERRORMESSAGE.text'
-            )
+            this.languageService.getTranslation('HOME.CONTACT.ERRORMESSAGE')
           );
           this.modalService.closeModal();
         })

@@ -45,8 +45,7 @@ export class ContactConfirmationEffects {
         ofType(contactConfirmationActions.confirmContactSuccess),
         tap(() => {
           this.notificationService.showSuccess(
-            this.languageService.getTranslation('CONTACT.SUCCESSMESSAGE.title'),
-            this.languageService.getTranslation('CONTACT.SUCCESSMESSAGE.text')
+            this.languageService.getTranslation('CONTACT.SUCCESSMESSAGE')
           );
           this.modalService.closeModal();
         })
@@ -60,12 +59,7 @@ export class ContactConfirmationEffects {
         ofType(contactConfirmationActions.confirmContactFailure),
         tap(() => {
           this.notificationService.showWarn(
-            this.languageService.getTranslation(
-              'CONTACT.ERRORMESSAGECONFIRM.title'
-            ),
-            this.languageService.getTranslation(
-              'CONTACT.ERRORMESSAGECONFIRM.text'
-            )
+            this.languageService.getTranslation('CONTACT.ERRORMESSAGECONFIRM')
           );
         })
       ),

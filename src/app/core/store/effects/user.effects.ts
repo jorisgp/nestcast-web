@@ -39,6 +39,11 @@ export class UserEffects {
     () =>
       this.actions$.pipe(
         ofType(userActions.UserSignUpSuccess),
+        tap(() =>
+          this.notificationService.showSuccess(
+            this.languageService.getTranslation('USER.SIGN_UP.SUCCESS')
+          )
+        ),
         tap(() => this.router.navigate(['/', 'auth', 'sign-in']))
       ),
     { dispatch: false }
@@ -49,9 +54,10 @@ export class UserEffects {
       this.actions$.pipe(
         ofType(userActions.UserSignUpError),
         tap(() =>
-          this.notificationService.showWarn(
-            this.languageService.getTranslation('AUTH.SIGN_UP.ERROR.title'),
-            this.languageService.getTranslation('AUTH.SIGN_UP.ERROR.text')
+          tap(() =>
+            this.notificationService.showSuccess(
+              this.languageService.getTranslation('USER.SIGN_UP.ERROR')
+            )
           )
         )
       ),
@@ -93,13 +99,8 @@ export class UserEffects {
       this.actions$.pipe(
         ofType(userActions.UserConfirmUsernameError),
         tap(() =>
-          this.notificationService.showWarn(
-            this.languageService.getTranslation(
-              'USER.CONFIRM_USERNAME.ERROR.title'
-            ),
-            this.languageService.getTranslation(
-              'USER.CONFIRM_USERNAME.ERROR.text'
-            )
+          this.notificationService.showSuccess(
+            this.languageService.getTranslation('USER.CONFIRM_USERNAME.ERROR')
           )
         )
       ),
@@ -112,7 +113,9 @@ export class UserEffects {
         ofType(userActions.UserConfirmUsernameSuccess),
         tap(() => this.localStorageService.removeItem(StorageKey.AUTH_TOKEN)),
         tap(() =>
-          this.notificationService.showSuccess('Success', 'User confirmed')
+          this.notificationService.showSuccess(
+            this.languageService.getTranslation('USER.CONFIRM_USERNAME.SUCCESS')
+          )
         ),
         tap(() => this.router.navigate(['/', 'auth', 'sign-in']))
       ),
@@ -126,13 +129,44 @@ export class UserEffects {
         this.nestcastHttpService
           .putUsersPassword({ username: action.payload.username })
           .pipe(
-            map((user) => userActions.UserRequestConfirmationCodeSuccess(null)),
+            map(() => userActions.UserPasswordRequestResetSuccess(null)),
             catchError((error) =>
               of(userActions.UserRequestConfirmationCodeError(error))
             )
           )
       )
     )
+  );
+
+  UserPasswordRequestResetError$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(userActions.UserPasswordRequestResetError),
+        tap(() =>
+          this.notificationService.showWarn(
+            this.languageService.getTranslation(
+              'USER.REQUEST_PASSWORD_RESET.ERROR'
+            )
+          )
+        )
+      ),
+    { dispatch: false }
+  );
+
+  UserPasswordRequestResetSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(userActions.UserPasswordRequestResetSuccess),
+        tap(() =>
+          this.notificationService.showSuccess(
+            this.languageService.getTranslation(
+              'USER.REQUEST_PASSWORD_RESET.SUCCESS'
+            )
+          )
+        ),
+        tap(() => this.router.navigate(['/', 'auth', 'sign-in']))
+      ),
+    { dispatch: false }
   );
 
   UserPasswordReset$ = createEffect(() =>
@@ -145,5 +179,32 @@ export class UserEffects {
         )
       )
     )
+  );
+
+  UserPasswordResetError$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(userActions.UserPasswordResetError),
+        tap(() =>
+          this.notificationService.showWarn(
+            this.languageService.getTranslation('USER.PASSWORD_RESET.ERROR')
+          )
+        )
+      ),
+    { dispatch: false }
+  );
+
+  UserPasswordResetSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(userActions.UserPasswordResetSuccess),
+        tap(() =>
+          this.notificationService.showSuccess(
+            this.languageService.getTranslation('USER.PASSWORD_RESET.SUCCESS')
+          )
+        ),
+        tap(() => this.router.navigate(['/', 'auth', 'sign-in']))
+      ),
+    { dispatch: false }
   );
 }
