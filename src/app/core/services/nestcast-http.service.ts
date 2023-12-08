@@ -49,6 +49,21 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
+  putUsersConfirmation(confirmationCode?: number): Observable<any> {
+    let params;
+    if (confirmationCode) {
+      params = this._createParams({ confirmationCode: confirmationCode });
+    }
+
+    return this.http
+      .put<any>(
+        `${apiPrefix}/${ApiResource.USERS}/${ApiResource.CONFIRMATION}`,
+        {},
+        { params }
+      )
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
   postUsers(body: any): Observable<any> {
     return this.http
       .post<any>(`${apiPrefix}/${ApiResource.USERS}`, {
@@ -61,6 +76,17 @@ export class NestcastHttpService {
   patchUsers(userId: string, body: any): Observable<any> {
     return this.http
       .patch<any>(`${apiPrefix}/${ApiResource.USERS}/${userId}`, body)
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  patchUsersConfirmation(confirmationCode: number, body: any): Observable<any> {
+    const params = this._createParams({ confirmationCode: confirmationCode });
+    return this.http
+      .patch<any>(
+        `${apiPrefix}/${ApiResource.USERS}/${ApiResource.CONFIRMATION}`,
+        body,
+        { params }
+      )
       .pipe(catchError((error) => this._handleError(error)));
   }
 
@@ -248,6 +274,7 @@ enum ApiResource {
   EPISODES = 'episodes',
   WAITING_LISTS = 'waiting-lists',
   CONTACTS = 'contacts',
+  CONFIRMATION = 'confirmation',
 }
 
 export interface Upload {

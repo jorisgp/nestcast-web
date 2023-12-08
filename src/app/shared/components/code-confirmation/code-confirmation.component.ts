@@ -24,14 +24,24 @@ export class CodeConfirmationComponent {
   @Input()
   text: string[] | string;
 
+  @Input()
+  linkText: string;
+
   @Output()
   submitForm = new EventEmitter<number>();
 
   @Output()
   cancelBack = new EventEmitter<void>();
 
+  @Output()
+  linkClick = new EventEmitter<void>();
+
   get cancelEnabled(): boolean {
     return this.cancelBack.observed;
+  }
+
+  get linkEnabled(): boolean {
+    return this.linkClick.observed;
   }
 
   onKeyPress(event: any, index: number) {

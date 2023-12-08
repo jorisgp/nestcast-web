@@ -7,3 +7,7 @@ export interface User {
   lastName: string;
   language: Language;
 }
+
+export interface Confirmation {
+  confirmationCode: number;
+}

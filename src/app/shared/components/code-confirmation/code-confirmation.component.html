@@ -17,18 +17,26 @@
       /></ng-container>
     </div>
     <div class="row mt-2">
-      <div class="col-12 d-flex justify-content-end">
-        <button
-          type="button"
-          class="btn btn-lght me-1"
-          (click)="cancelBack.emit()"
-          *ngIf="cancelEnabled"
-        >
-          {{ "CANCEL" | translate }}
-        </button>
-        <button type="button" #button class="btn btn-dark" (click)="onSubmit()">
-          {{ "CONFIRM" | translate }}
-        </button>
+      <div class="d-flex flex-column align-right">
+        <div class="col-12 d-flex justify-content-end">
+          <button
+            type="button"
+            class="btn btn-lght me-1"
+            (click)="cancelBack.emit()"
+            *ngIf="cancelEnabled"
+          >
+            {{ "CANCEL" | translate }}
+          </button>
+          <button
+            type="button"
+            #button
+            class="btn btn-dark"
+            (click)="onSubmit()"
+          >
+            {{ "CONFIRM" | translate }}
+          </button>
+        </div>
+        <a (click)="linkClick.emit()" *ngIf="linkEnabled">{{ linkText }}</a>
       </div>
     </div>
   </div>

@@ -10,7 +10,12 @@ import {
 } from '../../services/local-storage.service';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
 import { NotificationService } from '../../services/notification.service';
-import { signIn, signInFailure, signInSuccess } from '../actions/auth.actions';
+import {
+  signIn,
+  signInFailure,
+  signInSuccess,
+  signInSuccessNotActivated,
+} from '../actions/auth.actions';
 
 @Injectable()
 export class AuthEffects {
@@ -31,29 +36,40 @@ export class AuthEffects {
       switchMap((action) =>
         this.nestcastHttpService.postAuthLogin(action.payload).pipe(
           takeUntil(this.stopSignal$),
-          tap((result) => {
-            if (result.activated === false) {
-              this.router.navigate(['/', 'auth', 'activate']);
-              this.stopSignal$.next(null);
+          tap((result) =>
+            this.localStorageService.setItem(
+              StorageKey.AUTH_TOKEN,
+              result.accessToken
+            )
+          ),
+          map((result) => {
+            if (result.activated) {
+              return signInSuccess(result.accessToken);
             } else {
-              this.localStorageService.setItem(
-                StorageKey.AUTH_TOKEN,
-                result.accessToken
-              );
+              return signInSuccessNotActivated(result.accessToken);
             }
           }),
-          map((result) => signInSuccess(result.accessToken)),
           catchError((error) => of(signInFailure(error)))
         )
       )
     )
   );
 
+  signInSuccessNotActivated$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(signInSuccessNotActivated),
+        tap(() => this.router.navigate(['/', 'auth', 'activate']))
+      ),
+    { dispatch: false }
+  );
+
   signInSuccess$ = createEffect(
     () =>
       this.actions$.pipe(
         ofType(signInSuccess),
-        tap(() => this.router.navigate(['/', 'admin']))
+        tap(console.log),
+        tap(() => this.router.navigate(['/', 'manager']))
       ),
     { dispatch: false }
   );

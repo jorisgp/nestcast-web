@@ -31,8 +31,8 @@ export class SignInContainerComponent {
       }
     });
 
-    this.isLoading$.subscribe((error) => {
-      console.log('error', error);
+    this.isLoading$.subscribe((isLoading) => {
+      console.log('isLoading', isLoading);
     });
   }
 

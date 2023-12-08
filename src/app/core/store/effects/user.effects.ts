@@ -4,7 +4,10 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, mergeMap, tap } from 'rxjs/operators';
 import { LanguageService } from '../../services/language.service';
-import { ModalService } from '../../services/modal.service';
+import {
+  LocalStorageService,
+  StorageKey,
+} from '../../services/local-storage.service';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
 import { NotificationService } from '../../services/notification.service';
 import * as userActions from '../actions/user.actions';
@@ -17,7 +20,7 @@ export class UserEffects {
     private nestcastHttpService: NestcastHttpService,
     private notificationService: NotificationService,
     private languageService: LanguageService,
-    private modalService: ModalService
+    private localStorageService: LocalStorageService
   ) {}
 
   signUp$ = createEffect(() =>
@@ -53,5 +56,94 @@ export class UserEffects {
         )
       ),
     { dispatch: false }
+  );
+
+  requestConfirmationCode$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(userActions.UserRequestConfirmationCode),
+      mergeMap((action) =>
+        this.nestcastHttpService.putUsersConfirmation().pipe(
+          map((user) => userActions.UserRequestConfirmationCodeSuccess(null)),
+          catchError((error) =>
+            of(userActions.UserRequestConfirmationCodeError(error))
+          )
+        )
+      )
+    )
+  );
+
+  userConfirmUsername$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(userActions.UserConfirmUsername),
+      mergeMap((action) =>
+        this.nestcastHttpService
+          .putUsersConfirmation(action.payload.confirmationCode)
+          .pipe(
+            map((user) => userActions.UserConfirmUsernameSuccess(null)),
+            catchError((error) =>
+              of(userActions.UserConfirmUsernameError(error))
+            )
+          )
+      )
+    )
+  );
+
+  UserConfirmUsernameError$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(userActions.UserConfirmUsernameError),
+        tap(() =>
+          this.notificationService.showWarn(
+            this.languageService.getTranslation(
+              'USER.CONFIRM_USERNAME.ERROR.title'
+            ),
+            this.languageService.getTranslation(
+              'USER.CONFIRM_USERNAME.ERROR.text'
+            )
+          )
+        )
+      ),
+    { dispatch: false }
+  );
+
+  userConfirmUsernameSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(userActions.UserConfirmUsernameSuccess),
+        tap(() => this.localStorageService.removeItem(StorageKey.AUTH_TOKEN)),
+        tap(() =>
+          this.notificationService.showSuccess('Success', 'User confirmed')
+        ),
+        tap(() => this.router.navigate(['/', 'auth', 'sign-in']))
+      ),
+    { dispatch: false }
+  );
+
+  UserPasswordRequestReset$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(userActions.UserPasswordRequestReset),
+      mergeMap((action) =>
+        this.nestcastHttpService
+          .putUsersPassword({ username: action.payload.username })
+          .pipe(
+            map((user) => userActions.UserRequestConfirmationCodeSuccess(null)),
+            catchError((error) =>
+              of(userActions.UserRequestConfirmationCodeError(error))
+            )
+          )
+      )
+    )
+  );
+
+  UserPasswordReset$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(userActions.UserPasswordReset),
+      mergeMap((action) =>
+        this.nestcastHttpService.putUsersPassword(action.payload).pipe(
+          map((user) => userActions.UserPasswordResetSuccess(null)),
+          catchError((error) => of(userActions.UserPasswordResetError(error)))
+        )
+      )
+    )
   );
 }

@@ -22,13 +22,10 @@ export class ModalService {
     config?: any
   ) {
     if (!this.modalOpen) {
-      console.log(this.viewContainerRef);
-
       this.modalOpen = true;
       this.modalReference =
         this.viewContainerRef.createComponent(ModalComponent);
 
-      console.log(this.modalReference);
       const componentReference: ComponentRef<ModalInterface> =
         this.modalReference.instance.container.viewContainerRef.createComponent(
           component

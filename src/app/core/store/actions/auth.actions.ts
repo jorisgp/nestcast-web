@@ -14,6 +14,11 @@ export const signInSuccess = createAction(
   props<{ payload: Token }>()
 );
 
+export const signInSuccessNotActivated = createAction(
+  `${TYPE} SignIn Success Not Activated`,
+  props<{ payload: Token }>()
+);
+
 export const signInFailure = createAction(
   `${TYPE} SignIn Failure`,
   props<{ payload: Error }>()

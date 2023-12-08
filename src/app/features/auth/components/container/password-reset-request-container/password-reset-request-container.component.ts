@@ -14,9 +14,7 @@ export class PasswordResetRequestContainerComponent {
 
   constructor(private store: Store<{ auth: any }>) {}
 
-  onSubmit(passwordRequestReset: PasswordRequestReset) {
-    this.store.dispatch(
-      UserPasswordRequestReset({ payload: passwordRequestReset })
-    );
+  onSubmitForm(user: PasswordRequestReset) {
+    this.store.dispatch(UserPasswordRequestReset({ payload: user }));
   }
 }

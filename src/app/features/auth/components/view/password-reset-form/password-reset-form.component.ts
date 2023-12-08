@@ -1,6 +1,12 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { PasswordRequestReset } from 'src/app/shared/interfaces/auth.interface';
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
+import { PasswordReset } from 'src/app/shared/interfaces/auth.interface';
 
 @Component({
   selector: 'app-password-reset-form',
@@ -11,10 +17,10 @@ export class PasswordResetFormComponent {
   form: FormGroup;
 
   @Output()
-  submit = new EventEmitter<PasswordRequestReset>();
+  submitForm = new EventEmitter<PasswordReset>();
 
-  submitForm() {
-    this.submit.emit(this.form.value);
+  onSubmitForm() {
+    this.submitForm.emit(this.form.value);
   }
 
   ngOnInit() {
@@ -26,7 +32,18 @@ export class PasswordResetFormComponent {
       passwordConfirm: new FormControl(null, [
         Validators.required,
         Validators.minLength(8),
+        this._validateEqualPasswords,
       ]),
     });
+  }
+
+  private _validateEqualPasswords(control: AbstractControl): ValidationErrors {
+    const passwordControl = control.parent?.get('password');
+    const passwordConfirmControl = control.parent?.get('passwordConfirm');
+    if (passwordControl?.value !== passwordConfirmControl?.value) {
+      return { passwordsNotEqual: true };
+    }
+
+    return null;
   }
 }

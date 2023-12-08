@@ -1,28 +1,19 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, UrlSegment } from '@angular/router';
 import { languageResolver } from './core/resolvers/language.resolver';
 
-const routes: Routes = [
+export function checkLang(url: UrlSegment[]) {
+  if (url[0]?.path?.length === 2) {
+    return { consumed: [url[0]], posParams: { lang: url[0] } };
+  }
+  return null;
+}
+
+const mainRoutes: Routes = [
   {
     path: '',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
-  },
-  {
-    path: ':lang',
-    resolve: { language: languageResolver },
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./features/home/home.module').then((m) => m.HomeModule),
-      },
-      {
-        path: 'auth',
-        loadChildren: () =>
-          import('./features/auth/auth.module').then((m) => m.AuthModule),
-      },
-    ],
   },
   {
     path: 'auth',
@@ -30,11 +21,19 @@ const routes: Routes = [
       import('./features/auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'admin',
-    data: { reuse: true },
+    path: 'manager',
     loadChildren: () =>
-      import('./features/admin/admin.module').then((m) => m.AdminModule),
+      import('./features/manager/manager.module').then((m) => m.ManagerModule),
   },
+];
+
+const routes: Routes = [
+  {
+    matcher: checkLang,
+    resolve: { language: languageResolver },
+    children: mainRoutes,
+  },
+  ...mainRoutes,
 ];
 
 @NgModule({
