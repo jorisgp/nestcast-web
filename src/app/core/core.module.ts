@@ -9,9 +9,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
 import { HttpEnvironmentInterceptorService } from './interceptors/http-environment-interceptor.service';
+import { PublicAppComponent } from './components/public-app/public-app.component';
+import { PrivateAppComponent } from './components/private-app/private-app.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, LanguageSwitchComponent],
+  declarations: [HeaderComponent, FooterComponent, LanguageSwitchComponent, PublicAppComponent, PrivateAppComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
