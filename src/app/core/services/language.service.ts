@@ -91,8 +91,8 @@ export class LanguageService {
           content: this.getTranslation('KEYWORDS'),
         });
       });
-      this.location.go(this._replaceLanguageInUrl(country.language));
 
+      this.location.go(this._replaceLanguageInUrl(country.language));
       this.countrySubject.next(country);
 
       return true;

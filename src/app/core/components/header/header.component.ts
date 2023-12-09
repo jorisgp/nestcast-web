@@ -35,6 +35,6 @@ export class HeaderComponent {
 
   navigate(location: string[]) {
     this.mobileMenu = false;
-    this.router.navigate(location, { relativeTo: this.route });
+    this.router.navigate(location);
   }
 }

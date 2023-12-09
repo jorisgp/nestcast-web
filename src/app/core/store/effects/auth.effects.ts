@@ -68,8 +68,7 @@ export class AuthEffects {
     () =>
       this.actions$.pipe(
         ofType(signInSuccess),
-        tap(console.log),
-        tap(() => this.router.navigate(['/', 'manager']))
+        tap(() => this.router.navigate(['/', 'secure', 'manager']))
       ),
     { dispatch: false }
   );

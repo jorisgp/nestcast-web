@@ -31,9 +31,7 @@ export class SignInContainerComponent {
       }
     });
 
-    this.isLoading$.subscribe((isLoading) => {
-      console.log('isLoading', isLoading);
-    });
+    //this.isLoading$.subscribe((isLoading) => {});
   }
 
   onSubmit(auth: Auth) {

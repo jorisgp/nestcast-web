@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, UrlSegment } from '@angular/router';
+import { PrivateAppComponent } from './core/components/private-app/private-app.component';
+import { PublicAppComponent } from './core/components/public-app/public-app.component';
 import { languageResolver } from './core/resolvers/language.resolver';
 
 export function checkLang(url: UrlSegment[]) {
@@ -9,21 +11,38 @@ export function checkLang(url: UrlSegment[]) {
   return null;
 }
 
-const mainRoutes: Routes = [
+const publicRoutes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./features/home/home.module').then((m) => m.HomeModule),
+    component: PublicAppComponent,
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('./features/home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('./features/auth/auth.module').then((m) => m.AuthModule),
+      },
+    ],
   },
+];
+
+const privateRoutes: Routes = [
   {
-    path: 'auth',
-    loadChildren: () =>
-      import('./features/auth/auth.module').then((m) => m.AuthModule),
-  },
-  {
-    path: 'manager',
-    loadChildren: () =>
-      import('./features/manager/manager.module').then((m) => m.ManagerModule),
+    path: 'secure',
+    component: PrivateAppComponent,
+    children: [
+      {
+        path: 'manager',
+        loadChildren: () =>
+          import('./features/manager/manager.module').then(
+            (m) => m.ManagerModule
+          ),
+      },
+    ],
   },
 ];
 
@@ -31,9 +50,10 @@ const routes: Routes = [
   {
     matcher: checkLang,
     resolve: { language: languageResolver },
-    children: mainRoutes,
+    children: [...publicRoutes, ...privateRoutes],
   },
-  ...mainRoutes,
+  ...publicRoutes,
+  ...privateRoutes,
 ];
 
 @NgModule({

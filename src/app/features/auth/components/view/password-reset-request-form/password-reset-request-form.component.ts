@@ -14,7 +14,6 @@ export class PasswordResetRequestFormComponent {
   submitForm = new EventEmitter<PasswordRequestReset>();
 
   onSubmitForm() {
-    console.log('sd');
     this.submitForm.emit(this.form.value);
   }
 
