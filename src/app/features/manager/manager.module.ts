@@ -17,6 +17,7 @@ import { ManagerRoutingModule } from './manager-routing.module';
 import { ShowEditPageComponent } from './components/page/show-edit-page/show-edit-page.component';
 import { ShowEditPageContainerComponent } from './components/container/show-edit-page-container/show-edit-page-container.component';
 import { EpsiodeEditPageContainerComponent } from './components/container/epsiode-edit-page-container/epsiode-edit-page-container.component';
+import { ShowFormComponent } from './components/form/show-form/show-form.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EpsiodeEditPageContainerComponent } from './components/container/epsiod
     ShowEditPageComponent,
     ShowEditPageContainerComponent,
     EpsiodeEditPageContainerComponent,
+    ShowFormComponent,
   ],
   imports: [
     CommonModule,
