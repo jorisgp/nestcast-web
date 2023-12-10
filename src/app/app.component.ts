@@ -34,12 +34,21 @@ export class AppComponent implements OnInit, OnDestroy {
 
     this.router.events.pipe(takeUntil(this.destroy$)).subscribe((e) => {
       if (e instanceof ActivationStart && e.snapshot.outlet === 'primary') {
-        if (!this.done) {
+        if (!this.done && this.outlet.isActivated && !this.isSecure(e)) {
           this.outlet.deactivate();
           this.done = true;
         }
       }
     });
+  }
+
+  isSecure(outlet: ActivationStart) {
+    const fullPath = outlet.snapshot.pathFromRoot;
+    const fullPathMapped = fullPath
+      .filter((item) => !!item?.routeConfig?.path)
+      .map((item: any) => item.routeConfig.path)
+      .join('/');
+    return fullPathMapped.includes('secure/manager/');
   }
 
   ngOnDestroy(): void {

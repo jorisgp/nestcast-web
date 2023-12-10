@@ -7,10 +7,16 @@ import { Component, Input } from '@angular/core';
 })
 export class BackgroundSectionComponent {
   @Input()
+  view = BackgroundSectionView.DEFAULT;
+
+  @Input()
+  headerAdjustment = false;
+
+  @Input()
   gradient: Gradient;
 
   Gradient = Gradient;
-  changeBackground = false;
+  BackgroundSectionView = BackgroundSectionView;
 }
 
 export enum Gradient {
@@ -18,4 +24,10 @@ export enum Gradient {
   TWO,
   THREE,
   FOUR,
+  MANAGER_ONE,
+}
+
+export enum BackgroundSectionView {
+  DEFAULT,
+  FULL_SCREEN,
 }

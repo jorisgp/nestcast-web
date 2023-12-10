@@ -38,4 +38,7 @@ export enum IconType {
   INSTAGRAM = 'bi-instagram',
   LINKEDIN = 'bi-linkedin',
   PERSONAL = 'bi-person',
+  SETTINGS = 'bi-gear-wide-connected',
+  SHOW = 'bi-headphones',
+  DISTRIBUTION = 'bi-globe2',
 }

@@ -11,3 +11,16 @@ export interface User {
 export interface Confirmation {
   confirmationCode: number;
 }
+
+export interface Show {
+  title: string;
+  description: string;
+  author: string;
+  email: string;
+  copyright: string;
+  language: string;
+  category: string;
+  subCategory: string;
+  explicit: boolean;
+  keywords: string[];
+}

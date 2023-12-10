@@ -1,21 +1,38 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EpisodesPageComponent } from './components/page/episodes-page/episodes-page.component';
-import { ShowsPageComponent } from './components/page/shows-page/shows-page.component';
+import { DistributionPageComponent } from './components/page/distribution-page/distribution-page.component';
+import { ManagerRouterOutletComponent } from './components/page/manager-router-outlet/manager-router-outlet.component';
+import { SettingsPageComponent } from './components/page/settings-page/settings-page.component';
+import { ShowEditPageComponent } from './components/page/show-edit-page/show-edit-page.component';
+import { ShowPageComponent } from './components/page/show-page/show-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'shows',
-  },
-  {
-    path: 'shows',
-    component: ShowsPageComponent,
-  },
-  {
-    path: 'epsiodes',
-    component: EpisodesPageComponent,
+    component: ManagerRouterOutletComponent,
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'show',
+      },
+      {
+        path: 'show',
+        component: ShowPageComponent,
+      },
+      {
+        path: 'show/edit/:id',
+        component: ShowEditPageComponent,
+      },
+      {
+        path: 'distribution',
+        component: DistributionPageComponent,
+      },
+      {
+        path: 'settings',
+        component: SettingsPageComponent,
+      },
+    ],
   },
 ];
 

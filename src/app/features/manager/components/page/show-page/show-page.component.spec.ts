@@ -1,6 +1,6 @@
 import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
-import { ShowsPageComponent } from './shows-page.component';
+import { ShowsPageComponent } from './show-page.component';
 
 describe('ShowsPageComponent', () => {
   let spectator: Spectator<ShowsPageComponent>;
