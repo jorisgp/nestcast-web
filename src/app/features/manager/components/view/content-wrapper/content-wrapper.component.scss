@@ -1,7 +1,7 @@
 .content-wrapper {
   display: flex;
   flex-direction: column;
-  height: calc(100% - 4px);
+  min-height: calc(100vh - 182px);
 
   .content {
     flex-grow: 1;

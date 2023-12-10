@@ -1,8 +1,7 @@
 .page {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-
+  min-height: calc(100vh - 2px);
   .sub-menu {
     padding-top: 120px;
     padding-bottom: 20px;
