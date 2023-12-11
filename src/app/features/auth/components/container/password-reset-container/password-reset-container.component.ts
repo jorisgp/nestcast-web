@@ -17,6 +17,7 @@ export class PasswordResetContainerComponent {
     private store: Store<{ auth: any }>,
     private route: ActivatedRoute
   ) {}
+
   onSubmitForm(passwordReset: PasswordReset) {
     const token = this.route.snapshot.params['token'];
     passwordReset.token = token;

@@ -1,12 +1,10 @@
 .page {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 2px);
-  .sub-menu {
-    padding-top: 120px;
-    padding-bottom: 20px;
-  }
+  min-height: 100vh;
+
   .content {
+    padding-top: 200px;
     flex-grow: 1;
   }
 }

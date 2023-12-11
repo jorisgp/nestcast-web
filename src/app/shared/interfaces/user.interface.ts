@@ -1,18 +1,18 @@
 import { Language } from '../model/models';
 
-export interface User {
+export type User = {
   username: string;
   password: string;
   firstName: string;
   lastName: string;
   language: Language;
-}
+};
 
-export interface Confirmation {
+export type Confirmation = {
   confirmationCode: number;
-}
+};
 
-export interface Show {
+export type Show = {
   title: string;
   description: string;
   author: string;
@@ -23,4 +23,4 @@ export interface Show {
   subCategory: string;
   explicit: boolean;
   keywords: string[];
-}
+};

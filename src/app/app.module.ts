@@ -34,6 +34,7 @@ import * as reducers from './core/store/reducers';
       effects.ContactEffects,
       effects.WaitingListConfirmationEffects,
       effects.ContactConfirmationEffects,
+      effects.ShowEffects,
     ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,

@@ -25,6 +25,7 @@ import { UiComponentsModule } from './ui-components/ui-components.module';
     UiComponentsModule,
     CodeConfirmationComponent,
     FlagComponent,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}

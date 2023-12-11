@@ -1,5 +1,4 @@
 import { Component, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { PlatformService } from '../../services/platform.service';
 import { RouterService } from '../../services/router.service';
 
@@ -14,7 +13,6 @@ export class HeaderComponent {
 
   constructor(
     private router: RouterService,
-    private route: ActivatedRoute,
     private platformService: PlatformService
   ) {}
 

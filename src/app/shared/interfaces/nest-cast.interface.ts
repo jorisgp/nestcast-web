@@ -1,3 +1,3 @@
-export interface Error {
+export type Error = {
   message: string;
-}
+};

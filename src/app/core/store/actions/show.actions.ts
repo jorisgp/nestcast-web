@@ -3,44 +3,47 @@ import { Show } from 'src/app/shared/interfaces/user.interface';
 
 const TYPE = '[Show]';
 
-export const create = createAction(
+export const createShow = createAction(
   `${TYPE} Create`,
   props<{ payload: Show }>()
 );
 
-export const createSuccess = createAction(
+export const createShowSuccess = createAction(
   `${TYPE} Create Success`,
   props<{ payload: Show }>()
 );
 
-export const createError = createAction(
+export const createShowError = createAction(
   `${TYPE} Create Error`,
   props<{ payload: Error }>()
 );
 
-export const fetch = createAction(`${TYPE} Fecth`, props<{ payload: null }>());
+export const fetchShow = createAction(
+  `${TYPE} Fecth`,
+  props<{ payload: null }>()
+);
 
-export const fetchSuccess = createAction(
+export const fetchShowSuccess = createAction(
   `${TYPE} Fecth Success`,
   props<{ payload: Show }>()
 );
 
-export const fetchError = createAction(
+export const fetchShowError = createAction(
   `${TYPE} Fecth Error`,
   props<{ payload: Error }>()
 );
 
-export const update = createAction(
+export const updatShow = createAction(
   `${TYPE} Update`,
   props<{ payload: Show }>()
 );
 
-export const updateSuccess = createAction(
+export const updateShowSuccess = createAction(
   `${TYPE} Update Success`,
   props<{ payload: Show }>()
 );
 
-export const updateError = createAction(
+export const updateShowError = createAction(
   `${TYPE} Update Error`,
   props<{ payload: Error }>()
 );

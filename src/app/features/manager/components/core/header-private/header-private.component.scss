@@ -20,14 +20,13 @@
   }
 
   &.scrolled {
-    color: black;
-    background-color: rgba(255, 255, 255, 0.9);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
     border-color: rgba(0, 0, 0, 0.5);
-    border-width: 1px;
 
     a,
     .burger-menu {
-      color: black;
+      color: white;
     }
   }
 

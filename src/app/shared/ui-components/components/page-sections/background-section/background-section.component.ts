@@ -10,7 +10,7 @@ export class BackgroundSectionComponent {
   view = BackgroundSectionView.DEFAULT;
 
   @Input()
-  headerAdjustment = false;
+  headerAdjustment = true;
 
   @Input()
   gradient: Gradient;

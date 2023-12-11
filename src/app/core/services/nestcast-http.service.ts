@@ -252,10 +252,10 @@ export class NestcastHttpService {
       const errorMessageObject = JSON.parse(err.error.message);
       Object.keys(errorMessageObject)
         .map((key) => errorMessageObject[key])
-        .forEach((item) =>
+        .forEach((items) =>
           this.notificationService.showWarn({
             title: 'Ongeldige handeling',
-            text: item,
+            text: items.map((item: string) => '- ' + item + '\n'),
           })
         );
     } catch (catchedError) {
