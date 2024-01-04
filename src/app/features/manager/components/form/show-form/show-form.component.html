@@ -78,12 +78,10 @@
         <label for="language">{{
           "SECURE.SHOW.FORM.LANGUAGE" | translate
         }}</label>
-        <input
-          class="form-control"
-          id="language"
-          type="text"
-          formControlName="language"
-        />
+        <app-language-select
+          [form]="form"
+          nameFormControl="language"
+        ></app-language-select>
       </div>
     </div>
     <hr class="mt-4" />
@@ -94,12 +92,10 @@
         <label for="category">{{
           "SECURE.SHOW.FORM.CATEGORY" | translate
         }}</label>
-        <input
-          class="form-control"
-          id="category"
-          type="text"
-          formControlName="category"
-        />
+        <app-category-select
+          [form]="form"
+          nameFormControl="category"
+        ></app-category-select>
       </div>
     </div>
     <div class="row">
@@ -109,12 +105,11 @@
         <label for="subCategory">{{
           "SECURE.SHOW.FORM.SUB_CATEGORY" | translate
         }}</label>
-        <input
-          class="form-control"
-          id="subCategory"
-          type="text"
-          formControlName="subCategory"
-        />
+        <app-sub-category-select
+          [category]="form.value.category"
+          [form]="form"
+          nameFormControl="subCategory"
+        ></app-sub-category-select>
       </div>
     </div>
     <div class="row">
@@ -124,12 +119,10 @@
         <label for="keywords">{{
           "SECURE.SHOW.FORM.KEYWORDS" | translate
         }}</label>
-        <input
-          class="form-control"
-          id="keywords"
-          type="text"
-          formControlName="keywords"
-        />
+        <app-keyword-input
+          [form]="form"
+          nameFormControl="keywords"
+        ></app-keyword-input>
       </div>
     </div>
     <div class="row">
@@ -138,7 +131,7 @@
       >
         <label for="explicit">
           {{ "SECURE.SHOW.FORM.EXPLICIT" | translate }}</label
-        >
+        ><br />
         <input type="checkbox" id="explicit" formControlName="explicit" />
       </div>
     </div>

@@ -35,11 +35,20 @@ export class ShowFormComponent {
       ]),
       email: new FormControl(null, [Validators.email]),
       copyright: new FormControl(null, []),
-      language: new FormControl(null, [Validators.minLength(2)]),
-      category: new FormControl(null, [Validators.required]),
-      subCategory: new FormControl(null, []),
-      keywords: new FormControl(null, []),
+      language: new FormControl('', [
+        Validators.minLength(2),
+        Validators.required,
+      ]),
+      category: new FormControl('', [Validators.required]),
+      subCategory: new FormControl('', []),
+      keywords: new FormControl([], []),
       explicit: new FormControl(false, [Validators.required]),
+    });
+
+    this.form.controls['category'].valueChanges.subscribe(() => {
+      console.log('category changed');
+      this.form.controls['subCategory'].setValue('');
+      console.log(this.form.controls['subCategory'].value);
     });
   }
 }
