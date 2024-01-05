@@ -1,11 +1,11 @@
 import { Spectator, createComponentFactory } from '@ngneat/spectator';
 
-import { ShowEditPageContainerComponent } from './show-edit-page-container.component';
+import { EpisodeEditPageContainerComponent } from './episode-edit-page-container.component';
 
-describe('episodeEditPageContainerComponent', () => {
-  let spectator: Spectator<ShowEditPageContainerComponent>;
+describe('EpisodeEditPageContainerComponent', () => {
+  let spectator: Spectator<EpisodeEditPageContainerComponent>;
   const createComponent = createComponentFactory(
-    ShowEditPageContainerComponent
+    EpisodeEditPageContainerComponent
   );
 
   it('should create', () => {

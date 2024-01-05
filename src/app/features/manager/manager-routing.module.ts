@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DistributionPageComponent } from './components/page/distribution-page/distribution-page.component';
+import { EpisodeEditPageComponent } from './components/page/episode-edit-page/episode-edit-page.component';
 import { ManagerRouterOutletComponent } from './components/page/manager-router-outlet/manager-router-outlet.component';
 import { SettingsPageComponent } from './components/page/settings-page/settings-page.component';
 import { ShowEditPageComponent } from './components/page/show-edit-page/show-edit-page.component';
@@ -21,8 +22,20 @@ const routes: Routes = [
         component: ShowPageComponent,
       },
       {
-        path: 'show/edit/:id',
+        path: 'show/new',
         component: ShowEditPageComponent,
+      },
+      {
+        path: 'show/edit/:showId',
+        component: ShowEditPageComponent,
+      },
+      {
+        path: 'show/:showId/episode/new',
+        component: EpisodeEditPageComponent,
+      },
+      {
+        path: 'show/:showId/episode/edit/:episodeId',
+        component: EpisodeEditPageComponent,
       },
       {
         path: 'distribution',

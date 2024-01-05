@@ -1,12 +1,12 @@
-<h1>Show {{ (show$ | async) ? "wijzigen" : "toevoegen" }}</h1>
+<h1>Episode {{ episodeId ? "wijzigen" : "toevoegen" }}</h1>
 <hr />
 <div class="container">
   <div class="row">
     <div class="col pb-5">
-      <app-show-form
+      <app-episode-form
         (submitForm)="onSubmitForm($event)"
-        [data]="show$ | async"
-      ></app-show-form>
+        [data]="episode$ | async"
+      ></app-episode-form>
     </div>
   </div>
 </div>

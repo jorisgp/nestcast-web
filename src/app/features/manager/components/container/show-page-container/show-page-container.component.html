@@ -1,7 +1,7 @@
 <div *ngIf="!(show$ | async) && !(isLoading$ | async); else details">
   Je hebt nog geen show aangemaakt. Klik op de knop hieronder om een show aan te
   maken.
-  <a href="#" [routerLink]="['edit', '123']">Nieuwe Show</a>
+  <a href="#" [routerLink]="['new']">Nieuwe Show</a>
 </div>
 
 <ng-template #details>
@@ -13,7 +13,7 @@
       <div class="col-6">
         <app-show-details [data]="show$ | async"></app-show-details>
       </div>
-      <div class="col-1">
+      <div class="col-3 d-flex justify-content-end">
         <app-icon-button
           [iconType]="IconType.EDIT"
           [routerLinkData]="['edit', (show$ | async)?.id]"
@@ -25,10 +25,23 @@
   <hr />
   <div class="container">
     <div class="row">
-      <div class="col-9"><h3>Epsiodes</h3></div>
-      <div class="col-3">
-        <app-icon-button [iconType]="IconType.ADD">Add</app-icon-button>
+      <div class="col-9"><h3>episodes</h3></div>
+      <div class="col-3 d-flex justify-content-end">
+        <app-icon-button
+          [iconType]="IconType.ADD"
+          [routerLinkData]="[(show$ | async)?.id, 'episode', 'new']"
+          >Add</app-icon-button
+        >
       </div>
+    </div>
+    <div class="row">
+      <ng-container *ngFor="let episode of episodes$ | async">
+        <app-episode-details
+          [episodeData]="episode"
+          [showData]="show$ | async"
+          (editEpisode)="editEpisode($event)"
+        ></app-episode-details>
+      </ng-container>
     </div>
   </div>
 </ng-template>

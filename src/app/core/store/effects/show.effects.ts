@@ -13,6 +13,7 @@ import {
   createShowSuccess,
   fetchShow,
   fetchShowSuccess,
+  updateShow,
 } from '../actions/show.actions';
 
 @Injectable()
@@ -80,5 +81,17 @@ export class ShowEffects {
         tap((action) => console.log('fetchShowSuccess', action))
       ),
     { dispatch: false }
+  );
+
+  updateShow$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateShow),
+      mergeMap((action) =>
+        this.nestcastHttpService.patchShows(action.showId, action.payload).pipe(
+          map((show) => createShowSuccess(show)),
+          catchError((error) => of(createShowError(error)))
+        )
+      )
+    )
   );
 }

@@ -155,9 +155,9 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
-  getEpisodes(): Observable<any> {
+  getEpisodesById(episodeId: string): Observable<any> {
     return this.http
-      .get<any>(`${apiPrefix}/${ApiResource.EPISODES}`)
+      .get<any>(`${apiPrefix}/${ApiResource.EPISODES}/${episodeId}`)
       .pipe(catchError((error) => this._handleError(error)));
   }
 

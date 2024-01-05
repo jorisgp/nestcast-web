@@ -13,7 +13,7 @@ export type Confirmation = {
 };
 
 export type Show = {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   author: string;
@@ -30,4 +30,10 @@ export type Episode = {
   id: string;
   title: string;
   description: string;
+  type: string;
+  keywords: string[];
+  season: number;
+  episode: number;
+  explicit: boolean;
+  show: { id: string };
 };

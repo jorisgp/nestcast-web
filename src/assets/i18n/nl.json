@@ -447,6 +447,19 @@
         "CANCEL": "Annuleren",
         "SAVE": "Opslaan"
       }
+    },
+    "EPISODE": {
+      "FORM": {
+        "TITLE": "Titel",
+        "DESCRIPTION": "Omschrijving",
+        "TYPE": "Type",
+        "SEASON": "Seizoen",
+        "EPISODE": "Aflevering",
+        "KEYWORDS": "Trefwoorden",
+        "EXPLICIT": "Expliciet",
+        "CANCEL": "Annuleren",
+        "SAVE": "Opslaan"
+      }
     }
   }
 }

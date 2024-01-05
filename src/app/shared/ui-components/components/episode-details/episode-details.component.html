@@ -1,0 +1,23 @@
+<ng-container *ngIf="episodeData">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <h2>{{ episodeData.title }}</h2>
+      <p>{{ episodeData.description }}</p>
+      <div class="keywords">
+        <div *ngFor="let keyword of episodeData.keywords" class="nc-pill">
+          {{ keyword }}
+        </div>
+      </div>
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-end">
+      <app-icon-button
+        [iconType]="IconType.EDIT"
+        (click)="editEpisode.emit(episodeData)"
+        >Edit</app-icon-button
+      >
+    </div>
+  </div>
+
+  <hr />
+</ng-container>

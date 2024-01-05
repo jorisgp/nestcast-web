@@ -1,1 +1,104 @@
-<p>episode-form works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmitForm()">
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5"
+      >
+        <label for="title">
+          {{ "SECURE.EPISODE.FORM.TITLE" | translate }}</label
+        >
+        <input
+          class="form-control"
+          id="title"
+          type="text"
+          formControlName="title"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5"
+      >
+        <label for="description">
+          {{ "SECURE.EPISODE.FORM.DESCRIPTION" | translate }}</label
+        >
+        <textarea
+          class="form-control"
+          id="description"
+          type="text"
+          formControlName="description"
+          rows="4"
+        ></textarea>
+      </div>
+    </div>
+    <hr class="mt-4" />
+    <div class="row">
+      <div
+        class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5"
+      >
+        <label for="type"> {{ "SECURE.EPISODE.FORM.TYPE" | translate }}</label>
+        <app-episode-type-select [form]="form" nameFormControl="type" />
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5"
+      >
+        <div class="row">
+          <div class="col-6">
+            <label for="season">
+              {{ "SECURE.EPISODE.FORM.SEASON" | translate }}</label
+            >
+            <app-number-select [form]="form" nameFormControl="season" />
+          </div>
+          <div class="col-6">
+            <label for="episode">
+              {{ "SECURE.EPISODE.FORM.EPISODE" | translate }}</label
+            >
+            <app-number-select [form]="form" nameFormControl="episode" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div
+        class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5"
+      >
+        <label for="keywords">{{
+          "SECURE.EPISODE.FORM.KEYWORDS" | translate
+        }}</label>
+        <app-keyword-input
+          [form]="form"
+          nameFormControl="keywords"
+        ></app-keyword-input>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5"
+      >
+        <label for="explicit">
+          {{ "SECURE.EPISODE.FORM.EXPLICIT" | translate }}</label
+        ><br />
+        <input type="checkbox" id="explicit" formControlName="explicit" />
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div
+        class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5 buttons"
+      >
+        <button
+          type="button"
+          class="btn btn-light me-1"
+          [routerLink]="['/', 'secure', 'manager', 'show']"
+        >
+          {{ "SECURE.EPISODE.FORM.CANCEL" | translate }}
+        </button>
+        <button type="submit" class="btn btn-dark">
+          {{ "SECURE.EPISODE.FORM.SAVE" | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

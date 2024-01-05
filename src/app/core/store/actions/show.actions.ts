@@ -35,7 +35,7 @@ export const fetchShowError = createAction(
 
 export const updateShow = createAction(
   `${TYPE} Update`,
-  props<{ payload: Show }>()
+  props<{ payload: Show; showId: string }>()
 );
 
 export const updateShowSuccess = createAction(
