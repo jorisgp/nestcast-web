@@ -19,12 +19,12 @@ export const createShowError = createAction(
 );
 
 export const fetchShow = createAction(
-  `${TYPE} Fecth`,
-  props<{ payload: null }>()
+  `${TYPE} Fetch`,
+  props<{ payload: void }>()
 );
 
 export const fetchShowSuccess = createAction(
-  `${TYPE} Fecth Success`,
+  `${TYPE} Fetch Success`,
   props<{ payload: Show }>()
 );
 
@@ -33,7 +33,7 @@ export const fetchShowError = createAction(
   props<{ payload: Error }>()
 );
 
-export const updatShow = createAction(
+export const updateShow = createAction(
   `${TYPE} Update`,
   props<{ payload: Show }>()
 );

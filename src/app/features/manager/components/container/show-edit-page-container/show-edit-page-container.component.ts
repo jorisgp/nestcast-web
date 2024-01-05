@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { createShow } from 'src/app/core/store/actions/show.actions';
+import {
+  createShow,
+  updateShow,
+} from 'src/app/core/store/actions/show.actions';
 import { Show } from 'src/app/shared/interfaces/user.interface';
 
 @Component({
@@ -12,6 +15,10 @@ export class ShowEditPageContainerComponent {
   constructor(private store: Store<{ show: any }>) {}
 
   onSubmitForm(show: Show) {
-    this.store.dispatch(createShow({ payload: show }));
+    if (!show.id) {
+      this.store.dispatch(createShow({ payload: show }));
+    } else {
+      this.store.dispatch(updateShow({ payload: show }));
+    }
   }
 }

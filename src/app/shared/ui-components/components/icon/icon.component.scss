@@ -1,6 +1,10 @@
 .icon {
   font-size: 18px;
 
+  &.extra-small {
+    font-size: 14px;
+  }
+
   &.medium {
     font-size: 36px;
   }

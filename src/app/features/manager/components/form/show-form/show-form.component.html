@@ -139,7 +139,11 @@
       <div
         class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5 buttons"
       >
-        <button type="button" class="btn btn-light me-1">
+        <button
+          type="button"
+          class="btn btn-light me-1"
+          [routerLink]="['/', 'secure', 'manager', 'show']"
+        >
           {{ "SECURE.SHOW.FORM.CANCEL" | translate }}
         </button>
         <button type="submit" class="btn btn-dark">

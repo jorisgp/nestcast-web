@@ -18,6 +18,7 @@ import { ShowEditPageComponent } from './components/page/show-edit-page/show-edi
 import { ShowEditPageContainerComponent } from './components/container/show-edit-page-container/show-edit-page-container.component';
 import { EpsiodeEditPageContainerComponent } from './components/container/epsiode-edit-page-container/epsiode-edit-page-container.component';
 import { ShowFormComponent } from './components/form/show-form/show-form.component';
+import { EpisodeFormComponent } from './components/form/episode-form/episode-form.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ShowFormComponent } from './components/form/show-form/show-form.compone
     ShowEditPageContainerComponent,
     EpsiodeEditPageContainerComponent,
     ShowFormComponent,
+    EpisodeFormComponent,
   ],
   imports: [
     CommonModule,

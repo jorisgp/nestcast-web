@@ -46,9 +46,7 @@ export class ShowFormComponent {
     });
 
     this.form.controls['category'].valueChanges.subscribe(() => {
-      console.log('category changed');
       this.form.controls['subCategory'].setValue('');
-      console.log(this.form.controls['subCategory'].value);
     });
   }
 }

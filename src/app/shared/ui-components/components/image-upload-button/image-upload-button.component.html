@@ -1,0 +1,19 @@
+<div
+  class="upload-button"
+  [class.small]="size === ImageUploadButtonSize.SMALL"
+  [class.medium]="size === ImageUploadButtonSize.MEDIUM"
+  [class.large]="size === ImageUploadButtonSize.LARGE"
+>
+  <ng-container
+    *ngTemplateOutlet="data ? imageTemplate : uploadTemplate"
+  ></ng-container>
+</div>
+
+<ng-template #uploadTemplate>
+  <app-icon [type]="IconType.UPLOAD" [size]="IconSize.LARGE"></app-icon>
+  <div>Upload image</div>
+</ng-template>
+
+<ng-template #imageTemplate>
+  <app-icon [type]="IconType.DELETE"></app-icon>
+</ng-template>
