@@ -5,7 +5,7 @@
     <div class="col pb-5">
       <app-episode-form
         (submitForm)="onSubmitForm($event)"
-        [data]="episode$ | async"
+        [data]="editMode && (episode$ | async)"
       ></app-episode-form>
     </div>
   </div>

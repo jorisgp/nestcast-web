@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
+import { filter, first } from 'rxjs';
 import { fetchEpisodeList } from 'src/app/core/store/actions/episode.actions';
 import { fetchShow } from 'src/app/core/store/actions/show.actions';
 import { selectIsLoading } from 'src/app/core/store/selectors/auth.selectors';
@@ -30,13 +31,14 @@ export class ShowPageContainerComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(fetchShow({ payload: null }));
 
-    this.show$.subscribe((show) => {
-      this.store.dispatch(fetchEpisodeList({ showId: show.id }));
-    });
-
-    this.episodes$.subscribe((episodeList) => {
-      console.log('episodeList', episodeList);
-    });
+    this.show$
+      .pipe(
+        filter((show) => !!show),
+        first()
+      )
+      .subscribe((show) => {
+        this.store.dispatch(fetchEpisodeList({ showId: show.id }));
+      });
   }
 
   editEpisode(episode: Episode) {

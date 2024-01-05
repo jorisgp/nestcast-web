@@ -30,13 +30,6 @@ export class EpisodeFormComponent {
     this.createForm(changes['data'].currentValue);
   }
 
-  onSubmitForm() {
-    console.log(this.form.value);
-    if (this.form.valid) {
-      this.submitForm.emit(this.form.value);
-    }
-  }
-
   createForm(data: Episode) {
     this.form = new FormGroup({
       title: new FormControl(data?.title, [Validators.required]),
@@ -47,5 +40,11 @@ export class EpisodeFormComponent {
       keywords: new FormControl(data?.keywords || [], []),
       explicit: new FormControl(data?.explicit || false, [Validators.required]),
     });
+  }
+
+  onSubmitForm() {
+    if (this.form.valid) {
+      this.submitForm.emit({ id: this.data.id, ...this.form.value });
+    }
   }
 }

@@ -37,7 +37,6 @@ const episode = createReducer(
     isLoading: false,
   })),
   on(fetchEpisodeListSuccess, (state, result) => {
-    console.log('result', result);
     return {
       ...state,
       episodeList: result.payload,

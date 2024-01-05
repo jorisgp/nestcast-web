@@ -83,7 +83,6 @@ export class EpisodeEffects {
     this.actions$.pipe(
       ofType(fetchEpisode),
       mergeMap((action) => {
-        console.log('  fetchEpisode$', action);
         return this.nestcastHttpService.getEpisodesById(action.episodeId).pipe(
           map((result) => fetchEpisodeSuccess({ payload: result })),
           catchError((error) => of(fetchEpisodeError(error)))
@@ -93,11 +92,7 @@ export class EpisodeEffects {
   );
 
   fetchEpisodeSuccess$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(fetchEpisodeSuccess),
-        tap((action) => console.log('fetchEpisodeSuccess', action))
-      ),
+    () => this.actions$.pipe(ofType(fetchEpisodeSuccess)),
     { dispatch: false }
   );
 

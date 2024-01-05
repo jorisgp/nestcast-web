@@ -1,9 +1,9 @@
 <ng-container *ngIf="episodeData">
-  <div class="row">
+  <div class="row episode">
     <div class="col-3"></div>
-    <div class="col-6">
+    <div class="col-6 d-flex flex-column flex-container">
       <h2>{{ episodeData.title }}</h2>
-      <p>{{ episodeData.description }}</p>
+      <p class="flex-grow-1 description">{{ episodeData.description }}</p>
       <div class="keywords">
         <div *ngFor="let keyword of episodeData.keywords" class="nc-pill">
           {{ keyword }}

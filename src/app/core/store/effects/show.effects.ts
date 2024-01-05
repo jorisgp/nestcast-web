@@ -75,11 +75,7 @@ export class ShowEffects {
   );
 
   fetchShowSuccess$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(fetchShowSuccess),
-        tap((action) => console.log('fetchShowSuccess', action))
-      ),
+    () => this.actions$.pipe(ofType(fetchShowSuccess)),
     { dispatch: false }
   );
 

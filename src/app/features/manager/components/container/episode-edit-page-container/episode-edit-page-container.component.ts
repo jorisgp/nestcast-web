@@ -29,6 +29,10 @@ export class EpisodeEditPageContainerComponent {
   get episodeId(): string {
     return this.route.snapshot.params['episodeId'];
   }
+
+  get editMode(): boolean {
+    return !!this.episodeId;
+  }
   ngOnInit(): void {
     this.fetchEpisode();
   }
@@ -43,9 +47,10 @@ export class EpisodeEditPageContainerComponent {
         createEpisode({ payload: episode, showId: this.showId })
       );
     } else {
+      const { id, ...updatedEpisode } = episode;
       this.store.dispatch(
         updateEpisode({
-          payload: episode,
+          payload: updatedEpisode,
           episodeId: this.episodeId,
         })
       );

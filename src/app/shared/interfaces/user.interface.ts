@@ -27,7 +27,7 @@ export type Show = {
 };
 
 export type Episode = {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   type: string;
