@@ -40,6 +40,11 @@
           [episodeData]="episode"
           [showData]="show$ | async"
           (editEpisode)="editEpisode($event)"
+        >
+          <app-image-upload-button
+            image-upload
+            [size]="ImageUploadButtonSize.SMALL"
+          ></app-image-upload-button
         ></app-episode-details>
       </ng-container>
     </div>

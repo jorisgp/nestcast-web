@@ -8,6 +8,7 @@ import { selectIsLoading } from 'src/app/core/store/selectors/auth.selectors';
 import { selectEpisodeList } from 'src/app/core/store/selectors/episode.selector';
 import { selectShow } from 'src/app/core/store/selectors/show.selectors';
 import { Episode } from 'src/app/shared/interfaces/user.interface';
+import { ImageUploadButtonSize } from 'src/app/shared/modules/upload/components/image-upload-button/image-upload-button.component';
 import { IconType } from 'src/app/shared/ui-components/components/icon/icon.component';
 
 @Component({
@@ -21,6 +22,7 @@ export class ShowPageContainerComponent implements OnInit {
   isLoading$ = this.store.select(selectIsLoading);
 
   IconType = IconType;
+  ImageUploadButtonSize = ImageUploadButtonSize;
 
   constructor(
     private store: Store<{ show: any }>,

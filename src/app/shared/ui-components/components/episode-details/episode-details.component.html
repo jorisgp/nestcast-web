@@ -1,6 +1,8 @@
 <ng-container *ngIf="episodeData">
   <div class="row episode">
-    <div class="col-3"></div>
+    <div class="col-3 d-flex justify-content-end">
+      <ng-content select="[image-upload]"></ng-content>
+    </div>
     <div class="col-6 d-flex flex-column flex-container">
       <h2>{{ episodeData.title }}</h2>
       <p class="flex-grow-1 description">{{ episodeData.description }}</p>

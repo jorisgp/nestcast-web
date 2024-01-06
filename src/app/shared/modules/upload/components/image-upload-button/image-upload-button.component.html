@@ -3,11 +3,22 @@
   [class.small]="size === ImageUploadButtonSize.SMALL"
   [class.medium]="size === ImageUploadButtonSize.MEDIUM"
   [class.large]="size === ImageUploadButtonSize.LARGE"
+  (appDropFile)="onFileDragged($event)"
+  (click)="fileUpload.click()"
 >
   <ng-container
     *ngTemplateOutlet="data ? imageTemplate : uploadTemplate"
   ></ng-container>
 </div>
+
+<input
+  type="file"
+  title="file upload"
+  class="file-input"
+  (change)="onFileSelected($event)"
+  accept=".jpg,.jpeg,.png,.gif,.bmp"
+  #fileUpload
+/>
 
 <ng-template #uploadTemplate>
   <app-icon [type]="IconType.UPLOAD" [size]="IconSize.LARGE"></app-icon>

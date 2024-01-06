@@ -1,0 +1,27 @@
+<div
+  class="upload-button"
+  (appDropFile)="onFileDragged($event)"
+  (click)="fileUpload.click()"
+>
+  <ng-container
+    *ngTemplateOutlet="data ? imageTemplate : uploadTemplate"
+  ></ng-container>
+</div>
+
+<input
+  type="file"
+  title="file upload"
+  class="file-input"
+  (change)="onFileSelected($event)"
+  accept=".wav,.mp3"
+  #fileUpload
+/>
+
+<ng-template #uploadTemplate>
+  <app-icon [type]="IconType.UPLOAD" [size]="IconSize.LARGE"></app-icon>
+  <div>Upload image</div>
+</ng-template>
+
+<ng-template #imageTemplate>
+  <app-icon [type]="IconType.DELETE"></app-icon>
+</ng-template>

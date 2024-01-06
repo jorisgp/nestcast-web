@@ -11,7 +11,6 @@ import { EpisodeDetailsComponent } from './components/episode-details/episode-de
 import { EpisodeTypeSelectComponent } from './components/episode-type-select/episode-type-select.component';
 import { IconButtonComponent } from './components/icon-button/icon-button.component';
 import { IconComponent } from './components/icon/icon.component';
-import { ImageUploadButtonComponent } from './components/image-upload-button/image-upload-button.component';
 import { InputTextComponent } from './components/input-text/input-text.component';
 import { KeywordInputComponent } from './components/keyword-input/keyword-input.component';
 import { LanguageSelectComponent } from './components/language-select/language-select.component';
@@ -39,7 +38,6 @@ import { SubCategorySelectComponent } from './components/sub-category-select/sub
     SubCategorySelectComponent,
     KeywordInputComponent,
     ShowDetailsComponent,
-    ImageUploadButtonComponent,
     IconButtonComponent,
     NumberSelectComponent,
     EpisodeTypeSelectComponent,
@@ -66,7 +64,6 @@ import { SubCategorySelectComponent } from './components/sub-category-select/sub
     SubCategorySelectComponent,
     KeywordInputComponent,
     ShowDetailsComponent,
-    ImageUploadButtonComponent,
     IconButtonComponent,
     NumberSelectComponent,
     EpisodeTypeSelectComponent,

@@ -7,6 +7,7 @@ import { MessageModule } from 'primeng/message';
 import { MessagesModule } from 'primeng/messages';
 import { CodeConfirmationComponent } from './components/code-confirmation/code-confirmation.component';
 import { FlagComponent } from './components/flag/flag.component';
+import { UploadModule } from './modules/upload/upload.module';
 import { UiComponentsModule } from './ui-components/ui-components.module';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { UiComponentsModule } from './ui-components/ui-components.module';
     MessageModule,
     MessagesModule,
     UiComponentsModule,
+    UploadModule,
   ],
   exports: [
     TranslateModule,
@@ -26,6 +28,7 @@ import { UiComponentsModule } from './ui-components/ui-components.module';
     CodeConfirmationComponent,
     FlagComponent,
     ReactiveFormsModule,
+    UploadModule,
   ],
 })
 export class SharedModule {}
