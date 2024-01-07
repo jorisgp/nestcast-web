@@ -4,7 +4,7 @@
   (click)="fileUpload.click()"
 >
   <ng-container
-    *ngTemplateOutlet="data ? audioTemplate : uploadTemplate"
+    *ngTemplateOutlet="audioSource ? audioTemplate : uploadTemplate"
   ></ng-container>
 </div>
 
@@ -23,5 +23,11 @@
 </ng-template>
 
 <ng-template #audioTemplate>
-  <app-icon [type]="IconType.DELETE"></app-icon>
+  <div class="audio-wrapper">
+    <audio controls>
+      <source [src]="audioSourceUrl" />
+      Your browser does not support the audio element.
+    </audio>
+    <app-icon [type]="IconType.DELETE"></app-icon>
+  </div>
 </ng-template>

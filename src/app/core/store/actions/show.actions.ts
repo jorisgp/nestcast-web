@@ -53,6 +53,21 @@ export const uploadShowImageError = createAction(
   props<{ payload: Error }>()
 );
 
+export const deleteShowImage = createAction(
+  `${TYPE} Delete Image`,
+  props<{ showId: string }>()
+);
+
+export const deleteShowImageSuccess = createAction(
+  `${TYPE} Delete Image Success`,
+  props<{ payload: Show }>()
+);
+
+export const deleteShowImageError = createAction(
+  `${TYPE} Delete Image Error`,
+  props<{ payload: Error }>()
+);
+
 export const updateShowSuccess = createAction(
   `${TYPE} Update Success`,
   props<{ payload: Show }>()

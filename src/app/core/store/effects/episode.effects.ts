@@ -14,6 +14,7 @@ import {
   createEpisodeAddAudioSuccess,
   createEpisodeError,
   createEpisodeSuccess,
+  deleteEpisodeImage,
   fetchEpisode,
   fetchEpisodeError,
   fetchEpisodeList,
@@ -133,7 +134,7 @@ export class EpisodeEffects {
         this.nestcastHttpService
           .putEpisodesImage(action.episodeId, action.payload)
           .pipe(
-            map((episode) => uploadEpisodeImageSuccess(episode)),
+            map((episode) => uploadEpisodeImageSuccess({ payload: episode })),
             catchError((error) => of(uploadEpisodeImageError(error)))
           )
       )
@@ -165,6 +166,18 @@ export class EpisodeEffects {
             map((episode) => createEpisodeAddAudioSuccess(episode)),
             catchError((error) => of(createEpisodeAddAudioError(error)))
           )
+      )
+    )
+  );
+
+  deleteEpisodeImage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteEpisodeImage),
+      mergeMap((action) =>
+        this.nestcastHttpService.putEpisodesImage(action.episodeId, null).pipe(
+          map((show) => uploadEpisodeImageSuccess({ payload: show })),
+          catchError((error) => of(uploadEpisodeImageError(error)))
+        )
       )
     )
   );

@@ -139,8 +139,8 @@ export class NestcastHttpService {
   }
 
   putShowsImage(showId: string, file: File): Observable<any> {
-    const formData: FormData = new FormData();
-    formData.append('file', file);
+    const { formData, params }: { formData: FormData; params: any } =
+      this.prepareFile(file);
     return this.http
       .put<any>(
         `${apiPrefix}/${ApiResource.SHOWS}/${showId}/${ApiResource.IMAGES}`,
@@ -148,9 +148,21 @@ export class NestcastHttpService {
         {
           reportProgress: true,
           responseType: 'json',
+          params,
         }
       )
       .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  private prepareFile(file: File) {
+    let params;
+    if (!file) {
+      params = this._createParams({ delete: true });
+    }
+
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return { formData, params };
   }
 
   getShowsEpisodes(showId: string): Observable<any> {
@@ -189,8 +201,8 @@ export class NestcastHttpService {
   }
 
   putEpisodesImage(episodeId: string, file: File): Observable<any> {
-    const formData: FormData = new FormData();
-    formData.append('file', file);
+    const { formData, params }: { formData: FormData; params: any } =
+      this.prepareFile(file);
     return this.http
       .put<any>(
         `${apiPrefix}/${ApiResource.EPISODES}/${episodeId}/${ApiResource.IMAGES}`,
@@ -198,6 +210,7 @@ export class NestcastHttpService {
         {
           reportProgress: true,
           responseType: 'json',
+          params,
         }
       )
       .pipe(catchError((error) => this._handleError(error)));

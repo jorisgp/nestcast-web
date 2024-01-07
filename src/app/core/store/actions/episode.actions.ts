@@ -93,6 +93,21 @@ export const uploadEpisodeImageError = createAction(
   props<{ payload: Error }>()
 );
 
+export const deleteEpisodeImage = createAction(
+  `${TYPE} Delete Image`,
+  props<{ episodeId: string }>()
+);
+
+export const deleteEpisodeImageSuccess = createAction(
+  `${TYPE} Delete Image Success`,
+  props<{ payload: Episode }>()
+);
+
+export const deleteEpisodeImageError = createAction(
+  `${TYPE} Delete Image Error`,
+  props<{ payload: Error }>()
+);
+
 export const uploadEpisodeAudio = createAction(
   `${TYPE} Upload Audio`,
   props<{ payload: File; episodeId: string }>()

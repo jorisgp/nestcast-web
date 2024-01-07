@@ -4,6 +4,7 @@ import {
   fetchShow,
   fetchShowError,
   fetchShowSuccess,
+  uploadShowImageSuccess,
 } from '../actions/show.actions';
 
 export interface ShowState {
@@ -31,6 +32,11 @@ const show = createReducer(
   on(fetchShowError, (state, message) => ({
     ...state,
     message,
+    isLoading: false,
+  })),
+  on(uploadShowImageSuccess, (state, result) => ({
+    ...state,
+    payload: result.payload,
     isLoading: false,
   }))
 );

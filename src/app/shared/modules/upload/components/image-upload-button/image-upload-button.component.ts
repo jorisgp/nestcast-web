@@ -32,6 +32,9 @@ export class ImageUploadButtonComponent {
   @Output()
   upload = new EventEmitter<File>();
 
+  @Output()
+  delete = new EventEmitter<void>();
+
   @ViewChild('fileUpload')
   fileInput: ElementRef;
 
@@ -53,6 +56,7 @@ export class ImageUploadButtonComponent {
 
   onDelete(event: Event) {
     event.stopPropagation();
+    this.delete.emit();
   }
 
   clickFileUpload(event: Event) {

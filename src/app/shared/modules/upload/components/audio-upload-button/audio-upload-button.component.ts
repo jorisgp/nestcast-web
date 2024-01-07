@@ -18,7 +18,11 @@ import {
 })
 export class AudioUploadButtonComponent {
   @Input()
-  data: File;
+  audioSource: string;
+
+  storedData: File;
+
+  localAudioSource: string;
 
   @Input()
   size: ImageUploadButtonSize;
@@ -33,6 +37,10 @@ export class AudioUploadButtonComponent {
   IconType = IconType;
   IconSize = IconSize;
 
+  get audioSourceUrl() {
+    return this.localAudioSource ? this.localAudioSource : this.audioSource;
+  }
+
   onFileDragged(fileArray: File[]) {
     this._handleFile(fileArray[0]);
   }
@@ -45,7 +53,9 @@ export class AudioUploadButtonComponent {
   }
 
   private _handleFile(file: File) {
-    this.data = file;
+    this.storedData = file;
+    const createdFile = new File([file], 'temp_audio.mp3');
+    this.audioSource = URL.createObjectURL(createdFile);
     this.select.emit(file);
   }
 }

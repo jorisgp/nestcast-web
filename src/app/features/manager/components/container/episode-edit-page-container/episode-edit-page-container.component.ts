@@ -44,7 +44,7 @@ export class EpisodeEditPageContainerComponent {
   }
 
   onSubmitForm(episode: Episode) {
-    const { audio, ...episodeWithoutAudio } = episode;
+    const { audioFile, ...episodeWithoutAudio } = episode;
 
     if (!episode.id) {
       console.log('Create Episode');
@@ -52,7 +52,7 @@ export class EpisodeEditPageContainerComponent {
         createEpisode({
           payload: episodeWithoutAudio,
           showId: this.showId,
-          audio: audio,
+          audio: audioFile,
         })
       );
     } else {

@@ -11,6 +11,7 @@ import {
   createShow,
   createShowError,
   createShowSuccess,
+  deleteShowImage,
   fetchShow,
   fetchShowSuccess,
   updateShow,
@@ -101,9 +102,21 @@ export class ShowEffects {
         this.nestcastHttpService
           .putShowsImage(action.showId, action.payload)
           .pipe(
-            map((show) => uploadShowImageSuccess(show)),
+            map((show) => uploadShowImageSuccess({ payload: show })),
             catchError((error) => of(uploadShowImageError(error)))
           )
+      )
+    )
+  );
+
+  deleteShowImage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(deleteShowImage),
+      mergeMap((action) =>
+        this.nestcastHttpService.putShowsImage(action.showId, null).pipe(
+          map((show) => uploadShowImageSuccess({ payload: show })),
+          catchError((error) => of(uploadShowImageError(error)))
+        )
       )
     )
   );

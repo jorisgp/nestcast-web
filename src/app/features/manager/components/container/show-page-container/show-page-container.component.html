@@ -12,6 +12,7 @@
           <app-image-upload-button
             [data]="show.image"
             (upload)="onUpoadShowImage($event, show.id)"
+            (delete)="onDeleteShowImage(show.id)"
           ></app-image-upload-button>
         </div>
         <div class="col-6">
@@ -50,6 +51,7 @@
               [data]="episode.image || show.image"
               [size]="ImageUploadButtonSize.SMALL"
               (upload)="onUpoadEpisodeImage($event, episode.id)"
+              (delete)="onDeleteEpisodeImage(episode.id)"
               [disableDelete]="!episode.image"
             ></app-image-upload-button
           ></app-episode-details>

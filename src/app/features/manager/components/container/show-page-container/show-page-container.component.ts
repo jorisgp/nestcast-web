@@ -3,10 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter, first } from 'rxjs';
 import {
+  deleteEpisodeImage,
   fetchEpisodeList,
   uploadEpisodeImage,
 } from 'src/app/core/store/actions/episode.actions';
 import {
+  deleteShowImage,
   fetchShow,
   uploadShowImage,
 } from 'src/app/core/store/actions/show.actions';
@@ -64,5 +66,13 @@ export class ShowPageContainerComponent implements OnInit {
     this.store.dispatch(
       uploadEpisodeImage({ payload: file, episodeId: episodeId })
     );
+  }
+
+  onDeleteShowImage(showId: string) {
+    this.store.dispatch(deleteShowImage({ showId }));
+  }
+
+  onDeleteEpisodeImage(episodeId: string) {
+    this.store.dispatch(deleteEpisodeImage({ episodeId }));
   }
 }

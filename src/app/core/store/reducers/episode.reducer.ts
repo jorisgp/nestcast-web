@@ -5,6 +5,7 @@ import {
   fetchEpisodeError,
   fetchEpisodeListSuccess,
   fetchEpisodeSuccess,
+  uploadEpisodeImageSuccess,
 } from '../actions/episode.actions';
 
 export interface EpisodeState {
@@ -42,8 +43,22 @@ const episode = createReducer(
       episodeList: result.payload,
       isLoading: false,
     };
-  })
+  }),
+  on(uploadEpisodeImageSuccess, (state, result) => ({
+    ...state,
+    episodeList: replaceUpdatedEpisode(state.episodeList, result.payload),
+    isLoading: false,
+  }))
 );
+
+const replaceUpdatedEpisode = (episodeList: Episode[], episode: Episode) => {
+  const index = episodeList.findIndex((e) => e.id === episode.id);
+  return [
+    ...episodeList.slice(0, index),
+    episode,
+    ...episodeList.slice(index + 1),
+  ];
+};
 
 export function episodeReducer(state: EpisodeState, action: Action) {
   return episode(state, action);
