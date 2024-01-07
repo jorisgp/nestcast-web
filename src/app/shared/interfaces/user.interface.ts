@@ -24,6 +24,7 @@ export type Show = {
   subCategory: string;
   explicit: boolean;
   keywords: string[];
+  image: string;
 };
 
 export type Episode = {
@@ -36,4 +37,6 @@ export type Episode = {
   episode: number;
   explicit: boolean;
   show: { id: string };
+  audio?: File;
+  image: string;
 };

@@ -2,8 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { filter, first } from 'rxjs';
-import { fetchEpisodeList } from 'src/app/core/store/actions/episode.actions';
-import { fetchShow } from 'src/app/core/store/actions/show.actions';
+import {
+  fetchEpisodeList,
+  uploadEpisodeImage,
+} from 'src/app/core/store/actions/episode.actions';
+import {
+  fetchShow,
+  uploadShowImage,
+} from 'src/app/core/store/actions/show.actions';
 import { selectIsLoading } from 'src/app/core/store/selectors/auth.selectors';
 import { selectEpisodeList } from 'src/app/core/store/selectors/episode.selector';
 import { selectShow } from 'src/app/core/store/selectors/show.selectors';
@@ -48,5 +54,15 @@ export class ShowPageContainerComponent implements OnInit {
     this.router.navigate(routeArray, {
       relativeTo: this.route,
     });
+  }
+
+  onUpoadShowImage(file: File, showId: string) {
+    this.store.dispatch(uploadShowImage({ payload: file, showId: showId }));
+  }
+
+  onUpoadEpisodeImage(file: File, episodeId: string) {
+    this.store.dispatch(
+      uploadEpisodeImage({ payload: file, episodeId: episodeId })
+    );
   }
 }

@@ -6,6 +6,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { IconButtonColor } from 'src/app/shared/ui-components/components/icon-button/icon-button.component';
 import {
   IconSize,
   IconType,
@@ -17,8 +18,13 @@ import {
   styleUrls: ['./image-upload-button.component.scss'],
 })
 export class ImageUploadButtonComponent {
+  @ViewChild('fileUpload') fileUpload: ElementRef;
+
   @Input()
-  data: any;
+  data: string;
+
+  @Input()
+  disableDelete: boolean = false;
 
   @Input()
   size: ImageUploadButtonSize;
@@ -30,6 +36,7 @@ export class ImageUploadButtonComponent {
   fileInput: ElementRef;
 
   ImageUploadButtonSize = ImageUploadButtonSize;
+  IconButtonColor = IconButtonColor;
   IconType = IconType;
   IconSize = IconSize;
 
@@ -44,6 +51,14 @@ export class ImageUploadButtonComponent {
     this._handleFile(fileArray[0]);
   }
 
+  onDelete(event: Event) {
+    event.stopPropagation();
+  }
+
+  clickFileUpload(event: Event) {
+    this.fileUpload.nativeElement.click();
+    event.stopPropagation();
+  }
   private _handleFile(file: File) {
     this.upload.emit(file);
   }

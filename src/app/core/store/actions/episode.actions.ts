@@ -5,7 +5,7 @@ const TYPE = '[Episode]';
 
 export const createEpisode = createAction(
   `${TYPE} Create`,
-  props<{ payload: Episode; showId: string }>()
+  props<{ payload: Episode; showId: string; audio: File }>()
 );
 
 export const createEpisodeSuccess = createAction(
@@ -75,5 +75,50 @@ export const deleteEpisodeSuccess = createAction(
 
 export const deleteEpisodeError = createAction(
   `${TYPE} Delete Error`,
+  props<{ payload: Error }>()
+);
+
+export const uploadEpisodeImage = createAction(
+  `${TYPE} Upload Image`,
+  props<{ payload: File; episodeId: string }>()
+);
+
+export const uploadEpisodeImageSuccess = createAction(
+  `${TYPE} Upload Image Success`,
+  props<{ payload: Episode }>()
+);
+
+export const uploadEpisodeImageError = createAction(
+  `${TYPE} Upload Image Error`,
+  props<{ payload: Error }>()
+);
+
+export const uploadEpisodeAudio = createAction(
+  `${TYPE} Upload Audio`,
+  props<{ payload: File; episodeId: string }>()
+);
+
+export const uploadEpisodeAudioSuccess = createAction(
+  `${TYPE} Upload Audio Success`,
+  props<{ payload: Episode }>()
+);
+
+export const uploadEpisodeAudioError = createAction(
+  `${TYPE} Upload Audio Error`,
+  props<{ payload: Error }>()
+);
+
+export const createEpisodeAddAudio = createAction(
+  `${TYPE} Create Add Audio`,
+  props<{ payload: Episode; audio: File }>()
+);
+
+export const createEpisodeAddAudioSuccess = createAction(
+  `${TYPE} Create Add Audio Success`,
+  props<{ payload: Episode }>()
+);
+
+export const createEpisodeAddAudioError = createAction(
+  `${TYPE} Create Add Audio Error`,
   props<{ payload: Error }>()
 );

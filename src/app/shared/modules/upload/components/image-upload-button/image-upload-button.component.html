@@ -4,7 +4,7 @@
   [class.medium]="size === ImageUploadButtonSize.MEDIUM"
   [class.large]="size === ImageUploadButtonSize.LARGE"
   (appDropFile)="onFileDragged($event)"
-  (click)="fileUpload.click()"
+  (click)="clickFileUpload($event)"
 >
   <ng-container
     *ngTemplateOutlet="data ? imageTemplate : uploadTemplate"
@@ -26,5 +26,25 @@
 </ng-template>
 
 <ng-template #imageTemplate>
-  <app-icon [type]="IconType.DELETE"></app-icon>
+  <img [src]="data" alt="" />
+  <div class="button-wrapper">
+    <app-icon-button
+      [iconType]="IconType.DELETE"
+      *ngIf="data && !disableDelete"
+      [color]="IconButtonColor.LIGHT"
+      class="me-1"
+      (click)="onDelete($event)"
+      ><ng-container *ngIf="size !== ImageUploadButtonSize.SMALL"
+        >Delete</ng-container
+      ></app-icon-button
+    >
+    <app-icon-button
+      [iconType]="IconType.EDIT"
+      (click)="clickFileUpload($event)"
+      [color]="IconButtonColor.LIGHT"
+      ><ng-container *ngIf="size !== ImageUploadButtonSize.SMALL"
+        >Edit</ng-container
+      ></app-icon-button
+    >
+  </div>
 </ng-template>

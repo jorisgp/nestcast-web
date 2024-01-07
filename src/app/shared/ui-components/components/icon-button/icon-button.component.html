@@ -1,4 +1,14 @@
-<button type="button" class="btn btn-dark" [routerLink]="routerLinkData">
-  <ng-content></ng-content
-  ><app-icon [type]="iconType" *ngIf="iconType" class="ms-2"></app-icon>
+<button
+  type="button"
+  class="btn"
+  [class.btn-dark]="color === IconButtonColor.DARK"
+  [class.btn-light]="color === IconButtonColor.LIGHT"
+  [routerLink]="routerLinkData"
+>
+  <span #textContent><ng-content></ng-content></span>
+  <app-icon
+    [type]="iconType"
+    *ngIf="iconType"
+    [class.ms-2]="showMargin(textContent)"
+  ></app-icon>
 </button>

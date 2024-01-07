@@ -34,7 +34,9 @@ export class EpisodeEditPageContainerComponent {
     return !!this.episodeId;
   }
   ngOnInit(): void {
-    this.fetchEpisode();
+    if (this.episodeId) {
+      this.fetchEpisode();
+    }
   }
 
   fetchEpisode() {
@@ -42,12 +44,19 @@ export class EpisodeEditPageContainerComponent {
   }
 
   onSubmitForm(episode: Episode) {
+    const { audio, ...episodeWithoutAudio } = episode;
+
     if (!episode.id) {
+      console.log('Create Episode');
       this.store.dispatch(
-        createEpisode({ payload: episode, showId: this.showId })
+        createEpisode({
+          payload: episodeWithoutAudio,
+          showId: this.showId,
+          audio: audio,
+        })
       );
     } else {
-      const { id, ...updatedEpisode } = episode;
+      const { id, ...updatedEpisode } = episodeWithoutAudio;
       this.store.dispatch(
         updateEpisode({
           payload: updatedEpisode,

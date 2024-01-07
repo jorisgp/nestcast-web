@@ -138,6 +138,21 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
+  putShowsImage(showId: string, file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.http
+      .put<any>(
+        `${apiPrefix}/${ApiResource.SHOWS}/${showId}/${ApiResource.IMAGES}`,
+        formData,
+        {
+          reportProgress: true,
+          responseType: 'json',
+        }
+      )
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
   getShowsEpisodes(showId: string): Observable<any> {
     return this.http
       .get<any>(
@@ -170,6 +185,37 @@ export class NestcastHttpService {
   deleteEpisode(episodeId: string): Observable<any> {
     return this.http
       .delete<any>(`${apiPrefix}/${ApiResource.EPISODES}/${episodeId}`)
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  putEpisodesImage(episodeId: string, file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.http
+      .put<any>(
+        `${apiPrefix}/${ApiResource.EPISODES}/${episodeId}/${ApiResource.IMAGES}`,
+        formData,
+        {
+          reportProgress: true,
+          responseType: 'json',
+        }
+      )
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  putEpisodesAudio(episodeId: string, file: File): Observable<any> {
+    console.log('episodeId', episodeId);
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.http
+      .put<any>(
+        `${apiPrefix}/${ApiResource.EPISODES}/${episodeId}/${ApiResource.AUDIO}`,
+        formData,
+        {
+          reportProgress: true,
+          responseType: 'json',
+        }
+      )
       .pipe(catchError((error) => this._handleError(error)));
   }
 
@@ -274,10 +320,12 @@ enum ApiResource {
   USERS = 'users',
   PASSWORD = 'password',
   SHOWS = 'shows',
+  IMAGES = 'images',
   EPISODES = 'episodes',
   WAITING_LISTS = 'waiting-lists',
   CONTACTS = 'contacts',
   CONFIRMATION = 'confirmation',
+  AUDIO = 'audio',
 }
 
 export interface Upload {

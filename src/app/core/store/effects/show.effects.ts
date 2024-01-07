@@ -14,6 +14,9 @@ import {
   fetchShow,
   fetchShowSuccess,
   updateShow,
+  uploadShowImage,
+  uploadShowImageError,
+  uploadShowImageSuccess,
 } from '../actions/show.actions';
 
 @Injectable()
@@ -87,6 +90,20 @@ export class ShowEffects {
           map((show) => createShowSuccess(show)),
           catchError((error) => of(createShowError(error)))
         )
+      )
+    )
+  );
+
+  uploadShowImage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(uploadShowImage),
+      mergeMap((action) =>
+        this.nestcastHttpService
+          .putShowsImage(action.showId, action.payload)
+          .pipe(
+            map((show) => uploadShowImageSuccess(show)),
+            catchError((error) => of(uploadShowImageError(error)))
+          )
       )
     )
   );

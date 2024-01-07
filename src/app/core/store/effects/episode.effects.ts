@@ -9,6 +9,9 @@ import { NestcastHttpService } from '../../services/nestcast-http.service';
 import { NotificationService } from '../../services/notification.service';
 import {
   createEpisode,
+  createEpisodeAddAudio,
+  createEpisodeAddAudioError,
+  createEpisodeAddAudioSuccess,
   createEpisodeError,
   createEpisodeSuccess,
   fetchEpisode,
@@ -17,6 +20,9 @@ import {
   fetchEpisodeListSuccess,
   fetchEpisodeSuccess,
   updateEpisode,
+  uploadEpisodeImage,
+  uploadEpisodeImageError,
+  uploadEpisodeImageSuccess,
 } from '../actions/episode.actions';
 
 @Injectable()
@@ -37,7 +43,17 @@ export class EpisodeEffects {
         this.nestcastHttpService
           .postShowsEpisodes(action.showId, action.payload)
           .pipe(
-            map((episode) => createEpisodeSuccess(episode)),
+            map((episode) => {
+              if (action.audio) {
+                console.log('returned episode', episode);
+                return createEpisodeAddAudio({
+                  payload: episode,
+                  audio: action.audio,
+                });
+              } else {
+                return createEpisodeSuccess(episode);
+              }
+            }),
             catchError((error) => of(createEpisodeError(error)))
           )
       )
@@ -105,6 +121,49 @@ export class EpisodeEffects {
           .pipe(
             map((episode) => createEpisodeSuccess(episode)),
             catchError((error) => of(createEpisodeError(error)))
+          )
+      )
+    )
+  );
+
+  uploadEpisodeImage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(uploadEpisodeImage),
+      mergeMap((action) =>
+        this.nestcastHttpService
+          .putEpisodesImage(action.episodeId, action.payload)
+          .pipe(
+            map((episode) => uploadEpisodeImageSuccess(episode)),
+            catchError((error) => of(uploadEpisodeImageError(error)))
+          )
+      )
+    )
+  );
+
+  // uploadEpisodeAudio$ = createEffect(() =>
+  //   this.actions$.pipe(
+  //     ofType(uploadEpisodeAudio),
+  //     mergeMap((action) =>
+  //       this.nestcastHttpService
+  //         .putEpisodesAudio(action.episodeId, action.payload)
+  //         .pipe(
+  //           map((episode) => uploadEpisodeAudioSuccess(episode)),
+  //           catchError((error) => of(uploadEpisodeAudioError(error)))
+  //         )
+  //     )
+  //   )
+  // );
+
+  createEpisodeAddAudio$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(createEpisodeAddAudio),
+      tap(console.log),
+      mergeMap((action) =>
+        this.nestcastHttpService
+          .putEpisodesAudio(action.payload.id, action.audio)
+          .pipe(
+            map((episode) => createEpisodeAddAudioSuccess(episode)),
+            catchError((error) => of(createEpisodeAddAudioError(error)))
           )
       )
     )

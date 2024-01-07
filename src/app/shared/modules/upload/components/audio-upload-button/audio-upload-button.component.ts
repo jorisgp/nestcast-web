@@ -18,13 +18,13 @@ import {
 })
 export class AudioUploadButtonComponent {
   @Input()
-  data: any;
+  data: File;
 
   @Input()
   size: ImageUploadButtonSize;
 
   @Output()
-  upload = new EventEmitter<File>();
+  select = new EventEmitter<File>();
 
   @ViewChild('fileUpload')
   fileInput: ElementRef;
@@ -45,7 +45,8 @@ export class AudioUploadButtonComponent {
   }
 
   private _handleFile(file: File) {
-    this.upload.emit(file);
+    this.data = file;
+    this.select.emit(file);
   }
 }
 

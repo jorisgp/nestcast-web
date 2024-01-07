@@ -38,6 +38,21 @@ export const updateShow = createAction(
   props<{ payload: Show; showId: string }>()
 );
 
+export const uploadShowImage = createAction(
+  `${TYPE} Upload Image`,
+  props<{ payload: File; showId: string }>()
+);
+
+export const uploadShowImageSuccess = createAction(
+  `${TYPE} Upload Image Success`,
+  props<{ payload: Show }>()
+);
+
+export const uploadShowImageError = createAction(
+  `${TYPE} Upload Image Error`,
+  props<{ payload: Error }>()
+);
+
 export const updateShowSuccess = createAction(
   `${TYPE} Update Success`,
   props<{ payload: Show }>()

@@ -4,7 +4,7 @@
   (click)="fileUpload.click()"
 >
   <ng-container
-    *ngTemplateOutlet="data ? imageTemplate : uploadTemplate"
+    *ngTemplateOutlet="data ? audioTemplate : uploadTemplate"
   ></ng-container>
 </div>
 
@@ -22,6 +22,6 @@
   <div>Upload image</div>
 </ng-template>
 
-<ng-template #imageTemplate>
+<ng-template #audioTemplate>
   <app-icon [type]="IconType.DELETE"></app-icon>
 </ng-template>

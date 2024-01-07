@@ -11,5 +11,26 @@ export class IconButtonComponent {
   iconType: IconType;
 
   @Input()
+  color = IconButtonColor.DARK;
+
+  @Input()
   routerLinkData: string[] | string;
+
+  IconButtonColor = IconButtonColor;
+
+  showMargin(data: any) {
+    return data.innerHTML !== '<!---->';
+  }
+}
+
+export enum IconButtonColor {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  SUCCESS = 'success',
+  DANGER = 'danger',
+  WARNING = 'warning',
+  INFO = 'info',
+  LIGHT = 'light',
+  DARK = 'dark',
+  LINK = 'link',
 }

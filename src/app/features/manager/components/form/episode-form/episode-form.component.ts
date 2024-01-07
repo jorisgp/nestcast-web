@@ -39,7 +39,12 @@ export class EpisodeFormComponent {
       episode: new FormControl(data?.episode, []),
       keywords: new FormControl(data?.keywords || [], []),
       explicit: new FormControl(data?.explicit || false, [Validators.required]),
+      audio: new FormControl(),
     });
+  }
+
+  onAudioSelect(file: File) {
+    this.form.patchValue({ audio: file });
   }
 
   onSubmitForm() {
