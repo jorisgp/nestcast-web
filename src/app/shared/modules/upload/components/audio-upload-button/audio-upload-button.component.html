@@ -24,10 +24,19 @@
 
 <ng-template #audioTemplate>
   <div class="audio-wrapper">
-    <audio controls>
-      <source [src]="audioSourceUrl" />
+    <audio controls *ngIf="audioSource" #audioElement [src]="audioSource">
       Your browser does not support the audio element.
     </audio>
-    <app-icon [type]="IconType.DELETE"></app-icon>
+    <div class="button-wrapper">
+      <app-icon-button
+        [iconType]="IconType.EDIT"
+        *ngIf="audioSource"
+        [color]="IconButtonColor.LIGHT"
+        class="me-1"
+        ><ng-container *ngIf="size !== ImageUploadButtonSize.SMALL"
+          >Edit</ng-container
+        ></app-icon-button
+      >
+    </div>
   </div>
 </ng-template>

@@ -42,7 +42,6 @@ export class DropFileDirective implements OnInit, OnDestroy {
 
   @HostListener('drop', ['$event'])
   onDrop(event: DragEvent) {
-    console.log('onDrop');
     event.preventDefault();
     if (!this.enableBodyDrop) {
       this.handleDrop(event);

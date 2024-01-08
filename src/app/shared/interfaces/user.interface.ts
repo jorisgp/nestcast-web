@@ -37,7 +37,7 @@ export type Episode = {
   episode: number;
   explicit: boolean;
   show: { id: string };
-  audio: string;
+  audio?: string;
   audioFile?: File;
   image: string;
 };

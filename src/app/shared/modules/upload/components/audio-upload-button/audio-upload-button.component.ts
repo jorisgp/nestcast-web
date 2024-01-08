@@ -6,6 +6,7 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { IconButtonColor } from 'src/app/shared/ui-components/components/icon-button/icon-button.component';
 import {
   IconSize,
   IconType,
@@ -33,9 +34,13 @@ export class AudioUploadButtonComponent {
   @ViewChild('fileUpload')
   fileInput: ElementRef;
 
+  @ViewChild('audioElement', { static: false }) public _audioRef: ElementRef;
+  private audio: HTMLMediaElement;
+
   ImageUploadButtonSize = ImageUploadButtonSize;
   IconType = IconType;
   IconSize = IconSize;
+  IconButtonColor = IconButtonColor;
 
   get audioSourceUrl() {
     return this.localAudioSource ? this.localAudioSource : this.audioSource;
@@ -53,8 +58,13 @@ export class AudioUploadButtonComponent {
   }
 
   private _handleFile(file: File) {
+    this.audioSource = null;
     this.storedData = file;
-    const createdFile = new File([file], 'temp_audio.mp3');
+    const createdFile = new File(
+      [file],
+      `temp_audio_${new Date().getTime()}.mp3`
+    );
+
     this.audioSource = URL.createObjectURL(createdFile);
     this.select.emit(file);
   }

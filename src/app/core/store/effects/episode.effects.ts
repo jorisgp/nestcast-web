@@ -46,7 +46,6 @@ export class EpisodeEffects {
           .pipe(
             map((episode) => {
               if (action.audio) {
-                console.log('returned episode', episode);
                 return createEpisodeAddAudio({
                   payload: episode,
                   audio: action.audio,
@@ -120,7 +119,16 @@ export class EpisodeEffects {
         this.nestcastHttpService
           .patchEpisodes(action.episodeId, action.payload)
           .pipe(
-            map((episode) => createEpisodeSuccess(episode)),
+            map((episode) => {
+              if (action.audio) {
+                return createEpisodeAddAudio({
+                  payload: episode,
+                  audio: action.audio,
+                });
+              } else {
+                return createEpisodeSuccess(episode);
+              }
+            }),
             catchError((error) => of(createEpisodeError(error)))
           )
       )
@@ -158,16 +166,28 @@ export class EpisodeEffects {
   createEpisodeAddAudio$ = createEffect(() =>
     this.actions$.pipe(
       ofType(createEpisodeAddAudio),
-      tap(console.log),
       mergeMap((action) =>
         this.nestcastHttpService
           .putEpisodesAudio(action.payload.id, action.audio)
           .pipe(
-            map((episode) => createEpisodeAddAudioSuccess(episode)),
+            map((episode) =>
+              createEpisodeAddAudioSuccess({ payload: episode })
+            ),
             catchError((error) => of(createEpisodeAddAudioError(error)))
           )
       )
     )
+  );
+
+  createEpisodeAddAudioSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(createEpisodeAddAudioSuccess),
+        tap((action) =>
+          this.router.navigate(['/', 'secure', 'manager', 'show'])
+        )
+      ),
+    { dispatch: false }
   );
 
   deleteEpisodeImage$ = createEffect(() =>

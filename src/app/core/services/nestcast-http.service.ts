@@ -217,7 +217,6 @@ export class NestcastHttpService {
   }
 
   putEpisodesAudio(episodeId: string, file: File): Observable<any> {
-    console.log('episodeId', episodeId);
     const formData: FormData = new FormData();
     formData.append('file', file);
     return this.http

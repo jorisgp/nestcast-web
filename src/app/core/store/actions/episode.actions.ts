@@ -50,7 +50,7 @@ export const fetchEpisodeListError = createAction(
 
 export const updateEpisode = createAction(
   `${TYPE} Update`,
-  props<{ payload: Episode; episodeId: string }>()
+  props<{ payload: Episode; episodeId: string; audio: File }>()
 );
 
 export const updateEpisodeSuccess = createAction(
