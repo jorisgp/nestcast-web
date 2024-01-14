@@ -3,8 +3,8 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { WaitingListConfirmation } from 'src/app/shared/interfaces/auth.interface';
-import { ModalService } from 'src/app/shared/services/modal.service';
 import { LanguageService } from '../../services/language.service';
+import { ModalService } from '../../services/modal.service';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
 import { NotificationService } from '../../services/notification.service';
 import * as waitingListConfirmationActions from '../actions/waiting-list-confirmation.actions';
@@ -49,12 +49,7 @@ export class WaitingListConfirmationEffects {
         ofType(waitingListConfirmationActions.confirmWaitingListSuccess),
         tap(() => {
           this.notificationService.showSuccess(
-            this.languageService.getTranslation(
-              'WAITINGLIST.SUCCESSMESSAGE.title'
-            ),
-            this.languageService.getTranslation(
-              'WAITINGLIST.SUCCESSMESSAGE.text'
-            )
+            this.languageService.getTranslation('WAITINGLIST.SUCCESSMESSAGE')
           );
           this.modalService.closeModal();
         })
@@ -69,9 +64,8 @@ export class WaitingListConfirmationEffects {
         tap(() =>
           this.notificationService.showWarn(
             this.languageService.getTranslation(
-              'WAITINGLIST.ERRORMESSAGE.title'
-            ),
-            this.languageService.getTranslation('WAITINGLIST.ERRORMESSAGE.text')
+              'WAITINGLIST.ERRORMESSAGECONFIRM'
+            )
           )
         )
       ),

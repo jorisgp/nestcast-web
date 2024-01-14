@@ -1,10 +1,8 @@
 <div class="container">
   <div class="modal-content">
     <h2>{{ "EMAILCONFIRMATION.title" | translate }}</h2>
-    <p>
-      {{ "EMAILCONFIRMATION.text" | translate }}
-    </p>
-
+    <app-paragraphs [data]="'EMAILCONFIRMATION.text' | translate">
+    </app-paragraphs>
     <div class="code d-flex">
       <ng-container *ngFor="let digits of [1, 2, 3, 4]; let i = index">
         <input
@@ -19,17 +17,26 @@
       /></ng-container>
     </div>
     <div class="row mt-2">
-      <div class="col-12 d-flex justify-content-end">
-        <button
-          type="button"
-          class="btn btn-lght me-1"
-          (click)="cancelBack.emit()"
-        >
-          {{ "CANCEL" | translate }}
-        </button>
-        <button type="button" #button class="btn btn-dark" (click)="onSubmit()">
-          {{ "CONFIRM" | translate }}
-        </button>
+      <div class="d-flex flex-column align-right">
+        <div class="col-12 d-flex justify-content-end">
+          <button
+            type="button"
+            class="btn btn-lght me-1"
+            (click)="cancelBack.emit()"
+            *ngIf="cancelEnabled"
+          >
+            {{ "CANCEL" | translate }}
+          </button>
+          <button
+            type="button"
+            #button
+            class="btn btn-dark"
+            (click)="onSubmit()"
+          >
+            {{ "CONFIRM" | translate }}
+          </button>
+        </div>
+        <a (click)="linkClick.emit()" *ngIf="linkEnabled">{{ linkText }}</a>
       </div>
     </div>
   </div>

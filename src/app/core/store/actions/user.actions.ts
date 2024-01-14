@@ -3,7 +3,7 @@ import {
   PasswordRequestReset,
   PasswordReset,
 } from 'src/app/shared/interfaces/auth.interface';
-import { User } from 'src/app/shared/interfaces/user.interface';
+import { Confirmation, User } from 'src/app/shared/interfaces/user.interface';
 
 const TYPE = '[User]';
 
@@ -19,7 +19,7 @@ export const UserPasswordRequestResetError = createAction(
 
 export const UserPasswordRequestResetSuccess = createAction(
   `${TYPE} Password Request Reset Success`,
-  props<{ payload: PasswordRequestReset }>()
+  props<{ payload: void }>()
 );
 
 export const UserPasswordReset = createAction(
@@ -49,6 +49,36 @@ export const UserSignUpError = createAction(
 
 export const UserSignUpSuccess = createAction(
   `${TYPE} SignUp Success`,
+  props<{ payload: User }>()
+);
+
+export const UserRequestConfirmationCode = createAction(
+  `${TYPE} Request Confirmation Code`,
+  props<{ payload: User }>()
+);
+
+export const UserRequestConfirmationCodeError = createAction(
+  `${TYPE} Request Confirmation Code Error`,
+  props<{ payload: User }>()
+);
+
+export const UserRequestConfirmationCodeSuccess = createAction(
+  `${TYPE} Request Confirmation Code Success`,
+  props<{ payload: User }>()
+);
+
+export const UserConfirmUsername = createAction(
+  `${TYPE} Confirm Username`,
+  props<{ payload: Confirmation }>()
+);
+
+export const UserConfirmUsernameError = createAction(
+  `${TYPE} Confirm Username Error`,
+  props<{ payload: User }>()
+);
+
+export const UserConfirmUsernameSuccess = createAction(
+  `${TYPE} Confirm Username Success`,
   props<{ payload: User }>()
 );
 

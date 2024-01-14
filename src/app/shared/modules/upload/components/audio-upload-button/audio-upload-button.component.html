@@ -1,0 +1,42 @@
+<div
+  class="upload-button"
+  (appDropFile)="onFileDragged($event)"
+  (click)="fileUpload.click()"
+>
+  <ng-container
+    *ngTemplateOutlet="audioSource ? audioTemplate : uploadTemplate"
+  ></ng-container>
+</div>
+
+<input
+  type="file"
+  title="file upload"
+  class="file-input"
+  (change)="onFileSelected($event)"
+  accept=".wav,.mp3"
+  #fileUpload
+/>
+
+<ng-template #uploadTemplate>
+  <app-icon [type]="IconType.UPLOAD" [size]="IconSize.LARGE"></app-icon>
+  <div>Upload image</div>
+</ng-template>
+
+<ng-template #audioTemplate>
+  <div class="audio-wrapper">
+    <audio controls *ngIf="audioSource" #audioElement [src]="audioSource">
+      Your browser does not support the audio element.
+    </audio>
+    <div class="button-wrapper">
+      <app-icon-button
+        [iconType]="IconType.EDIT"
+        *ngIf="audioSource"
+        [color]="IconButtonColor.LIGHT"
+        class="me-1"
+        ><ng-container *ngIf="size !== ImageUploadButtonSize.SMALL"
+          >Edit</ng-container
+        ></app-icon-button
+      >
+    </div>
+  </div>
+</ng-template>

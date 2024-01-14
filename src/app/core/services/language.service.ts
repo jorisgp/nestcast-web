@@ -57,7 +57,7 @@ export class LanguageService {
     this.changeLanguage();
   }
 
-  getTranslation(key: string): string {
+  getTranslation(key: string): any {
     return this.translateService.instant(key);
   }
 
@@ -91,8 +91,8 @@ export class LanguageService {
           content: this.getTranslation('KEYWORDS'),
         });
       });
-      this.location.go(this._replaceLanguageInUrl(country.language));
 
+      this.location.go(this._replaceLanguageInUrl(country.language));
       this.countrySubject.next(country);
 
       return true;
@@ -144,6 +144,6 @@ const countries = [
   { name: 'Nederland', code: 'NL', language: Language.NL },
   { name: 'UK', code: 'UK', language: Language.EN, default: true },
   { name: 'United States', code: 'US', language: Language.EN },
-  { name: 'France', code: 'FR', language: Language.FR },
-  { name: 'Espania', code: 'ES', language: Language.ES },
+  // { name: 'France', code: 'FR', language: Language.FR },
+  // { name: 'Espania', code: 'ES', language: Language.ES },
 ];

@@ -4,7 +4,12 @@ import { UserState } from '../reducers/user.reducer';
 
 export const userState = createFeatureSelector<UserState>('user');
 
-export const isUserLoading = createSelector(
+export const selectIsLoading = createSelector(
   userState,
   (state: UserState) => state.status === Status.LOADING
+);
+
+export const selectUser = createSelector(
+  userState,
+  (state: UserState) => state.payload
 );

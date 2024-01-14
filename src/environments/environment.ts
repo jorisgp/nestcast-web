@@ -2,10 +2,22 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
+import { Feature, NestCastConfig } from './environment.model';
+
+export const environment: NestCastConfig = {
   production: false,
   apiPrefix: true,
   apiUrl: 'http://nestcast.net',
+  featureFlags: {
+    [Feature.SignIn]: {
+      visible: false,
+      accessible: true,
+    },
+    [Feature.SignUp]: {
+      visible: false,
+      accessible: true,
+    },
+  },
 };
 
 /*

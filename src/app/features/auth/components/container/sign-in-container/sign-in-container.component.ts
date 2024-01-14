@@ -7,6 +7,7 @@ import {
   selectIsLoading,
   selectToken,
 } from 'src/app/core/store/selectors/auth.selectors';
+import { Gradient } from 'src/app/shared/ui-components/components/page-sections/background-section/background-section.component';
 import { Auth } from '../../../model/auth.model';
 
 @Component({
@@ -19,6 +20,8 @@ export class SignInContainerComponent {
   isLoading$ = this.store.select(selectIsLoading);
   token$ = this.store.select(selectToken);
 
+  Gradient = Gradient;
+
   constructor(private router: Router, private store: Store<{ auth: any }>) {}
 
   ngOnInit() {
@@ -28,9 +31,7 @@ export class SignInContainerComponent {
       }
     });
 
-    this.isLoading$.subscribe((error) => {
-      console.log('error', error);
-    });
+    //this.isLoading$.subscribe((isLoading) => {});
   }
 
   onSubmit(auth: Auth) {

@@ -1,0 +1,25 @@
+<ng-container *ngIf="episodeData">
+  <div class="row episode">
+    <div class="col-3 d-flex justify-content-end">
+      <ng-content select="[image-upload]"></ng-content>
+    </div>
+    <div class="col-6 d-flex flex-column flex-container">
+      <h2>{{ episodeData.title }}</h2>
+      <p class="flex-grow-1 description">{{ episodeData.description }}</p>
+      <div class="keywords">
+        <div *ngFor="let keyword of episodeData.keywords" class="nc-pill">
+          {{ keyword }}
+        </div>
+      </div>
+    </div>
+    <div class="col-3 d-flex justify-content-end align-items-end">
+      <app-icon-button
+        [iconType]="IconType.EDIT"
+        (click)="editEpisode.emit(episodeData)"
+        >Edit</app-icon-button
+      >
+    </div>
+  </div>
+
+  <hr />
+</ng-container>

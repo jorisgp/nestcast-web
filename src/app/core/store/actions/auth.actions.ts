@@ -14,9 +14,37 @@ export const signInSuccess = createAction(
   props<{ payload: Token }>()
 );
 
+export const signInSuccessNotActivated = createAction(
+  `${TYPE} SignIn Success Not Activated`,
+  props<{ payload: Token }>()
+);
+
 export const signInFailure = createAction(
   `${TYPE} SignIn Failure`,
   props<{ payload: Error }>()
 );
 
-export const signOut = createAction('[SignIn] User SignOut');
+export const signUp = createAction(
+  `${TYPE} User SignUp`,
+  props<{ payload: Login }>()
+);
+
+export const signUpSuccess = createAction(
+  `${TYPE} SignUp Success`,
+  props<{ payload: Token }>()
+);
+
+export const signUpFailure = createAction(
+  `${TYPE} SignUp Failure`,
+  props<{ payload: Error }>()
+);
+
+export const signOut = createAction(
+  `${TYPE} SignOut`,
+  props<{ payload: void }>()
+);
+
+export const signOutSuccess = createAction(
+  `${TYPE} SignOut Success`,
+  props<{ payload: void }>()
+);

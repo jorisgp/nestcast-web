@@ -16,6 +16,10 @@ p {
   letter-spacing: 1px;
 }
 
+textarea {
+  resize: none;
+}
+
 .header-adjustment {
   padding-top: 200px;
 }
@@ -35,4 +39,19 @@ p {
   .ng-invalid {
     border-color: rgb(174, 0, 0);
   }
+}
+
+.align-right {
+  text-align: right;
+}
+
+.nc-pill {
+  background-color: #838282;
+  border-radius: 15px;
+  height: 30px;
+  color: white;
+  display: inline-block;
+  padding: 2px 20px 0 20px;
+  margin-right: 4px;
+  margin-bottom: 4px;
 }

@@ -1,0 +1,23 @@
+<div class="keyword-input-wrapper">
+  <input
+    title="keyword"
+    class="form-control me-2"
+    type="text"
+    [(ngModel)]="keyword"
+    (keydown)="onKeyDown($event)"
+  />
+  <button type="button" class="btn btn-dark" (click)="onAddKeyword()">+</button>
+</div>
+<div class="mt-2">
+  <div *ngFor="let keyword of keywords; index as i" class="nc-pill">
+    {{ keyword }}
+    <app-icon
+      [type]="IconType.DELETE"
+      [size]="IconSize.EXTRA_SMALL"
+      class="icon"
+      title="delete keyword"
+      (click)="onDeleteKeyword(i)"
+      >x</app-icon
+    >
+  </div>
+</div>

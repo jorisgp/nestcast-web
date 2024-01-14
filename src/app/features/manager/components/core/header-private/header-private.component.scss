@@ -1,0 +1,87 @@
+@import "/src//mixins.scss";
+
+.header {
+  z-index: 2;
+  transition: all 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  color: black;
+
+  a {
+    cursor: pointer;
+    color: black;
+  }
+
+  .burger-menu {
+    font-size: 36px;
+    color: white;
+  }
+
+  &.scrolled {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 0, 0, 0.5);
+
+    a,
+    .burger-menu {
+      color: white;
+    }
+  }
+
+  .top-nav {
+    height: 100px;
+    padding: 30px 10px;
+    display: flex;
+    align-items: center;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    .language-switch {
+      height: 40px;
+      width: 100px;
+    }
+
+    .navbar-logo {
+      font-size: 30px;
+      line-height: 30px;
+      text-decoration: none;
+
+      span {
+        font-weight: 200;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+      .burger-menu {
+        display: none;
+      }
+
+      .option-wrapper {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+
+        .top-nav-links {
+          display: flex;
+          flex-direction: row;
+          list-style: none;
+          align-items: center;
+          margin-bottom: 0;
+          margin-right: 50px;
+
+          li {
+            margin-left: 15px;
+
+            a {
+              letter-spacing: 2px;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

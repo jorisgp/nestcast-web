@@ -1,0 +1,12 @@
+<div [formGroup]="form">
+  <select
+    class="form-select"
+    title="type select"
+    [formControlName]="nameFormControl"
+  >
+    <option value="" disabled selected>Select your option</option>
+    <option *ngFor="let type of episodeTypeList" [value]="type">
+      {{ type }}
+    </option>
+  </select>
+</div>

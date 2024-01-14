@@ -68,7 +68,7 @@
         }
       },
       "options": {
-        "cwd": "${workspaceFolder}/src"
+        "cwd": "${workspaceFolder}"
       }
     },
     {

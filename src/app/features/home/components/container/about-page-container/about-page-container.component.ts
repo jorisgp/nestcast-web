@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Gradient } from '../../view/background-section/background-section.component';
+import { Gradient } from '../../../../../shared/ui-components/components/page-sections/background-section/background-section.component';
 import {
   CallToActionColor,
   CallToActionView,

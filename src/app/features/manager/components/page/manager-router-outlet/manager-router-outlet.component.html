@@ -1,0 +1,17 @@
+<app-header-private></app-header-private>
+<app-background-section
+  [gradient]="Gradient.MANAGER_ONE"
+  [view]="BackgroundSectionView.FULL_SCREEN"
+  [headerAdjustment]="false"
+>
+  <div class="page">
+    <div class="sub-menu">
+      <app-menu></app-menu>
+    </div>
+    <div class="content">
+      <app-content-wrapper>
+        <router-outlet></router-outlet>
+      </app-content-wrapper>
+    </div>
+  </div>
+</app-background-section>

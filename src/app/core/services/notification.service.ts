@@ -7,38 +7,55 @@ import { MessageService } from 'primeng/api';
 export class NotificationService {
   constructor(private messageService: MessageService) {}
 
-  showSuccess(title: string, text: string) {
-    console.log(`Notification service: ${title}`, text);
-    this.showNotification(title, text, Severity.SUCCESS);
+  showSuccess(notification: Notification) {
+    console.log(
+      `Notification service: ${notification.title}`,
+      notification.text
+    );
+    this.showNotification(notification, Severity.SUCCESS);
   }
 
-  showInfo(title: string, text: string) {
-    console.info(`Notification service: ${title}`, text);
-    this.showNotification(title, text, Severity.INFO);
+  showInfo(notification: Notification) {
+    console.info(
+      `Notification service: ${notification.title}`,
+      notification.text
+    );
+    this.showNotification(notification, Severity.INFO);
   }
 
-  showWarn(title: string, text: string) {
-    console.warn(`Notification service: ${title}`, text);
-    this.showNotification(title, text, Severity.WARN);
+  showWarn(notification: Notification) {
+    console.warn(
+      `Notification service: ${notification.title}`,
+      notification.text
+    );
+    this.showNotification(notification, Severity.WARN);
   }
 
-  showError(title: string, text: string) {
-    console.error(`Notification service: ${title}`, text);
-    this.showNotification(title, text, Severity.ERROR);
+  showError(notification: Notification) {
+    console.error(
+      `Notification service: ${notification.title}`,
+      notification.text
+    );
+    this.showNotification(notification, Severity.ERROR);
   }
 
-  private showNotification(title: string, text: string, severity: Severity) {
+  private showNotification(notification: Notification, severity: Severity) {
     this.messageService.add({
       severity: severity,
-      summary: title,
-      detail: text,
+      summary: notification.title,
+      detail: notification.text,
     });
   }
 }
 
-enum Severity {
+export enum Severity {
   ERROR = 'error',
   WARN = 'warn',
   INFO = 'info',
   SUCCESS = 'success',
 }
+
+export type Notification = {
+  title: string;
+  text: string;
+};

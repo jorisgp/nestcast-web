@@ -1,0 +1,9 @@
+<app-background-section [gradient]="Gradient.THREE">
+  <app-card>
+    <app-code-confirmation
+      (linkClick)="onLinkClick()"
+      (submitForm)="onSubmit($event)"
+      linkText="resend mail"
+    ></app-code-confirmation>
+  </app-card>
+</app-background-section>

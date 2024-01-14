@@ -27,6 +27,7 @@ export enum IconColor {
 }
 
 export enum IconSize {
+  EXTRA_SMALL,
   SMALL,
   MEDIUM,
   LARGE,
@@ -38,4 +39,11 @@ export enum IconType {
   INSTAGRAM = 'bi-instagram',
   LINKEDIN = 'bi-linkedin',
   PERSONAL = 'bi-person',
+  SETTINGS = 'bi-gear-wide-connected',
+  SHOW = 'bi-headphones',
+  DISTRIBUTION = 'bi-globe2',
+  DELETE = 'bi-x-lg',
+  UPLOAD = 'bi-cloud-arrow-up',
+  EDIT = 'bi-pencil-square',
+  ADD = 'bi-plus-square',
 }

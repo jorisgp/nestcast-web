@@ -1,0 +1,12 @@
+<div [formGroup]="form">
+  <select
+    class="form-select"
+    title="language select"
+    [formControlName]="nameFormControl"
+  >
+    <option value="" disabled selected>Select your option</option>
+    <option *ngFor="let language of languages" [value]="language.code">
+      {{ language.flag }} {{ language.name }}
+    </option>
+  </select>
+</div>

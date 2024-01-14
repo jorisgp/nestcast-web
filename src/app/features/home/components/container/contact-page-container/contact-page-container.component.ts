@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subject, takeUntil } from 'rxjs';
+import { ModalService } from 'src/app/core/services/modal.service';
 import { confirmContact } from 'src/app/core/store/actions/contact-confirmation.actions';
 import { addToContact } from 'src/app/core/store/actions/contact.actions';
 import {
@@ -11,8 +12,7 @@ import {
   Contact,
   ContactDetails,
 } from 'src/app/shared/interfaces/auth.interface';
-import { ModalService } from 'src/app/shared/services/modal.service';
-import { Gradient } from '../../view/background-section/background-section.component';
+import { Gradient } from '../../../../../shared/ui-components/components/page-sections/background-section/background-section.component';
 import {
   CallToActionColor,
   CallToActionView,

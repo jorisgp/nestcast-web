@@ -1,0 +1,10 @@
+<ng-container *ngIf="data"
+  ><h2>{{ data.title }}</h2>
+  <div class="auhor">{{ data.author }}</div>
+  <p>{{ data.description }}</p>
+  <div class="keywords">
+    <div *ngFor="let keyword of data.keywords" class="nc-pill">
+      {{ keyword }}
+    </div>
+  </div>
+</ng-container>

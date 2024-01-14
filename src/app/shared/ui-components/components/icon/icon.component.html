@@ -2,6 +2,7 @@
   *ngIf="type"
   class="icon bi"
   ngClass="{{ type }}"
+  [class.extra-small]="size === IconSize.EXTRA_SMALL"
   [class.large]="size === IconSize.LARGE"
   [class.medium]="size === IconSize.MEDIUM"
   [class.dark]="color === IconColor.DARK"

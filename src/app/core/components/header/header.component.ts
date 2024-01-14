@@ -1,5 +1,5 @@
 import { Component, HostListener } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Feature } from 'src/environments/environment.model';
 import { PlatformService } from '../../services/platform.service';
 import { RouterService } from '../../services/router.service';
 
@@ -12,9 +12,10 @@ export class HeaderComponent {
   mobileMenu = false;
   background = false;
 
+  Feature = Feature;
+
   constructor(
     private router: RouterService,
-    private route: ActivatedRoute,
     private platformService: PlatformService
   ) {}
 
@@ -35,6 +36,6 @@ export class HeaderComponent {
 
   navigate(location: string[]) {
     this.mobileMenu = false;
-    this.router.navigate(location, { relativeTo: this.route });
+    this.router.navigate(location);
   }
 }

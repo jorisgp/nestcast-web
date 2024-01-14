@@ -1,0 +1,50 @@
+<div
+  class="upload-button"
+  [class.small]="size === ImageUploadButtonSize.SMALL"
+  [class.medium]="size === ImageUploadButtonSize.MEDIUM"
+  [class.large]="size === ImageUploadButtonSize.LARGE"
+  (appDropFile)="onFileDragged($event)"
+  (click)="clickFileUpload($event)"
+>
+  <ng-container
+    *ngTemplateOutlet="data ? imageTemplate : uploadTemplate"
+  ></ng-container>
+</div>
+
+<input
+  type="file"
+  title="file upload"
+  class="file-input"
+  (change)="onFileSelected($event)"
+  accept=".jpg,.jpeg,.png,.gif,.bmp"
+  #fileUpload
+/>
+
+<ng-template #uploadTemplate>
+  <app-icon [type]="IconType.UPLOAD" [size]="IconSize.LARGE"></app-icon>
+  <div>Upload image</div>
+</ng-template>
+
+<ng-template #imageTemplate>
+  <img [src]="data" alt="" />
+  <div class="button-wrapper">
+    <app-icon-button
+      [iconType]="IconType.DELETE"
+      *ngIf="data && !disableDelete"
+      [color]="IconButtonColor.LIGHT"
+      class="me-1"
+      (click)="onDelete($event)"
+      ><ng-container *ngIf="size !== ImageUploadButtonSize.SMALL"
+        >Delete</ng-container
+      ></app-icon-button
+    >
+    <app-icon-button
+      [iconType]="IconType.EDIT"
+      (click)="clickFileUpload($event)"
+      [color]="IconButtonColor.LIGHT"
+      ><ng-container *ngIf="size !== ImageUploadButtonSize.SMALL"
+        >Edit</ng-container
+      ></app-icon-button
+    >
+  </div>
+</ng-template>

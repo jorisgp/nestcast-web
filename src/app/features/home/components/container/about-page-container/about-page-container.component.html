@@ -1,21 +1,23 @@
 <app-background-section [gradient]="Gradient.THREE">
-  <app-call-to-action [data]="'ABOUT.INTRO' | translate"></app-call-to-action>
+  <app-call-to-action
+    [data]="'HOME.ABOUT.INTRO' | translate"
+  ></app-call-to-action>
 </app-background-section>
 <app-color-section>
   <div class="margin-section">
-    <h2>{{ "ABOUT.TECHNIQUES.title" | translate }}</h2>
+    <h2>{{ "HOME.ABOUT.TECHNIQUES.title" | translate }}</h2>
     <app-paragraphs
-      [data]="'ABOUT.TECHNIQUES.text' | translate"
+      [data]="'HOME.ABOUT.TECHNIQUES.text' | translate"
     ></app-paragraphs>
     <app-stack-category
-      *ngFor="let stackCategory of 'ABOUT.TECHNIQUES.stack' | translate"
+      *ngFor="let stackCategory of 'HOME.ABOUT.TECHNIQUES.stack' | translate"
       [data]="stackCategory"
     ></app-stack-category>
   </div>
 </app-color-section>
 <app-half-photo-section src="assets/images/pictures/developer.jpg">
   <app-call-to-action
-    [data]="'ABOUT.WORD' | translate"
+    [data]="'HOME.ABOUT.WORD' | translate"
     [color]="CallToActionColor.DARK"
     [view]="CallToActionView.LEFT"
   ></app-call-to-action>

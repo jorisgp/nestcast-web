@@ -1,0 +1,62 @@
+<div *ngIf="!(show$ | async) && !(isLoading$ | async); else details">
+  Je hebt nog geen show aangemaakt. Klik op de knop hieronder om een show aan te
+  maken.
+  <a href="#" [routerLink]="['new']">Nieuwe Show</a>
+</div>
+
+<ng-template #details>
+  <ng-container *ngIf="show$ | async as show">
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <app-image-upload-button
+            [data]="show.image"
+            (upload)="onUpoadShowImage($event, show.id)"
+            (delete)="onDeleteShowImage(show.id)"
+          ></app-image-upload-button>
+        </div>
+        <div class="col-6">
+          <app-show-details [data]="show"></app-show-details>
+        </div>
+        <div class="col-3 d-flex justify-content-end">
+          <app-icon-button
+            [iconType]="IconType.EDIT"
+            [routerLinkData]="['edit', show.id]"
+            >Edit</app-icon-button
+          >
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="container">
+      <div class="row">
+        <div class="col-9"><h3>episodes</h3></div>
+        <div class="col-3 d-flex justify-content-end">
+          <app-icon-button
+            [iconType]="IconType.ADD"
+            [routerLinkData]="[(show$ | async)?.id, 'episode', 'new']"
+            >Add</app-icon-button
+          >
+        </div>
+      </div>
+      <div class="row">
+        <ng-container *ngFor="let episode of episodes$ | async">
+          <app-episode-details
+            [episodeData]="episode"
+            [showData]="show$ | async"
+            (editEpisode)="editEpisode($event)"
+          >
+            <app-image-upload-button
+              image-upload
+              [data]="episode.image || show.image"
+              [size]="ImageUploadButtonSize.SMALL"
+              (upload)="onUpoadEpisodeImage($event, episode.id)"
+              (delete)="onDeleteEpisodeImage(episode.id)"
+              [disableDelete]="!episode.image"
+            ></app-image-upload-button
+          ></app-episode-details>
+        </ng-container>
+      </div>
+    </div>
+  </ng-container>
+</ng-template>

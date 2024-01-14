@@ -3,8 +3,8 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { ContactConfirmation } from 'src/app/shared/interfaces/auth.interface';
-import { ModalService } from 'src/app/shared/services/modal.service';
 import { LanguageService } from '../../services/language.service';
+import { ModalService } from '../../services/modal.service';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
 import { NotificationService } from '../../services/notification.service';
 import * as contactConfirmationActions from '../actions/contact-confirmation.actions';
@@ -45,8 +45,7 @@ export class ContactConfirmationEffects {
         ofType(contactConfirmationActions.confirmContactSuccess),
         tap(() => {
           this.notificationService.showSuccess(
-            this.languageService.getTranslation('CONTACT.SUCCESSMESSAGE.title'),
-            this.languageService.getTranslation('CONTACT.SUCCESSMESSAGE.text')
+            this.languageService.getTranslation('CONTACT.SUCCESSMESSAGE')
           );
           this.modalService.closeModal();
         })
@@ -60,8 +59,7 @@ export class ContactConfirmationEffects {
         ofType(contactConfirmationActions.confirmContactFailure),
         tap(() => {
           this.notificationService.showWarn(
-            this.languageService.getTranslation('CONTACT.ERRORMESSAGE.title'),
-            this.languageService.getTranslation('CONTACT.ERRORMESSAGE.text')
+            this.languageService.getTranslation('CONTACT.ERRORMESSAGECONFIRM')
           );
         })
       ),

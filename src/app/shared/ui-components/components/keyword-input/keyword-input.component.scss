@@ -1,0 +1,16 @@
+.keyword-input-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon {
+  margin-right: -10px;
+  margin-bottom: -2px;
+  cursor: pointer;
+  color: #ddd;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: white;
+  }
+}

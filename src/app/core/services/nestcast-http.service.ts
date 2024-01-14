@@ -49,15 +49,44 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
+  putUsersConfirmation(confirmationCode?: number): Observable<any> {
+    let params;
+    if (confirmationCode) {
+      params = this._createParams({ confirmationCode: confirmationCode });
+    }
+
+    return this.http
+      .put<any>(
+        `${apiPrefix}/${ApiResource.USERS}/${ApiResource.CONFIRMATION}`,
+        {},
+        { params }
+      )
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
   postUsers(body: any): Observable<any> {
     return this.http
-      .post<any>(`${apiPrefix}/${ApiResource.USERS}`, body)
+      .post<any>(`${apiPrefix}/${ApiResource.USERS}`, {
+        ...body,
+        language: this.languageService.getLanguage(),
+      })
       .pipe(catchError((error) => this._handleError(error)));
   }
 
   patchUsers(userId: string, body: any): Observable<any> {
     return this.http
       .patch<any>(`${apiPrefix}/${ApiResource.USERS}/${userId}`, body)
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  patchUsersConfirmation(confirmationCode: number, body: any): Observable<any> {
+    const params = this._createParams({ confirmationCode: confirmationCode });
+    return this.http
+      .patch<any>(
+        `${apiPrefix}/${ApiResource.USERS}/${ApiResource.CONFIRMATION}`,
+        body,
+        { params }
+      )
       .pipe(catchError((error) => this._handleError(error)));
   }
 
@@ -109,6 +138,33 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
+  putShowsImage(showId: string, file: File): Observable<any> {
+    const { formData, params }: { formData: FormData; params: any } =
+      this.prepareFile(file);
+    return this.http
+      .put<any>(
+        `${apiPrefix}/${ApiResource.SHOWS}/${showId}/${ApiResource.IMAGES}`,
+        formData,
+        {
+          reportProgress: true,
+          responseType: 'json',
+          params,
+        }
+      )
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  private prepareFile(file: File) {
+    let params;
+    if (!file) {
+      params = this._createParams({ delete: true });
+    }
+
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return { formData, params };
+  }
+
   getShowsEpisodes(showId: string): Observable<any> {
     return this.http
       .get<any>(
@@ -126,9 +182,9 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
-  getEpisodes(): Observable<any> {
+  getEpisodesById(episodeId: string): Observable<any> {
     return this.http
-      .get<any>(`${apiPrefix}/${ApiResource.EPISODES}`)
+      .get<any>(`${apiPrefix}/${ApiResource.EPISODES}/${episodeId}`)
       .pipe(catchError((error) => this._handleError(error)));
   }
 
@@ -141,6 +197,37 @@ export class NestcastHttpService {
   deleteEpisode(episodeId: string): Observable<any> {
     return this.http
       .delete<any>(`${apiPrefix}/${ApiResource.EPISODES}/${episodeId}`)
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  putEpisodesImage(episodeId: string, file: File): Observable<any> {
+    const { formData, params }: { formData: FormData; params: any } =
+      this.prepareFile(file);
+    return this.http
+      .put<any>(
+        `${apiPrefix}/${ApiResource.EPISODES}/${episodeId}/${ApiResource.IMAGES}`,
+        formData,
+        {
+          reportProgress: true,
+          responseType: 'json',
+          params,
+        }
+      )
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  putEpisodesAudio(episodeId: string, file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.http
+      .put<any>(
+        `${apiPrefix}/${ApiResource.EPISODES}/${episodeId}/${ApiResource.AUDIO}`,
+        formData,
+        {
+          reportProgress: true,
+          responseType: 'json',
+        }
+      )
       .pipe(catchError((error) => this._handleError(error)));
   }
 
@@ -223,14 +310,17 @@ export class NestcastHttpService {
       const errorMessageObject = JSON.parse(err.error.message);
       Object.keys(errorMessageObject)
         .map((key) => errorMessageObject[key])
-        .forEach((item) =>
-          this.notificationService.showWarn('Ongeldige handeling', item)
+        .forEach((items) =>
+          this.notificationService.showWarn({
+            title: 'Ongeldige handeling',
+            text: items.map((item: string) => '- ' + item + '\n'),
+          })
         );
     } catch (catchedError) {
-      this.notificationService.showWarn(
-        'Ongeldige handeling',
-        err.error.message
-      );
+      this.notificationService.showWarn({
+        title: 'Ongeldige handeling',
+        text: err.error.message,
+      });
     }
   }
 }
@@ -242,9 +332,12 @@ enum ApiResource {
   USERS = 'users',
   PASSWORD = 'password',
   SHOWS = 'shows',
+  IMAGES = 'images',
   EPISODES = 'episodes',
   WAITING_LISTS = 'waiting-lists',
   CONTACTS = 'contacts',
+  CONFIRMATION = 'confirmation',
+  AUDIO = 'audio',
 }
 
 export interface Upload {

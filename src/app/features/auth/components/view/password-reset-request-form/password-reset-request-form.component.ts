@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PasswordRequestReset } from 'src/app/shared/interfaces/auth.interface';
 
 @Component({
   selector: 'app-password-reset-request-form',
@@ -10,10 +11,10 @@ export class PasswordResetRequestFormComponent {
   form: FormGroup;
 
   @Output()
-  submit = new EventEmitter<{ username: string }>();
+  submitForm = new EventEmitter<PasswordRequestReset>();
 
-  submitForm() {
-    this.submit.emit(this.form.value);
+  onSubmitForm() {
+    this.submitForm.emit(this.form.value);
   }
 
   ngOnInit() {

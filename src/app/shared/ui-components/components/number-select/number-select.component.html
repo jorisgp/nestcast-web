@@ -1,0 +1,12 @@
+<div [formGroup]="form">
+  <select
+    class="form-select"
+    title="number select"
+    [formControlName]="nameFormControl"
+  >
+    <option value="0" disabled selected>Select your option</option>
+    <option *ngFor="let option of optionValues" [value]="option">
+      {{ option }}
+    </option>
+  </select>
+</div>

@@ -1,0 +1,16 @@
+<div class="menu">
+  <button type="button" class="btn btn-dark me-2" [routerLink]="['show']">
+    Show <app-icon class="ms-1" [type]="IconType.SHOW"></app-icon>
+  </button>
+  <button
+    type="button"
+    class="btn btn-dark me-2"
+    [routerLink]="['distribution']"
+  >
+    Distribution
+    <app-icon class="ms-1" [type]="IconType.DISTRIBUTION"></app-icon>
+  </button>
+  <button type="button" class="btn btn-dark" [routerLink]="['.', 'settings']">
+    Settings <app-icon class="ms-1" [type]="IconType.SETTINGS"></app-icon>
+  </button>
+</div>
