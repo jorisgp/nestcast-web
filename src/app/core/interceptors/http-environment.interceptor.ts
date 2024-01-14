@@ -1,4 +1,9 @@
-import { HttpEvent, HttpHandler, HttpRequest } from '@angular/common/http';
+import {
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest,
+} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
@@ -10,7 +15,7 @@ import {
 @Injectable({
   providedIn: 'root',
 })
-export class HttpEnvironmentInterceptorService {
+export class HttpEnvironmentInterceptor implements HttpInterceptor {
   constructor(private localStorageService: LocalStorageService) {}
 
   intercept(

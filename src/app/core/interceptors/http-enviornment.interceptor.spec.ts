@@ -1,11 +1,11 @@
 import { createServiceFactory, SpectatorService } from '@ngneat/spectator/jest';
-import { HttpEnvironmentInterceptorService } from './http-environment-interceptor.service';
 import { environment } from '../../../environments/environment';
+import { HttpEnvironmentInterceptor } from './http-environment.interceptor';
 
 jest.mock('../../../environments/environment');
-describe('HttpEnvironmentInterceptorService', () => {
-  let spectator: SpectatorService<HttpEnvironmentInterceptorService>;
-  const createService = createServiceFactory(HttpEnvironmentInterceptorService);
+describe('HttpEnvironmentInterceptor', () => {
+  let spectator: SpectatorService<HttpEnvironmentInterceptor>;
+  const createService = createServiceFactory(HttpEnvironmentInterceptor);
 
   const mockedHandleFunction = jest.fn();
   const nextMock = { handle: mockedHandleFunction } as any;

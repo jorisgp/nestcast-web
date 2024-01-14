@@ -15,6 +15,8 @@ import {
   signInFailure,
   signInSuccess,
   signInSuccessNotActivated,
+  signOut,
+  signOutSuccess,
 } from '../actions/auth.actions';
 
 @Injectable()
@@ -82,6 +84,27 @@ export class AuthEffects {
             this.languageService.getTranslation('AUTH.SIGN_IN.ERROR')
           )
         )
+      ),
+    { dispatch: false }
+  );
+
+  signOut$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(signOut),
+      tap(() => {
+        this.localStorageService.removeItem(StorageKey.AUTH_TOKEN);
+      }),
+      map(() => signOutSuccess({ payload: null }))
+    )
+  );
+
+  signOutSuccess$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(signOutSuccess),
+        tap(() => {
+          this.router.navigate(['/', 'auth', 'sign-in']);
+        })
       ),
     { dispatch: false }
   );

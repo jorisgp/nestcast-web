@@ -62,8 +62,10 @@ export class ModalService {
   }
 
   closeModal() {
-    this.modalReference.instance.closeModalFromService();
-    this.removeChild();
+    if (this.modalReference) {
+      this.modalReference.instance.closeModalFromService();
+      this.removeChild();
+    }
   }
 }
 

@@ -39,4 +39,12 @@ export const signUpFailure = createAction(
   props<{ payload: Error }>()
 );
 
-export const signOut = createAction('[SignIn] User SignOut');
+export const signOut = createAction(
+  `${TYPE} SignOut`,
+  props<{ payload: void }>()
+);
+
+export const signOutSuccess = createAction(
+  `${TYPE} SignOut Success`,
+  props<{ payload: void }>()
+);

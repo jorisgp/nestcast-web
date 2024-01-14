@@ -13,7 +13,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { LanguageSwitchComponent } from './components/language-switch/language-switch.component';
 import { PrivateAppComponent } from './components/private-app/private-app.component';
 import { PublicAppComponent } from './components/public-app/public-app.component';
-import { HttpEnvironmentInterceptorService } from './interceptors/http-environment-interceptor.service';
+import { AuthorisationInterceptor } from './interceptors/authorisation.interceptor';
+import { HttpEnvironmentInterceptor } from './interceptors/http-environment.interceptor';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -30,7 +31,12 @@ export function createTranslateLoader(http: HttpClient) {
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: HttpEnvironmentInterceptorService,
+      useClass: AuthorisationInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpEnvironmentInterceptor,
       multi: true,
     },
   ],

@@ -27,12 +27,12 @@
                 "MENU.CONTACT" | translate
               }}</a>
             </li>
-            <li>
+            <li *appFeatureVisible="Feature.SignIn">
               <a (click)="navigate(['auth', 'sign-in'])">{{
                 "MENU.SIGN_IN" | translate
               }}</a>
             </li>
-            <li>
+            <li *appFeatureVisible="Feature.SignUp">
               <a (click)="navigate(['auth', 'sign-up'])">{{
                 "MENU.SIGN_UP" | translate
               }}</a>
