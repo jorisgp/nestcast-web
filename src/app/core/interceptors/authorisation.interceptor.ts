@@ -19,7 +19,6 @@ export class AuthorisationInterceptor implements HttpInterceptor {
     request: HttpRequest<unknown>,
     next: HttpHandler
   ): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
     return next.handle(request).pipe(
       tap((event) => {
         if (event instanceof HttpResponse) {
