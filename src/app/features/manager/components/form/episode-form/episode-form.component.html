@@ -90,7 +90,7 @@
         class="col-12 offset-sm-2 col-sm-8 offset-md-3 col-md-7 col-lg-6 col-xl-5"
       >
         <app-audio-upload-button
-          [audioSource]="data?.audio"
+          [audioSource]="data?.audio?.url"
           (select)="onAudioSelect($event)"
         ></app-audio-upload-button>
       </div>

@@ -25,7 +25,9 @@ export class HttpEnvironmentInterceptor implements HttpInterceptor {
     const token = this.localStorageService.getItem(StorageKey.AUTH_TOKEN);
     const isLoggedIn = token;
 
-    if (request.url.includes('assets')) {
+    if (request.url.startsWith('http')) {
+      return next.handle(request);
+    } else if (request.url.includes('assets')) {
       return next.handle(request);
     }
 

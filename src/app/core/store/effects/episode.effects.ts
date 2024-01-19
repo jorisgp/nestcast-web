@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { of } from 'rxjs';
-import { catchError, map, mergeMap, tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import {
+  FileReference,
+  FileReferenceResponse,
+} from 'src/app/shared/interfaces/auth.interface';
 import { LanguageService } from '../../services/language.service';
 import { ModalService } from '../../services/modal.service';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
@@ -10,7 +14,6 @@ import { NotificationService } from '../../services/notification.service';
 import {
   createEpisode,
   createEpisodeAddAudio,
-  createEpisodeAddAudioError,
   createEpisodeAddAudioSuccess,
   createEpisodeError,
   createEpisodeSuccess,
@@ -45,10 +48,13 @@ export class EpisodeEffects {
           .postShowsEpisodes(action.showId, action.payload)
           .pipe(
             map((episode) => {
-              if (action.audio) {
+              if (action.audioFile) {
                 return createEpisodeAddAudio({
-                  payload: episode,
-                  audio: action.audio,
+                  audioFile: action.audioFile,
+                  audioFileReference: {
+                    ...action.audioFileReference,
+                    episodeId: episode.id,
+                  },
                 });
               } else {
                 return createEpisodeSuccess(episode);
@@ -120,10 +126,10 @@ export class EpisodeEffects {
           .patchEpisodes(action.episodeId, action.payload)
           .pipe(
             map((episode) => {
-              if (action.audio) {
+              if (action.audioFile) {
                 return createEpisodeAddAudio({
-                  payload: episode,
-                  audio: action.audio,
+                  audioFile: action.audioFile,
+                  audioFileReference: action.audioFileReference,
                 });
               } else {
                 return createEpisodeSuccess(episode);
@@ -139,12 +145,20 @@ export class EpisodeEffects {
     this.actions$.pipe(
       ofType(uploadEpisodeImage),
       mergeMap((action) =>
-        this.nestcastHttpService
-          .putEpisodesImage(action.episodeId, action.payload)
-          .pipe(
-            map((episode) => uploadEpisodeImageSuccess({ payload: episode })),
-            catchError((error) => of(uploadEpisodeImageError(error)))
-          )
+        this._uploadFile(action.fileDetails, action.payload).pipe(
+          switchMap((fileReference) =>
+            this.nestcastHttpService
+              .patchEpisodes(action.fileDetails.episodeId, {
+                image: fileReference.id,
+              })
+              .pipe(
+                map((episode) =>
+                  uploadEpisodeImageSuccess({ payload: episode })
+                )
+              )
+          ),
+          catchError((error) => of(uploadEpisodeImageError(error)))
+        )
       )
     )
   );
@@ -167,14 +181,20 @@ export class EpisodeEffects {
     this.actions$.pipe(
       ofType(createEpisodeAddAudio),
       mergeMap((action) =>
-        this.nestcastHttpService
-          .putEpisodesAudio(action.payload.id, action.audio)
-          .pipe(
-            map((episode) =>
-              createEpisodeAddAudioSuccess({ payload: episode })
-            ),
-            catchError((error) => of(createEpisodeAddAudioError(error)))
-          )
+        this._uploadFile(action.audioFileReference, action.audioFile).pipe(
+          switchMap((fileReference) =>
+            this.nestcastHttpService
+              .patchEpisodes(action.audioFileReference.episodeId, {
+                audio: fileReference.id,
+              })
+              .pipe(
+                map((episode) =>
+                  createEpisodeAddAudioSuccess({ payload: episode })
+                )
+              )
+          ),
+          catchError((error) => of(uploadEpisodeImageError(error)))
+        )
       )
     )
   );
@@ -201,4 +221,19 @@ export class EpisodeEffects {
       )
     )
   );
+
+  private _uploadFile(
+    fileDetails: FileReference,
+    file: File
+  ): Observable<FileReferenceResponse> {
+    return this.nestcastHttpService
+      .postFileReference(fileDetails)
+      .pipe(
+        switchMap((fileReference) =>
+          this.nestcastHttpService
+            .putFile(fileReference.url, file)
+            .pipe(map(() => fileReference))
+        )
+      );
+  }
 }

@@ -1,6 +1,7 @@
 import {
   HttpClient,
   HttpErrorResponse,
+  HttpHeaders,
   HttpParams,
   HttpStatusCode,
 } from '@angular/common/http';
@@ -9,6 +10,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 import {
   Contact,
   ContactConfirmation,
+  FileReference,
   WaitingList,
   WaitingListConfirmation,
 } from 'src/app/shared/interfaces/auth.interface';
@@ -275,6 +277,30 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
+  postFileReference(body: FileReference): Observable<any> {
+    return this.http
+      .post<any>(
+        `${apiPrefix}/${ApiResource.FILE}/${ApiResource.REFERENCE}`,
+        body
+      )
+      .pipe(catchError((error) => this._handleError(error)));
+  }
+
+  putFile(url: string, file: File): Observable<any> {
+    const headers = new HttpHeaders({
+      mimeType: 'multipart/form-data',
+      contentType: file.type,
+    });
+
+    return this.http
+      .put<any>(url, file)
+      .pipe(catchError((error) => this._handleError(error)));
+
+    // return this.http
+    //   .put<any>(url, file, { reportProgress: true, observe: 'events', headers })
+    //   .pipe(catchError((error) => this.handleError(error)));
+  }
+
   private _createParams(keyValuePairs: { [key: string]: any }): HttpParams {
     let httpParams = new HttpParams();
     if (keyValuePairs) {
@@ -338,6 +364,8 @@ enum ApiResource {
   CONTACTS = 'contacts',
   CONFIRMATION = 'confirmation',
   AUDIO = 'audio',
+  FILE = 'file',
+  REFERENCE = 'reference',
 }
 
 export interface Upload {

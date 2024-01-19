@@ -1,13 +1,13 @@
 import {
+  HttpErrorResponse,
   HttpEvent,
   HttpHandler,
   HttpInterceptor,
   HttpRequest,
-  HttpResponse,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, tap } from 'rxjs';
+import { EMPTY, Observable, catchError, throwError } from 'rxjs';
 import { signOut } from '../store/actions/auth.actions';
 
 @Injectable({
@@ -15,18 +15,24 @@ import { signOut } from '../store/actions/auth.actions';
 })
 export class AuthorisationInterceptor implements HttpInterceptor {
   constructor(private store: Store<{ auth: any }>) {}
+
+  private handleAuthError(err: HttpErrorResponse): Observable<any> {
+    if (err.status === 401 || err.status === 403) {
+      this.store.dispatch(signOut());
+      return EMPTY;
+    }
+    return throwError(err);
+  }
+
   intercept(
-    request: HttpRequest<unknown>,
+    req: HttpRequest<any>,
     next: HttpHandler
-  ): Observable<HttpEvent<unknown>> {
-    return next.handle(request).pipe(
-      tap((event) => {
-        if (event instanceof HttpResponse) {
-          if (event.status === 401 || event.status === 403) {
-            this.store.dispatch(signOut({ payload: null }));
-          }
-        }
-      })
-    );
+  ): Observable<HttpEvent<any>> {
+    // // Clone the request to add the new header.
+    // const authReq = req.clone({
+    //   headers: req.headers.set(Cookie.tokenKey, Cookie.getToken()),
+    // });
+    // // catch the error, make specific functions for catching specific errors and you can chain through them with more catch operators
+    return next.handle(req).pipe(catchError((x) => this.handleAuthError(x))); //here use an arrow function, otherwise you may get "Cannot read property 'navigate' of undefined" on angular 4.4.2/net core 2/webpack 2.70
   }
 }

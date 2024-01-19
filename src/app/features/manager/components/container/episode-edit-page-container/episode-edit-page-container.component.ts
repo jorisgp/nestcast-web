@@ -7,6 +7,7 @@ import {
   updateEpisode,
 } from 'src/app/core/store/actions/episode.actions';
 import { selectEpisode } from 'src/app/core/store/selectors/episode.selector';
+import { FileReference } from 'src/app/shared/interfaces/auth.interface';
 import { Episode } from 'src/app/shared/interfaces/user.interface';
 
 @Component({
@@ -46,12 +47,15 @@ export class EpisodeEditPageContainerComponent {
   onSubmitForm(episode: Episode) {
     const { audioFile, audio, ...episodeWithoutAudio } = episode;
 
+    const audioFileDetails = this.createFileDetails(episode.id, audioFile);
+
     if (!episode.id) {
       this.store.dispatch(
         createEpisode({
           payload: episodeWithoutAudio,
           showId: this.showId,
-          audio: audioFile,
+          audioFile: audioFile,
+          audioFileReference: audioFileDetails,
         })
       );
     } else {
@@ -60,9 +64,19 @@ export class EpisodeEditPageContainerComponent {
         updateEpisode({
           payload: updatedEpisode,
           episodeId: id,
-          audio: audioFile,
+          audioFile: audioFile,
+          audioFileReference: audioFileDetails,
         })
       );
     }
+  }
+
+  private createFileDetails(episodeId: string, file: File): FileReference {
+    return {
+      showId: this.showId,
+      episodeId: episodeId,
+      contentType: file?.type,
+      length: file?.size,
+    };
   }
 }

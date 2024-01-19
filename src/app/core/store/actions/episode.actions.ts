@@ -1,11 +1,17 @@
 import { createAction, props } from '@ngrx/store';
+import { FileReference } from 'src/app/shared/interfaces/auth.interface';
 import { Episode } from 'src/app/shared/interfaces/user.interface';
 
 const TYPE = '[Episode]';
 
 export const createEpisode = createAction(
   `${TYPE} Create`,
-  props<{ payload: Episode; showId: string; audio: File }>()
+  props<{
+    payload: Episode;
+    showId: string;
+    audioFile: File;
+    audioFileReference: FileReference;
+  }>()
 );
 
 export const createEpisodeSuccess = createAction(
@@ -50,7 +56,12 @@ export const fetchEpisodeListError = createAction(
 
 export const updateEpisode = createAction(
   `${TYPE} Update`,
-  props<{ payload: Episode; episodeId: string; audio: File }>()
+  props<{
+    payload: Episode;
+    episodeId: string;
+    audioFile: File;
+    audioFileReference: FileReference;
+  }>()
 );
 
 export const updateEpisodeSuccess = createAction(
@@ -80,7 +91,7 @@ export const deleteEpisodeError = createAction(
 
 export const uploadEpisodeImage = createAction(
   `${TYPE} Upload Image`,
-  props<{ payload: File; episodeId: string }>()
+  props<{ payload: File; fileDetails: FileReference }>()
 );
 
 export const uploadEpisodeImageSuccess = createAction(
@@ -110,7 +121,7 @@ export const deleteEpisodeImageError = createAction(
 
 export const uploadEpisodeAudio = createAction(
   `${TYPE} Upload Audio`,
-  props<{ payload: File; episodeId: string }>()
+  props<{ payload: File; fileDetails: FileReference }>()
 );
 
 export const uploadEpisodeAudioSuccess = createAction(
@@ -125,7 +136,7 @@ export const uploadEpisodeAudioError = createAction(
 
 export const createEpisodeAddAudio = createAction(
   `${TYPE} Create Add Audio`,
-  props<{ payload: Episode; audio: File }>()
+  props<{ audioFile: File; audioFileReference: FileReference }>()
 );
 
 export const createEpisodeAddAudioSuccess = createAction(

@@ -24,7 +24,7 @@ export type Show = {
   subCategory: string;
   explicit: boolean;
   keywords: string[];
-  image: string;
+  image: NestFile;
 };
 
 export type Episode = {
@@ -37,7 +37,13 @@ export type Episode = {
   episode: number;
   explicit: boolean;
   show: { id: string };
-  audio?: string;
+  audio?: NestFile;
   audioFile?: File;
-  image: string;
+  image: NestFile;
+};
+
+export type NestFile = {
+  name: string;
+  url: string;
+  contentType: string;
 };

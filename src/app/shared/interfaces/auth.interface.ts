@@ -65,3 +65,20 @@ export interface ContactConfirmation {
 export interface ContactDetails extends WaitingList, BaseResponse {
   confirmed: boolean;
 }
+
+export interface FileReference {
+  contentType: string;
+  length: number;
+  showId: string;
+  episodeId?: string;
+}
+
+export interface FileReferenceResponse extends BaseResponse {
+  name: string;
+  contentType: string;
+  uploadUrl: string;
+}
+
+export interface WaitingListDetails extends WaitingList, BaseResponse {
+  confirmed: boolean;
+}
