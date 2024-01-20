@@ -52,12 +52,18 @@ const episode = createReducer(
 );
 
 const replaceUpdatedEpisode = (episodeList: Episode[], episode: Episode) => {
+  console.log('episodeList', episodeList);
+  console.log('episode', episode);
   const index = episodeList.findIndex((e) => e.id === episode.id);
-  return [
+  const result = [
     ...episodeList.slice(0, index),
     episode,
     ...episodeList.slice(index + 1),
   ];
+
+  console.log(result);
+
+  return result;
 };
 
 export function episodeReducer(state: EpisodeState, action: Action) {

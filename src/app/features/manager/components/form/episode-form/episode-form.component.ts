@@ -27,6 +27,7 @@ export class EpisodeFormComponent {
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log(this.data);
     this.createForm(changes['data'].currentValue);
   }
 

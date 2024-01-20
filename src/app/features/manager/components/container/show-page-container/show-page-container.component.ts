@@ -15,6 +15,7 @@ import {
 import { selectIsLoading } from 'src/app/core/store/selectors/auth.selectors';
 import { selectEpisodeList } from 'src/app/core/store/selectors/episode.selector';
 import { selectShow } from 'src/app/core/store/selectors/show.selectors';
+import { FileReference } from 'src/app/shared/interfaces/auth.interface';
 import { Episode } from 'src/app/shared/interfaces/user.interface';
 import { ImageUploadButtonSize } from 'src/app/shared/modules/upload/components/image-upload-button/image-upload-button.component';
 import { IconType } from 'src/app/shared/ui-components/components/icon/icon.component';
@@ -32,6 +33,8 @@ export class ShowPageContainerComponent implements OnInit {
   IconType = IconType;
   ImageUploadButtonSize = ImageUploadButtonSize;
 
+  showId: string;
+
   constructor(
     private store: Store<{ show: any }>,
     private router: Router,
@@ -47,6 +50,7 @@ export class ShowPageContainerComponent implements OnInit {
         first()
       )
       .subscribe((show) => {
+        this.showId = show.id;
         this.store.dispatch(fetchEpisodeList({ showId: show.id }));
       });
   }
@@ -59,12 +63,21 @@ export class ShowPageContainerComponent implements OnInit {
   }
 
   onUpoadShowImage(file: File, showId: string) {
-    this.store.dispatch(uploadShowImage({ payload: file, showId: showId }));
+    this.store.dispatch(
+      uploadShowImage({
+        payload: file,
+        showId: showId,
+        fileDetails: this.createFileDetails(undefined, file),
+      })
+    );
   }
 
   onUpoadEpisodeImage(file: File, episodeId: string) {
     this.store.dispatch(
-      uploadEpisodeImage({ payload: file, episodeId: episodeId })
+      uploadEpisodeImage({
+        payload: file,
+        fileDetails: this.createFileDetails(episodeId, file),
+      })
     );
   }
 
@@ -74,5 +87,14 @@ export class ShowPageContainerComponent implements OnInit {
 
   onDeleteEpisodeImage(episodeId: string) {
     this.store.dispatch(deleteEpisodeImage({ episodeId }));
+  }
+
+  private createFileDetails(episodeId: string, file: File): FileReference {
+    return {
+      showId: this.showId,
+      episodeId: episodeId,
+      contentType: file.type,
+      length: file.size,
+    };
   }
 }
