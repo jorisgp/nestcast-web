@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { of } from 'rxjs';
-import { catchError, map, mergeMap, tap } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { catchError, map, mergeMap, switchMap, tap } from 'rxjs/operators';
+import {
+  FileReference,
+  FileReferenceResponse,
+} from 'src/app/shared/interfaces/auth.interface';
 import { LanguageService } from '../../services/language.service';
 import { ModalService } from '../../services/modal.service';
 import { NestcastHttpService } from '../../services/nestcast-http.service';
@@ -95,20 +99,6 @@ export class ShowEffects {
     )
   );
 
-  uploadShowImage$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(uploadShowImage),
-      mergeMap((action) =>
-        this.nestcastHttpService
-          .putShowsImage(action.showId, action.payload)
-          .pipe(
-            map((show) => uploadShowImageSuccess({ payload: show })),
-            catchError((error) => of(uploadShowImageError(error)))
-          )
-      )
-    )
-  );
-
   deleteShowImage$ = createEffect(() =>
     this.actions$.pipe(
       ofType(deleteShowImage),
@@ -120,4 +110,37 @@ export class ShowEffects {
       )
     )
   );
+
+  uploadShowImage$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(uploadShowImage),
+      mergeMap((action) =>
+        this._uploadFile(action.fileDetails, action.payload).pipe(
+          switchMap((fileReference) =>
+            this.nestcastHttpService
+              .patchShows(action.showId, {
+                image: fileReference.id,
+              })
+              .pipe(map((show) => uploadShowImageSuccess({ payload: show })))
+          ),
+          catchError((error) => of(uploadShowImageError(error)))
+        )
+      )
+    )
+  );
+
+  private _uploadFile(
+    fileDetails: FileReference,
+    file: File
+  ): Observable<FileReferenceResponse> {
+    return this.nestcastHttpService
+      .postFileReference(fileDetails)
+      .pipe(
+        switchMap((fileReference) =>
+          this.nestcastHttpService
+            .putFile(fileReference.url, file)
+            .pipe(map(() => fileReference))
+        )
+      );
+  }
 }

@@ -1,19 +1,21 @@
 <div [class.scroll]="scroll" (scroll)="onScroll($event)">
-  <div class="d-flex flex-column">
-    <div
-      class="background background-section"
-      [class.full-screen]="view === BackgroundSectionView.FULL_SCREEN"
-      [ngClass]="{
+  <div class="inner-scroll">
+    <div class="d-flex flex-column">
+      <div
+        class="background background-section"
+        [class.full-screen]="view === BackgroundSectionView.FULL_SCREEN"
+        [ngClass]="{
     'gradient-1': gradient === Gradient.ONE,
     'gradient-2': gradient === Gradient.TWO,
     'gradient-3': gradient === Gradient.THREE,
     'gradient-4': gradient === Gradient.FOUR,
     'gradient-manager-1': gradient === Gradient.MANAGER_ONE,
   }"
-    >
-      <div class="container">
-        <div [class.header-adjustment]="headerAdjustment">
-          <ng-content></ng-content>
+      >
+        <div class="container">
+          <div [class.header-adjustment]="headerAdjustment">
+            <ng-content></ng-content>
+          </div>
         </div>
       </div>
     </div>

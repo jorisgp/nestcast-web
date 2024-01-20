@@ -63,7 +63,13 @@ export class ShowPageContainerComponent implements OnInit {
   }
 
   onUpoadShowImage(file: File, showId: string) {
-    this.store.dispatch(uploadShowImage({ payload: file, showId: showId }));
+    this.store.dispatch(
+      uploadShowImage({
+        payload: file,
+        showId: showId,
+        fileDetails: this.createFileDetails(undefined, file),
+      })
+    );
   }
 
   onUpoadEpisodeImage(file: File, episodeId: string) {

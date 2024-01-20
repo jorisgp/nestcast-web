@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { FileReference } from 'src/app/shared/interfaces/auth.interface';
 import { Show } from 'src/app/shared/interfaces/user.interface';
 
 const TYPE = '[Show]';
@@ -40,7 +41,7 @@ export const updateShow = createAction(
 
 export const uploadShowImage = createAction(
   `${TYPE} Upload Image`,
-  props<{ payload: File; showId: string }>()
+  props<{ payload: File; showId: string; fileDetails: FileReference }>()
 );
 
 export const uploadShowImageSuccess = createAction(
