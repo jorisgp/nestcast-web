@@ -23,7 +23,6 @@ export class HeaderPrivateComponent {
 
   @HostListener('scroll', ['$event'])
   addBackground(event: any) {
-    console.log(event);
     if (this.platformService.isBrowser) {
       if (scrollY > 100) {
         this.background = true;

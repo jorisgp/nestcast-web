@@ -12,14 +12,12 @@ export const initialState: UiState = {
 const ui = createReducer(
   initialState,
   on(uiActions.showPrivateHeaderBackground, (state) => {
-    console.log('show');
     return {
       ...state,
       showPrivateHeaderBackground: true,
     };
   }),
   on(uiActions.hidePrivateHeaderBackground, (state) => {
-    console.log('hide');
     return {
       ...state,
       showPrivateHeaderBackground: false,

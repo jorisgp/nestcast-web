@@ -19,4 +19,17 @@ export class EpisodeDetailsComponent {
   editEpisode = new EventEmitter<Episode>();
 
   IconType = IconType;
+
+  get episodeDetails() {
+    let result;
+    if (this.episodeData.season) {
+      result = `S${this.episodeData.season}`;
+      if (this.episodeData.episode) {
+        result += ` - E${this.episodeData.episode}`;
+      }
+    } else if (this.episodeData.episode) {
+      result = `E${this.episodeData.season}`;
+    }
+    return result;
+  }
 }
