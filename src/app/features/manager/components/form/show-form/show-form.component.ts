@@ -55,7 +55,6 @@ export class ShowFormComponent implements OnInit, OnChanges {
 
   onSubmitForm() {
     if (this.form.valid) {
-      console.log('form is valid');
       this.submitForm.emit({ id: this.data?.id, ...this.form.value });
     }
   }

@@ -4,8 +4,13 @@
       <ng-content select="[image-upload]"></ng-content>
     </div>
     <div class="col-6 d-flex flex-column flex-container">
-      <h2>{{ episodeData.title }}</h2>
-      <p class="flex-grow-1 description">{{ episodeData.description }}</p>
+      <h3 class="nc-h3">{{ episodeData.title }}</h3>
+      <div class="nc-sub-title" *ngIf="episodeDetails">
+        {{ episodeDetails }}
+      </div>
+      <p class="flex-grow-1 nc-paragraph description">
+        {{ episodeData.description }}
+      </p>
       <div class="keywords">
         <div *ngFor="let keyword of episodeData.keywords" class="nc-pill">
           {{ keyword }}

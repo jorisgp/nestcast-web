@@ -1,7 +1,7 @@
 <ng-container *ngIf="data"
-  ><h2>{{ data.title }}</h2>
-  <div class="auhor">{{ data.author }}</div>
-  <p>{{ data.description }}</p>
+  ><h2 class="nc-h2">{{ data.title }}</h2>
+  <div class="nc-sub-title">{{ data.author }}</div>
+  <p class="nc-paragraph description">{{ data.description }}</p>
   <div class="keywords">
     <div *ngFor="let keyword of data.keywords" class="nc-pill">
       {{ keyword }}

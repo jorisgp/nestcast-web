@@ -214,10 +214,12 @@ export class EpisodeEffects {
     this.actions$.pipe(
       ofType(deleteEpisodeImage),
       mergeMap((action) =>
-        this.nestcastHttpService.putEpisodesImage(action.episodeId, null).pipe(
-          map((show) => uploadEpisodeImageSuccess({ payload: show })),
-          catchError((error) => of(uploadEpisodeImageError(error)))
-        )
+        this.nestcastHttpService
+          .patchEpisodes(action.episodeId, { image: null })
+          .pipe(
+            map((show) => uploadEpisodeImageSuccess({ payload: show })),
+            catchError((error) => of(uploadEpisodeImageError(error)))
+          )
       )
     )
   );
