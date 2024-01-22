@@ -20,6 +20,7 @@ import { ShowPageComponent } from './components/page/show-page/show-page.compone
 import { ContentWrapperComponent } from './components/view/content-wrapper/content-wrapper.component';
 import { UserAvatarComponent } from './components/view/user-avatar/user-avatar.component';
 import { ManagerRoutingModule } from './manager-routing.module';
+import { DistributionPageContainerComponent } from './components/container/distribution-page-container/distribution-page-container.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ManagerRoutingModule } from './manager-routing.module';
     ShowFormComponent,
     EpisodeFormComponent,
     EpisodeEditPageComponent,
+    DistributionPageContainerComponent,
   ],
 
   imports: [

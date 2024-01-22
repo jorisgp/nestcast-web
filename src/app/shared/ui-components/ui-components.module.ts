@@ -1,3 +1,4 @@
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -7,6 +8,7 @@ import { ContainerDirective } from '../directives/container.directive';
 import { ButtonComponent } from './components/button/button.component';
 import { CardComponent } from './components/card/card.component';
 import { CategorySelectComponent } from './components/category-select/category-select.component';
+import { CopyBoxComponent } from './components/copy-box/copy-box.component';
 import { EpisodeDetailsComponent } from './components/episode-details/episode-details.component';
 import { EpisodeTypeSelectComponent } from './components/episode-type-select/episode-type-select.component';
 import { IconButtonComponent } from './components/icon-button/icon-button.component';
@@ -42,6 +44,7 @@ import { SubCategorySelectComponent } from './components/sub-category-select/sub
     NumberSelectComponent,
     EpisodeTypeSelectComponent,
     EpisodeDetailsComponent,
+    CopyBoxComponent,
   ],
   imports: [
     CommonModule,
@@ -49,6 +52,7 @@ import { SubCategorySelectComponent } from './components/sub-category-select/sub
     ReactiveFormsModule,
     FormsModule,
     RouterModule,
+    ClipboardModule,
   ],
   exports: [
     ParagraphsComponent,
@@ -68,6 +72,7 @@ import { SubCategorySelectComponent } from './components/sub-category-select/sub
     NumberSelectComponent,
     EpisodeTypeSelectComponent,
     EpisodeDetailsComponent,
+    CopyBoxComponent,
   ],
 })
 export class UiComponentsModule {}

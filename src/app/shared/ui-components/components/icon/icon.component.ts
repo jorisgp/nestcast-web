@@ -46,4 +46,5 @@ export enum IconType {
   UPLOAD = 'bi-cloud-arrow-up',
   EDIT = 'bi-pencil-square',
   ADD = 'bi-plus-square',
+  COPY = 'bi-copy',
 }

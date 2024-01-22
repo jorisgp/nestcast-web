@@ -1,0 +1,17 @@
+<div class="d-flex">
+  <input
+    title="{{ data }}"
+    type="text"
+    class="form-control"
+    [value]="data"
+    disabled
+  />
+  <button
+    class="btn btn-dark"
+    type="button"
+    title="Copy to clipboard"
+    [cdkCopyToClipboard]="data"
+  >
+    <app-icon [type]="IconType.COPY"></app-icon>
+  </button>
+</div>
