@@ -25,6 +25,7 @@ export type Show = {
   explicit: boolean;
   keywords: string[];
   image: NestFile;
+  rssFeedUrl: string;
 };
 
 export type Episode = {
