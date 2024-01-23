@@ -6,8 +6,9 @@ import { PlatformService } from './platform.service';
 })
 export class LocalStorageService {
   constructor(private plaformService: PlatformService) {}
+
   setNumber(storageKey: StorageKey, data: number) {
-    localStorage.setItem(storageKey, data.toString());
+    this._setItem(storageKey, data.toString());
   }
 
   getNumber(storageKey: StorageKey): number | null {
@@ -16,16 +17,24 @@ export class LocalStorageService {
   }
 
   setItem(storageKey: StorageKey | string, data: Object) {
-    localStorage.setItem(storageKey, JSON.stringify(data));
+    this._setItem(storageKey, JSON.stringify(data));
   }
 
   removeItem(storageKey: StorageKey | string) {
-    localStorage.removeItem(storageKey);
+    if (this.plaformService.isBrowser) {
+      localStorage.removeItem(storageKey);
+    }
   }
 
   getItem(storageKey: StorageKey | string): any {
     const value = this._getItem(storageKey);
     return value ? JSON.parse(value) : null;
+  }
+
+  private _setItem(storageKey: StorageKey | string, data: string) {
+    if (this.plaformService.isBrowser) {
+      localStorage.setItem(storageKey, data);
+    }
   }
 
   private _getItem(storageKey: StorageKey | string) {
