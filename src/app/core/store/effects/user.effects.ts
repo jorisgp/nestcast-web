@@ -39,6 +39,7 @@ export class UserEffects {
     () =>
       this.actions$.pipe(
         ofType(userActions.UserSignUpSuccess),
+        tap(() => console.log('UserSignUpSuccess')),
         tap(() =>
           this.notificationService.showSuccess(
             this.languageService.getTranslation('USER.SIGN_UP.SUCCESS')
@@ -111,6 +112,7 @@ export class UserEffects {
     () =>
       this.actions$.pipe(
         ofType(userActions.UserConfirmUsernameSuccess),
+        tap(() => console.log('userConfirmUsernameSuccess')),
         tap(() => this.localStorageService.removeItem(StorageKey.AUTH_TOKEN)),
         tap(() =>
           this.notificationService.showSuccess(
@@ -157,6 +159,7 @@ export class UserEffects {
     () =>
       this.actions$.pipe(
         ofType(userActions.UserPasswordRequestResetSuccess),
+        tap(() => console.log('UserPasswordRequestResetSuccess')),
         tap(() =>
           this.notificationService.showSuccess(
             this.languageService.getTranslation(
@@ -198,6 +201,7 @@ export class UserEffects {
     () =>
       this.actions$.pipe(
         ofType(userActions.UserPasswordResetSuccess),
+        tap(() => console.log('UserPasswordResetSuccess')),
         tap(() =>
           this.notificationService.showSuccess(
             this.languageService.getTranslation('USER.PASSWORD_RESET.SUCCESS')
