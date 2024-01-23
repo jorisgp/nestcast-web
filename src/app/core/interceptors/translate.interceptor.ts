@@ -11,21 +11,11 @@ import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class TranslateInterceptor implements HttpInterceptor {
-  private readonly DEFAULT_PORT: number = null;
-  private readonly PORT = process.env['PORT'] || this.DEFAULT_PORT;
-
   constructor(@Inject(REQUEST) private request: express.Request) {}
-
-  getBaseUrl(req: express.Request) {
-    const { protocol } = req;
-    return this.PORT
-      ? `${protocol}://${environment.host}:${this.PORT}`
-      : `${protocol}://${environment.host}`;
-  }
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     if (request.url.startsWith('./assets')) {
-      const baseUrl = this.getBaseUrl(this.request);
+      const baseUrl = environment.host;
       console.debug('TranslateInterceptor: baseUrl', baseUrl);
       request = request.clone({
         url: `${baseUrl}/${request.url.replace('./assets', 'assets')}`,
