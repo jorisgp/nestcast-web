@@ -5,6 +5,7 @@
 import { Feature, NestCastConfig } from './environment.model';
 
 export const environment: NestCastConfig = {
+  host: 'http://localhost:4200',
   production: false,
   apiPrefix: true,
   apiUrl: 'http://nestcast.net',

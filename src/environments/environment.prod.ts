@@ -1,6 +1,7 @@
 import { Feature, NestCastConfig } from './environment.model';
 
 export const environment: NestCastConfig = {
+  host: 'https://nestcast.net',
   production: true,
   apiPrefix: true,
   apiUrl: 'https://nestcast.net',

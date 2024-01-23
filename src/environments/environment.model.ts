@@ -1,4 +1,5 @@
 export type NestCastConfig = {
+  host: string;
   production: boolean;
   apiPrefix: boolean;
   apiUrl: string;

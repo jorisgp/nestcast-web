@@ -7,6 +7,7 @@ import { Inject, Injectable } from '@angular/core';
 
 import { REQUEST } from '@nguniversal/express-engine/tokens';
 import * as express from 'express';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class TranslateInterceptor implements HttpInterceptor {
@@ -16,10 +17,10 @@ export class TranslateInterceptor implements HttpInterceptor {
   constructor(@Inject(REQUEST) private request: express.Request) {}
 
   getBaseUrl(req: express.Request) {
-    const { protocol, hostname } = req;
+    const { protocol } = req;
     return this.PORT
-      ? `${protocol}://${hostname}:${this.PORT}`
-      : `${protocol}://${hostname}`;
+      ? `${protocol}://${environment.host}:${this.PORT}`
+      : `${protocol}://${environment.host}`;
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler) {
