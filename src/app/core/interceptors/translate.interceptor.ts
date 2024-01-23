@@ -3,16 +3,12 @@ import {
   HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import { REQUEST } from '@nguniversal/express-engine/tokens';
-import * as express from 'express';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class TranslateInterceptor implements HttpInterceptor {
-  constructor(@Inject(REQUEST) private request: express.Request) {}
-
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     if (request.url.startsWith('./assets')) {
       const baseUrl = environment.host;
