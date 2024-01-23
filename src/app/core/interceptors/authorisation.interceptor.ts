@@ -17,7 +17,9 @@ export class AuthorisationInterceptor implements HttpInterceptor {
   constructor(private store: Store<{ auth: any }>) {}
 
   private handleAuthError(err: HttpErrorResponse): Observable<any> {
+    console.debug('handleAuthError', err);
     if (err.status === 401 || err.status === 403) {
+      console.debug('handled error ' + err.status);
       this.store.dispatch(signOut());
       return EMPTY;
     }
