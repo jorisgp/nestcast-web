@@ -39,6 +39,13 @@ export class EpisodeFormComponent {
       episode: new FormControl(data?.episode, []),
       keywords: new FormControl(data?.keywords || [], []),
       explicit: new FormControl(data?.explicit || false, [Validators.required]),
+      publicationDate: new FormControl(
+        this.dateOrNowString(data?.publicationDate),
+        []
+      ),
+      publicationTime: new FormControl(
+        this.dateOrNowTime(data?.publicationDate) || new Date()
+      ),
       audioFile: new FormControl(),
     });
   }
@@ -48,8 +55,53 @@ export class EpisodeFormComponent {
   }
 
   onSubmitForm() {
+    const publicationDate = this._combineDateAndTime(
+      this.form.value.publicationDate,
+      this.form.value.publicationTime
+    );
     if (this.form.valid) {
-      this.submitForm.emit({ id: this.data.id, ...this.form.value });
+      this.submitForm.emit({
+        ...this.form.value,
+        id: this.data.id,
+        publicationDate,
+        publicationTime: undefined,
+      });
     }
+  }
+
+  private _combineDateAndTime(dateString: string, timeString: string): Date {
+    const date = new Date(dateString + ' ' + timeString);
+    return date;
+  }
+
+  private dateOrNowTime(dateString: string): string {
+    const date = new Date(dateString);
+    return this._createTimeString(date || new Date());
+  }
+  private dateOrNowString(dateString: string): string {
+    const date = new Date(dateString);
+    return this._createDateString(date || new Date());
+  }
+
+  private _createDateString(date: Date): string {
+    return (
+      date.getFullYear() +
+      '-' +
+      this._addZero(date.getMonth() + 1) +
+      '-' +
+      this._addZero(date.getDate())
+    );
+  }
+
+  private _createTimeString(date: Date): string {
+    return (
+      this._addZero(date.getHours() + 1) +
+      ':' +
+      this._addZero(date.getMinutes())
+    );
+  }
+
+  private _addZero(number: number): string {
+    return number < 10 ? '0' + number : number.toString();
   }
 }

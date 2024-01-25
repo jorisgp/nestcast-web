@@ -1,0 +1,19 @@
+<h3>Crop image</h3>
+<image-cropper
+  class="cropper"
+  [imageFile]="data"
+  [resizeToHeight]="config.height"
+  [resizeToWidth]="config.width"
+  [imageChangedEvent]="imageChangedEvent"
+  [aspectRatio]="config.aspectRatio"
+  [format]="config.format"
+  (imageCropped)="imageCropped($event)"
+></image-cropper>
+
+<button
+  type="button"
+  class="btn btn-dark"
+  (click)="submitForm.emit(croppedImage)"
+>
+  Opslaan
+</button>

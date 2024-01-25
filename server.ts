@@ -24,6 +24,16 @@ export function app(): express.Express {
     })
   );
 
+  server.get('*', (req, res) => {
+    if (req.headers.host.slice(0, 4) === 'www.') {
+      var newHost = req.headers.host.slice(4);
+      return res.redirect(
+        301,
+        req.protocol + '://' + newHost + req.originalUrl
+      );
+    }
+  });
+
   server.set('view engine', 'html');
   server.set('views', distFolder);
 

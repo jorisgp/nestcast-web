@@ -1,5 +1,5 @@
 {
-  "TITLE": "RSS Podcast hosting voor iedereen - NestCast",
+  "TITLE": "Podcast hosting voor iedereen - NestCast",
   "KEYWORDS": "podcast hosting rss feed spotify nestcast",
   "DESCRIPTION": "Wij hosten jouw podcast voor een veel lagere prijs dan andere hosting bedrijven. Hierdoor kan je langdurig jouw podcast beschikbaar houden.",
   "HOME": {
@@ -458,7 +458,8 @@
         "KEYWORDS": "Trefwoorden",
         "EXPLICIT": "Expliciet",
         "CANCEL": "Annuleren",
-        "SAVE": "Opslaan"
+        "SAVE": "Opslaan",
+        "PUBLICATIONDATE": "Publicatiedatum"
       }
     }
   }
