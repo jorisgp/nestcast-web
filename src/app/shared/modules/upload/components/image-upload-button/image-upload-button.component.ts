@@ -75,8 +75,8 @@ export class ImageUploadButtonComponent {
       file,
       {
         aspectRatio: 1,
-        width: 1000,
-        height: 1000,
+        width: 1400,
+        height: 1400,
         format: 'png',
       }
     );
