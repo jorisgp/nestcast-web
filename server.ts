@@ -24,6 +24,7 @@ export function app(): express.Express {
     })
   );
 
+
   server.get('*', (req, res, next) => {
     if (req.headers.host.slice(0, 4) === 'www.') {
       var newHost = req.headers.host.slice(4);
@@ -31,6 +32,7 @@ export function app(): express.Express {
         301,
         req.protocol + '://' + newHost + req.originalUrl
       );
+
     } else {
       next();
     }
