@@ -80,7 +80,19 @@
 }
 
 .header-adjustment {
-  padding-top: 120px;
+  padding-top: 200px;
+
+  &.full-screen {
+    padding-top: 120px;
+  }
+}
+
+.background {
+  padding-bottom: 50px;
+
+  &.full-screen {
+    padding-bottom: 0;
+  }
 }
 
 @include media-breakpoint-up(sm) {

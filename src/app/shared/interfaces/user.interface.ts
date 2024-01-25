@@ -41,6 +41,7 @@ export type Episode = {
   audio?: NestFile;
   audioFile?: File;
   image: NestFile;
+  publicationDate?: string;
 };
 
 export type NestFile = {

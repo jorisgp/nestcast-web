@@ -6,11 +6,13 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
+import { ModalService } from 'src/app/core/services/modal.service';
 import { IconButtonColor } from 'src/app/shared/ui-components/components/icon-button/icon-button.component';
 import {
   IconSize,
   IconType,
 } from '../../../../ui-components/components/icon/icon.component';
+import { ImageCropperComponent } from '../image-cropper/image-cropper.component';
 
 @Component({
   selector: 'app-image-upload-button',
@@ -43,15 +45,17 @@ export class ImageUploadButtonComponent {
   IconType = IconType;
   IconSize = IconSize;
 
+  constructor(private modalService: ModalService) {}
+
   onFileDragged(fileArray: File[]) {
-    this._handleFile(fileArray[0]);
+    this._openEditModal(fileArray[0]);
   }
 
   onFileSelected(event: any) {
     const inputFileList = event.target.files;
     const fileArray = Array.prototype.slice.call(inputFileList);
     this.fileInput.nativeElement.value = '';
-    this._handleFile(fileArray[0]);
+    this._openEditModal(fileArray[0]);
   }
 
   onDelete(event: Event) {
@@ -63,7 +67,22 @@ export class ImageUploadButtonComponent {
     this.fileUpload.nativeElement.click();
     event.stopPropagation();
   }
-  private _handleFile(file: File) {
+  private _openEditModal(file: File) {
+    this.modalService.openModal(
+      ImageCropperComponent,
+      (croppedFile) => this._uploadFile(croppedFile),
+      null,
+      file,
+      {
+        aspectRatio: 1,
+        width: 1000,
+        height: 1000,
+        format: 'png',
+      }
+    );
+  }
+
+  private _uploadFile(file: File) {
     this.upload.emit(file);
   }
 }
