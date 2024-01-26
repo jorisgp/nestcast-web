@@ -71,6 +71,7 @@ export interface FileReference {
   length: number;
   showId: string;
   episodeId?: string;
+  duration: number;
 }
 
 export interface FileReferenceResponse extends BaseResponse {
