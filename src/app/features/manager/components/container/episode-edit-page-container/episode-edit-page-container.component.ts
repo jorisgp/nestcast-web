@@ -44,10 +44,11 @@ export class EpisodeEditPageContainerComponent {
     this.store.dispatch(fetchEpisode({ episodeId: this.episodeId }));
   }
 
-  onSubmitForm(episode: Episode) {
+  async onSubmitForm(episode: Episode) {
     const { audioFile, audio, ...episodeWithoutAudio } = episode;
 
-    const audioFileDetails = this.createFileDetails(episode.id, audioFile);
+    const audioFileDetails =
+      audioFile && (await this._createFileDetails(episode.id, audioFile));
 
     if (!episode.id) {
       this.store.dispatch(
@@ -71,12 +72,27 @@ export class EpisodeEditPageContainerComponent {
     }
   }
 
-  private createFileDetails(episodeId: string, file: File): FileReference {
+  private async _createFileDetails(
+    episodeId: string,
+    file: File
+  ): Promise<FileReference> {
     return {
       showId: this.showId,
       episodeId: episodeId,
       contentType: file?.type,
       length: file?.size,
+      duration: await this._getDuration(file),
     };
+  }
+
+  private async _getDuration(file: File): Promise<number> {
+    const audio = new Audio();
+    audio.src = URL.createObjectURL(file);
+    return new Promise((resolve) => {
+      audio.onloadedmetadata = () => {
+        const duration = audio.duration;
+        resolve(duration);
+      };
+    });
   }
 }

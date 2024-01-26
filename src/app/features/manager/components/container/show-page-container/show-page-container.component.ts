@@ -95,6 +95,7 @@ export class ShowPageContainerComponent implements OnInit {
       episodeId: episodeId,
       contentType: file.type,
       length: file.size,
+      duration: 0,
     };
   }
 }
