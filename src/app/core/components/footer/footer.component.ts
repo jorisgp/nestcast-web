@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IconType } from 'src/app/shared/ui-components/components/icon/icon.component';
+import {
+  IconSize,
+  IconType,
+} from 'src/app/shared/ui-components/components/icon/icon.component';
 import { PlatformService } from '../../services/platform.service';
 import { RouterService } from '../../services/router.service';
 
@@ -10,6 +13,7 @@ import { RouterService } from '../../services/router.service';
 })
 export class FooterComponent {
   IconType = IconType;
+  IconSize = IconSize;
 
   constructor(
     private router: RouterService,

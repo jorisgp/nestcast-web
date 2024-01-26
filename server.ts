@@ -24,15 +24,17 @@ export function app(): express.Express {
     })
   );
 
-
   server.get('*', (req, res, next) => {
+    console.log('req.headers: ', req.headers);
+    console.log('req.headers.host: ', req.headers.host);
+    console.log('req.headers.host.slice: ', req.headers.host.slice(0, 4));
     if (req.headers.host.slice(0, 4) === 'www.') {
       var newHost = req.headers.host.slice(4);
+      console.log('newHost: ', newHost);
       return res.redirect(
         301,
         req.protocol + '://' + newHost + req.originalUrl
       );
-
     } else {
       next();
     }
