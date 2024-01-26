@@ -13,6 +13,7 @@
             *ngIf="'SOCIALMEDIA.FACEBOOK' | translate as facebookLink"
           >
             <app-icon
+              [size]="IconSize.MEDIUM"
               [type]="IconType.FACEBOOK"
               class="facebook-icon"
             ></app-icon
@@ -22,7 +23,11 @@
             target="_blank"
             *ngIf="'SOCIALMEDIA.X' | translate as facebookLink"
           >
-            <app-icon [type]="IconType.X" class="x-icon"></app-icon>
+            <app-icon
+              [size]="IconSize.MEDIUM"
+              [type]="IconType.X"
+              class="x-icon"
+            ></app-icon>
           </a>
           <a
             [href]="instagramLink"
@@ -30,6 +35,7 @@
             *ngIf="'SOCIALMEDIA.INSTAGRAM' | translate as instagramLink"
           >
             <app-icon
+              [size]="IconSize.MEDIUM"
               [type]="IconType.INSTAGRAM"
               class="instagram-icon"
             ></app-icon
@@ -40,6 +46,7 @@
             *ngIf="'SOCIALMEDIA.LINKEDIN' | translate as linkedInLink"
           >
             <app-icon
+              [size]="IconSize.MEDIUM"
               [type]="IconType.LINKEDIN"
               class="linkedin-icon"
             ></app-icon>
