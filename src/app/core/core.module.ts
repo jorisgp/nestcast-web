@@ -15,6 +15,7 @@ import { PrivateAppComponent } from './components/private-app/private-app.compon
 import { PublicAppComponent } from './components/public-app/public-app.component';
 import { AuthorisationInterceptor } from './interceptors/authorisation.interceptor';
 import { HttpEnvironmentInterceptor } from './interceptors/http-environment.interceptor';
+import { ShowAppComponent } from './components/show-app/show-app.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -27,6 +28,7 @@ export function createTranslateLoader(http: HttpClient) {
     LanguageSwitchComponent,
     PublicAppComponent,
     PrivateAppComponent,
+    ShowAppComponent,
   ],
   providers: [
     {

@@ -17,6 +17,9 @@ import {
   createShowSuccess,
   deleteShowImage,
   fetchShow,
+  fetchShowByDomain,
+  fetchShowByDomainError,
+  fetchShowByDomainSuccess,
   fetchShowSuccess,
   updateShow,
   uploadShowImage,
@@ -85,6 +88,22 @@ export class ShowEffects {
   fetchShowSuccess$ = createEffect(
     () => this.actions$.pipe(ofType(fetchShowSuccess)),
     { dispatch: false }
+  );
+
+  fetchShowByDomain$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(fetchShowByDomain),
+      mergeMap((action) =>
+        this.nestcastHttpService.getShows({ domain: action.domain }).pipe(
+          map(
+            (result) =>
+              result?.length === 1 &&
+              fetchShowByDomainSuccess({ show: result[0] })
+          ),
+          catchError((error) => of(fetchShowByDomainError(error)))
+        )
+      )
+    )
   );
 
   updateShow$ = createEffect(() =>

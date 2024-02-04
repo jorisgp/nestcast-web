@@ -1,0 +1,20 @@
+<div *ngIf="show$ | async as show" class="show-container">
+  <div class="content">
+    <div>
+      <app-public-show-view [show]="show"></app-public-show-view>
+    </div>
+    <hr />
+    <div *ngIf="episodes$ | async as episodes">
+      <app-public-episode-view
+        *ngFor="let episode of episodes"
+        [data]="episode"
+        [show]="show"
+        (play)="onPlay($event)"
+        [playing]="selectedEpisode?.id === episode.id"
+      ></app-public-episode-view>
+    </div>
+  </div>
+  <div class="player">
+    <app-episode-player [data]="selectedEpisode"></app-episode-player>
+  </div>
+</div>

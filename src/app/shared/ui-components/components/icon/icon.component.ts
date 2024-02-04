@@ -47,4 +47,7 @@ export enum IconType {
   EDIT = 'bi-pencil-square',
   ADD = 'bi-plus-square',
   COPY = 'bi-copy',
+  PLAY = 'bi-play-fill',
+  PAUZE = 'bi-pause-fill',
+  PLAYING = 'bi-soundwave',
 }

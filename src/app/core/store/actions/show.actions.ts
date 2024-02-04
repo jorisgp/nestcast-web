@@ -24,6 +24,21 @@ export const fetchShow = createAction(
   props<{ payload: void }>()
 );
 
+export const fetchShowByDomain = createAction(
+  `${TYPE} Fetch by Domain`,
+  props<{ domain: string }>()
+);
+
+export const fetchShowByDomainSuccess = createAction(
+  `${TYPE} Fetch By Domain Success`,
+  props<{ show: Show }>()
+);
+
+export const fetchShowByDomainError = createAction(
+  `${TYPE} Fetch By Domain Error`,
+  props<{ error: Error }>()
+);
+
 export const fetchShowSuccess = createAction(
   `${TYPE} Fetch Success`,
   props<{ payload: Show }>()

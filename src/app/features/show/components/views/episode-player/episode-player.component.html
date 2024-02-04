@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row episode-player">
+    <ng-container *ngIf="data">
+      <div class="col-4 offset-2 pt-3">
+        <div class="d-flex">
+          <h3>{{ data.title }}</h3>
+        </div>
+        <p class="description">S{{ data.season }}E{{ data.episode }}</p>
+      </div>
+      <div class="col-6">
+        <div class="pt-4">
+          <audio
+            controls
+            *ngIf="data?.audio?.url"
+            #audioElement
+            [src]="data?.audio?.url"
+            autoplay
+          >
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -104,9 +104,10 @@ export class NestcastHttpService {
       .pipe(catchError((error) => this._handleError(error)));
   }
 
-  getShows(): Observable<any> {
+  getShows(query: any): Observable<any> {
+    const params = this._createParams(query);
     return this.http
-      .get<any>(`${apiPrefix}/${ApiResource.SHOWS}`)
+      .get<any>(`${apiPrefix}/${ApiResource.SHOWS}`, { params })
       .pipe(catchError((error) => this._handleError(error)));
   }
 
@@ -303,6 +304,13 @@ export class NestcastHttpService {
 
   private _createParams(keyValuePairs: { [key: string]: any }): HttpParams {
     let httpParams = new HttpParams();
+    const keys = Object.keys(keyValuePairs);
+    keys.forEach((key) => {
+      if (!keyValuePairs[key]) {
+        delete keyValuePairs[key];
+      }
+    });
+
     if (keyValuePairs) {
       httpParams = new HttpParams({ fromObject: keyValuePairs });
     }

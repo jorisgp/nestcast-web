@@ -1,0 +1,12 @@
+<div class="container show">
+  <div class="row" *ngIf="show">
+    <div class="col-3" *ngIf="show.image">
+      <img [src]="show.image?.url" alt="" class="image" />
+    </div>
+    <div class="col-9">
+      <h1>{{ show.title }}</h1>
+      <h2 class="nc-sub-title">{{ show.author }}</h2>
+      <p>{{ show.description }}</p>
+    </div>
+  </div>
+</div>

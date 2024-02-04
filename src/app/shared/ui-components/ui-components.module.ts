@@ -21,6 +21,7 @@ import { ModalComponent } from './components/modal/modal.component';
 import { NumberSelectComponent } from './components/number-select/number-select.component';
 import { BackgroundSectionComponent } from './components/page-sections/background-section/background-section.component';
 import { ParagraphsComponent } from './components/paragraphs/paragraphs.component';
+import { RoundIconButtonComponent } from './components/round-icon-button/round-icon-button.component';
 import { ShowDetailsComponent } from './components/show-details/show-details.component';
 import { SubCategorySelectComponent } from './components/sub-category-select/sub-category-select.component';
 
@@ -45,6 +46,7 @@ import { SubCategorySelectComponent } from './components/sub-category-select/sub
     EpisodeTypeSelectComponent,
     EpisodeDetailsComponent,
     CopyBoxComponent,
+    RoundIconButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -73,6 +75,7 @@ import { SubCategorySelectComponent } from './components/sub-category-select/sub
     EpisodeTypeSelectComponent,
     EpisodeDetailsComponent,
     CopyBoxComponent,
+    RoundIconButtonComponent,
   ],
 })
 export class UiComponentsModule {}

@@ -1,0 +1,16 @@
+.show-container {
+  height: 100vh;
+  position: relative;
+  overflow-y: scroll;
+
+  .player {
+    position: fixed;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+  }
+
+  .content {
+    padding-bottom: 150px;
+  }
+}

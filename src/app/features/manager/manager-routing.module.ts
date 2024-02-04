@@ -45,6 +45,11 @@ const routes: Routes = [
         path: 'settings',
         component: SettingsPageComponent,
       },
+      // {
+      //   path: '**',
+      //   pathMatch: 'full',
+      //   redirectTo: '/404',
+      // },
     ],
   },
 ];

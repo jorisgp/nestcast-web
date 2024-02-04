@@ -2,6 +2,8 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { Show } from 'src/app/shared/interfaces/user.interface';
 import {
   fetchShow,
+  fetchShowByDomain,
+  fetchShowByDomainSuccess,
   fetchShowError,
   fetchShowSuccess,
   uploadShowImageSuccess,
@@ -21,6 +23,14 @@ const initialState: ShowState = {
 
 const show = createReducer(
   initialState,
+  on(fetchShowByDomain, (state) => ({ ...state, isLoading: true })),
+  on(fetchShowByDomainSuccess, (state, result) => {
+    return {
+      ...state,
+      payload: result.show,
+      isLoading: false,
+    };
+  }),
   on(fetchShow, (state) => ({ ...state, isLoading: true })),
   on(fetchShowSuccess, (state, result) => {
     return {

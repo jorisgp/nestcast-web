@@ -26,6 +26,8 @@ export type Show = {
   keywords: string[];
   image: NestFile;
   rssFeedUrl: string;
+  showUrl: string;
+  domainName: string;
 };
 
 export type Episode = {
